@@ -32,6 +32,20 @@
     --max-width: 1440px;
 }
 
+/* --- Ajustes Globais Mobile --- */
+@media (max-width: 768px) {
+    :root {
+        --space-xxl: 5rem; /* Reduzindo espaços vazios gigantes */
+        --space-xl: 3rem;
+    }
+    .container {
+        padding: 0 1.2rem; /* Mais espaço para o conteúdo nas laterais */
+    }
+    .section {
+        padding: var(--space-xl) 0;
+    }
+}
+
 /* --- Reset e Base --- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; font-size: 16px; background-color: var(--bg-color); }
@@ -279,6 +293,14 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 800px;
 }
 
+@media (max-width: 900px) {
+    .hero-content-editorial {
+        margin-left: 0;
+        text-align: center;
+        padding: 0 1rem;
+    }
+}
+
 .hero-title-main {
     font-size: clamp(3.5rem, 8vw, 6.5rem); /* Reduzido levemente para equilíbrio */
     letter-spacing: -0.04em;
@@ -507,6 +529,12 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 15rem;
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .sobre-mim-section {
+        padding-top: var(--space-xxl); /* Remove o empoderamento de 15rem no mobile */
+    }
 }
 
 .storytelling-grid {
@@ -851,6 +879,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10rem; /* Espaço generoso entre o badge e as habilidades */
     padding-top: 6rem;
     border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (max-width: 768px) {
+    .skills-editorial-wrapper {
+        margin-top: 4rem;
+        padding-top: 3rem;
+    }
 }
 
 .skills-grid {
