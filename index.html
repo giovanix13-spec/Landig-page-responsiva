@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovani Almeida | Designer & Empresário</title>
+    <meta name="description" content="Portfólio de Giovani Almeida, focado em Branding, Identidade Visual e UI/UX. Conheça meus projetos.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Syne para Títulos impactantes, Inter para corpo de texto com perfeita legibilidade -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Phosphor Icons para icones modernos (opcional/leve) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-dark">
+    <!-- Cursor Customizado Minimalista -->
+    <div class="cursor-follower">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
+    <!-- Header / Navbar Editorial -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-text">Giovani Almeida</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#trabalhos" class="nav-link">Trabalhos</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="close-menu-btn" aria-label="Fechar Menu">
+            <i class="ph ph-x"></i>
+        </button>
+        <nav class="mobile-nav-links">
+            <a href="#trabalhos" class="mobile-link">Trabalhos</a>
+            <a href="#sobre" class="mobile-link">Sobre</a>
+            <a href="#contato" class="mobile-link accent-link">Contato</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section com Vídeo Background -->
+        <section class="hero-video-section">
+            <!-- Div para receber o vídeo do fundo -->
+            <div class="video-container">
+                <video id="heroVideo" loop muted playsinline class="hero-video">
+                    <source src="meu-video.mp4" type="video/mp4">
+                </video>
+                <div class="video-placeholder"></div>
+            </div>
+            
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content-editorial">
+                <h1 class="hero-title-main reveal">Giovani Almeida</h1>
+                <p class="hero-tagline-main reveal reveal-delay-1">Designer Digital & Estrategista de Marketing</p>
+                <p class="hero-subtitle-main reveal reveal-delay-2">Design, estratégia e comunicação para transformar marcas.</p>
+                <div class="mt-2 reveal reveal-delay-3">
+                    <a href="#trabalhos" class="btn btn-primary btn-glass">Explorar Projetos</a>
+                </div>
+            </div>
+            
+            <a href="#trabalhos" class="scroll-down-minimal" aria-label="Rolar para baixo">
+                <span>SCROLL</span>
+                <i class="ph ph-arrow-down"></i>
+            </a>
+        </section>
+        
+        <!-- Marquee Row 1: Pós-Hero -->
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
+                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
+                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
+                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
+            </div>
+        </div>
+
+        <!-- Seção: Projetos Reais (Editorial Grid) -->
+        <section id="trabalhos" class="section projetos-section">
+            <div class="container">
+                <div class="section-header-minimal reveal">
+                    <span class="section-label">Obras Selecionadas</span>
+                    <h2 class="section-title">Portfólio</h2>
+                </div>
+
+                <div class="editorial-grid">
+                    <!-- Gato Imóveis -->
+                    <a href="https://www.behance.net/gallery/243833241/Gato-Imoveis-Rebranding-Identidade-Visual" target="_blank" class="project-item reveal item-medium">
+                        <div class="project-image-wrapper">
+                            <img src="assets/projects/gato-imoveis-familia.png" alt="Gato Imóveis" class="project-img">
+                            <div class="project-cta-overlay">
+                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
+                            </div>
+                        </div>
+                        <div class="project-meta">
+                            <h3 class="project-title">Gato Imóveis</h3>
+                            <span class="project-category">Rebranding & Identidade Visual</span>
+                        </div>
+                    </a>
+
+                    <!-- Azeite Lisboa -->
+                    <a href="https://www.behance.net/gallery/243228307/Azeite-de-Oliva-Lisboa" target="_blank" class="project-item reveal item-medium">
+                        <div class="project-image-wrapper">
+                            <img src="assets/projects/lisboa.png" alt="Azeite Lisboa" class="project-img">
+                            <div class="project-cta-overlay">
+                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
+                            </div>
+                        </div>
+                        <div class="project-meta">
+                            <h3 class="project-title">Azeite de Oliva Lisboa</h3>
+                            <span class="project-category">Branding & Embalagem</span>
+                        </div>
+                    </a>
+
+                    <!-- CTA CARD (Referência) -->
+                    <div class="portfolio-cta-card reveal">
+                        <h3>Precisa de <br>um projeto?</h3>
+                        <p>Agende uma conversa com nossa equipe. Estamos dispostos a entender sobre sua marca para oferecer uma solução eficiente e criativa.</p>
+                        <a href="https://wa.me/5511964894096?text=Olá Giovani, vi seu portfólio e gostaria de agendar uma call para solicitar uma reunião sobre um novo projeto." target="_blank" class="btn btn-outline">Solicitar Reunião</a>
+                    </div>
+
+                    <!-- Luna Cosméticos -->
+                    <a href="https://www.behance.net/gallery/192575167/Luna-Cosmticos" target="_blank" class="project-item reveal item-medium">
+                        <div class="project-image-wrapper">
+                            <img src="assets/projects/luna.png" alt="Luna Cosméticos" class="project-img">
+                            <div class="project-cta-overlay">
+                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
+                            </div>
+                        </div>
+                        <div class="project-meta">
+                            <h3 class="project-title">Luna Cosméticos</h3>
+                            <span class="project-category">Identidade Visual</span>
+                        </div>
+                    </a>
+
+                    <!-- Social Media Compilação -->
+                    <a href="https://www.behance.net/gallery/174634029/Social-Media-Junho-2023" target="_blank" class="project-item reveal item-medium">
+                        <div class="project-image-wrapper">
+                            <img src="assets/projects/social-media.jpg" alt="Coleção Social Media" class="project-img">
+                            <div class="project-cta-overlay">
+                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
+                            </div>
+                        </div>
+                        <div class="project-meta">
+                            <h3 class="project-title">Coleção Social Media</h3>
+                            <span class="project-category">Direção de Arte (2021-2023)</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Real Salgadinho -->
+                    <a href="https://www.behance.net/gallery/233342345/Real-Salgadinho-Identidade-Visual" target="_blank" class="project-item reveal item-medium">
+                        <div class="project-image-wrapper">
+                            <img src="assets/projects/real-salgadinho.png" alt="Real Salgadinho" class="project-img">
+                            <div class="project-cta-overlay">
+                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
+                            </div>
+                        </div>
+                        <div class="project-meta">
+                            <h3 class="project-title">Real Salgadinho</h3>
+                            <span class="project-category">Identidade Visual & Branding</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Row 2: Pré-Sobre (Velocidade diferente/Invertido) -->
+        <div class="marquee-wrapper border-top-bottom bg-accent">
+            <div class="marquee-content slow reverse">
+                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
+                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
+                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 1: SOBRE (Storytelling Pessoal) -->
+        <section id="sobre" class="section sobre-mim-section">
+            <div class="container">
+                <div class="storytelling-grid">
+                    <div class="story-image-column reveal">
+                        <div class="about-flip-card">
+                            <div class="flip-card-inner">
+                                <!-- Frente: Foto de Perfil -->
+                                <div class="flip-card-front">
+                                    <div class="about-image-wrapper">
+                                        <img src="foto-perfil.png" alt="Giovani Almeida" class="about-profile-img">
+                                    </div>
+                                </div>
+                                <!-- Verso: Foto de Família + Versículo -->
+                                <div class="flip-card-back">
+                                    <div class="about-image-wrapper">
+                                        <img src="Familia.jpg" alt="Família" class="about-profile-img family-img-blur">
+                                        <div class="flip-overlay">
+                                            <a href="https://www.instagram.com/giovanni_fazzio?igsh=dG1kNzBhejVqdGlz" target="_blank" class="btn-glass-sm verse-btn">
+                                                "Bem-Aventurados todos os que nele confiam"
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-text-column">
+                        <div class="reveal">
+                            <span class="section-label">Minha História</span>
+                            <h2 class="section-title">Sou Giovani Almeida</h2>
+                        </div>
+                        <div class="bio-story-content">
+                            <p class="text-lead reveal reveal-delay-1">
+                                Designer e estrategista de marketing, movido por transformar realidades através de boas ideias.
+                            </p>
+                            <div class="story-paragraphs reveal reveal-delay-2">
+                                <p>Minha jornada começou na comunidade <strong>Vila União, em Cajamar</strong>, onde cresci em uma realidade simples. Foi ali que descobri o design aos <strong>12 anos</strong>, mesmo sem recursos ou estrutura, apenas com curiosidade e vontade de criar.</p>
+                                <p>Aos <strong>14 anos</strong>, iniciei meu curso técnico em <strong>Web Design (UI/UX)</strong>, onde comecei a desenvolver as bases da minha carreira.</p>
+                                <p>Antes de me consolidar na área criativa, passei brevemente por setores como logística e controle de qualidade. Essas experiências me ajudaram a entender que meu verdadeiro caminho estava na criação, na comunicação e no design.</p>
+                            </div>
+                            <div class="personal-lifestyle reveal reveal-delay-3">
+                                <div class="lifestyle-item">
+                                    <i class="ph ph-calendar icon-age-anim"></i>
+                                    <span>29 anos</span>
+                                </div>
+                                <div class="lifestyle-item">
+                                    <i class="ph ph-heart-straight icon-heart-anim"></i>
+                                    <span>Casado</span>
+                                </div>
+                                <div class="lifestyle-item">
+                                    <i class="ph ph-users-three icon-family-anim"></i>
+                                    <span>Em família</span>
+                                </div>
+                                <div class="lifestyle-item">
+                                    <i class="ph ph-dog icon-dog-anim"></i>
+                                    <span>Tenho 2 cachorros</span>
+                                </div>
+                                
+                                <div class="hobbies-lifestyle mt-2">
+                                    <span class="hobbies-label">Além do design:</span>
+                                    <div class="hobbies-grid">
+                                        <div class="hobby-item">
+                                            <i class="ph ph-airplane-tilt icon-travel-anim"></i>
+                                            <span>Viajar</span>
+                                        </div>
+                                        <div class="hobby-item">
+                                            <i class="ph ph-cooking-pot icon-cook-anim"></i>
+                                            <span>Cozinhar</span>
+                                        </div>
+                                        <div class="hobby-item">
+                                            <i class="ph ph-soccer-ball icon-soccer-anim"></i>
+                                            <span>Futebol</span>
+                                        </div>
+                                        <div class="hobby-item">
+                                            <i class="ph ph-game-controller icon-game-anim"></i>
+                                            <span>Videogame</span>
+                                        </div>
+                                        <div class="hobby-item">
+                                            <i class="ph ph-film-slate icon-film-anim"></i>
+                                            <span>Cinema</span>
+                                        </div>
+                                        <div class="hobby-item">
+                                            <i class="ph ph-palette icon-art-anim"></i>
+                                            <span>Cultura e arte</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="quote-minimal">"Acredito que boas ideias podem transformar realidades."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: MINHA CARREIRA (Trajetória Profissional) -->
+        <section id="carreira" class="section carreira-section">
+            <div class="container">
+                <div class="section-header-minimal reveal">
+                    <span class="section-label">Trajetória Profissional</span>
+                    <h2 class="section-title">Minha Carreira</h2>
+                    <p class="text-lead mt-1">Ao longo da minha trajetória trabalhei com design, marketing e estratégia, desenvolvendo projetos para diferentes segmentos.</p>
+                </div>
+
+                <div class="career-grid mt-4">
+                    <!-- Card: Empresas de Impacto -->
+                    <div class="career-card reveal">
+                        <div class="card-icon"><i class="ph ph-buildings"></i></div>
+                        <h3>Projetos de Impacto</h3>
+                        <p>Participei de projetos e trabalhos com grandes players do mercado:</p>
+                        <ul class="career-list">
+                            <li><i class="ph ph-check"></i> Carrefour</li>
+                            <li><i class="ph ph-check"></i> Empresas de Tecnologia</li>
+                            <li><i class="ph ph-check"></i> Setor Financeiro</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card: Setor Farmacêutico -->
+                    <div class="career-card reveal reveal-delay-1">
+                        <div class="card-icon"><i class="ph ph-first-aid-kit"></i></div>
+                        <h3>Especialista em Farma</h3>
+                        <p>Durante a pandemia, liderei a modernização digital de importantes drogarias:</p>
+                        <div class="clients-tag-cloud">
+                            <span>Drogaria Polvilho</span>
+                            <span>Drogaria Estrela Dalva</span>
+                            <span>Drogaria Leal</span>
+                            <span>Drogaria da Ponte</span>
+                        </div>
+                    </div>
+
+                    <!-- Card: Soluções Digitais -->
+                    <div class="career-card reveal reveal-delay-2">
+                        <div class="card-icon"><i class="ph ph-rocket-launch"></i></div>
+                        <h3>Impacto Digital</h3>
+                        <p>Implantei soluções que geraram crescimento real e faturamento:</p>
+                        <ul class="career-list">
+                            <li><i class="ph ph-arrows-merge"></i> Integração com iFood</li>
+                            <li><i class="ph ph-robot"></i> Automações de Atendimento</li>
+                            <li><i class="ph ph-paint-brush-broad"></i> Novas Identidades Visuais</li>
+                            <li><i class="ph ph-chart-line-up"></i> Estratégias de Marketing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-footer reveal mt-4">
+                    <div class="role-badge">
+                        <p>Hoje atuo como <strong>Coordenador de Marketing e Diretor de Arte</strong>, conectando design, estratégia e crescimento de negócios.</p>
+                    </div>
+                </div>
+
+                <!-- Restaurando Habilidades & Processos (Chips/Tabs) -->
+                <div class="skills-editorial-wrapper reveal">
+                    <div class="section-header-minimal mb-3">
+                        <span class="section-label">Expertise Técnica</span>
+                        <h2 class="section-title" style="font-size: 2.5rem;">Habilidades & Processos</h2>
+                    </div>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <span class="skill-label">Design & Arte</span>
+                            <ul class="info-list inline-chips">
+                                <li><span class="chip chip-design">Branding</span></li>
+                                <li><span class="chip chip-design">Identidade Visual</span></li>
+                                <li><span class="chip chip-design">Rebranding de Marca</span></li>
+                                <li><span class="chip chip-design">Direção de Arte</span></li>
+                                <li><span class="chip chip-design">Design Estratégico</span></li>
+                                <li><span class="chip chip-design">Design de Embalagem</span></li>
+                                <li><span class="chip chip-design">UI Design</span></li>
+                                <li><span class="chip chip-design">Web Design</span></li>
+                                <li><span class="chip chip-design">Criação de Campanhas</span></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <span class="skill-label">Marketing Estratégico</span>
+                            <ul class="info-list inline-chips">
+                                <li><span class="chip chip-mkt">Gestão de Marketing</span></li>
+                                <li><span class="chip chip-mkt">Planejamento</span></li>
+                                <li><span class="chip chip-mkt">Posicionamento de Marca</span></li>
+                                <li><span class="chip chip-mkt">Comunicação</span></li>
+                                <li><span class="chip chip-mkt">Funil de Marketing</span></li>
+                                <li><span class="chip chip-mkt">Otimização (CRO)</span></li>
+                                <li><span class="chip chip-mkt">Trade Marketing</span></li>
+                                <li><span class="chip chip-mkt">Estratégia de PDV</span></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <span class="skill-label">Social & Tráfego</span>
+                            <ul class="info-list inline-chips">
+                                <li><span class="chip chip-social">Gestão de Redes Sociais</span></li>
+                                <li><span class="chip chip-social">Conteúdo Visual</span></li>
+                                <li><span class="chip chip-social">Tráfego Pago</span></li>
+                                <li><span class="chip chip-social">Google Ads</span></li>
+                                <li><span class="chip chip-social">Meta Ads</span></li>
+                                <li><span class="chip chip-social">Análise de Dados/Relatórios</span></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <span class="skill-label">Softwares & Ferramentas</span>
+                            <ul class="info-list inline-chips">
+                                <li><span class="chip chip-soft">Adobe Photoshop</span></li>
+                                <li><span class="chip chip-soft">Adobe Illustrator</span></li>
+                                <li><span class="chip chip-soft">Adobe XD</span></li>
+                                <li><span class="chip chip-soft">Meta Business Mngr.</span></li>
+                                <li><span class="chip chip-soft">Google Analytics</span></li>
+                                <li><span class="chip chip-soft">Notion</span></li>
+                                <li><span class="chip chip-soft">IA & Midjourney</span></li>
+                            </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: CONTATO (Modernizada) -->
+        <section id="contato" class="section contato-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Coluna 1: Informações e Texto -->
+                    <div class="contact-info reveal">
+                        <span class="section-label">Vamos Conversar</span>
+                        <h2 class="section-title">Vamos criar algo <br>incrível juntos.</h2>
+                        <p class="text-lead mt-1">
+                            Se você tem um projeto, uma ideia ou quer melhorar a presença digital da sua empresa, vamos conversar.
+                        </p>
+                        
+                        <div class="contact-methods mt-4">
+                            <a href="https://wa.me/5511964894096" target="_blank" class="contact-method-card">
+                                <div class="method-icon"><i class="ph ph-whatsapp-logo"></i></div>
+                                <div class="method-text">
+                                    <strong>WhatsApp</strong>
+                                    <span>(11) 96489-4096</span>
+                                </div>
+                            </a>
+                            
+                            <a href="mailto:contato.giovanialmeida@gmail.com" class="contact-method-card">
+                                <div class="method-icon"><i class="ph ph-envelope-simple"></i></div>
+                                <div class="method-text">
+                                    <strong>E-mail</strong>
+                                    <span>contato.giovanialmeida@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/giovanialmeidamktedesign" target="_blank" class="contact-method-card">
+                                <div class="method-icon"><i class="ph ph-linkedin-logo"></i></div>
+                                <div class="method-text">
+                                    <strong>LinkedIn</strong>
+                                    <span>Perfil Profissional</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.behance.net/giovanix133f97" target="_blank" class="contact-method-card">
+                                <div class="method-icon"><i class="ph ph-behance-logo"></i></div>
+                                <div class="method-text">
+                                    <strong>Behance</strong>
+                                    <span>Portfólio de Projetos</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 2: Formulário -->
+                    <div class="contact-form-wrapper reveal reveal-delay-1">
+                        <form id="contactForm" class="premium-form">
+                            <div class="form-group">
+                                <label for="name">Nome Completo</label>
+                                <input type="text" id="name" name="name" placeholder="Como posso te chamar?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Sua Mensagem</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Conte um pouco sobre o seu projeto..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">
+                                Enviar Mensagem <i class="ph ph-paper-plane-tilt"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Simplificado -->
+    <footer class="footer-minimal">
+        <div class="container flex-footer">
+            <p>&copy; 2026 Giovani Almeida. Cajamar/SP.</p>
+            <p>Design em Equilíbrio.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp CTA -->
+    <button id="floating-whatsapp-cta" class="floating-cta" aria-label="Solicitar Orçamento">
+        <span class="cta-text">Vamos Conversar</span>
+        <span class="cta-icon"><i class="ph ph-whatsapp-logo"></i></span>
+    </button>
+
+    <!-- WhatsApp Budget Modal -->
+    <div id="whatsapp-modal" class="whatsapp-modal-overlay">
+        <div class="whatsapp-modal-content">
+            <button class="close-modal-btn" id="close-whatsapp-modal" aria-label="Fechar">
+                <i class="ph ph-x"></i>
+            </button>
+            
+            <div class="modal-header">
+                <span class="section-label">Contato Direto</span>
+                <div class="modal-tabs">
+                    <button class="modal-tab-btn active" data-tab="servicos">Freelance</button>
+                    <button class="modal-tab-btn" data-tab="recrutamento">Empresas</button>
+                    <div class="modal-tab-indicator"></div>
+                </div>
+            </div>
+
+            <!-- Aba 1: Serviços / Freelance -->
+            <div class="modal-tab-pane active" id="pane-servicos">
+                <h3 class="modal-title mb-2">Orçar um <br>trabalho?</h3>
+                <div class="modal-options">
+                    <button class="modal-opt-btn" data-service="design">
+                        <span class="opt-icon"><i class="ph ph-paint-brush-broad"></i></span>
+                        <div class="opt-text">
+                            <strong>Design</strong>
+                            <span>Branding, UI/UX, Projetos</span>
+                        </div>
+                        <i class="ph ph-arrow-right"></i>
+                    </button>
+
+                    <button class="modal-opt-btn" data-service="marketing">
+                        <span class="opt-icon"><i class="ph ph-chart-line-up"></i></span>
+                        <div class="opt-text">
+                            <strong>Marketing</strong>
+                            <span>Estratégia, Tráfego, Gestão</span>
+                        </div>
+                        <i class="ph ph-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Aba 2: Recrutamento / Empresa -->
+            <div class="modal-tab-pane" id="pane-recrutamento">
+                <h3 class="modal-title mb-2">Me contrate <br>para seu time.</h3>
+                <div class="hire-me-content">
+                    <p class="text-body mb-2">Precisa de um designer estrategista focado em resultados? Confira minha trajetória.</p>
+                    
+                    <a href="curriculo-giovani-almeida.pdf.pdf" download class="cv-download-btn">
+                        <div class="cv-icon"><i class="ph ph-file-pdf"></i></div>
+                        <div class="cv-text">
+                            <strong>Baixar Currículo (CV)</strong>
+                            <span>PDF • 2026</span>
+                        </div>
+                        <i class="ph ph-download-simple"></i>
+                    </a>
+
+                    <div class="mt-2">
+                        <button class="modal-opt-btn w-full" data-service="fixo">
+                            <span class="opt-icon"><i class="ph ph-briefcase"></i></span>
+                            <div class="opt-text">
+                                <strong>Conversar sobre Vaga Fixa</strong>
+                                <span>Falar diretamente via WhatsApp</span>
+                            </div>
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
