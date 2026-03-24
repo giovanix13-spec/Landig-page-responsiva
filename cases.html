@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cases Estratégicos | Giovani Almeida</title>
+    <meta name="description" content="Cases estratégicos de design e marketing desenvolvidos com foco em posicionamento corporativo por Giovani Almeida.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ================= TRACKING INFRASTRUCTURE ================= -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-SUBSTITUIR');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SUBSTITUIR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SUBSTITUIR'); 
+      gtag('config', 'AW-SUBSTITUIR'); 
+    </script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID_SUBSTITUIR');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID_SUBSTITUIR&ev=PageView&noscript=1"/></noscript>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        /* Estrutura Minimalista Aba Cases */
+        .case-topic {
+            margin-bottom: 2rem;
+            color: #ddd;
+        }
+        .case-topic strong {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .case-topic strong i {
+            color: #c41212;
+            font-size: 1.4rem;
+        }
+        
+        .case-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .case-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+        .case-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #c41212;
+        }
+        
+        /* Container dos Personagens e Animação */
+        .char-anim-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 24px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 100%);
+            padding: 2rem;
+            height: 100%;
+            min-height: 450px;
+            border: 1px solid rgba(255,255,255,0.02);
+        }
+        .char-img {
+            max-width: 100%;
+            border-radius: 12px;
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.5));
+            /* Animação de respiração sutil do personagem */
+            animation: gentleBreathe 5s ease-in-out infinite alternate;
+            transition: transform 0.4s ease, filter 0.3s ease;
+        }
+        
+        .char-img:hover {
+            filter: drop-shadow(0 20px 35px rgba(196, 18, 18, 0.2)) saturate(1) brightness(1);
+        }
+        
+        @keyframes gentleBreathe {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-5px) scale(1.005); }
+        }
+
+        /* Correções de alinhamento Mobile */
+        @media (max-width: 900px) {
+            .storytelling-grid .story-image-column, 
+            .storytelling-grid .story-text-column {
+                order: unset !important;
+            }
+            .char-anim-box {
+                min-height: 300px;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-SUBSTITUIR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <div class="cursor-follower">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Giovani Almeida</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html#trabalhos" class="nav-link">Trabalhos</a>
+                <a href="cases.html" class="nav-link" style="color: #fff; border-bottom: 2px solid #c41212;">Cases</a>
+                <a href="index.html#sobre" class="nav-link">Sobre</a>
+                <a href="index.html#contato" class="nav-link">Contato</a>
+                <a class="nav-link client-login-link"><i class="ph ph-user"></i> Área do Cliente</a>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay">
+        <button class="close-menu-btn"><i class="ph ph-x"></i></button>
+        <nav class="mobile-nav-links">
+            <a href="index.html#trabalhos" class="mobile-link">Trabalhos</a>
+            <a href="cases.html" class="mobile-link" style="color: #c41212;">Cases</a>
+            <a href="index.html#sobre" class="mobile-link">Sobre</a>
+            <a href="index.html#contato" class="mobile-link accent-link">Contato</a>
+            <a class="client-login-link" style="margin-top: 1rem; color: #fff; font-size: 1.1rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 12px; text-align: center; display: inline-flex; justify-content: center;"><i class="ph ph-lock-key"></i> Área do Cliente</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- TOPO -->
+        <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
+            <div class="container text-center">
+                <h1 class="section-title reveal reveal-delay-1" style="max-width: 900px; margin: 0 auto; line-height: 1.1;">Cases estratégicos de <br>design e marketing</h1>
+                <p class="text-lead reveal reveal-delay-2 mx-auto mt-2" style="max-width: 600px; font-weight: 500; font-size: 1.15rem;">
+                    Projetos desenvolvidos com foco incisivo em posicionamento corporativo.
+                </p>
+            </div>
+        </section>
+
+        <!-- CASE 1 - DROGARIA -->
+        <section class="section border-top-bottom">
+            <div class="container">
+                <div class="storytelling-grid" style="align-items: center; gap: 4rem;">
+                    <div class="story-image-column reveal" style="order: 2;">
+                        <div class="char-anim-box">
+                            <img src="assets/projects/pharmacy_final.jpg" alt="Visão arquitetônica de varejo farmacêutico moderno" class="char-img" loading="eager">
+                        </div>
+                    </div>
+                    <div class="story-text-column reveal reveal-delay-1" style="order: 1;">
+                        <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Cenário Varejo Farma</h2>
+                        <span class="section-label" style="margin-bottom: 2rem;">Reestruturação visual corporativa</span>
+                        
+                        <div class="bio-story-content">
+                            <div class="case-topic">
+                                <strong><i class="ph ph-info"></i> Contexto</strong>
+                                <ul class="case-list">
+                                    <li>Rede farmacêutica local estabilizada financeiramente.</li>
+                                    <li>Forte pressão e entrada maciça de concorrentes maiores no bairro.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-warning-circle"></i> Desafio</strong>
+                                <ul class="case-list">
+                                    <li>Identidade visual do salão de vendas enfraquecida.</li>
+                                    <li>Comunicação de chão-de-loja e tabloides desorganizada.</li>
+                                    <li>Pulverização total da atenção cognitiva do fluxo de clientes.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-target"></i> Abordagem</strong>
+                                <ul class="case-list">
+                                    <li>Redesign do sistema digital e impresso base de Trade Marketing.</li>
+                                    <li>Linguagem limpa instaurada em diretrizes rígidas nas vitrines.</li>
+                                    <li>Hierarquização extrema entre perfumaria orgânica e gôndolas de alta saída.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-trend-up"></i> Resultado</strong>
+                                <ul class="case-list">
+                                    <li>Experiência e permanência de compra altamente profissionalizada.</li>
+                                    <li>Facilidade imediata na condução visual dos produtos foco.</li>
+                                    <li>Consolidação de uma ótica premium sem perder sua origem popular comunitária.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE 2 - CORPORATE IDENTITY -->
+        <section class="section border-top-bottom" style="background: rgba(255,255,255,0.01);">
+            <div class="container">
+                <div class="storytelling-grid" style="align-items: center; gap: 4rem;">
+                    <div class="story-image-column reveal" style="order: 1;">
+                        <div class="char-anim-box">
+                            <img src="assets/projects/branding_final.jpg" alt="Estúdio de criação e design de marca estratégico" class="char-img" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="story-text-column reveal reveal-delay-1" style="order: 2;">
+                        <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Estrutura B2B Enterprise</h2>
+                        <span class="section-label" style="margin-bottom: 2rem;">Criação Sistêmica de Identidade de Marca</span>
+                        
+                        <div class="bio-story-content">
+                            <div class="case-topic">
+                                <strong><i class="ph ph-info"></i> Contexto</strong>
+                                <ul class="case-list">
+                                    <li>Empresa B2B sólida precisando fechar e prospectar contas maiores.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-warning-circle"></i> Desafio</strong>
+                                <ul class="case-list">
+                                    <li>Apresentações de vendas inteiramente genéricas.</li>
+                                    <li>Nível de linguagem visual não condizente com a cifra do faturamento real.</li>
+                                    <li>Material raso que criava grave fricção de credibilidade com diretores executivos.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-target"></i> Abordagem</strong>
+                                <ul class="case-list">
+                                    <li>Reestruturação técnica de de Identidade (Logotipo, Cores, Regras de Ouro).</li>
+                                    <li>Montagem rigorosa do Brandbook corporativo primário.</li>
+                                    <li>Engenharia limpa e minimalista de Pitch Decks focados em fechamento.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-trend-up"></i> Resultado</strong>
+                                <ul class="case-list">
+                                    <li>Eliminação total de barreiras visuais amadoras e precoces de reunião.</li>
+                                    <li>Crescimento instantâneo do gatilho tático de autoridade nas visitas.</li>
+                                    <li>Velocidade e encurtamento na recepção de grandes contas institucionais.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE 3 - ADVERTISING / RETAIL CAMPAIGN -->
+        <section class="section border-top-bottom">
+            <div class="container">
+                <div class="storytelling-grid" style="align-items: center; gap: 4rem;">
+                    <div class="story-image-column reveal" style="order: 2;">
+                        <div class="char-anim-box">
+                            <img src="assets/projects/strategy_final.jpg" alt="Análise de dados e inteligência de marketing" class="char-img" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="story-text-column reveal reveal-delay-1" style="order: 1;">
+                        <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Canais Estratégicos</h2>
+                        <span class="section-label" style="margin-bottom: 2rem;">Campanhas de Escoamento Contínuo</span>
+                        
+                        <div class="bio-story-content">
+                            <div class="case-topic">
+                                <strong><i class="ph ph-info"></i> Contexto</strong>
+                                <ul class="case-list">
+                                    <li>Operação varejista operando evento forte de liquidação para saldo de estoques.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-warning-circle"></i> Desafio</strong>
+                                <ul class="case-list">
+                                    <li>Baixo engajamento histórico de promoções antigas.</li>
+                                    <li>Peças apelativas poluidoras que degradavam a pureza da marca de médio prazo.</li>
+                                    <li>Treinar o cliente passivo de tráfego com excesso de informação.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-target"></i> Abordagem</strong>
+                                <ul class="case-list">
+                                    <li>Instalação de uma linguagem tática temporária baseada em blocos urbanos limpos.</li>
+                                    <li>Foco absoluto no benefício ímpar ao invés da multi-confusão de descontos.</li>
+                                    <li>Distanciamento hierárquico, priorizando a fotografia do produto antes da cifra comercial.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic">
+                                <strong><i class="ph ph-trend-up"></i> Resultado</strong>
+                                <ul class="case-list">
+                                    <li>Ampliação da taxa de retenção dos anúncios do Tráfego Pago.</li>
+                                    <li>As vendas ocorreram puramente por gatilho visual cirúrgico, blindando a etiqueta de coleções normais.</li>
+                                    <li>Consistência técnica para escalonar piques de faturamento sem sacrificar a imagem futura.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL DA PAGINA -->
+        <section class="section" style="padding: var(--space-xxl) 0;">
+            <div class="container text-center reveal">
+                <span class="section-label" style="display: block; margin-bottom: 1.5rem;">Alinhamento Comercial</span>
+                <h2 class="section-title" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; line-height: 1.1;">Vamos construir liderança <br>agora mesmo.</h2>
+                <div style="display: flex; justify-content: center; margin-top: 3rem;">
+                    <a href="https://wa.me/5511964894096" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; width: auto; padding: 1.2rem 2.5rem; font-size: 1.1rem; border-radius: 12px;">
+                        Traçar Posicionamento Agora <i class="ph ph-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Simplificado -->
+    <footer class="footer-minimal">
+        <div class="container flex-footer">
+            <p>&copy; 2026 Giovani Almeida. Cajamar/SP.</p>
+            <p>Estratégia · Arte · Resultados</p>
+        </div>
+    </footer>
+
+    <!-- Client Area Modal -->
+    <div id="client-area-modal" class="whatsapp-modal-overlay">
+        <div class="whatsapp-modal-content" style="max-width: 480px; padding: 2.5rem 2rem;">
+            <button class="close-modal-btn" id="close-client-modal" aria-label="Fechar">
+                <i class="ph ph-x"></i>
+            </button>
+            <div class="modal-header" style="text-align: center; border-bottom: none; padding-bottom: 0;">
+                <div class="modal-icon" style="font-size: 2.5rem; color: #c41212; margin-bottom: 1rem;"><i class="ph ph-lock-key"></i></div>
+                <h3 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem; line-height: 1.2;">Área do Cliente</h3>
+                <p class="text-body" style="color: var(--text-secondary); font-size: 0.95rem; margin: 0 auto 2rem auto;">
+                    Um espaço pensado para centralizar acessos, materiais e acompanhamento de projetos. Em breve, clientes ativos terão acesso a uma área exclusiva com mais praticidade e organização.
+                </p>
+            </div>
+            <div class="modal-body">
+                <form id="clientAccessForm">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="text" id="clientName" placeholder="Seu Nome Completo" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="email" id="clientEmail" placeholder="E-mail Corporativo" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <input type="text" id="clientCompany" placeholder="Empresa / Marca" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1rem; position: relative;">
+                        <select id="isClient" required style="width: 100%; background: var(--bg-color); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1rem; color: #fff; font-family: var(--font-body); font-size: 1rem; appearance: none; cursor: pointer;">
+                            <option value="" disabled selected>Você já é cliente?</option>
+                            <option value="sim">Sim, projetos em andamento</option>
+                            <option value="nao">Ainda não</option>
+                        </select>
+                        <i class="ph ph-caret-down" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #666;"></i>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <textarea id="clientMessage" rows="2" placeholder="Sua Mensagem (Opcional)" style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full" id="clientSubmitBtn" style="border-radius: 12px;">
+                        Solicitar acesso <i class="ph ph-arrow-right"></i>
+                    </button>
+                    <p style="text-align: center; font-size: 0.8rem; color: #555; margin-top: 1.5rem;">
+                        Em breve, esta área reunirá informações e acessos para clientes em andamento.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

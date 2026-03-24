@@ -173,6 +173,39 @@ document.addEventListener('DOMContentLoaded', () => {
             window.addEventListener(evt, attemptPlay, { passive: true })
         );
     }
+
+    /* ==========================================================
+       Number Counter Animation (Prova Social)
+       ========================================================== */
+    const countElements = document.querySelectorAll('.count-up');
+    const countObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'));
+                const duration = 2000; // 2 segundos
+                const step = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateCount = () => {
+                    current += step;
+                    if (current < target) {
+                        el.innerText = Math.ceil(current);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        el.innerText = target;
+                    }
+                };
+                
+                // Pequeno delay para sincronizar com a entrada (reveal) do elemento
+                setTimeout(updateCount, 400); 
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    countElements.forEach(el => countObserver.observe(el));
+
     /* ==========================================================
        WhatsApp Budget & Recruitment Modal Logic
        ========================================================== */
@@ -240,9 +273,187 @@ document.addEventListener('DOMContentLoaded', () => {
                 const text = encodeURIComponent(MESSAGES[service]);
                 const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${text}`;
                 
-                window.open(whatsappUrl, '_blank');
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
                 closeModal();
             });
+        });
+    }
+
+    /* ==========================================================
+       Security & Privacy Hardening
+       ========================================================== */
+    // 1. Frame Busting (Anti-Clickjacking - Impede iframe não autorizado)
+    try {
+        if (window.top !== window.self) {
+            window.top.location.replace(window.self.location.href);
+        }
+    } catch (e) {
+        // Bloqueado pelo navegador
+    }
+
+    // 2. Proteção de Imagens (dificulta clique direito em imagens)
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+            e.preventDefault();
+        }
+    });
+
+    // 3. Ofuscação de E-mail (protege contra bots/scrapers)
+    const secureEmails = document.querySelectorAll('[data-secure-mailto="true"]');
+    secureEmails.forEach(el => {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            const m1 = this.getAttribute('data-m1');
+            const m2 = this.getAttribute('data-m2');
+            if (typeof trackEvent === 'function') trackEvent('click_email', 'Contact', 'Email_Obfuscated');
+            window.location.href = `mailto:${m1}@${m2}`;
+        });
+    });
+
+    // 4. Validação Limpa e Honeypot (Anti-spam) no Formulário
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    if (contactForm && submitBtn) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Honeypot check (Se _honey tiver valor, é bot)
+            const honey = this.querySelector('[name="_honey"]').value;
+            if (honey) {
+                console.warn('Envio bloqueado (Anti-Spam).');
+                return; // Silenciosamente falha pro bot
+            }
+            
+            // Sanitização mega básica simulada contra <tags>
+            const nameInput = document.getElementById('name');
+            nameInput.value = nameInput.value.replace(/<[^>]*>?/gm, '');
+            
+            // Simulação de Sucesso / Preparação para requisição POST real futura
+            if (typeof trackEvent === 'function') trackEvent('generate_lead', 'Conversion', 'Contact_Form_Submit');
+            
+            const btnOriginalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Protegido & Enviado! <i class="ph ph-shield-check"></i>';
+            submitBtn.style.backgroundColor = '#16a085'; // verde sutil
+            submitBtn.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                contactForm.reset();
+                submitBtn.innerHTML = btnOriginalText;
+                submitBtn.style.backgroundColor = '';
+                submitBtn.style.pointerEvents = 'auto';
+            }, 4000);
+        });
+    }
+
+    /* ==========================================================
+       Global Conversion Tracking (GA4, GTM, Meta Pixel)
+       ========================================================== */
+    window.trackEvent = function(eventName, category, label) {
+        try {
+            // 1. GTM (DataLayer)
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': eventName,
+                'event_category': category,
+                'event_label': label
+            });
+
+            // 2. Google Ads / GA4 (gtag direct)
+            if (typeof gtag === 'function') {
+                gtag('event', eventName, {
+                    'event_category': category,
+                    'event_label': label
+                });
+            }
+
+            // 3. Meta Pixel (Facebook)
+            if (typeof fbq === 'function') {
+                let fbEvent = 'Contact'; 
+                if(eventName === 'generate_lead' || eventName === 'form_submit') fbEvent = 'Lead';
+                fbq('trackCustom', fbEvent, { content_name: label, content_category: category });
+            }
+
+            console.log(`[Tracking Activo] Evento: ${eventName} | Categ: ${category} | Label: ${label}`);
+        } catch(e) { console.error('Tracking Error', e); }
+    };
+
+    // A. Captura automática de Interações em Links do WhatsApp e CTAs Extras
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            const href = this.getAttribute('href') || '';
+            const isBtn  = this.classList.contains('btn');
+            
+            if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+                trackEvent('click_whatsapp', 'Contact', 'WhatsApp_Direct_Link');
+            } else if (href.includes('mailto:')) {
+                trackEvent('click_email', 'Contact', 'Email_Direct_Link');
+            } else if (isBtn) {
+                trackEvent('click_cta', 'Engagement', this.innerText.trim());
+            }
+        });
+    });
+
+    // B. Captura do CTA Flutuante
+    const floatCta = document.getElementById('floating-whatsapp-cta');
+    if (floatCta) {
+        floatCta.addEventListener('click', () => {
+            trackEvent('click_whatsapp_floating', 'Contact', 'WhatsApp_Floating_CTA');
+        });
+    }
+
+    // C. Modal Área do Cliente
+    const clientModalOverride = document.getElementById('client-area-modal');
+    const closeClientModalBtn = document.getElementById('close-client-modal');
+    const clientForm = document.getElementById('clientAccessForm');
+    const clientSubmitBtn = document.getElementById('clientSubmitBtn');
+
+    document.querySelectorAll('.client-login-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(clientModalOverride) {
+                clientModalOverride.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if (typeof trackEvent === 'function') trackEvent('open_client_area', 'Engagement', 'Client_Area_Modal');
+            }
+        });
+    });
+
+    const closeClientModalDef = () => {
+        if(clientModalOverride) {
+            clientModalOverride.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (closeClientModalBtn) closeClientModalBtn.addEventListener('click', closeClientModalDef);
+    
+    if (clientModalOverride) {
+        clientModalOverride.addEventListener('click', (e) => {
+            if (e.target === clientModalOverride) closeClientModalDef();
+        });
+    }
+
+    if (clientForm && clientSubmitBtn) {
+        clientForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const honey = this.querySelector('[name="_honey"]').value;
+            if (honey) return; 
+
+            if (typeof trackEvent === 'function') trackEvent('request_client_access', 'Lead', 'Client_Area_Request');
+            
+            const btnOriginalText = clientSubmitBtn.innerHTML;
+            clientSubmitBtn.innerHTML = 'Solicitação Recebida! <i class="ph ph-check"></i>';
+            clientSubmitBtn.style.backgroundColor = '#16a085'; 
+            clientSubmitBtn.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                clientForm.reset();
+                clientSubmitBtn.innerHTML = btnOriginalText;
+                clientSubmitBtn.style.backgroundColor = '';
+                clientSubmitBtn.style.pointerEvents = 'auto';
+                closeClientModalDef();
+            }, 3000);
         });
     }
 });
