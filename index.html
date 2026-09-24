@@ -1,85 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giovani Almeida | Designer & Empresário</title>
-    <meta name="description" content="Portfólio de Giovani Almeida, focado em Branding, Identidade Visual e UI/UX. Conheça meus projetos.">
+    <title>Giovani Almeida — Diretor de Arte & Estrategista de Marcas</title>
+    <meta name="description" content="Portfólio de Giovani Almeida. Design com rigor suíço e estratégia com clareza. Especialista em Branding, Identidade Visual e Direção de Arte.">
     
-    <!-- Google Fonts -->
+    <!-- Tipografia Neo-Grotesque (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- ================= TRACKING INFRASTRUCTURE ================= -->
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-SUBSTITUIR');</script>
-    
-    <!-- Google Analytics (GA4) / Google Ads -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SUBSTITUIR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SUBSTITUIR'); /* GA4 ID */
-      gtag('config', 'AW-SUBSTITUIR'); /* Google Ads Conversion ID */
-    </script>
-    
-    <!-- Meta Pixel Code (Facebook/Instagram) -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'PIXEL_ID_SUBSTITUIR');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID_SUBSTITUIR&ev=PageView&noscript=1"/></noscript>
-    <!-- ================= END TRACKING INFRASTRUCTURE ================= -->
-    
-    <!-- CSS -->
+    <!-- CSS 2027 Minimalismo Suíço & Apple Clean -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Phosphor Icons para icones modernos (opcional/leve) -->
+    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body class="bg-dark">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-SUBSTITUIR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <!-- Cursor Customizado Minimalista -->
-    <div class="cursor-follower">
-        <div class="cursor-dot"></div>
-        <div class="cursor-circle"></div>
-    </div>
+<body>
 
-    <!-- Header / Navbar Editorial -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <span class="logo-text">Giovani Almeida</span>
+    <!-- 1. Barra de Navegação Padrão Apple (Ultra Clean & Minimalista) -->
+    <header class="apple-nav-header">
+        <div class="apple-nav-container">
+            <!-- Marca à Esquerda -->
+            <a href="index.html" class="apple-nav-brand">
+                Giovani Almeida
             </a>
             
-            <nav class="nav-links">
-                <a href="index.html#trabalhos" class="nav-link">Trabalhos</a>
-                <a href="cases.html" class="nav-link">Cases</a>
-                <a href="index.html#sobre" class="nav-link">Sobre</a>
-                <a href="index.html#contato" class="nav-link">Contato</a>
-                <a class="nav-link client-login-link"><i class="ph ph-user"></i> Área do Cliente</a>
+            <!-- Links Centrais Padrão Apple -->
+            <nav class="apple-nav-menu">
+                <a href="#trabalhos" class="apple-nav-link">Trabalhos</a>
+                <a href="cases.html" class="apple-nav-link">Cases</a>
+                <a href="#sobre" class="apple-nav-link">Sobre</a>
+                <a href="#autoridade" class="apple-nav-link">Autoridade</a>
+                <a href="#contato" class="apple-nav-link">Contato</a>
             </nav>
-
-            <button class="mobile-menu-btn" aria-label="Abrir Menu">
-                <i class="ph ph-list"></i>
-            </button>
+            
+            <!-- Ações à Direita -->
+            <div class="apple-nav-actions">
+                <a class="apple-nav-sublink client-login-link" style="cursor: pointer;">
+                    <i class="ph ph-user"></i> <span>Área do Cliente</span>
+                </a>
+                <button class="apple-btn-cta" id="open-contact-modal-btn">
+                    Iniciar Projeto
+                </button>
+                <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -89,276 +57,436 @@
             <i class="ph ph-x"></i>
         </button>
         <nav class="mobile-nav-links">
-            <a href="index.html#trabalhos" class="mobile-link">Trabalhos</a>
-            <a href="cases.html" class="mobile-link">Cases</a>
-            <a href="index.html#sobre" class="mobile-link">Sobre</a>
-            <a href="index.html#contato" class="mobile-link accent-link">Contato</a>
-            <a class="client-login-link" style="margin-top: 1rem; color: #fff; font-size: 1.1rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 12px; text-align: center; display: inline-flex; justify-content: center;"><i class="ph ph-lock-key"></i> Área do Cliente</a>
+            <a href="#trabalhos" class="mobile-link">Trabalhos</a>
+            <a href="cases.html" class="mobile-link highlight-link">Cases</a>
+            <a href="#sobre" class="mobile-link">Sobre</a>
+            <a href="#autoridade" class="mobile-link">Autoridade</a>
+            <a href="#contato" class="mobile-link">Contato</a>
+            <button class="mobile-link client-login-link" style="background: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; padding: 12px 24px; color: #fff; font-size: 1.1rem; margin-top: 1rem;">
+                <i class="ph ph-user"></i> Área do Cliente
+            </button>
         </nav>
     </div>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section com Vídeo Background -->
-        <section class="hero-video-section">
-            <!-- Div para receber o vídeo do fundo -->
-            <div class="video-container">
-                <video id="heroVideo" loop muted playsinline class="hero-video">
+        <!-- 2. Hero Section: Fullscreen com Vídeo 100% Puro em FHD + Glass Texture Card e Text Animation -->
+        <section class="hero-section hero-fullscreen">
+            <!-- Background Video Layer com BANNER 2027 em Fidelidade Máxima (Sem Scrim / Sem Opacidade) -->
+            <div class="hero-video-bg-container">
+                <video id="heroVideo" autoplay loop muted playsinline preload="auto" class="hero-video-full">
+                    <source src="BANNER 2027.mp4" type="video/mp4">
                     <source src="meu-video.mp4" type="video/mp4">
                 </video>
-                <div class="video-placeholder"></div>
             </div>
             
-            <div class="hero-overlay"></div>
-
-            <div class="container hero-content-editorial">
-                <h1 class="hero-title-main reveal">Giovani Almeida</h1>
-                <p class="hero-tagline-main reveal reveal-delay-1">Diretor de Arte & Estrategista de Marcas</p>
-                <p class="hero-subtitle-main reveal reveal-delay-2">Alinhando excelência visual com inteligência de negócio corporativa para escalar a percepção de valor e acelerar resultados de mercado.<br>
-                <span style="font-size: 0.9em; opacity: 0.8; display: block; margin-top: 12px; font-weight: 500;">+<span class="count-up" data-target="10">0</span> Anos de Mercado | +<span class="count-up" data-target="100">0</span> Projetos Entregues | Especialidades: Varejo, Saúde e Corporativo</span></p>
-                <div class="mt-2 reveal reveal-delay-3">
-                    <a href="#trabalhos" class="btn btn-primary btn-glass">Construa Sua Autoridade Visual</a>
+            <!-- Hero Content: Glass Box com Efeito Noise e Animações Fluidas Apple -->
+            <div class="container hero-content-overlay">
+                <div class="hero-glass-box-apple">
+                    <div class="glass-noise-layer"></div>
+                    <div class="hero-glass-inner">
+                        <span class="hero-eyebrow-pill anim-hero-1">
+                            <span class="hero-eyebrow-dot"></span>
+                            Direção de Arte & Estratégia de Marcas
+                        </span>
+                        <h1 class="hero-display-title anim-hero-2">
+                            <span class="title-primary">Design com rigor.</span>
+                            <span class="title-accent">Estratégia com propósito.</span>
+                        </h1>
+                        <p class="hero-subhead anim-hero-3">
+                            Crio soluções visuais fundamentadas em significado, proporção e clareza para marcas que buscam relevância duradoura.
+                        </p>
+                        
+                        <div class="hero-actions anim-hero-4">
+                            <a href="#trabalhos" class="btn btn-primary hero-btn-apple">Explorar Trabalhos</a>
+                            <a href="cases.html" class="btn btn-hero-secondary">
+                                Ver Cases Detalhados <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <a href="#trabalhos" class="scroll-down-minimal" aria-label="Rolar para baixo">
-                <span>SCROLL</span>
-                <i class="ph ph-arrow-down"></i>
+            <!-- Indicador Sensorial de Scroll (Roll) -->
+            <a href="#visao" class="hero-scroll-indicator" aria-label="Rolar para baixo">
+                <span class="scroll-text">EXPLORAR</span>
+                <div class="scroll-mouse-icon">
+                    <div class="scroll-wheel"></div>
+                </div>
             </a>
         </section>
-        
-        <!-- Marquee Row 1: Pós-Hero -->
-        <div class="marquee-wrapper">
-            <div class="marquee-content">
-                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
-                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
-                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
-                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
-            </div>
-        </div>
 
-        <!-- Seção: Projetos Reais (Editorial Grid) -->
-        <section id="trabalhos" class="section projetos-section">
+        <!-- 3. Manifesto / Declaração de Posicionamento -->
+        <section id="visao" class="section-tight manifesto-section">
             <div class="container">
-                <div class="section-header-minimal reveal">
-                    <span class="section-label">Obras Selecionadas</span>
-                    <h2 class="section-title">Portfólio</h2>
-                </div>
-
-                <div class="editorial-grid">
-                    <!-- Gato Imóveis -->
-                    <a href="https://www.behance.net/gallery/243833241/Gato-Imoveis-Rebranding-Identidade-Visual" target="_blank" rel="noopener noreferrer" class="project-item reveal item-medium">
-                        <div class="project-image-wrapper">
-                            <img src="assets/projects/gato-imoveis-familia.png" alt="Gato Imóveis" class="project-img">
-                            <div class="project-cta-overlay">
-                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Gato Imóveis</h3>
-                            <span class="project-category">Rebranding estratégico: Do legado popular à consolidação premium. Mercado Imobiliário.</span>
-                        </div>
-                    </a>
-
-                    <!-- Azeite Lisboa -->
-                    <a href="https://www.behance.net/gallery/243228307/Azeite-de-Oliva-Lisboa" target="_blank" rel="noopener noreferrer" class="project-item reveal item-medium">
-                        <div class="project-image-wrapper">
-                            <img src="assets/projects/lisboa.png" alt="Azeite Lisboa" class="project-img">
-                            <div class="project-cta-overlay">
-                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Azeite de Oliva Lisboa</h3>
-                            <span class="project-category">Branding focado e Design de Embalagem para alto impacto no PDV.</span>
-                        </div>
-                    </a>
-
-                    <!-- CTA CARD (Referência) -->
-                    <div class="portfolio-cta-card reveal">
-                        <h3>Pronto para liderar <br>o seu setor?</h3>
-                        <p>Atuação cirúrgica focada em lucro. Reagende o posicionamento da sua marca e desenvolva ativos digitais que aceleram conversão e agregam valor contínuo.</p>
-                        <a href="https://wa.me/5511964894096?text=Olá Giovani, agendar meu diagnóstico estratégico..." target="_blank" rel="noopener noreferrer" class="btn btn-outline">Solicitar Diagnóstico</a>
-                    </div>
-
-                    <!-- Luna Cosméticos -->
-                    <a href="https://www.behance.net/gallery/192575167/Luna-Cosmticos" target="_blank" rel="noopener noreferrer" class="project-item reveal item-medium">
-                        <div class="project-image-wrapper">
-                            <img src="assets/projects/luna.png" alt="Luna Cosméticos" class="project-img">
-                            <div class="project-cta-overlay">
-                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Luna Cosméticos</h3>
-                            <span class="project-category">Identidade Visual: Construção tática de marca para expansão nacional ágil.</span>
-                        </div>
-                    </a>
-
-                    <!-- Social Media Compilação -->
-                    <a href="https://www.behance.net/gallery/174634029/Social-Media-Junho-2023" target="_blank" rel="noopener noreferrer" class="project-item reveal item-medium">
-                        <div class="project-image-wrapper">
-                            <img src="assets/projects/social-media.jpg" alt="Coleção Social Media" class="project-img">
-                            <div class="project-cta-overlay">
-                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Coleção Social Media</h3>
-                            <span class="project-category">Direção de Arte: Táticas de performance para engajamento contínuo da audiência (2021-2023).</span>
-                        </div>
-                    </a>
-                    
-                    <!-- Real Salgadinho -->
-                    <a href="https://www.behance.net/gallery/233342345/Real-Salgadinho-Identidade-Visual" target="_blank" rel="noopener noreferrer" class="project-item reveal item-medium">
-                        <div class="project-image-wrapper">
-                            <img src="assets/projects/real-salgadinho.png" alt="Real Salgadinho" class="project-img">
-                            <div class="project-cta-overlay">
-                                <span class="btn-glass-sm">Clique para abrir no Behance</span>
-                            </div>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Real Salgadinho</h3>
-                            <span class="project-category">Reestruturação visual focada na demanda B2B corporativa das franquias de alimentação.</span>
-                        </div>
-                    </a>
-
+                <div class="manifesto-grid">
+                    <span class="eyebrow">Filosofia de Design</span>
+                    <p class="manifesto-statement">
+                        "O design autêntico não existe para preencher espaços vazios. Ele existe para <mark>estruturar negócios</mark>, gerar clareza imediata e transformar marcas em referências de mercado."
+                    </p>
+                    <p class="body-regular" style="max-width: 620px; margin: 0 auto;">
+                        Abordagem orientada pelo minimalismo suíço: cada elemento gráfico possui função exata, eliminando o ruído para que a essência e o valor do produto se destaquem.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Marquee Row 2: Pré-Sobre (Velocidade diferente/Invertido) -->
-        <div class="marquee-wrapper border-top-bottom bg-accent">
-            <div class="marquee-content slow reverse">
-                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
-                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
-                <span>DESIGN • BRANDING • DIREÇÃO DE ARTE • PERFORMANCE MARKETING • UX • IDENTIDADE VISUAL • </span>
-            </div>
-        </div>
-
-        <!-- SEÇÃO 1: SOBRE (Storytelling Pessoal) -->
-        <section id="sobre" class="section sobre-mim-section">
+        <!-- 4. Galeria de Trabalhos & Cases Selecionados -->
+        <section id="trabalhos" class="section gallery-section">
             <div class="container">
-                <div class="storytelling-grid">
-                    <div class="story-image-column reveal">
-                        <div class="about-flip-card">
-                            <div class="flip-card-inner">
-                                <!-- Frente: Foto de Perfil -->
-                                <div class="flip-card-front">
-                                    <div class="about-image-wrapper">
-                                        <img src="foto-perfil.png" alt="Giovani Almeida" class="about-profile-img">
-                                    </div>
+                <div class="gallery-header-flex">
+                    <div>
+                        <span class="eyebrow">Trabalhos Selecionados</span>
+                        <h2 class="section-heading">Projetos em Destaque</h2>
+                    </div>
+                    <div class="gallery-header-action">
+                        <a href="cases.html" class="link-apple" style="font-weight: 600;">
+                            Acessar galeria completa de Cases <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- 1. Nescau Duo (Key Visual & Campanha) -->
+                    <article class="project-card col-full">
+                        <div class="project-media-wrapper">
+                            <img src="assets/projects/nescau-duo.png" alt="Campanha Nescau Duo — Composição Digital e Key Visual" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <div>
+                                <div class="project-meta">
+                                    <span class="project-tag">Composição Digital & Key Visual</span>
+                                    <span style="color: var(--text-tertiary);">•</span>
+                                    <span style="font-size: 0.8125rem; color: var(--text-secondary);">Campanha Nescau Duo</span>
                                 </div>
-                                <!-- Verso: Foto de Família + Versículo -->
-                                <div class="flip-card-back">
-                                    <div class="about-image-wrapper">
-                                        <img src="familia.jpg" alt="Família" class="about-profile-img family-img-blur">
-                                        <div class="flip-overlay">
-                                            <a href="https://www.instagram.com/giovanni_fazzio?igsh=dG1kNzBhejVqdGlz" target="_blank" rel="noopener noreferrer" class="btn-glass-sm verse-btn">
-                                                <i class="ph ph-instagram-logo"></i> "Bem-Aventurados todos os que nele confiam"
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h3 class="project-title">Campanha Nescau Duo — Composição Digital & Key Visual</h3>
+                                <p class="project-desc">
+                                    Desenvolvimento de Key Visual para a campanha Nescau Duo, com foco em traduzir a dualidade de sabores (chocolate ao leite e branco) através de uma estética vibrante, dinâmica e urbana. O objetivo foi criar uma peça central de comunicação que conecte o público jovem à energia da marca, utilizando elementos do basquete e um design de cena lúdico.
+                                </p>
+                            </div>
+                            <div>
+                                <a href="https://www.behance.net/gallery/249385345/Composicao-Digital-Campanha-Nescau-Duo" target="_blank" rel="noopener noreferrer" class="link-apple">
+                                    Ver projeto completo no Behance <span class="arrow">→</span>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="story-text-column">
-                        <div class="reveal">
-                            <span class="section-label">Minha História</span>
-                            <h2 class="section-title">Sou Giovani Almeida</h2>
+                    </article>
+
+                    <!-- 2. GTA VI x WooB Digital (Estratégia & Direção de Arte) -->
+                    <article class="project-card col-half card-poster">
+                        <div class="project-media-wrapper">
+                            <img src="assets/projects/woob-gta.png" alt="GTA VI x WooB Digital — Estudo de Retenção e Narrativa" loading="lazy">
                         </div>
-                        <div class="bio-story-content">
-                            <p class="text-lead reveal reveal-delay-1">
-                                Diretor de Arte e estrategista de marketing, guiando grandes marcas à liderança de mercado sem perder a essência humana.
+                        <div class="project-content">
+                            <div>
+                                <div class="project-meta">
+                                    <span class="project-tag">Estratégia & Direção de Arte</span>
+                                </div>
+                                <h3 class="project-title">GTA VI x WooB Digital</h3>
+                                <p class="project-desc">
+                                    Apresentação de Case Estratégia e Direção de Arte para o Carrossel "GTA VI x WooB Digital". Um estudo sobre retenção, branding e narrativa.
+                                </p>
+                            </div>
+                            <div>
+                                <a href="https://www.behance.net/gallery/254292767/Projeto-Woob-(Teste)" target="_blank" rel="noopener noreferrer" class="link-apple">
+                                    Ver projeto completo no Behance <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Luna Cosméticos (Rebranding & Identidade Visual) -->
+                    <article class="project-card col-half">
+                        <div class="project-media-wrapper">
+                            <img src="assets/projects/luna-rebranding.png" alt="Criação de Rebranding Luna Cosméticos" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <div>
+                                <div class="project-meta">
+                                    <span class="project-tag">Rebranding & Identidade Visual</span>
+                                </div>
+                                <h3 class="project-title">Luna Cosméticos</h3>
+                                <p class="project-desc">
+                                    Criação de rebranding e identidade visual para a Luna Cosméticos, integrando design clean, sofisticação e linguagem visual focada no bem-estar e cuidados com a pele.
+                                </p>
+                            </div>
+                            <div>
+                                <a href="https://www.behance.net/gallery/192575167/Luna-Cosmticos" target="_blank" rel="noopener noreferrer" class="link-apple">
+                                    Ver projeto completo no Behance <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4. Azeite de Oliva Lisboa (Lançamento & Estratégia) -->
+                    <article class="project-card col-full">
+                        <div class="project-media-wrapper" style="aspect-ratio: 16 / 9;">
+                            <img src="assets/projects/azeite-lisboa-hero.png" alt="Azeite de Oliva Lisboa — Lançamento e Estratégia de Marketing" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <div>
+                                <div class="project-meta">
+                                    <span class="project-tag">Lançamento & Estratégia de Marketing</span>
+                                    <span style="color: var(--text-tertiary);">•</span>
+                                    <span style="font-size: 0.8125rem; color: var(--text-secondary);">Comunicação & Embalagem</span>
+                                </div>
+                                <h3 class="project-title">Azeite de Oliva Lisboa — Lançamento e Estratégia de Marketing</h3>
+                                <p class="project-desc">
+                                    Desenvolvimento de marca, comunicação e lançamento de um novo produto importado da Argentina para o Brasil. Sem alterar características da identidade visual da marca. (O projeto contém alterações do projeto original preservando a exclusividade de uso e privacidade da marca.)
+                                </p>
+                            </div>
+                            <div>
+                                <a href="https://www.behance.net/gallery/243228307/Azeite-de-Oliva-Lisboa" target="_blank" rel="noopener noreferrer" class="link-apple">
+                                    Ver projeto completo no Behance <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Metodologia: Processo Suíço de 4 Fases -->
+        <section id="metodologia" class="section process-section">
+            <div class="container">
+                <div class="process-header-center">
+                    <span class="eyebrow">Rigor e Previsibilidade</span>
+                    <h2 class="section-heading">Como eu construo valor</h2>
+                    <p class="section-subhead">
+                        Um fluxo de trabalho disciplinado onde cada decisão visual é respaldada por objetivos concretos de negócio.
+                    </p>
+                </div>
+
+                <!-- Banner com Legenda (BANNER COM LEG.mp4) -->
+                <div class="methodology-video-banner">
+                    <div class="methodology-video-wrapper">
+                        <video id="methodologyVideo" autoplay loop muted playsinline preload="auto" class="methodology-video-player">
+                            <source src="BANNER COM LEG.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-sound-control">
+                            <button id="toggleMethodologySound" class="sound-toggle-btn" aria-label="Ativar ou desativar áudio">
+                                <i class="ph ph-speaker-simple-slash" id="soundIcon"></i>
+                                <span id="soundText">Ativar Áudio</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-step">
+                        <span class="step-number">01</span>
+                        <h4 class="step-title">Imersão & Diagnóstico</h4>
+                        <p class="step-desc">
+                            Investigação profunda do modelo de negócio, concorrência direta e comportamento do público-alvo para mapear diferenciais reais.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="step-number">02</span>
+                        <h4 class="step-title">Estratégia & Conceito</h4>
+                        <p class="step-desc">
+                            Definição de território de marca, posicionamento estratégico e diretrizes conceituais que servirão de guia para todas as manifestações.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="step-number">03</span>
+                        <h4 class="step-title">Design & Sistema Visual</h4>
+                        <p class="step-desc">
+                            Desenvolvimento da identidade completa: tipografia, grids modulares, paleta de cores, ícones, embalagens e guidelines de aplicação.
+                        </p>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="step-number">04</span>
+                        <h4 class="step-title">Execução & Performance</h4>
+                        <p class="step-desc">
+                            Entrega dos ativos em alta fidelidade, suporte a equipes de marketing e alinhamento dos pontos de contato digitais e físicos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Seção Sobre Mim (Biografia com Foco Editorial Limpo — Sem Bloco de Liderança) -->
+        <section id="sobre" class="section bio-editorial-section">
+            <div class="container">
+                <div class="bio-header-center">
+                    <span class="eyebrow">Biografia & Trajetória</span>
+                    <h2 class="section-heading">Processo, Organização e Significado.</h2>
+                    <p class="section-subhead" style="margin: 0 auto;">
+                        Uma visão estruturada que une sensibilidade artística e inteligência comercial para posicionar marcas de forma definitiva.
+                    </p>
+                </div>
+
+                <div class="bio-layout-grid">
+                    <!-- Coluna da Esquerda: Retrato de Galeria + Ação Direta -->
+                    <div class="bio-portrait-column">
+                        <div class="bio-photo-card">
+                            <img src="foto-perfil.png" alt="Giovani Almeida — Diretor de Arte" class="bio-img">
+                            <div class="bio-photo-caption">
+                                <strong>Giovani Almeida</strong>
+                                <span>Cajamar / São Paulo, Brasil</span>
+                            </div>
+                        </div>
+
+                        <a href="curriculo-giovani-almeida.pdf.pdf" download class="btn btn-secondary w-full" style="padding: 14px 20px;">
+                            <i class="ph ph-file-pdf"></i> Baixar Currículo (PDF)
+                        </a>
+                    </div>
+
+                    <!-- Coluna da Direita: Manifesto & Matriz Suíça de Especialidades -->
+                    <div class="bio-narrative-column">
+                        <div class="bio-text-block">
+                            <h3 class="bio-block-title">O design como catalisador de negócios</h3>
+                            <p class="body-large" style="color: var(--text-primary); margin-bottom: 16px;">
+                                Sou movido por processos criativos, organização e clareza conceitual. Gosto de entender o todo antes de propor a forma final, explorando ideias, referências e hipóteses até que cada detalhe faça sentido comercial e visual.
                             </p>
-                            <div class="story-paragraphs reveal reveal-delay-2">
-                                <p>Minha história começou na comunidade <strong>Vila União, em Cajamar</strong>, onde cresci em uma realidade simples. Foi ali que descobri o design aos <strong>12 anos</strong>, algo que considero um presente de fé. Essa origem me forjou a ter foco obstinado em observar as coisas e resolver problemas, extraindo o máximo de resultado através da criatividade.</p>
-                                <p>Aos <strong>14 anos</strong>, estruturei minhas bases em <strong>Web Design (UI/UX)</strong>. Com o tempo, entendi que um visual de excelência vai muito além de "post bonito": ele molda o comportamento do consumidor e dita o valor (equity) que uma empresa possui no mercado.</p>
-                                <p>Unindo meus valores familiares com passagens por setores logísticos operacionais, hoje entrego os projetos com absoluto pragmatismo. Sento à mesa de grandes marcas para alavancar a rentabilidade por meio de design e performance, mas continuo atuando com as mesmas raízes simples de sempre.</p>
-                            </div>
-                            <div class="personal-lifestyle reveal reveal-delay-3">
-                                <div class="lifestyle-item">
-                                    <i class="ph ph-calendar icon-age-anim"></i>
-                                    <span>29 anos</span>
-                                </div>
-                                <div class="lifestyle-item">
-                                    <i class="ph ph-heart-straight icon-heart-anim"></i>
-                                    <span>Casado</span>
-                                </div>
-                                <div class="lifestyle-item">
-                                    <i class="ph ph-users-three icon-family-anim"></i>
-                                    <span>Em família</span>
-                                </div>
-                                <div class="lifestyle-item">
-                                    <i class="ph ph-dog icon-dog-anim"></i>
-                                    <span>Tenho 2 cachorros</span>
-                                </div>
-                                
-                                <div class="hobbies-lifestyle mt-2">
-                                    <span class="hobbies-label">Além do design:</span>
-                                    <div class="hobbies-grid">
-                                        <div class="hobby-item">
-                                            <i class="ph ph-airplane-tilt icon-travel-anim"></i>
-                                            <span>Viajar</span>
-                                        </div>
-                                        <div class="hobby-item">
-                                            <i class="ph ph-cooking-pot icon-cook-anim"></i>
-                                            <span>Cozinhar</span>
-                                        </div>
-                                        <div class="hobby-item">
-                                            <i class="ph ph-soccer-ball icon-soccer-anim"></i>
-                                            <span>Futebol</span>
-                                        </div>
-                                        <div class="hobby-item">
-                                            <i class="ph ph-game-controller icon-game-anim"></i>
-                                            <span>Videogame</span>
-                                        </div>
-                                        <div class="hobby-item">
-                                            <i class="ph ph-film-slate icon-film-anim"></i>
-                                            <span>Cinema</span>
-                                        </div>
-                                        <div class="hobby-item">
-                                            <i class="ph ph-palette icon-art-anim"></i>
-                                            <span>Cultura e arte</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            <p class="body-regular">
+                                Com mais de uma década de vivência prática em design e marketing estratégico, atuo na criação de identidades visuais sofisticadas e sistemas integrados que garantem percepção de alto valor, tração e relevância duradoura.
+                            </p>
+                        </div>
 
-                                <p class="quote-minimal">"Acredito que boas ideias podem transformar realidades."</p>
+                        <!-- Matriz Suíça de Especialidades (3 Colunas Limpas) -->
+                        <div class="skills-matrix-suisse">
+                            <!-- Coluna 1 -->
+                            <div class="matrix-column">
+                                <div class="matrix-col-header">
+                                    <i class="ph ph-paint-brush-broad"></i>
+                                    <h4>Design & Sistemas</h4>
+                                </div>
+                                <ul class="matrix-list">
+                                    <li>Branding & Identidade Visual</li>
+                                    <li>Rebranding de Marcas</li>
+                                    <li>Design de Embalagens & Rótulos</li>
+                                    <li>Direção de Arte Editorial</li>
+                                    <li>UI / Web Design</li>
+                                    <li>Design para Social Media</li>
+                                    <li>Campanhas Visuais Integradas</li>
+                                </ul>
                             </div>
+
+                            <!-- Coluna 2 -->
+                            <div class="matrix-column">
+                                <div class="matrix-col-header">
+                                    <i class="ph ph-chart-line-up"></i>
+                                    <h4>Estratégia & Marketing</h4>
+                                </div>
+                                <ul class="matrix-list">
+                                    <li>Planejamento Estratégico</li>
+                                    <li>Posicionamento de Marca</li>
+                                    <li>Trade Marketing & PDV</li>
+                                    <li>Tráfego Pago (Meta & Google)</li>
+                                    <li>Funil & Otimização (CRO)</li>
+                                    <li>Gestão de Comunicação</li>
+                                    <li>Análise & Métricas de Performance</li>
+                                </ul>
+                            </div>
+
+                            <!-- Coluna 3 -->
+                            <div class="matrix-column">
+                                <div class="matrix-col-header">
+                                    <i class="ph ph-cpu"></i>
+                                    <h4>Ferramentas & IA</h4>
+                                </div>
+                                <ul class="matrix-list">
+                                    <li>Adobe Photoshop & Illustrator</li>
+                                    <li>Adobe XD & Creative Cloud</li>
+                                    <li>Meta Business Manager</li>
+                                    <li>Google Analytics</li>
+                                    <li>Inteligência Artificial (Prompts)</li>
+                                    <li>Midjourney & ChatGPT</li>
+                                    <li>Notion & Fluxos Criativos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Pessoal & Lifestyle (Além do Design) — Padrão Apple Bento 2027 (Largura Total Centralizado) -->
+                <div class="apple-lifestyle-bento">
+                    <div class="lifestyle-media-frame">
+                        <img src="GIF ICONES.gif" alt="Giovani Almeida Avatar 3D" class="lifestyle-gif-img" loading="lazy">
+                    </div>
+                    <div class="lifestyle-info-content">
+                        <div class="lifestyle-stats-grid">
+                            <div class="lifestyle-stat-pill">
+                                <i class="ph ph-calendar"></i>
+                                <span>29 anos</span>
+                            </div>
+                            <div class="lifestyle-stat-pill">
+                                <i class="ph ph-heart-straight icon-heart-anim"></i>
+                                <span>Casado</span>
+                            </div>
+                            <div class="lifestyle-stat-pill">
+                                <i class="ph ph-users-three"></i>
+                                <span>Em família</span>
+                            </div>
+                            <div class="lifestyle-stat-pill">
+                                <i class="ph ph-dog icon-dog-anim"></i>
+                                <span>2 cachorros</span>
+                            </div>
+                        </div>
+                        
+                        <div class="lifestyle-hobbies-block">
+                            <span class="hobbies-label">Além do design:</span>
+                            <div class="hobbies-pills-row">
+                                <span class="hobby-pill"><i class="ph ph-airplane-tilt"></i> Viajar</span>
+                                <span class="hobby-pill"><i class="ph ph-cooking-pot"></i> Cozinhar</span>
+                                <span class="hobby-pill"><i class="ph ph-soccer-ball"></i> Futebol</span>
+                                <span class="hobby-pill"><i class="ph ph-game-controller"></i> Videogame</span>
+                                <span class="hobby-pill"><i class="ph ph-film-slate"></i> Cinema</span>
+                                <span class="hobby-pill"><i class="ph ph-palette"></i> Cultura e arte</span>
+                            </div>
+                        </div>
+
+                        <div class="lifestyle-quote-box">
+                            <i class="ph ph-quotes"></i>
+                            <p class="quote-text">"Acredito que boas ideias podem transformar realidades."</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 2: MINHA CARREIRA (Trajetória Profissional) -->
-        <section id="carreira" class="section carreira-section">
+        <!-- 7. Seção: Autoridade Executiva & Habilidades & Processos (Harmonizada Apple 2027) -->
+        <section id="autoridade" class="section executive-authority-section">
             <div class="container">
-                <div class="section-header-minimal reveal">
-                    <span class="section-label">Validação Plena</span>
-                    <h2 class="section-title">Autoridade Executiva</h2>
-                    <p class="text-lead mt-1">Transformando desafios complexos de vendas em rentáveis ecossistemas de marca. Operação construída por um sólido protocolo de atuação:</p>
-                    <p class="mt-1" style="font-size: 0.95em; opacity: 0.85;"><strong>Diagnóstico</strong> (análise cirúrgica inicial) → <strong>Estratégia</strong> (road map e táticas) → <strong>Criação</strong> (design direcionado) → <strong>Implementação</strong> (ganho final de KPIs).</p>
+                <div class="authority-header authority-header-center">
+                    <span class="eyebrow">Validação Corporativa</span>
+                    <h2 class="section-heading">Autoridade Executiva</h2>
+                    <p class="section-subhead">
+                        Transformando desafios complexos de vendas em rentáveis ecossistemas de marca. Operação construída por um sólido protocolo de atuação:
+                    </p>
                 </div>
 
-                <div class="career-grid mt-4">
-                    <!-- Card: Empresas de Impacto -->
-                    <div class="career-card reveal">
-                        <div class="card-icon"><i class="ph ph-buildings"></i></div>
+                <div class="protocol-flow-center-wrapper">
+                    <div class="protocol-flow-box">
+                        <span class="protocol-step"><strong>Diagnóstico</strong> (análise cirúrgica inicial)</span>
+                        <span class="protocol-arrow">→</span>
+                        <span class="protocol-step"><strong>Estratégia</strong> (road map e táticas)</span>
+                        <span class="protocol-arrow">→</span>
+                        <span class="protocol-step"><strong>Criação</strong> (design direcionado)</span>
+                        <span class="protocol-arrow">→</span>
+                        <span class="protocol-step"><strong>Implementação</strong> (ganho final de KPIs)</span>
+                    </div>
+                </div>
+
+                <div class="career-grid">
+                    <!-- Card 1: Empresas de Impacto -->
+                    <div class="career-card">
+                        <div class="card-icon-badge"><i class="ph ph-buildings"></i></div>
                         <h3>Controle de Equity Corporativo</h3>
                         <p>Elevei a atração e consolidação do posicionamento para as mais gigantescas redes:</p>
                         <ul class="career-list">
-                            <li><i class="ph ph-check"></i> <strong>Carrefour:</strong> Alto faturamento e conversão agressiva e contínua</li>
-                            <li><i class="ph ph-check"></i> <strong>Cia's de Tecnologia:</strong> Liderança e autoridade incontestável no nicho</li>
-                            <li><i class="ph ph-check"></i> <strong>Holdings e Instituições:</strong> Padrão premium do ecossistema e compliance de marca</li>
+                            <li><i class="ph ph-check-circle"></i> <div><strong>Carrefour:</strong> Alto faturamento e conversão agressiva e contínua</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div><strong>Cia's de Tecnologia:</strong> Liderança e autoridade incontestável no nicho</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div><strong>Holdings e Instituições:</strong> Padrão premium do ecossistema e compliance de marca</div></li>
                         </ul>
                     </div>
 
-                    <!-- Card: Setor Farmacêutico -->
-                    <div class="career-card reveal reveal-delay-1">
-                        <div class="card-icon"><i class="ph ph-first-aid-kit"></i></div>
+                    <!-- Card 2: Setor Farmacêutico -->
+                    <div class="career-card">
+                        <div class="card-icon-badge"><i class="ph ph-first-aid-kit"></i></div>
                         <h3>Resultados e LTV na Saúde e Varejo</h3>
                         <p>Revolução no modelo de aquisição e escala em drogarias. Transformação direta e sólida atração de clientes nas gigantes do atacado:</p>
                         <div class="clients-tag-cloud">
@@ -369,295 +497,350 @@
                         </div>
                     </div>
 
-                    <!-- Card: Soluções Digitais -->
-                    <div class="career-card reveal reveal-delay-2">
-                        <div class="card-icon"><i class="ph ph-rocket-launch"></i></div>
+                    <!-- Card 3: Soluções Digitais -->
+                    <div class="career-card">
+                        <div class="card-icon-badge"><i class="ph ph-rocket-launch"></i></div>
                         <h3>Estratégia & ROI Digital Contínuo</h3>
                         <p>Criação de esteiras escalonáveis focadas em alta extração e baixa barreira:</p>
                         <ul class="career-list">
-                            <li><i class="ph ph-arrows-merge"></i> Multiplicidade e Canais Automatizados (App/iFood/API)</li>
-                            <li><i class="ph ph-robot"></i> Sistemas avançados operacionais focado em CAC</li>
-                            <li><i class="ph ph-paint-brush-broad"></i> Imagem premium impulsionando percepção do usuário</li>
-                            <li><i class="ph ph-chart-line-up"></i> Metodologia aplicada com foco absoluto nas conversões de métricas de aquisição</li>
+                            <li><i class="ph ph-arrows-merge"></i> <div>Multiplicidade e Canais Automatizados (App/iFood/API)</div></li>
+                            <li><i class="ph ph-robot"></i> <div>Sistemas avançados operacionais focado em CAC</div></li>
+                            <li><i class="ph ph-paint-brush-broad"></i> <div>Imagem premium impulsionando percepção do usuário</div></li>
+                            <li><i class="ph ph-chart-line-up"></i> <div>Metodologia aplicada com foco absoluto nas conversões de métricas</div></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="career-footer reveal mt-4">
-                    <div class="role-badge">
-                        <p>Evolutivo e Diretor Executivo (Diretor de Arte / Estratégia). Meu ofício principal consiste em conectar branding com a extração violenta da atenção corporativa do mercado.</p>
+                <!-- Banner Executivo Estilo Apple -->
+                <div class="career-footer">
+                    <div class="role-badge-apple">
+                        <span class="role-badge-tag">Direção Estratégica & Criativa</span>
+                        <p>Evolutivo e Diretor Executivo (Diretor de Arte / Estratégia). Meu ofício principal consiste em conectar branding com a extração da atenção corporativa do mercado.</p>
                     </div>
                 </div>
 
-                <!-- Restaurando Habilidades & Processos (Chips/Tabs) -->
-                <div class="skills-editorial-wrapper reveal">
-                    <div class="section-header-minimal mb-3">
+                <!-- Habilidades & Processos (Padrão Apple Minimalista) -->
+                <div class="skills-editorial-wrapper">
+                    <div class="skills-heading-minimal">
                         <span class="section-label">Expertise Técnica</span>
-                        <h2 class="section-title" style="font-size: 2.5rem;">Habilidades & Processos</h2>
+                        <h3>Habilidades & Processos</h3>
                     </div>
                     
                     <div class="skills-grid">
                         <div class="skill-category">
                             <span class="skill-label">Design & Arte</span>
-                            <ul class="info-list inline-chips">
-                                <li><span class="chip chip-design">Branding</span></li>
-                                <li><span class="chip chip-design">Identidade Visual</span></li>
-                                <li><span class="chip chip-design">Rebranding de Marca</span></li>
-                                <li><span class="chip chip-design">Direção de Arte</span></li>
-                                <li><span class="chip chip-design">Design Estratégico</span></li>
-                                <li><span class="chip chip-design">Design de Embalagem</span></li>
-                                <li><span class="chip chip-design">UI Design</span></li>
-                                <li><span class="chip chip-design">Web Design</span></li>
-                                <li><span class="chip chip-design">Criação de Campanhas</span></li>
+                            <ul class="inline-chips">
+                                <li><span class="chip">Branding</span></li>
+                                <li><span class="chip">Identidade Visual</span></li>
+                                <li><span class="chip">Rebranding de Marca</span></li>
+                                <li><span class="chip">Direção de Arte</span></li>
+                                <li><span class="chip">Design Estratégico</span></li>
+                                <li><span class="chip">Design de Embalagem</span></li>
+                                <li><span class="chip">UI Design</span></li>
+                                <li><span class="chip">Web Design</span></li>
+                                <li><span class="chip">Criação de Campanhas</span></li>
                             </ul>
                         </div>
                         <div class="skill-category">
                             <span class="skill-label">Marketing Estratégico</span>
-                            <ul class="info-list inline-chips">
-                                <li><span class="chip chip-mkt">Gestão de Marketing</span></li>
-                                <li><span class="chip chip-mkt">Planejamento</span></li>
-                                <li><span class="chip chip-mkt">Posicionamento de Marca</span></li>
-                                <li><span class="chip chip-mkt">Comunicação</span></li>
-                                <li><span class="chip chip-mkt">Funil de Marketing</span></li>
-                                <li><span class="chip chip-mkt">Otimização (CRO)</span></li>
-                                <li><span class="chip chip-mkt">Trade Marketing</span></li>
-                                <li><span class="chip chip-mkt">Estratégia de PDV</span></li>
+                            <ul class="inline-chips">
+                                <li><span class="chip">Gestão de Marketing</span></li>
+                                <li><span class="chip">Planejamento</span></li>
+                                <li><span class="chip">Posicionamento de Marca</span></li>
+                                <li><span class="chip">Comunicação</span></li>
+                                <li><span class="chip">Funil de Marketing</span></li>
+                                <li><span class="chip">Otimização (CRO)</span></li>
+                                <li><span class="chip">Trade Marketing</span></li>
+                                <li><span class="chip">Estratégia de PDV</span></li>
                             </ul>
                         </div>
                         <div class="skill-category">
                             <span class="skill-label">Social & Tráfego</span>
-                            <ul class="info-list inline-chips">
-                                <li><span class="chip chip-social">Gestão de Redes Sociais</span></li>
-                                <li><span class="chip chip-social">Conteúdo Visual</span></li>
-                                <li><span class="chip chip-social">Tráfego Pago</span></li>
-                                <li><span class="chip chip-social">Google Ads</span></li>
-                                <li><span class="chip chip-social">Meta Ads</span></li>
-                                <li><span class="chip chip-social">Análise de Dados/Relatórios</span></li>
+                            <ul class="inline-chips">
+                                <li><span class="chip">Gestão de Redes Sociais</span></li>
+                                <li><span class="chip">Conteúdo Visual</span></li>
+                                <li><span class="chip">Tráfego Pago</span></li>
+                                <li><span class="chip">Google Ads</span></li>
+                                <li><span class="chip">Meta Ads</span></li>
+                                <li><span class="chip">Análise de Dados/Relatórios</span></li>
                             </ul>
                         </div>
                         <div class="skill-category">
                             <span class="skill-label">Softwares & Ferramentas</span>
-                            <ul class="info-list inline-chips">
-                                <li><span class="chip chip-soft">Adobe Photoshop</span></li>
-                                <li><span class="chip chip-soft">Adobe Illustrator</span></li>
-                                <li><span class="chip chip-soft">Adobe XD</span></li>
-                                <li><span class="chip chip-soft">Meta Business Mngr.</span></li>
-                                <li><span class="chip chip-soft">Google Analytics</span></li>
-                                <li><span class="chip chip-soft">Notion</span></li>
-                                <li><span class="chip chip-soft">IA & Midjourney</span></li>
+                            <ul class="inline-chips">
+                                <li><span class="chip">Adobe Photoshop</span></li>
+                                <li><span class="chip">Adobe Illustrator</span></li>
+                                <li><span class="chip">Adobe XD</span></li>
+                                <li><span class="chip">Meta Business Mngr.</span></li>
+                                <li><span class="chip">Google Analytics</span></li>
+                                <li><span class="chip">Notion</span></li>
+                                <li><span class="chip">IA & Midjourney</span></li>
                             </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO: CONTATO (Modernizada) -->
-        <section id="contato" class="section contato-section">
+        <!-- 8. Seção de Contato Reestruturada (Arquitetura de Estúdio Global) -->
+        <section id="contato" class="section contact-section-redesigned">
             <div class="container">
-                <div class="contact-grid">
-                    <!-- Coluna 1: Informações e Texto -->
-                    <div class="contact-info reveal">
-                        <span class="section-label">Acesso e Conversa Executiva</span>
-                        <h2 class="section-title">Coloque a sua marca <br>em escala máxima.</h2>
-                        <p class="text-lead mt-1">
-                            Apresente seu desafio corporativo na mesa. Avaliaremos de forma cirúrgica como um posicionamento impecável fará alavancar todas suas linhas de receita de imediato. Construa seu império.
-                        </p>
+                <div class="contact-hub-grid">
+                    <!-- Coluna da Esquerda: Proposta de Valor & Chamada Executiva -->
+                    <div class="contact-hub-left">
+                        <div class="status-pill status-pill-glow">
+                            <span class="status-dot-green"></span>
+                            Disponível para novos projetos e contratos
+                        </div>
                         
-                        <div class="contact-methods mt-4">
-                            <a href="https://wa.me/5511964894096" target="_blank" rel="noopener noreferrer" class="contact-method-card">
-                                <div class="method-icon"><i class="ph ph-whatsapp-logo"></i></div>
-                                <div class="method-text">
-                                    <strong>WhatsApp</strong>
-                                    <span>(11) 96489-4096</span>
-                                </div>
-                            </a>
-                            
-                            <a href="#" class="contact-method-card" data-secure-mailto="true" data-m1="contato.giovanialmeida" data-m2="gmail.com">
-                                <div class="method-icon"><i class="ph ph-envelope-simple"></i></div>
-                                <div class="method-text">
-                                    <strong>E-mail</strong>
-                                    <span>Enviar mensagem segura</span>
-                                </div>
-                            </a>
+                        <h2 class="contact-hub-heading">
+                            Vamos construir o próximo marco da sua marca?
+                        </h2>
+                        
+                        <p class="contact-hub-description">
+                            Seja para reformular uma identidade completa, desenhar novas embalagens ou liderar a direção criativa estratégica do seu negócio.
+                        </p>
 
-                            <a href="https://www.linkedin.com/in/giovanialmeidamktedesign" target="_blank" rel="noopener noreferrer" class="contact-method-card">
-                                <div class="method-icon"><i class="ph ph-linkedin-logo"></i></div>
-                                <div class="method-text">
-                                    <strong>LinkedIn</strong>
-                                    <span>Perfil Profissional</span>
-                                </div>
-                            </a>
+                        <!-- E-mail Box Interativo com Cópia Rápida -->
+                        <div class="contact-email-box">
+                            <div class="email-info">
+                                <span class="email-label">E-mail Direto</span>
+                                <a href="mailto:contato@giovanialmeida.com" class="email-address" id="main-email-link">
+                                    contato@giovanialmeida.com
+                                </a>
+                            </div>
+                            <button class="btn-copy-email" id="btn-copy-email" title="Copiar e-mail">
+                                <i class="ph ph-copy"></i>
+                                <span class="copy-tooltip">Copiar</span>
+                            </button>
+                        </div>
 
-                            <a href="https://www.behance.net/giovanix133f97" target="_blank" rel="noopener noreferrer" class="contact-method-card">
-                                <div class="method-icon"><i class="ph ph-behance-logo"></i></div>
-                                <div class="method-text">
-                                    <strong>Behance</strong>
-                                    <span>Portfólio de Projetos</span>
-                                </div>
-                            </a>
+                        <div class="contact-location-meta">
+                            <i class="ph ph-map-pin"></i>
+                            <span>Cajamar / São Paulo, Brasil — Atendimento Nacional & Internacional</span>
                         </div>
                     </div>
 
-                    <!-- Coluna 2: Formulário -->
-                    <div class="contact-form-wrapper reveal reveal-delay-1">
-                        <form id="contactForm" class="premium-form" action="#" novalidate>
-                            <!-- Honeypot oculto para bots anti-spam -->
-                            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-                            <input type="hidden" name="csrf_token" value="frontend_validation_active">
-                            
-                            <div class="form-group">
-                                <label for="name">Nome Completo</label>
-                                <input type="text" id="name" name="name" placeholder="Como posso te chamar?" required minlength="3" maxlength="80" pattern="^[a-zA-ZÀ-ÿ\s]*$">
+                    <!-- Coluna da Direita: Cards de Canais Estruturados -->
+                    <div class="contact-hub-right">
+                        <!-- Card 1: WhatsApp Orçamento Rápido -->
+                        <div class="contact-channel-card card-whatsapp-direct" id="open-whatsapp-modal-hub">
+                            <div class="channel-icon-wrapper icon-whatsapp">
+                                <i class="ph ph-whatsapp-logo"></i>
                             </div>
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" placeholder="seu@email.com" required maxlength="100" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$">
+                            <div class="channel-content">
+                                <div class="channel-header-row">
+                                    <h4>Conversa via WhatsApp</h4>
+                                    <span class="channel-badge badge-fast">Resposta Rápida</span>
+                                </div>
+                                <p>Solicite orçamento para projetos de Design, Branding ou Marketing.</p>
                             </div>
-                            <div class="form-group">
-                                <label for="message">Sua Mensagem</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Conte um pouco sobre o seu projeto..." required minlength="10" maxlength="1500"></textarea>
+                            <div class="channel-action-arrow">
+                                <i class="ph ph-arrow-right"></i>
                             </div>
-                            <button type="submit" class="btn btn-primary w-full" id="submitBtn">
-                                Enviar Mensagem Segura <i class="ph ph-paper-plane-tilt"></i>
-                            </button>
-                        </form>
+                        </div>
+
+                        <!-- Card 2: LinkedIn Executivo -->
+                        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+                            <div class="channel-icon-wrapper icon-linkedin">
+                                <i class="ph ph-linkedin-logo"></i>
+                            </div>
+                            <div class="channel-content">
+                                <div class="channel-header-row">
+                                    <h4>Perfil no LinkedIn</h4>
+                                    <span class="channel-badge">Corporativo</span>
+                                </div>
+                                <p>Networking executivo, posições de liderança e trajetória profissional.</p>
+                            </div>
+                            <div class="channel-action-arrow">
+                                <i class="ph ph-arrow-up-right"></i>
+                            </div>
+                        </a>
+
+                        <!-- Card 3: Behance Portfólio -->
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+                            <div class="channel-icon-wrapper icon-behance">
+                                <i class="ph ph-behance-logo"></i>
+                            </div>
+                            <div class="channel-content">
+                                <div class="channel-header-row">
+                                    <h4>Galeria no Behance</h4>
+                                    <span class="channel-badge">Visual</span>
+                                </div>
+                                <p>Pranchas completas, mockups em alta resolução e processos visuais.</p>
+                            </div>
+                            <div class="channel-action-arrow">
+                                <i class="ph ph-arrow-up-right"></i>
+                            </div>
+                        </a>
+
+                        <!-- Card 4: Área do Cliente -->
+                        <div class="contact-channel-card client-login-link" style="cursor: pointer;">
+                            <div class="channel-icon-wrapper icon-client">
+                                <i class="ph ph-lock-key"></i>
+                            </div>
+                            <div class="channel-content">
+                                <div class="channel-header-row">
+                                    <h4>Área do Cliente</h4>
+                                    <span class="channel-badge">Restrito</span>
+                                </div>
+                                <p>Acompanhamento de entregáveis e arquivos para clientes ativos.</p>
+                            </div>
+                            <div class="channel-action-arrow">
+                                <i class="ph ph-arrow-right"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer Simplificado -->
-    <footer class="footer-minimal">
-        <div class="container flex-footer">
-            <p>&copy; 2026 Giovani Almeida. Cajamar/SP.</p>
-            <p>Design em Equilíbrio.</p>
+    <!-- 8. Footer Minimalista Apple -->
+    <footer class="footer-apple">
+        <div class="container">
+            <div class="footer-inner">
+                <p>&copy; 2026 — 2027 Giovani Almeida. Todos os direitos reservados. Cajamar, Brasil.</p>
+                <div class="footer-links">
+                    <a href="#trabalhos">Trabalhos</a>
+                    <a href="cases.html">Cases</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#contato">Contato</a>
+                    <a class="client-login-link" style="cursor: pointer;">Área do Cliente</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp CTA -->
-    <button id="floating-whatsapp-cta" class="floating-cta" aria-label="Solicitar Orçamento">
+    <!-- 9. Floating WhatsApp CTA Button (Estilo Apple Glass Pill) -->
+    <button id="floating-whatsapp-cta" class="floating-cta" aria-label="Solicitar Orçamento via WhatsApp">
+        <span class="cta-apple-badge"><i class="ph ph-whatsapp-logo"></i></span>
         <span class="cta-text">Vamos Conversar</span>
-        <span class="cta-icon"><i class="ph ph-whatsapp-logo"></i></span>
     </button>
 
-    <!-- WhatsApp Budget Modal -->
+    <!-- 10. WhatsApp Contact Modal (Estilo Apple Sheet Modal) -->
     <div id="whatsapp-modal" class="whatsapp-modal-overlay">
-        <div class="whatsapp-modal-content">
-            <button class="close-modal-btn" id="close-whatsapp-modal" aria-label="Fechar">
+        <div class="whatsapp-modal-sheet">
+            <button class="close-modal-btn" id="close-whatsapp-modal" aria-label="Fechar Modal">
                 <i class="ph ph-x"></i>
             </button>
             
-            <div class="modal-header">
-                <span class="section-label">Contato Direto</span>
-                <div class="modal-tabs">
-                    <button class="modal-tab-btn active" data-tab="servicos">Freelance</button>
-                    <button class="modal-tab-btn" data-tab="recrutamento">Empresas</button>
-                    <div class="modal-tab-indicator"></div>
+            <div class="modal-apple-header">
+                <div class="modal-apple-badge">
+                    <i class="ph ph-whatsapp-logo"></i>
+                    <span>Canal Direto</span>
+                </div>
+                <h3 class="modal-apple-title">Vamos conversar.</h3>
+                <p class="modal-apple-desc">Selecione o formato ideal para iniciar seu contato direto no WhatsApp:</p>
+
+                <!-- Segmented Control Estilo Apple -->
+                <div class="apple-segmented-control">
+                    <button class="segmented-btn modal-tab-btn active" data-tab="servicos">Freelance & Projetos</button>
+                    <button class="segmented-btn modal-tab-btn" data-tab="recrutamento">Empresas & Contratação</button>
                 </div>
             </div>
 
-            <!-- Aba 1: Serviços / Freelance -->
+            <!-- Aba 1: Freelance / Serviços -->
             <div class="modal-tab-pane active" id="pane-servicos">
-                <h3 class="modal-title mb-2">Orçar um <br>trabalho?</h3>
-                <div class="modal-options">
-                    <button class="modal-opt-btn" data-service="design">
-                        <span class="opt-icon"><i class="ph ph-paint-brush-broad"></i></span>
-                        <div class="opt-text">
-                            <strong>Design</strong>
-                            <span>Branding, UI/UX, Projetos</span>
+                <div class="apple-modal-options">
+                    <button class="apple-option-card modal-opt-card" data-service="design">
+                        <div class="apple-opt-icon">
+                            <i class="ph ph-paint-brush-broad"></i>
                         </div>
-                        <i class="ph ph-arrow-right"></i>
+                        <div class="apple-opt-info">
+                            <strong>Design & Branding</strong>
+                            <span>Identidade Visual, UI/UX, Rebranding, Embalagens</span>
+                        </div>
+                        <i class="ph ph-caret-right apple-opt-chevron"></i>
                     </button>
 
-                    <button class="modal-opt-btn" data-service="marketing">
-                        <span class="opt-icon"><i class="ph ph-chart-line-up"></i></span>
-                        <div class="opt-text">
-                            <strong>Marketing</strong>
-                            <span>Estratégia, Tráfego, Gestão</span>
+                    <button class="apple-option-card modal-opt-card" data-service="marketing">
+                        <div class="apple-opt-icon">
+                            <i class="ph ph-chart-line-up"></i>
                         </div>
-                        <i class="ph ph-arrow-right"></i>
+                        <div class="apple-opt-info">
+                            <strong>Marketing & Estratégia</strong>
+                            <span>Tráfego Pago, Gestão de Marca, PDV & Performance</span>
+                        </div>
+                        <i class="ph ph-caret-right apple-opt-chevron"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Aba 2: Recrutamento / Empresa -->
+            <!-- Aba 2: Empresas / Contratação -->
             <div class="modal-tab-pane" id="pane-recrutamento">
-                <h3 class="modal-title mb-2">Me contrate <br>para seu time.</h3>
-                <div class="hire-me-content">
-                    <p class="text-body mb-2">Precisa de um designer estrategista focado em resultados? Confira minha trajetória.</p>
-                    
-                    <a href="curriculo-giovani-almeida.pdf.pdf" download class="cv-download-btn">
-                        <div class="cv-icon"><i class="ph ph-file-pdf"></i></div>
-                        <div class="cv-text">
-                            <strong>Baixar Currículo (CV)</strong>
-                            <span>PDF • 2026</span>
+                <div class="apple-modal-options">
+                    <a href="curriculo-giovani-almeida.pdf.pdf" download class="apple-option-card">
+                        <div class="apple-opt-icon cv-icon">
+                            <i class="ph ph-file-pdf"></i>
                         </div>
-                        <i class="ph ph-download-simple"></i>
+                        <div class="apple-opt-info">
+                            <strong>Baixar Currículo Executivo</strong>
+                            <span>PDF Oficial 2026/2027 • Trajetória e Conquistas</span>
+                        </div>
+                        <i class="ph ph-download-simple apple-opt-chevron"></i>
                     </a>
 
-                    <div class="mt-2">
-                        <button class="modal-opt-btn w-full" data-service="fixo">
-                            <span class="opt-icon"><i class="ph ph-briefcase"></i></span>
-                            <div class="opt-text">
-                                <strong>Conversar sobre Vaga Fixa</strong>
-                                <span>Falar diretamente via WhatsApp</span>
-                            </div>
-                            <i class="ph ph-arrow-right"></i>
-                        </button>
-                    </div>
+                    <button class="apple-option-card modal-opt-card" data-service="fixo">
+                        <div class="apple-opt-icon">
+                            <i class="ph ph-briefcase"></i>
+                        </div>
+                        <div class="apple-opt-info">
+                            <strong>Posição Estratégica / Contratação</strong>
+                            <span>Falar diretamente comigo sobre posições no time</span>
+                        </div>
+                        <i class="ph ph-caret-right apple-opt-chevron"></i>
+                    </button>
                 </div>
+            </div>
+
+            <div class="apple-modal-footer">
+                <span><i class="ph ph-shield-check"></i> Resposta rápida • Atendimento direto no WhatsApp</span>
             </div>
         </div>
     </div>
 
-    <!-- Client Area Modal -->
+    <!-- 11. Modal Área do Cliente -->
     <div id="client-area-modal" class="whatsapp-modal-overlay">
-        <div class="whatsapp-modal-content" style="max-width: 480px; padding: 2.5rem 2rem;">
+        <div class="whatsapp-modal-content" style="max-width: 480px; padding: 36px 28px;">
             <button class="close-modal-btn" id="close-client-modal" aria-label="Fechar">
                 <i class="ph ph-x"></i>
             </button>
             <div class="modal-header" style="text-align: center; border-bottom: none; padding-bottom: 0;">
-                <div class="modal-icon" style="font-size: 2.5rem; color: #c41212; margin-bottom: 1rem;"><i class="ph ph-lock-key"></i></div>
-                <h3 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem; line-height: 1.2;">Área do Cliente</h3>
-                <p class="text-body" style="color: var(--text-secondary); font-size: 0.95rem; margin: 0 auto 2rem auto;">
-                    Um espaço pensado para centralizar acessos, materiais e acompanhamento de projetos. Em breve, clientes ativos terão acesso a uma área exclusiva com mais praticidade e organização.
+                <div style="font-size: 2.25rem; color: var(--accent-blue); margin-bottom: 12px;">
+                    <i class="ph ph-lock-key"></i>
+                </div>
+                <h3 class="modal-title" style="font-size: 1.75rem; margin-bottom: 8px;">Área do Cliente</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9375rem; margin: 0 auto 24px auto; line-height: 1.5;">
+                    Ambiente reservado para clientes ativos acompanharem entregáveis, cronogramas e arquivos de projeto.
                 </p>
             </div>
-            <div class="modal-body">
-                <form id="clientAccessForm">
-                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-                    <div class="form-group" style="margin-bottom: 1rem;">
-                        <input type="text" id="clientName" placeholder="Seu Nome Completo" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 1rem;">
-                        <input type="email" id="clientEmail" placeholder="E-mail Corporativo" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 1rem;">
-                        <input type="text" id="clientCompany" placeholder="Empresa / Marca" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 1rem; position: relative;">
-                        <select id="isClient" required style="width: 100%; background: var(--bg-color); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1rem; color: #fff; font-family: var(--font-body); font-size: 1rem; appearance: none; cursor: pointer;">
-                            <option value="" disabled selected>Você já é cliente?</option>
-                            <option value="sim">Sim, projetos em andamento</option>
-                            <option value="nao">Ainda não</option>
-                        </select>
-                        <i class="ph ph-caret-down" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #666;"></i>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <textarea id="clientMessage" rows="2" placeholder="Sua Mensagem (Opcional)" style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-full" id="clientSubmitBtn" style="border-radius: 12px;">
-                        Solicitar acesso <i class="ph ph-arrow-right"></i>
-                    </button>
-                    <p style="text-align: center; font-size: 0.8rem; color: #555; margin-top: 1.5rem;">
-                        Em breve, esta área reunirá informações e acessos para clientes em andamento.
-                    </p>
-                </form>
-            </div>
+            
+            <form id="clientAccessForm" onsubmit="event.preventDefault(); alert('Solicitação de acesso enviada com sucesso! Em breve você receberá as credenciais.'); document.getElementById('client-area-modal').classList.remove('active'); document.body.style.overflow = '';">
+                <div style="margin-bottom: 12px;">
+                    <input type="text" placeholder="Seu Nome Completo" required class="input-suisse">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <input type="email" placeholder="E-mail Corporativo" required class="input-suisse">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <input type="text" placeholder="Empresa / Marca" required class="input-suisse">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <select required class="input-suisse">
+                        <option value="" disabled selected>Você já é cliente ativo?</option>
+                        <option value="sim">Sim, tenho projetos em andamento</option>
+                        <option value="nao">Ainda não, quero solicitar acesso</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-full" style="padding: 14px;">
+                    Solicitar Acesso à Área do Cliente <i class="ph ph-arrow-right"></i>
+                </button>
+            </form>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts da Versão 2027 -->
     <script src="script.js"></script>
 </body>
 </html>

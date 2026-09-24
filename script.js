@@ -1,459 +1,343 @@
+/* =========================================================================
+   GIOVANI ALMEIDA — JAVASCRIPT 2027
+   Interações Sensoriais • Padrão Apple Clean • Modais & Scroll Storytelling
+   ========================================================================= */
+
 document.addEventListener('DOMContentLoaded', () => {
-    
-    /* ==========================================================
-       Cursor Customizado Moderno (Minimalista)
-       ========================================================== */
-    const follower = document.querySelector('.cursor-follower');
-    const dot = document.querySelector('.cursor-dot');
-    const circle = document.querySelector('.cursor-circle');
-    
-    if (follower && dot && circle && window.innerWidth >= 1024) {
-        let mouseX = 0, mouseY = 0;
-        let circleX = 0, circleY = 0;
+    // -------------------------------------------------------------
+    // 1. Constantes & WhatsApp Integration
+    // -------------------------------------------------------------
+    const PHONE_NUMBER = "5511964894096";
 
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Ponto central segue instataneamente
-            dot.style.left = mouseX + 'px';
-            dot.style.top = mouseY + 'px';
-        });
+    const WHATSAPP_MESSAGES = {
+        design: "Olá Giovani! Vim pelo seu portfólio e gostaria de orçar um projeto de Design (Branding / UI / Embalagem).",
+        marketing: "Olá Giovani! Vim pelo seu portfólio e gostaria de conversar sobre consultoria e estratégia de Marketing.",
+        fixo: "Olá Giovani! Gostei do seu portfólio e gostaria de saber mais para te contratar para uma posição estratégica em minha empresa."
+    };
 
-        // Suavização do círculo externo (Linear Interpolation sutil)
-        const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
-        
-        const animateCursor = () => {
-            circleX = lerp(circleX, mouseX, 0.15);
-            circleY = lerp(circleY, mouseY, 0.15);
-            
-            circle.style.left = circleX + 'px';
-            circle.style.top = circleY + 'px';
-            
-            requestAnimationFrame(animateCursor);
-        };
-        animateCursor();
+    const sendToWhatsApp = (serviceKey) => {
+        const text = encodeURIComponent(WHATSAPP_MESSAGES[serviceKey] || WHATSAPP_MESSAGES.design);
+        const url = `https://wa.me/${PHONE_NUMBER}?text=${text}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+    };
 
-        // Efeito de Hover em links e botões
-        const hoverTags = 'a, button, .portfolio-card, .contact-method-card, .hobby-item';
-        const interactives = document.querySelectorAll(hoverTags);
-        
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => follower.classList.add('is-hovering'));
-            el.addEventListener('mouseleave', () => follower.classList.remove('is-hovering'));
+    // -------------------------------------------------------------
+    // 2. Modais: WhatsApp (Contato Direto) & Área do Cliente
+    // -------------------------------------------------------------
+    const whatsappModal = document.getElementById('whatsapp-modal');
+    const closeWhatsAppModalBtn = document.getElementById('close-whatsapp-modal');
+    const floatingWhatsAppBtn = document.getElementById('floating-whatsapp-cta');
+    const openContactModalBtn = document.getElementById('open-contact-modal-btn');
+    const openWhatsAppModalHub = document.getElementById('open-whatsapp-modal-hub');
+    const modalOptCards = document.querySelectorAll('.modal-opt-card');
+    const modalTabBtns = document.querySelectorAll('.modal-tab-btn');
+    const modalTabPanes = document.querySelectorAll('.modal-tab-pane');
+
+    const clientModal = document.getElementById('client-area-modal');
+    const closeClientModalBtn = document.getElementById('close-client-modal');
+    const clientLoginLinks = document.querySelectorAll('.client-login-link');
+
+    // Abre modal de WhatsApp
+    const openWhatsAppModal = () => {
+        if (whatsappModal) {
+            whatsappModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    const closeWhatsAppModal = () => {
+        if (whatsappModal) {
+            whatsappModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    // Abre modal de Área do Cliente
+    const openClientModal = () => {
+        if (clientModal) {
+            clientModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    const closeClientModal = () => {
+        if (clientModal) {
+            clientModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    // Eventos WhatsApp Modal
+    if (floatingWhatsAppBtn) floatingWhatsAppBtn.addEventListener('click', openWhatsAppModal);
+    if (openContactModalBtn) openContactModalBtn.addEventListener('click', openWhatsAppModal);
+    if (openWhatsAppModalHub) openWhatsAppModalHub.addEventListener('click', openWhatsAppModal);
+    if (closeWhatsAppModalBtn) closeWhatsAppModalBtn.addEventListener('click', closeWhatsAppModal);
+
+    if (whatsappModal) {
+        whatsappModal.addEventListener('click', (e) => {
+            if (e.target === whatsappModal) closeWhatsAppModal();
         });
     }
 
-    /* ==========================================================
-       Header Change on Scroll
-       ========================================================== */
-    const header = document.querySelector('.header');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+    // Troca de Abas no Modal WhatsApp
+    modalTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+            modalTabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            modalTabPanes.forEach(pane => {
+                pane.classList.remove('active');
+                if (pane.id === `pane-${targetTab}`) {
+                    pane.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // Clique nas opções direciona para o WhatsApp
+    modalOptCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const serviceKey = card.getAttribute('data-service');
+            sendToWhatsApp(serviceKey);
+            closeWhatsAppModal();
+        });
+    });
+
+    // Eventos Área do Cliente
+    clientLoginLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            openClientModal();
+        });
+    });
+
+    if (closeClientModalBtn) closeClientModalBtn.addEventListener('click', closeClientModal);
+    if (clientModal) {
+        clientModal.addEventListener('click', (e) => {
+            if (e.target === clientModal) closeClientModal();
+        });
+    }
+
+    // Fechar com tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeWhatsAppModal();
+            closeClientModal();
         }
     });
 
-    /* ==========================================================
-       Menu Mobile
-       ========================================================== */
+    // -------------------------------------------------------------
+    // 3. Botão Copiar E-mail com Feedback Rápido
+    // -------------------------------------------------------------
+    const copyEmailBtn = document.getElementById('btn-copy-email');
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contato@giovanialmeida.com').then(() => {
+                const tooltip = copyEmailBtn.querySelector('.copy-tooltip');
+                if (tooltip) {
+                    const originalText = tooltip.textContent;
+                    tooltip.textContent = 'Copiado!';
+                    setTimeout(() => {
+                        tooltip.textContent = originalText;
+                    }, 2000);
+                }
+            }).catch(() => {
+                window.location.href = 'mailto:contato@giovanialmeida.com';
+            });
+        });
+    }
+
+    // -------------------------------------------------------------
+    // 4. Menu Mobile Overlay
+    // -------------------------------------------------------------
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
     const mobileOverlay = document.querySelector('.mobile-menu-overlay');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    const toggleMenu = () => {
-        mobileOverlay.classList.toggle('active');
-        document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+    const toggleMobileMenu = () => {
+        if (mobileOverlay) {
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+        }
     };
 
-    if (mobileMenuBtn && closeMenuBtn && mobileOverlay) {
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-        closeMenuBtn.addEventListener('click', toggleMenu);
-        
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMobileMenu);
+    mobileLinks.forEach(l => l.addEventListener('click', toggleMobileMenu));
+
+    // -------------------------------------------------------------
+    // 5. Hero Fullscreen: Reprodução e Roll Animation
+    // -------------------------------------------------------------
+    const heroVideo = document.getElementById('heroVideo');
+    const heroContent = document.querySelector('.hero-content-overlay');
+    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+    const appleNav = document.querySelector('.apple-nav-header');
+
+    if (heroVideo) {
+        heroVideo.muted = true;
+        heroVideo.playsInline = true;
+        heroVideo.loop = true;
+
+        const attemptPlay = () => {
+            const playPromise = heroVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    const onUserAction = () => {
+                        heroVideo.play().catch(() => {});
+                        ['scroll', 'touchstart', 'click', 'mousemove'].forEach(evt => {
+                            window.removeEventListener(evt, onUserAction);
+                        });
+                    };
+                    ['scroll', 'touchstart', 'click', 'mousemove'].forEach(evt => {
+                        window.addEventListener(evt, onUserAction, { passive: true, once: true });
+                    });
+                });
+            }
+        };
+        attemptPlay();
     }
 
-    /* ==========================================================
-       Scroll Reveal Animations
-       ========================================================== */
-    const revealElements = document.querySelectorAll('.reveal');
+    // -------------------------------------------------------------
+    // 6. Scroll Storytelling (Roll Parallax com Fidelidade FHD)
+    // -------------------------------------------------------------
+    let isTicking = false;
 
-    const revealOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+    const onScrollUpdate = () => {
+        const scrollY = window.scrollY;
+        const vh = window.innerHeight;
+
+        // Roll no Hero (apenas translação e escala suave, sem tocar na imagem pura em FHD!)
+        if (scrollY <= vh * 1.2) {
+            const progress = Math.min(scrollY / vh, 1);
+
+            if (heroVideo) {
+                const scaleVal = 1.02 + progress * 0.05;
+                const translateYVal = scrollY * 0.28;
+                heroVideo.style.transform = `scale(${scaleVal}) translateY(${translateYVal}px)`;
+            }
+
+            if (heroContent) {
+                const textOpacity = Math.max(1 - progress * 1.7, 0);
+                const textTranslate = -scrollY * 0.24;
+                heroContent.style.opacity = textOpacity;
+                heroContent.style.transform = `translateY(${textTranslate}px)`;
+            }
+
+            if (scrollIndicator) {
+                scrollIndicator.style.opacity = Math.max(1 - progress * 4, 0);
+            }
+        }
+
+        // Navbar Apple adaptativa (apenas adiciona 'on-hero' se o vídeo hero estiver na página)
+        if (appleNav) {
+            if (heroVideo && scrollY <= vh * 0.7) {
+                appleNav.classList.add('on-hero');
+            } else {
+                appleNav.classList.remove('on-hero');
+            }
+        }
+
+        isTicking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!isTicking) {
+            window.requestAnimationFrame(onScrollUpdate);
+            isTicking = true;
+        }
+    }, { passive: true });
+
+    onScrollUpdate();
+
+    // -------------------------------------------------------------
+    // 7. Scroll Reveal Suave para Seções
+    // -------------------------------------------------------------
+    const revealElements = document.querySelectorAll('.project-card, .process-step, .manifesto-grid, .bio-photo-card, .bio-text-block, .matrix-column, .contact-channel-card, .contact-hub-left, .career-card, .personal-lifestyle-card, .role-badge, .skill-category, .apple-case-card');
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            
-            entry.target.classList.add('active');
-            // Opcional: descomente a linha abaixo se quiser que a animação rode apenas 1x
-            // observer.unobserve(entry.target); 
-        });
-    }, revealOptions);
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    /* ==========================================================
-       Active Navigation Link on Scroll
-       ========================================================== */
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
             }
         });
+    }, observerOptions);
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        revealObserver.observe(el);
     });
 
-    /* ==========================================================
-       Smooth Scroll to Top
-       ========================================================== */
-    const scrollTopBtn = document.getElementById('scrollToTop');
-    
-    if (scrollTopBtn) {
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
+    // -------------------------------------------------------------
+    // 8. Controles do Carrossel Apple (cases.html)
+    // -------------------------------------------------------------
+    const carouselTrackWrapper = document.getElementById('apple-carousel-wrapper');
+    const carouselPrevBtn = document.getElementById('apple-carousel-prev');
+    const carouselNextBtn = document.getElementById('apple-carousel-next');
+
+    if (carouselTrackWrapper && carouselPrevBtn && carouselNextBtn) {
+        carouselPrevBtn.addEventListener('click', () => {
+            carouselTrackWrapper.scrollBy({
+                left: -440,
+                behavior: 'smooth'
+            });
+        });
+
+        carouselNextBtn.addEventListener('click', () => {
+            carouselTrackWrapper.scrollBy({
+                left: 440,
                 behavior: 'smooth'
             });
         });
     }
 
-    /* ==========================================================
-       Play Hero Video on interaction (Mouse move / Scroll / Click)
-       ========================================================== */
-    const heroVideo = document.getElementById('heroVideo');
-    if (heroVideo) {
-        let isVideoPlaying = false;
-
-        const attemptPlay = () => {
-            if (isVideoPlaying || !heroVideo.paused) return;
-
-            const playPromise = heroVideo.play();
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    isVideoPlaying = true;
-                    // Força a classe no CSS que revela o vídeo suavemente
-                    heroVideo.classList.add('is-playing');
-                    
-                    // Remove listeners após sucesso
-                    ['mousemove', 'touchstart', 'scroll', 'click'].forEach(evt => 
-                        window.removeEventListener(evt, attemptPlay)
-                    );
-                }).catch(error => {
-                    console.log("Aguardando interação válida do usuário para tocar o vídeo...");
-                });
-            }
-        };
-
-        // Escuta os eventos para forçar o autoplay nativo burlado
-        ['mousemove', 'touchstart', 'scroll', 'click'].forEach(evt => 
-            window.addEventListener(evt, attemptPlay, { passive: true })
-        );
-    }
-
-    /* ==========================================================
-       Number Counter Animation (Prova Social)
-       ========================================================== */
-    const countElements = document.querySelectorAll('.count-up');
-    const countObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.getAttribute('data-target'));
-                const duration = 2000; // 2 segundos
-                const step = target / (duration / 16); // 60fps
-                let current = 0;
-                
-                const updateCount = () => {
-                    current += step;
-                    if (current < target) {
-                        el.innerText = Math.ceil(current);
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        el.innerText = target;
-                    }
-                };
-                
-                // Pequeno delay para sincronizar com a entrada (reveal) do elemento
-                setTimeout(updateCount, 400); 
-                observer.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    countElements.forEach(el => countObserver.observe(el));
-
-    /* ==========================================================
-       WhatsApp Budget & Recruitment Modal Logic
-       ========================================================== */
-    const floatingCta = document.getElementById('floating-whatsapp-cta');
-    const closeModalBtn = document.getElementById('close-whatsapp-modal');
-    const modalOverlay = document.getElementById('whatsapp-modal');
-    const modalOptions = document.querySelectorAll('.modal-opt-btn');
-    const tabBtns = document.querySelectorAll('.modal-tab-btn');
-    const tabPanes = document.querySelectorAll('.modal-tab-pane');
-
-    const PHONE_NUMBER = "5511964894096";
-
-    const MESSAGES = {
-        design: "Olá, vim pelos serviços de design e gostaria de orçar um trabalho.",
-        marketing: "Olá, vim pelos serviços de marketing e gostaria de orçar um trabalho.",
-        fixo: "Giovani gostei do seu trabalho e gosatria de saber mais, para te contratar para minha empresa"
-    };
-
-    const openModal = () => {
-        modalOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    };
-
-    const closeModal = () => {
-        modalOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    };
-
-    if (modalOverlay) {
-        // Gatilho: Botão flutuante
-        if (floatingCta) {
-            floatingCta.addEventListener('click', openModal);
-        }
-        
-        if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', closeModal);
-        }
-
-        // Fechar ao clicar fora
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) closeModal();
-        });
-
-        // Lógica de Troca de Abas
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const targetTab = btn.getAttribute('data-tab');
-                
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                tabPanes.forEach(pane => {
-                    pane.classList.remove('active');
-                    if (pane.id === `pane-${targetTab}`) {
-                        pane.classList.add('active');
-                    }
-                });
-            });
-        });
-
-        // Lógica de Redirecionamento WhatsApp
-        modalOptions.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const service = btn.getAttribute('data-service');
-                const text = encodeURIComponent(MESSAGES[service]);
-                const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${text}`;
-                
-                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-                closeModal();
-            });
-        });
-    }
-
-    /* ==========================================================
-       Security & Privacy Hardening
-       ========================================================== */
-    // 1. Frame Busting (Anti-Clickjacking - Impede iframe não autorizado)
-    try {
-        if (window.top !== window.self) {
-            window.top.location.replace(window.self.location.href);
-        }
-    } catch (e) {
-        // Bloqueado pelo navegador
-    }
-
-    // 2. Proteção de Imagens (dificulta clique direito em imagens)
-    document.addEventListener('contextmenu', function(e) {
-        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
-            e.preventDefault();
-        }
-    });
-
-    // 3. Ofuscação de E-mail (protege contra bots/scrapers)
-    const secureEmails = document.querySelectorAll('[data-secure-mailto="true"]');
-    secureEmails.forEach(el => {
-        el.addEventListener('click', function(e) {
-            e.preventDefault();
-            const m1 = this.getAttribute('data-m1');
-            const m2 = this.getAttribute('data-m2');
-            if (typeof trackEvent === 'function') trackEvent('click_email', 'Contact', 'Email_Obfuscated');
-            window.location.href = `mailto:${m1}@${m2}`;
-        });
-    });
-
-    // 4. Validação Limpa e Honeypot (Anti-spam) no Formulário
-    const contactForm = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    
-    if (contactForm && submitBtn) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Honeypot check (Se _honey tiver valor, é bot)
-            const honey = this.querySelector('[name="_honey"]').value;
-            if (honey) {
-                console.warn('Envio bloqueado (Anti-Spam).');
-                return; // Silenciosamente falha pro bot
-            }
-            
-            // Sanitização mega básica simulada contra <tags>
-            const nameInput = document.getElementById('name');
-            nameInput.value = nameInput.value.replace(/<[^>]*>?/gm, '');
-            
-            // Simulação de Sucesso / Preparação para requisição POST real futura
-            if (typeof trackEvent === 'function') trackEvent('generate_lead', 'Conversion', 'Contact_Form_Submit');
-            
-            const btnOriginalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Protegido & Enviado! <i class="ph ph-shield-check"></i>';
-            submitBtn.style.backgroundColor = '#16a085'; // verde sutil
-            submitBtn.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                contactForm.reset();
-                submitBtn.innerHTML = btnOriginalText;
-                submitBtn.style.backgroundColor = '';
-                submitBtn.style.pointerEvents = 'auto';
-            }, 4000);
-        });
-    }
-
-    /* ==========================================================
-       Global Conversion Tracking (GA4, GTM, Meta Pixel)
-       ========================================================== */
-    window.trackEvent = function(eventName, category, label) {
-        try {
-            // 1. GTM (DataLayer)
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': eventName,
-                'event_category': category,
-                'event_label': label
-            });
-
-            // 2. Google Ads / GA4 (gtag direct)
-            if (typeof gtag === 'function') {
-                gtag('event', eventName, {
-                    'event_category': category,
-                    'event_label': label
-                });
-            }
-
-            // 3. Meta Pixel (Facebook)
-            if (typeof fbq === 'function') {
-                let fbEvent = 'Contact'; 
-                if(eventName === 'generate_lead' || eventName === 'form_submit') fbEvent = 'Lead';
-                fbq('trackCustom', fbEvent, { content_name: label, content_category: category });
-            }
-
-            console.log(`[Tracking Activo] Evento: ${eventName} | Categ: ${category} | Label: ${label}`);
-        } catch(e) { console.error('Tracking Error', e); }
-    };
-
-    // A. Captura automática de Interações em Links do WhatsApp e CTAs Extras
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            const href = this.getAttribute('href') || '';
-            const isBtn  = this.classList.contains('btn');
-            
-            if (href.includes('wa.me') || href.includes('whatsapp.com')) {
-                trackEvent('click_whatsapp', 'Contact', 'WhatsApp_Direct_Link');
-            } else if (href.includes('mailto:')) {
-                trackEvent('click_email', 'Contact', 'Email_Direct_Link');
-            } else if (isBtn) {
-                trackEvent('click_cta', 'Engagement', this.innerText.trim());
+    // -------------------------------------------------------------
+    // 9. Scroll Suave para Links Internos
+    // -------------------------------------------------------------
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
         });
     });
 
-    // B. Captura do CTA Flutuante
-    const floatCta = document.getElementById('floating-whatsapp-cta');
-    if (floatCta) {
-        floatCta.addEventListener('click', () => {
-            trackEvent('click_whatsapp_floating', 'Contact', 'WhatsApp_Floating_CTA');
-        });
-    }
+    // -------------------------------------------------------------
+    // 10. Controle de Áudio do Banner com Legenda
+    // -------------------------------------------------------------
+    const methodologyVideo = document.getElementById('methodologyVideo');
+    const toggleSoundBtn = document.getElementById('toggleMethodologySound');
+    const soundIcon = document.getElementById('soundIcon');
+    const soundText = document.getElementById('soundText');
 
-    // C. Modal Área do Cliente
-    const clientModalOverride = document.getElementById('client-area-modal');
-    const closeClientModalBtn = document.getElementById('close-client-modal');
-    const clientForm = document.getElementById('clientAccessForm');
-    const clientSubmitBtn = document.getElementById('clientSubmitBtn');
-
-    document.querySelectorAll('.client-login-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            if(clientModalOverride) {
-                clientModalOverride.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                if (typeof trackEvent === 'function') trackEvent('open_client_area', 'Engagement', 'Client_Area_Modal');
+    if (toggleSoundBtn && methodologyVideo) {
+        toggleSoundBtn.addEventListener('click', () => {
+            methodologyVideo.muted = !methodologyVideo.muted;
+            if (methodologyVideo.muted) {
+                if (soundIcon) soundIcon.className = 'ph ph-speaker-simple-slash';
+                if (soundText) soundText.textContent = 'Ativar Áudio';
+            } else {
+                if (soundIcon) soundIcon.className = 'ph ph-speaker-simple-high';
+                if (soundText) soundText.textContent = 'Desativar Áudio';
             }
-        });
-    });
-
-    const closeClientModalDef = () => {
-        if(clientModalOverride) {
-            clientModalOverride.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    };
-
-    if (closeClientModalBtn) closeClientModalBtn.addEventListener('click', closeClientModalDef);
-    
-    if (clientModalOverride) {
-        clientModalOverride.addEventListener('click', (e) => {
-            if (e.target === clientModalOverride) closeClientModalDef();
-        });
-    }
-
-    if (clientForm && clientSubmitBtn) {
-        clientForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const honey = this.querySelector('[name="_honey"]').value;
-            if (honey) return; 
-
-            if (typeof trackEvent === 'function') trackEvent('request_client_access', 'Lead', 'Client_Area_Request');
-            
-            const btnOriginalText = clientSubmitBtn.innerHTML;
-            clientSubmitBtn.innerHTML = 'Solicitação Recebida! <i class="ph ph-check"></i>';
-            clientSubmitBtn.style.backgroundColor = '#16a085'; 
-            clientSubmitBtn.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                clientForm.reset();
-                clientSubmitBtn.innerHTML = btnOriginalText;
-                clientSubmitBtn.style.backgroundColor = '';
-                clientSubmitBtn.style.pointerEvents = 'auto';
-                closeClientModalDef();
-            }, 3000);
         });
     }
 });

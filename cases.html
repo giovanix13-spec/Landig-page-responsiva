@@ -1,408 +1,391 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cases Estratégicos | Giovani Almeida</title>
-    <meta name="description" content="Cases estratégicos de design e marketing desenvolvidos com foco em posicionamento corporativo por Giovani Almeida.">
+    <meta name="description" content="Cases estratégicos de design, branding e marketing desenvolvidos com foco em posicionamento corporativo por Giovani Almeida.">
     
-    <!-- Google Fonts -->
+    <!-- Tipografia Neo-Grotesque (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- ================= TRACKING INFRASTRUCTURE ================= -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-SUBSTITUIR');</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SUBSTITUIR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SUBSTITUIR'); 
-      gtag('config', 'AW-SUBSTITUIR'); 
-    </script>
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'PIXEL_ID_SUBSTITUIR');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID_SUBSTITUIR&ev=PageView&noscript=1"/></noscript>
-    
-    <!-- CSS -->
+    <!-- CSS 2027 Minimalismo Suíço & Apple Clean -->
     <link rel="stylesheet" href="style.css">
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <style>
-        /* Estrutura Minimalista Aba Cases */
-        .case-topic {
-            margin-bottom: 2rem;
-            color: #ddd;
-        }
-        .case-topic strong {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--font-heading);
-            font-size: 1rem;
-            color: #fff;
-            margin-bottom: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .case-topic strong i {
-            color: #c41212;
-            font-size: 1.4rem;
-        }
-        
-        .case-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .case-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.6rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            color: var(--text-secondary);
-        }
-        .case-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #c41212;
-        }
-        
-        /* Container dos Personagens e Animação */
-        .char-anim-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 24px;
-            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 100%);
-            padding: 2rem;
-            height: 100%;
-            min-height: 450px;
-            border: 1px solid rgba(255,255,255,0.02);
-        }
-        .char-img {
-            max-width: 100%;
-            border-radius: 12px;
-            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.5));
-            /* Animação de respiração sutil do personagem */
-            animation: gentleBreathe 5s ease-in-out infinite alternate;
-            transition: transform 0.4s ease, filter 0.3s ease;
-        }
-        
-        .char-img:hover {
-            filter: drop-shadow(0 20px 35px rgba(196, 18, 18, 0.2)) saturate(1) brightness(1);
-        }
-        
-        @keyframes gentleBreathe {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(-5px) scale(1.005); }
-        }
-
-        /* Correções de alinhamento Mobile */
-        @media (max-width: 900px) {
-            .storytelling-grid .story-image-column, 
-            .storytelling-grid .story-text-column {
-                order: unset !important;
-            }
-            .char-anim-box {
-                min-height: 300px;
-                padding: 1rem;
-            }
-        }
-    </style>
 </head>
-<body class="bg-dark">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-SUBSTITUIR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <div class="cursor-follower">
-        <div class="cursor-dot"></div>
-        <div class="cursor-circle"></div>
-    </div>
+<body class="apple-cases-body">
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <span class="logo-text">Giovani Almeida</span>
+    <!-- 1. Barra de Navegação Padrão Apple (Ultra Clean & Minimalista) -->
+    <header class="apple-nav-header">
+        <div class="apple-nav-container">
+            <!-- Marca à Esquerda -->
+            <a href="index.html" class="apple-nav-brand">
+                Giovani Almeida
             </a>
             
-            <nav class="nav-links">
-                <a href="index.html#trabalhos" class="nav-link">Trabalhos</a>
-                <a href="cases.html" class="nav-link" style="color: #fff; border-bottom: 2px solid #c41212;">Cases</a>
-                <a href="index.html#sobre" class="nav-link">Sobre</a>
-                <a href="index.html#contato" class="nav-link">Contato</a>
-                <a class="nav-link client-login-link"><i class="ph ph-user"></i> Área do Cliente</a>
+            <!-- Links Centrais Padrão Apple -->
+            <nav class="apple-nav-menu">
+                <a href="index.html#trabalhos" class="apple-nav-link">Trabalhos</a>
+                <a href="cases.html" class="apple-nav-link active">Cases</a>
+                <a href="index.html#sobre" class="apple-nav-link">Sobre</a>
+                <a href="index.html#autoridade" class="apple-nav-link">Autoridade</a>
+                <a href="index.html#contato" class="apple-nav-link">Contato</a>
             </nav>
-
-            <button class="mobile-menu-btn" aria-label="Abrir Menu">
-                <i class="ph ph-list"></i>
-            </button>
+            
+            <!-- Ações à Direita -->
+            <div class="apple-nav-actions">
+                <a class="apple-nav-sublink client-login-link" style="cursor: pointer;">
+                    <i class="ph ph-user"></i> <span>Área do Cliente</span>
+                </a>
+                <a href="index.html#contato" class="apple-btn-cta" style="text-decoration: none;">
+                    Iniciar Projeto
+                </a>
+                <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
         </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay">
-        <button class="close-menu-btn"><i class="ph ph-x"></i></button>
+        <button class="close-menu-btn" aria-label="Fechar Menu">
+            <i class="ph ph-x"></i>
+        </button>
         <nav class="mobile-nav-links">
             <a href="index.html#trabalhos" class="mobile-link">Trabalhos</a>
-            <a href="cases.html" class="mobile-link" style="color: #c41212;">Cases</a>
+            <a href="cases.html" class="mobile-link highlight-link">Cases</a>
             <a href="index.html#sobre" class="mobile-link">Sobre</a>
-            <a href="index.html#contato" class="mobile-link accent-link">Contato</a>
-            <a class="client-login-link" style="margin-top: 1rem; color: #fff; font-size: 1.1rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 12px; text-align: center; display: inline-flex; justify-content: center;"><i class="ph ph-lock-key"></i> Área do Cliente</a>
+            <a href="index.html#autoridade" class="mobile-link">Autoridade</a>
+            <a href="index.html#contato" class="mobile-link">Contato</a>
+            <button class="mobile-link client-login-link" style="background: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; padding: 12px 24px; color: #fff; font-size: 1.1rem; margin-top: 1rem;">
+                <i class="ph ph-user"></i> Área do Cliente
+            </button>
         </nav>
     </div>
 
-    <main>
-        <!-- TOPO -->
-        <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
-            <div class="container text-center">
-                <h1 class="section-title reveal reveal-delay-1" style="max-width: 900px; margin: 0 auto; line-height: 1.1;">Cases estratégicos de <br>design e marketing</h1>
-                <p class="text-lead reveal reveal-delay-2 mx-auto mt-2" style="max-width: 600px; font-weight: 500; font-size: 1.15rem;">
-                    Projetos desenvolvidos com foco incisivo em posicionamento corporativo.
-                </p>
+    <main style="padding-top: 68px;">
+        <!-- =========================================================================
+             2. CARROSSEL SHOWCASE NO PADRÃO APPLE STORE
+             ========================================================================= -->
+        <section class="apple-carousel-section">
+            <div class="container">
+                <div class="carousel-header-flex">
+                    <div>
+                        <span class="eyebrow" style="color: var(--accent-blue);">Casos de Estudo & Impacto</span>
+                        <h1 class="section-heading" style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-top: 8px; letter-spacing: -0.03em;">
+                            Resultados e Estratégia.<br>Onde o design encontra a escala comercial.
+                        </h1>
+                        <p class="section-subhead" style="margin-top: 12px; max-width: 680px;">
+                            Uma seleção de operações construídas com rigor estético, precisão matemática e visão corporativa de longo prazo.
+                        </p>
+                    </div>
+                    <div class="carousel-nav-controls">
+                        <button class="carousel-btn" id="apple-carousel-prev" aria-label="Caso anterior">
+                            <i class="ph ph-caret-left"></i>
+                        </button>
+                        <button class="carousel-btn" id="apple-carousel-next" aria-label="Próximo caso">
+                            <i class="ph ph-caret-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Track Horizontal Deslizante Apple -->
+                <div class="apple-carousel-track-wrapper" id="apple-carousel-wrapper">
+                    <div class="apple-carousel-track">
+                        <!-- Card 1: Varejo Farma -->
+                        <a href="#case-farma" class="apple-case-card">
+                            <div class="apple-card-media">
+                                <img src="assets/projects/case-apple-farma.jpg" alt="Visão arquitetônica e trade marketing para varejo farmacêutico no padrão Apple" loading="eager">
+                            </div>
+                            <div class="apple-card-content">
+                                <span class="apple-card-tag">Varejo & Saúde</span>
+                                <h3 class="apple-card-title">Reestruturação Visual & Chão de Loja</h3>
+                                <p class="apple-card-desc">
+                                    Transformação integral da jornada do cliente, organização de gôndolas e consolidação premium no varejo farmacêutico.
+                                </p>
+                                <span class="apple-card-cta">
+                                    Explorar estudo detalhado <span class="arrow">→</span>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card 2: B2B Enterprise -->
+                        <a href="#case-enterprise" class="apple-case-card">
+                            <div class="apple-card-media">
+                                <img src="assets/projects/case-apple-enterprise.jpg" alt="Identidade de marca e pitch deck corporativo no padrão Apple" loading="eager">
+                            </div>
+                            <div class="apple-card-content">
+                                <span class="apple-card-tag">Estrutura B2B</span>
+                                <h3 class="apple-card-title">Identidade Sistêmica & Pitch Decks</h3>
+                                <p class="apple-card-desc">
+                                    Construção de brandbook e apresentações corporativas de alta conversão para conquista de contas institucionais.
+                                </p>
+                                <span class="apple-card-cta">
+                                    Explorar estudo detalhado <span class="arrow">→</span>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Card 3: Performance & Growth -->
+                        <a href="#case-growth" class="apple-case-card">
+                            <div class="apple-card-media">
+                                <img src="assets/projects/case-apple-growth.jpg" alt="Dashboards de estratégia de marketing e conversão omnichannel no padrão Apple" loading="eager">
+                            </div>
+                            <div class="apple-card-content">
+                                <span class="apple-card-tag">Digital & Performance</span>
+                                <h3 class="apple-card-title">Estratégia de Aquisição & ROI Contínuo</h3>
+                                <p class="apple-card-desc">
+                                    Esteiras de conversão integradas com CAC reduzido, automações (App/iFood/API) e inteligência de dados.
+                                </p>
+                                <span class="apple-card-cta">
+                                    Explorar estudo detalhado <span class="arrow">→</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- CASE 1 - DROGARIA -->
-        <section class="section border-top-bottom">
+        <!-- =========================================================================
+             3. ESTUDOS DE CASO EM PROFUNDIDADE (EDITORIAL SUÍÇO & APPLE CLEAN)
+             ========================================================================= -->
+        <section class="apple-cases-deepdive">
             <div class="container">
-                <div class="storytelling-grid" style="align-items: center; gap: 4rem;">
-                    <div class="story-image-column reveal" style="order: 2;">
-                        <div class="char-anim-box">
-                            <img src="assets/projects/pharmacy_final.jpg" alt="Visão arquitetônica de varejo farmacêutico moderno" class="char-img" loading="eager">
-                        </div>
+                <!-- CASE 1: DROGARIA / VAREJO FARMA -->
+                <article id="case-farma" class="case-study-block">
+                    <div class="case-study-visual">
+                        <img src="assets/projects/case-apple-farma.jpg" alt="Arquitetura de varejo e trade marketing moderno para drogaria" loading="lazy">
                     </div>
-                    <div class="story-text-column reveal reveal-delay-1" style="order: 1;">
-                        <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Cenário Varejo Farma</h2>
-                        <span class="section-label" style="margin-bottom: 2rem;">Reestruturação visual corporativa</span>
-                        
-                        <div class="bio-story-content">
-                            <div class="case-topic">
-                                <strong><i class="ph ph-info"></i> Contexto</strong>
-                                <ul class="case-list">
-                                    <li>Rede farmacêutica local estabilizada financeiramente.</li>
-                                    <li>Forte pressão e entrada maciça de concorrentes maiores no bairro.</li>
+                    <div class="case-study-details">
+                        <span class="eyebrow" style="color: var(--accent-blue);">Caso 01 • Varejo & Saúde</span>
+                        <h2 class="section-heading" style="font-size: 2rem; margin: 8px 0 16px 0; text-align: left;">
+                            Cenário Varejo Farma: Reestruturação Visual Corporativa
+                        </h2>
+                        <p class="body-regular" style="color: var(--text-secondary); text-align: left;">
+                            Redesenho completo da experiência física e digital de rede farmacêutica regional, elevando o valor percebido sem descaracterizar sua raiz comunitária.
+                        </p>
+
+                        <div class="case-topic-grid">
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-info"></i> Contexto</span>
+                                <ul class="case-topic-list">
+                                    <li>Rede farmacêutica estabilizada financeiramente.</li>
+                                    <li>Forte pressão e entrada de grandes concorrentes no bairro.</li>
                                 </ul>
                             </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-warning-circle"></i> Desafio</strong>
-                                <ul class="case-list">
-                                    <li>Identidade visual do salão de vendas enfraquecida.</li>
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-warning-circle"></i> Desafio</span>
+                                <ul class="case-topic-list">
+                                    <li>Identidade do salão de vendas enfraquecida.</li>
                                     <li>Comunicação de chão-de-loja e tabloides desorganizada.</li>
-                                    <li>Pulverização total da atenção cognitiva do fluxo de clientes.</li>
+                                    <li>Pulverização da atenção do fluxo de clientes.</li>
                                 </ul>
                             </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-target"></i> Abordagem</strong>
-                                <ul class="case-list">
-                                    <li>Redesign do sistema digital e impresso base de Trade Marketing.</li>
-                                    <li>Linguagem limpa instaurada em diretrizes rígidas nas vitrines.</li>
-                                    <li>Hierarquização extrema entre perfumaria orgânica e gôndolas de alta saída.</li>
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-target"></i> Abordagem</span>
+                                <ul class="case-topic-list">
+                                    <li>Redesign do sistema digital e impresso de Trade Marketing.</li>
+                                    <li>Linguagem limpa instaurada nas diretrizes de vitrines.</li>
+                                    <li>Hierarquização entre perfumaria e gôndolas de alta saída.</li>
                                 </ul>
                             </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-trend-up"></i> Resultado</strong>
-                                <ul class="case-list">
-                                    <li>Experiência e permanência de compra altamente profissionalizada.</li>
-                                    <li>Facilidade imediata na condução visual dos produtos foco.</li>
-                                    <li>Consolidação de uma ótica premium sem perder sua origem popular comunitária.</li>
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-trend-up"></i> Resultado</span>
+                                <ul class="case-topic-list">
+                                    <li>Permanência e experiência de compra altamente profissionalizada.</li>
+                                    <li>Facilidade imediata na condução aos produtos foco.</li>
+                                    <li>Consolidação de uma ótica premium acessível.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </article>
 
-        <!-- CASE 2 - CORPORATE IDENTITY -->
-        <section class="section border-top-bottom" style="background: rgba(255,255,255,0.01);">
-            <div class="container">
-                <div class="storytelling-grid" style="align-items: center; gap: 4rem;">
-                    <div class="story-image-column reveal" style="order: 1;">
-                        <div class="char-anim-box">
-                            <img src="assets/projects/branding_final.jpg" alt="Estúdio de criação e design de marca estratégico" class="char-img" loading="lazy">
-                        </div>
+                <!-- CASE 2: B2B ENTERPRISE IDENTITY -->
+                <article id="case-enterprise" class="case-study-block reverse-layout">
+                    <div class="case-study-visual">
+                        <img src="assets/projects/case-apple-enterprise.jpg" alt="Design de marca estratégico para empresa B2B" loading="lazy">
                     </div>
-                    <div class="story-text-column reveal reveal-delay-1" style="order: 2;">
-                        <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Estrutura B2B Enterprise</h2>
-                        <span class="section-label" style="margin-bottom: 2rem;">Criação Sistêmica de Identidade de Marca</span>
-                        
-                        <div class="bio-story-content">
-                            <div class="case-topic">
-                                <strong><i class="ph ph-info"></i> Contexto</strong>
-                                <ul class="case-list">
-                                    <li>Empresa B2B sólida precisando fechar e prospectar contas maiores.</li>
+                    <div class="case-study-details">
+                        <span class="eyebrow" style="color: var(--accent-blue);">Caso 02 • Estrutura B2B</span>
+                        <h2 class="section-heading" style="font-size: 2rem; margin: 8px 0 16px 0; text-align: left;">
+                            Estrutura B2B Enterprise: Identidade Sistêmica de Marca
+                        </h2>
+                        <p class="body-regular" style="color: var(--text-secondary); text-align: left;">
+                            Alinhamento estético de autoridade e pitch decks de alta conversão para abertura de contas de grandes corporações.
+                        </p>
+
+                        <div class="case-topic-grid">
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-info"></i> Contexto</span>
+                                <ul class="case-topic-list">
+                                    <li>Empresa B2B sólida necessitando prospectar contas enterprise.</li>
+                                    <li>Operação robusta com faturamento de grande porte.</li>
                                 </ul>
                             </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-warning-circle"></i> Desafio</strong>
-                                <ul class="case-list">
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-warning-circle"></i> Desafio</span>
+                                <ul class="case-topic-list">
                                     <li>Apresentações de vendas inteiramente genéricas.</li>
-                                    <li>Nível de linguagem visual não condizente com a cifra do faturamento real.</li>
-                                    <li>Material raso que criava grave fricção de credibilidade com diretores executivos.</li>
+                                    <li>Nível visual desalinhado da cifra do faturamento real.</li>
+                                    <li>Fricção de credibilidade com diretores executivos (C-Levels).</li>
                                 </ul>
                             </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-target"></i> Abordagem</strong>
-                                <ul class="case-list">
-                                    <li>Reestruturação técnica de de Identidade (Logotipo, Cores, Regras de Ouro).</li>
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-target"></i> Abordagem</span>
+                                <ul class="case-topic-list">
+                                    <li>Reestruturação técnica de Identidade (Logotipo, Cores, Regras).</li>
                                     <li>Montagem rigorosa do Brandbook corporativo primário.</li>
-                                    <li>Engenharia limpa e minimalista de Pitch Decks focados em fechamento.</li>
+                                    <li>Engenharia limpa e minimalista de Pitch Decks comerciais.</li>
                                 </ul>
                             </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-trend-up"></i> Resultado</strong>
-                                <ul class="case-list">
-                                    <li>Eliminação total de barreiras visuais amadoras e precoces de reunião.</li>
-                                    <li>Crescimento instantâneo do gatilho tático de autoridade nas visitas.</li>
-                                    <li>Velocidade e encurtamento na recepção de grandes contas institucionais.</li>
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-trend-up"></i> Resultado</span>
+                                <ul class="case-topic-list">
+                                    <li>Eliminação total de barreiras visuais amadoras em reuniões.</li>
+                                    <li>Crescimento instantâneo do gatilho tático de autoridade.</li>
+                                    <li>Velocidade e encurtamento na recepção de grandes contas.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </article>
 
-        <!-- CASE 3 - ADVERTISING / RETAIL CAMPAIGN -->
-        <section class="section border-top-bottom">
-            <div class="container">
-                <div class="storytelling-grid" style="align-items: center; gap: 4rem;">
-                    <div class="story-image-column reveal" style="order: 2;">
-                        <div class="char-anim-box">
-                            <img src="assets/projects/strategy_final.jpg" alt="Análise de dados e inteligência de marketing" class="char-img" loading="lazy">
-                        </div>
+                <!-- CASE 3: CANAIS DIGITAIS & PERFORMANCE -->
+                <article id="case-growth" class="case-study-block">
+                    <div class="case-study-visual">
+                        <img src="assets/projects/case-apple-growth.jpg" alt="Dashboards de estratégia de marketing e conversão omnichannel" loading="lazy">
                     </div>
-                    <div class="story-text-column reveal reveal-delay-1" style="order: 1;">
-                        <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Canais Estratégicos</h2>
-                        <span class="section-label" style="margin-bottom: 2rem;">Campanhas de Escoamento Contínuo</span>
-                        
-                        <div class="bio-story-content">
-                            <div class="case-topic">
-                                <strong><i class="ph ph-info"></i> Contexto</strong>
-                                <ul class="case-list">
-                                    <li>Operação varejista operando evento forte de liquidação para saldo de estoques.</li>
-                                </ul>
-                            </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-warning-circle"></i> Desafio</strong>
-                                <ul class="case-list">
-                                    <li>Baixo engajamento histórico de promoções antigas.</li>
-                                    <li>Peças apelativas poluidoras que degradavam a pureza da marca de médio prazo.</li>
-                                    <li>Treinar o cliente passivo de tráfego com excesso de informação.</li>
-                                </ul>
-                            </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-target"></i> Abordagem</strong>
-                                <ul class="case-list">
-                                    <li>Instalação de uma linguagem tática temporária baseada em blocos urbanos limpos.</li>
-                                    <li>Foco absoluto no benefício ímpar ao invés da multi-confusão de descontos.</li>
-                                    <li>Distanciamento hierárquico, priorizando a fotografia do produto antes da cifra comercial.</li>
-                                </ul>
-                            </div>
-                            <div class="case-topic">
-                                <strong><i class="ph ph-trend-up"></i> Resultado</strong>
-                                <ul class="case-list">
-                                    <li>Ampliação da taxa de retenção dos anúncios do Tráfego Pago.</li>
-                                    <li>As vendas ocorreram puramente por gatilho visual cirúrgico, blindando a etiqueta de coleções normais.</li>
-                                    <li>Consistência técnica para escalonar piques de faturamento sem sacrificar a imagem futura.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="case-study-details">
+                        <span class="eyebrow" style="color: var(--accent-blue);">Caso 03 • Digital & Performance</span>
+                        <h2 class="section-heading" style="font-size: 2rem; margin: 8px 0 16px 0; text-align: left;">
+                            Canais Estratégicos: Campanhas de Escoamento Contínuo
+                        </h2>
+                        <p class="body-regular" style="color: var(--text-secondary); text-align: left;">
+                            Estratégia de esteiras de conversão multicanal integrando tráfego pago, produto e percepção de marca sem desgastar o valor do produto.
+                        </p>
 
-        <!-- FINAL DA PAGINA -->
-        <section class="section" style="padding: var(--space-xxl) 0;">
-            <div class="container text-center reveal">
-                <span class="section-label" style="display: block; margin-bottom: 1.5rem;">Alinhamento Comercial</span>
-                <h2 class="section-title" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; line-height: 1.1;">Vamos construir liderança <br>agora mesmo.</h2>
-                <div style="display: flex; justify-content: center; margin-top: 3rem;">
-                    <a href="https://wa.me/5511964894096" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; width: auto; padding: 1.2rem 2.5rem; font-size: 1.1rem; border-radius: 12px;">
-                        Traçar Posicionamento Agora <i class="ph ph-arrow-right" style="margin-left: 8px;"></i>
-                    </a>
+                        <div class="case-topic-grid">
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-info"></i> Contexto</span>
+                                <ul class="case-topic-list">
+                                    <li>Operação varejista com necessidade de escoamento rápido de estoque.</li>
+                                    <li>Demanda por tração contínua em múltiplos canais digitais.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-warning-circle"></i> Desafio</span>
+                                <ul class="case-topic-list">
+                                    <li>Baixo engajamento histórico de promoções convencionais.</li>
+                                    <li>Peças apelativas poluidoras que degradavam a imagem da marca.</li>
+                                    <li>Sobrecarga cognitiva do cliente com excesso de informação.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-target"></i> Abordagem</span>
+                                <ul class="case-topic-list">
+                                    <li>Linguagem tática temporária baseada em blocos limpos.</li>
+                                    <li>Foco absoluto no benefício ímpar ao invés de multi-descontos.</li>
+                                    <li>Priorização estética da fotografia do produto sobre o valor.</li>
+                                </ul>
+                            </div>
+                            <div class="case-topic-card">
+                                <span class="case-topic-title"><i class="ph ph-trend-up"></i> Resultado</span>
+                                <ul class="case-topic-list">
+                                    <li>Ampliação da taxa de retenção dos anúncios de tráfego pago.</li>
+                                    <li>Vendas com gatilho visual cirúrgico, blindando a marca.</li>
+                                    <li>Consistência para escalar receita sem sacrificar reputação.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD CTA DE FINALIZAÇÃO -->
+                <div class="apple-cta-card">
+                    <span class="eyebrow" style="color: var(--accent-blue);">Posicionamento Corporativo</span>
+                    <h2 class="section-heading" style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin: 12px 0 18px 0;">
+                        Pronto para elevar o padrão da sua marca?
+                    </h2>
+                    <p class="body-regular" style="max-width: 580px; margin: 0 auto 32px auto; color: var(--text-secondary);">
+                        Entre em contato diretamente para traçar o plano estratégico de design, branding e esteira comercial da sua empresa.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                        <a href="https://wa.me/5511964894096" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 14px 32px;">
+                            Iniciar Conversa no WhatsApp <i class="ph ph-arrow-right"></i>
+                        </a>
+                        <a href="index.html#contato" class="btn btn-secondary" style="padding: 14px 28px;">
+                            Ver Outros Canais
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer Simplificado -->
-    <footer class="footer-minimal">
-        <div class="container flex-footer">
-            <p>&copy; 2026 Giovani Almeida. Cajamar/SP.</p>
-            <p>Estratégia · Arte · Resultados</p>
+    <!-- Rodapé Editorial Apple Minimalista -->
+    <footer class="apple-footer">
+        <div class="container apple-footer-container">
+            <div class="apple-footer-top">
+                <span>Giovani Almeida — Direção de Arte & Estratégia de Marcas</span>
+                <div class="apple-footer-links">
+                    <a href="index.html#trabalhos">Trabalhos</a>
+                    <a href="cases.html">Cases</a>
+                    <a href="index.html#sobre">Sobre</a>
+                    <a href="index.html#autoridade">Autoridade</a>
+                    <a href="index.html#contato">Contato</a>
+                </div>
+            </div>
+            <div class="apple-footer-bottom">
+                <p>&copy; 2027 Giovani Almeida. Todos os direitos reservados. Cajamar / São Paulo, Brasil.</p>
+                <p>Design fundamentado com rigor suíço e estética global.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Client Area Modal -->
+    <!-- Modal Área do Cliente -->
     <div id="client-area-modal" class="whatsapp-modal-overlay">
-        <div class="whatsapp-modal-content" style="max-width: 480px; padding: 2.5rem 2rem;">
-            <button class="close-modal-btn" id="close-client-modal" aria-label="Fechar">
+        <div class="whatsapp-modal-content" style="max-width: 480px; padding: 40px 32px; border-radius: 32px;">
+            <button class="close-modal-btn" id="close-client-modal" aria-label="Fechar Modal">
                 <i class="ph ph-x"></i>
             </button>
             <div class="modal-header" style="text-align: center; border-bottom: none; padding-bottom: 0;">
-                <div class="modal-icon" style="font-size: 2.5rem; color: #c41212; margin-bottom: 1rem;"><i class="ph ph-lock-key"></i></div>
+                <div class="modal-icon" style="font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 1rem;"><i class="ph ph-lock-key"></i></div>
                 <h3 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem; line-height: 1.2;">Área do Cliente</h3>
                 <p class="text-body" style="color: var(--text-secondary); font-size: 0.95rem; margin: 0 auto 2rem auto;">
-                    Um espaço pensado para centralizar acessos, materiais e acompanhamento de projetos. Em breve, clientes ativos terão acesso a uma área exclusiva com mais praticidade e organização.
+                    Espaço dedicado para clientes ativos acompanharem entregas, cronogramas e aprovações de projetos.
                 </p>
             </div>
             <div class="modal-body">
                 <form id="clientAccessForm">
                     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="form-group" style="margin-bottom: 1rem;">
-                        <input type="text" id="clientName" placeholder="Seu Nome Completo" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
+                        <input type="text" id="clientName" placeholder="Seu Nome Completo" required style="width: 100%; padding: 14px 18px; border-radius: 14px; background: #F5F5F7; border: 1px solid rgba(0,0,0,0.08); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
                     </div>
                     <div class="form-group" style="margin-bottom: 1rem;">
-                        <input type="email" id="clientEmail" placeholder="E-mail Corporativo" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
+                        <input type="email" id="clientEmail" placeholder="E-mail Corporativo" required style="width: 100%; padding: 14px 18px; border-radius: 14px; background: #F5F5F7; border: 1px solid rgba(0,0,0,0.08); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
                     </div>
                     <div class="form-group" style="margin-bottom: 1rem;">
-                        <input type="text" id="clientCompany" placeholder="Empresa / Marca" required style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);">
-                    </div>
-                    <div class="form-group" style="margin-bottom: 1rem; position: relative;">
-                        <select id="isClient" required style="width: 100%; background: var(--bg-color); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1rem; color: #fff; font-family: var(--font-body); font-size: 1rem; appearance: none; cursor: pointer;">
-                            <option value="" disabled selected>Você já é cliente?</option>
-                            <option value="sim">Sim, projetos em andamento</option>
-                            <option value="nao">Ainda não</option>
-                        </select>
-                        <i class="ph ph-caret-down" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #666;"></i>
+                        <input type="text" id="clientCompany" placeholder="Empresa / Marca" required style="width: 100%; padding: 14px 18px; border-radius: 14px; background: #F5F5F7; border: 1px solid rgba(0,0,0,0.08); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
                     </div>
                     <div class="form-group" style="margin-bottom: 1.5rem;">
-                        <textarea id="clientMessage" rows="2" placeholder="Sua Mensagem (Opcional)" style="width: 100%; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: var(--font-body);"></textarea>
+                        <textarea id="clientMessage" rows="2" placeholder="Sua Mensagem (Opcional)" style="width: 100%; padding: 14px 18px; border-radius: 14px; background: #F5F5F7; border: 1px solid rgba(0,0,0,0.08); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary w-full" id="clientSubmitBtn" style="border-radius: 12px;">
-                        Solicitar acesso <i class="ph ph-arrow-right"></i>
+                    <button type="submit" class="btn btn-primary w-full" id="clientSubmitBtn" style="border-radius: 999px; padding: 14px 24px;">
+                        Solicitar Acesso <i class="ph ph-arrow-right"></i>
                     </button>
-                    <p style="text-align: center; font-size: 0.8rem; color: #555; margin-top: 1.5rem;">
-                        Em breve, esta área reunirá informações e acessos para clientes em andamento.
-                    </p>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
