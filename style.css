@@ -2682,5 +2682,382 @@ h1, h2, h3, h4, h5, h6 {
     .case-topic-grid {
         grid-template-columns: 1fr;
     }
+    .apple-lifestyle-bento {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+        gap: 28px;
+        text-align: center;
+    }
+    .lifestyle-media-frame {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .career-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .skills-expert-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .contact-architectural-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 28px;
+    }
+}
+
+/* =========================================================================
+   11. RESPONSIVIDADE COMPLETA PARA SMARTPHONES (MOBILE MAX 768px)
+   ========================================================================= */
+@media (max-width: 768px) {
+    /* Barra de Navegação Apple Mobile */
+    .apple-nav-menu, 
+    .apple-nav-sublink, 
+    .apple-btn-cta {
+        display: none !important;
+    }
+    
+    .mobile-menu-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .apple-nav-container {
+        padding: 0 16px;
+    }
+
+    /* Hero Section */
+    .hero-glass-card {
+        padding: 28px 18px !important;
+        width: calc(100% - 24px) !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        border-radius: 20px !important;
+    }
+
+    .hero-name {
+        font-size: clamp(1.85rem, 8vw, 2.5rem) !important;
+        letter-spacing: -0.03em !important;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9375rem !important;
+        margin-bottom: 24px !important;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Container Global */
+    .container {
+        padding: 0 18px !important;
+    }
+
+    .section {
+        padding: 64px 0 !important;
+    }
+
+    .section-heading {
+        font-size: clamp(1.75rem, 6.5vw, 2.25rem) !important;
+    }
+
+    .section-subhead {
+        font-size: 1rem !important;
+    }
+
+    /* Galeria de Projetos Mobile */
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    .project-card {
+        border-radius: 22px !important;
+    }
+
+    .project-content {
+        padding: 24px 20px !important;
+    }
+
+    .project-title {
+        font-size: 1.35rem !important;
+    }
+
+    /* Metodologia & Banner Vídeo Mobile */
+    .process-header-center {
+        margin-bottom: 28px !important;
+        padding: 0 8px !important;
+    }
+
+    .methodology-video-banner {
+        margin: 0 0 32px 0 !important;
+    }
+
+    .methodology-video-wrapper {
+        border-radius: 18px !important;
+    }
+
+    .sound-toggle-btn {
+        padding: 8px 14px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-top: 32px !important;
+    }
+
+    .process-step {
+        padding: 24px 20px !important;
+        border-radius: 18px !important;
+    }
+
+    /* Biografia & Retrato Mobile */
+    .bio-layout-grid {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+    }
+
+    .bio-portrait-column {
+        max-width: 320px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    .skills-matrix-suisse {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .matrix-column {
+        padding: 24px 20px !important;
+        border-radius: 18px !important;
+    }
+
+    /* Lifestyle Bento Card Mobile (Correção do Avatar e Pills) */
+    .apple-lifestyle-bento {
+        grid-template-columns: 1fr !important;
+        padding: 28px 18px !important;
+        gap: 20px !important;
+        margin-top: 36px !important;
+        border-radius: 22px !important;
+        text-align: center;
+    }
+
+    .lifestyle-media-frame {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+
+    .lifestyle-gif-img {
+        width: 105px !important;
+        height: auto !important;
+    }
+
+    .lifestyle-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .lifestyle-stat-pill {
+        padding: 10px 12px !important;
+        font-size: 0.8125rem !important;
+        justify-content: center !important;
+    }
+
+    .lifestyle-hobbies-block {
+        text-align: center;
+    }
+
+    .hobbies-label {
+        text-align: center;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .hobbies-pills-row {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+
+    .hobby-pill {
+        flex: unset !important;
+        padding: 8px 14px !important;
+        font-size: 0.8125rem !important;
+    }
+
+    .lifestyle-quote-box {
+        padding: 16px 18px !important;
+        border-radius: 16px !important;
+    }
+
+    .quote-text {
+        font-size: 0.9375rem !important;
+    }
+
+    /* Autoridade Executiva Mobile */
+    .executive-authority-section {
+        padding: 60px 0 !important;
+    }
+
+    .authority-header-center {
+        margin-bottom: 24px !important;
+    }
+
+    .protocol-flow-center-wrapper {
+        margin-bottom: 32px !important;
+        padding: 0 4px !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .protocol-flow-center-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .protocol-flow-box {
+        padding: 12px 22px !important;
+        font-size: 0.75rem !important;
+        gap: 6px 10px !important;
+        min-width: max-content;
+    }
+
+    .career-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-bottom: 32px !important;
+    }
+
+    .career-card {
+        padding: 28px 20px !important;
+        border-radius: 18px !important;
+    }
+
+    .executive-banner-card {
+        padding: 32px 20px !important;
+        margin-bottom: 32px !important;
+        border-radius: 20px !important;
+    }
+
+    .banner-title {
+        font-size: 1.35rem !important;
+    }
+
+    .skills-expert-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .skill-card-corporate {
+        padding: 24px 20px !important;
+        border-radius: 18px !important;
+    }
+
+    /* Contato Arquitetônico Mobile */
+    .contact-architectural-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+        padding: 32px 18px !important;
+        border-radius: 22px !important;
+    }
+
+    .contact-hub-headline {
+        font-size: 1.85rem !important;
+    }
+
+    .contact-channels-column {
+        gap: 14px !important;
+    }
+
+    .contact-channel-card {
+        padding: 20px 16px !important;
+        border-radius: 18px !important;
+    }
+
+    .channel-title {
+        font-size: 1.05rem !important;
+    }
+
+    /* Cases.html Carousel & Deep Dives Mobile */
+    .apple-carousel-section {
+        padding: 40px 0 60px 0 !important;
+    }
+
+    .carousel-header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .apple-case-card {
+        width: 290px !important;
+        max-width: 82vw !important;
+        border-radius: 22px !important;
+    }
+
+    .apple-card-content {
+        padding: 22px 16px !important;
+    }
+
+    .apple-card-title {
+        font-size: 1.3rem !important;
+    }
+
+    .case-study-block {
+        padding: 24px 18px !important;
+        border-radius: 22px !important;
+        gap: 24px !important;
+        margin-bottom: 36px !important;
+    }
+
+    .case-topic-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .apple-cta-card {
+        padding: 40px 18px !important;
+        border-radius: 22px !important;
+    }
+}
+
+/* Telas Ultra Pequenas (<= 420px) */
+@media (max-width: 420px) {
+    .container {
+        padding: 0 14px !important;
+    }
+
+    .hero-glass-card {
+        padding: 24px 14px !important;
+    }
+
+    .lifestyle-stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .apple-cta-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .apple-cta-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
