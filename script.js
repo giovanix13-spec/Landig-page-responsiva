@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const WHATSAPP_MESSAGES = {
         design: "Olá Giovani! Vim pelo seu portfólio e gostaria de orçar um projeto de Design (Branding / UI / Embalagem).",
         marketing: "Olá Giovani! Vim pelo seu portfólio e gostaria de conversar sobre consultoria e estratégia de Marketing.",
+        consultoria: "Olá Giovani! Gostaria de conversar sobre Consultoria Estratégica (Diagnóstico de Marca, Gestão de Riscos e Novas Oportunidades).",
         fixo: "Olá Giovani! Gostei do seu portfólio e gostaria de saber mais para te contratar para uma posição estratégica em minha empresa."
     };
 
