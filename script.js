@@ -124,8 +124,118 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') {
             closeWhatsAppModal();
             closeClientModal();
+            closeAuthModal();
         }
     });
+
+    // -------------------------------------------------------------
+    // 2.5 Modal de Autorização de Download (Currículo & Apresentação)
+    // -------------------------------------------------------------
+    const authDownloadModal = document.getElementById('auth-download-modal');
+    const closeAuthModalBtn = document.getElementById('close-auth-modal');
+    const btnRequestDocs = document.querySelectorAll('.btn-request-doc');
+    const requestedDocNameEl = document.getElementById('requested-doc-name');
+    const authDownloadForm = document.getElementById('authDownloadForm');
+    const vipPassInput = document.getElementById('vipPassInput');
+    const btnUnlockVip = document.getElementById('btnUnlockVip');
+    const vipFeedback = document.getElementById('vipFeedback');
+
+    let currentRequestedDoc = "Currículo Executivo";
+
+    const openAuthModal = (docName) => {
+        currentRequestedDoc = docName || "Currículo Executivo";
+        if (requestedDocNameEl) requestedDocNameEl.textContent = currentRequestedDoc;
+        if (vipFeedback) {
+            vipFeedback.textContent = '';
+            vipFeedback.style.color = '#FF453A';
+        }
+        if (vipPassInput) vipPassInput.value = '';
+        if (whatsappModal) whatsappModal.classList.remove('active');
+        if (authDownloadModal) {
+            authDownloadModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    const closeAuthModal = () => {
+        if (authDownloadModal) {
+            authDownloadModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    btnRequestDocs.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const docName = btn.getAttribute('data-document') || "Currículo Executivo";
+            openAuthModal(docName);
+        });
+    });
+
+    if (closeAuthModalBtn) closeAuthModalBtn.addEventListener('click', closeAuthModal);
+    if (authDownloadModal) {
+        authDownloadModal.addEventListener('click', (e) => {
+            if (e.target === authDownloadModal) closeAuthModal();
+        });
+    }
+
+    // Submissão do formulário de solicitação de aprovação
+    if (authDownloadForm) {
+        authDownloadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('authName')?.value || '';
+            const email = document.getElementById('authEmail')?.value || '';
+            const company = document.getElementById('authCompany')?.value || '';
+            const reason = document.getElementById('authReason')?.value || '';
+
+            const message = `Olá Giovani! Gostaria de solicitar aprovação para download do material restrito: *${currentRequestedDoc}*.\n\n` +
+                            `• *Nome:* ${name}\n` +
+                            `• *Empresa:* ${company}\n` +
+                            `• *E-mail:* ${email}\n` +
+                            `• *Finalidade:* ${reason}`;
+
+            const url = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+            closeAuthModal();
+            authDownloadForm.reset();
+        });
+    }
+
+    // Desbloqueio com Código VIP
+    const triggerFileDownload = (docName) => {
+        const link = document.createElement('a');
+        if (docName.toLowerCase().includes('currículo') || docName.toLowerCase().includes('curriculo')) {
+            link.href = 'curriculo-giovani-almeida.pdf.pdf';
+            link.download = 'curriculo-giovani-almeida.pdf';
+        } else {
+            link.href = 'STRATEGIC PRESENTATION.pdf';
+            link.download = 'STRATEGIC PRESENTATION.pdf';
+        }
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    if (btnUnlockVip && vipPassInput) {
+        btnUnlockVip.addEventListener('click', () => {
+            const enteredCode = vipPassInput.value.trim().toUpperCase();
+            if (enteredCode === 'GIOVANI2027' || enteredCode === 'VIP2027' || enteredCode === 'ALMEIDA2027') {
+                if (vipFeedback) {
+                    vipFeedback.textContent = '✓ Código VIP aprovado! Iniciando download...';
+                    vipFeedback.style.color = '#30D158';
+                }
+                setTimeout(() => {
+                    triggerFileDownload(currentRequestedDoc);
+                    closeAuthModal();
+                }, 1000);
+            } else {
+                if (vipFeedback) {
+                    vipFeedback.textContent = 'Código incorreto. Solicite autorização pelo botão acima.';
+                    vipFeedback.style.color = '#FF453A';
+                }
+            }
+        });
+    }
 
     // -------------------------------------------------------------
     // 3. Botão Copiar E-mail com Feedback Rápido

@@ -636,9 +636,9 @@
                             </div>
                         </div>
 
-                        <a href="STRATEGIC PRESENTATION.pdf" download="STRATEGIC PRESENTATION.pdf" class="btn btn-secondary w-full" style="padding: 14px 20px;">
-                            <i class="ph ph-file-pdf"></i> Baixar Strategic Presentation (PDF)
-                        </a>
+                        <button type="button" class="btn btn-secondary w-full btn-request-doc" data-document="Strategic Presentation" style="padding: 14px 20px; cursor: pointer;">
+                            <i class="ph ph-lock-key"></i> Solicitar Apresentação Estratégica (PDF)
+                        </button>
                     </div>
 
                     <!-- Coluna da Direita: Manifesto & Matriz Suíça de Especialidades -->
@@ -1169,17 +1169,19 @@
 
             <!-- Aba 2: Empresas / Contratação -->
             <div class="modal-tab-pane" id="pane-recrutamento">
-                <div class="apple-modal-options">
-                    <a href="curriculo-giovani-almeida.pdf.pdf" download class="apple-option-card">
-                        <div class="apple-opt-icon cv-icon">
-                            <i class="ph ph-file-pdf"></i>
+                    <button type="button" class="apple-option-card btn-request-doc" data-document="Currículo Executivo" style="cursor: pointer; text-align: left; width: 100%; border: 1px solid rgba(0,0,0,0.05);">
+                        <div class="apple-opt-icon cv-icon" style="background: rgba(0, 113, 227, 0.08); color: #0071E3;">
+                            <i class="ph ph-lock-key"></i>
                         </div>
                         <div class="apple-opt-info">
-                            <strong>Baixar Currículo Executivo</strong>
-                            <span>PDF Oficial 2026/2027 • Trajetória e Conquistas</span>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <strong>Currículo Executivo</strong>
+                                <span style="font-size: 0.6875rem; padding: 2px 8px; border-radius: 999px; background: rgba(0, 113, 227, 0.12); color: #0071E3; font-weight: 600;">Sob Aprovação</span>
+                            </div>
+                            <span>Acesso restrito • Requer autorização prévia</span>
                         </div>
-                        <i class="ph ph-download-simple apple-opt-chevron"></i>
-                    </a>
+                        <i class="ph ph-shield-check apple-opt-chevron"></i>
+                    </button>
 
                     <button class="apple-option-card modal-opt-card" data-service="fixo">
                         <div class="apple-opt-icon">
@@ -1240,7 +1242,78 @@
         </div>
     </div>
 
-    <!-- Scripts da Versão 2027-2028 (v2028.5) -->
-    <script src="script.js?v=2028.5"></script>
+    <!-- 12. Modal de Acesso a Material Restrito (Download Sob Aprovação) -->
+    <div id="auth-download-modal" class="whatsapp-modal-overlay">
+        <div class="whatsapp-modal-content" style="max-width: 500px; padding: 36px 30px; border-radius: 28px;">
+            <button class="close-modal-btn" id="close-auth-modal" aria-label="Fechar Modal">
+                <i class="ph ph-x"></i>
+            </button>
+            <div class="modal-header" style="text-align: center; border-bottom: none; padding-bottom: 0;">
+                <div style="font-size: 2.25rem; color: #0071E3; margin-bottom: 10px;">
+                    <i class="ph ph-shield-check"></i>
+                </div>
+                <div style="display: inline-block; padding: 4px 12px; border-radius: 999px; background: rgba(0, 113, 227, 0.1); color: #0071E3; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px;">
+                    ACESSO RESTRITO • SOB APROVAÇÃO
+                </div>
+                <h3 class="modal-title" style="font-size: 1.6rem; margin-bottom: 8px;">Acesso ao Documento</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0 auto 20px auto; line-height: 1.5;">
+                    Para preservar dados confidenciais e estratégicos, o download deste material requer liberação prévia de <strong>Giovani Almeida</strong>.
+                </p>
+            </div>
+
+            <!-- Material Selecionado Badge -->
+            <div style="background: rgba(0, 113, 227, 0.05); border: 1px solid rgba(0, 113, 227, 0.15); border-radius: 12px; padding: 10px 16px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                <i class="ph ph-file-pdf" style="font-size: 1.4rem; color: #0071E3;"></i>
+                <div style="text-align: left;">
+                    <span style="font-size: 0.75rem; color: var(--text-tertiary); display: block; text-transform: uppercase;">Material Requisitado</span>
+                    <strong id="requested-doc-name" style="font-size: 0.9375rem; color: var(--text-primary);">Currículo Executivo</strong>
+                </div>
+            </div>
+
+            <!-- Formulário de Requisição de Aprovação -->
+            <form id="authDownloadForm">
+                <div style="margin-bottom: 12px;">
+                    <input type="text" id="authName" placeholder="Seu Nome Completo *" required class="input-suisse">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <input type="email" id="authEmail" placeholder="Seu E-mail Corporativo *" required class="input-suisse">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <input type="text" id="authCompany" placeholder="Empresa / Organização *" required class="input-suisse">
+                </div>
+                <div style="margin-bottom: 18px;">
+                    <select id="authReason" required class="input-suisse">
+                        <option value="" disabled selected>Finalidade do Acesso *</option>
+                        <option value="Contratação / Recrutamento Executivo">Contratação / Recrutamento Executivo</option>
+                        <option value="Avaliação para Projeto de Branding">Avaliação para Projeto de Branding</option>
+                        <option value="Parceria Comercial / Agência">Parceria Comercial / Agência</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full" style="padding: 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="ph ph-whatsapp-logo" style="font-size: 1.2rem;"></i>
+                    <span>Solicitar Aprovação via WhatsApp</span>
+                </button>
+            </form>
+
+            <!-- Desbloqueio com Chave VIP -->
+            <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.08); text-align: center;">
+                <p style="font-size: 0.8125rem; color: var(--text-tertiary); margin-bottom: 10px;">
+                    Já possui um código de liberação fornecido por Giovani?
+                </p>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="vipPassInput" placeholder="Código de Liberação" class="input-suisse" style="padding: 10px 14px; font-size: 0.875rem; text-transform: uppercase;">
+                    <button type="button" id="btnUnlockVip" class="btn btn-secondary" style="padding: 10px 16px; font-size: 0.8125rem; white-space: nowrap;">
+                        Liberar <i class="ph ph-lock-key-open"></i>
+                    </button>
+                </div>
+                <span id="vipFeedback" style="display: block; font-size: 0.75rem; margin-top: 8px; color: #FF453A;"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts da Versão 2027-2028 (v2028.6) -->
+    <script src="script.js?v=2028.6"></script>
 </body>
 </html>
