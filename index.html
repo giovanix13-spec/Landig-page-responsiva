@@ -323,7 +323,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS 2027-2028 Minimalismo Suíço & Apple Clean (v2028.9) -->
-    <link rel="stylesheet" href="style.css?v=2028.11">
+    <link rel="stylesheet" href="style.css?v=2028.12">
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -384,38 +384,59 @@
     </div>
 
     <main>
-        <!-- 2. Hero Section: Boas-Vindas & Apresentação (Foco em Conversão & Fundo #F5F5F7) -->
-        <section class="hero-welcome-section">
-            <div class="container">
-                <div class="hero-welcome-card">
-                    <span class="hero-eyebrow-pill" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 102, 204, 0.08); color: #0066CC; padding: 6px 16px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; border: 1px solid rgba(0, 102, 204, 0.15);">
-                        <span class="hero-eyebrow-dot" style="width: 7px; height: 7px; border-radius: 50%; background: #0066CC;"></span>
-                        Designer Profissional & Estrategista de Marcas
-                    </span>
+        <!-- 2. Hero Section: Fullscreen com Vídeo 100% Puro em FHD + Card de Apresentação em #F5F5F7 -->
+        <section class="hero-section hero-fullscreen">
+            <!-- Background Video Layer com BANNER 2027 em Fidelidade Máxima -->
+            <div class="hero-video-bg-container">
+                <video id="heroVideo" autoplay loop muted playsinline preload="auto" class="hero-video-full">
+                    <source src="BANNER 2027.mp4" type="video/mp4">
+                    <source src="meu-video.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <!-- Hero Content: Card de Apresentação em Fundo #F5F5F7 com Textos de Boas-Vindas e Ação Rápida -->
+            <div class="container hero-content-overlay">
+                <div class="hero-glass-box-apple hero-card-light">
+                    <div class="glass-noise-layer"></div>
+                    <div class="hero-glass-inner">
+                        <span class="hero-eyebrow-pill anim-hero-1">
+                            <span class="hero-eyebrow-dot"></span>
+                            Designer Profissional & Estrategista de Marcas
+                        </span>
+                        
+                        <h1 class="hero-display-title anim-hero-2">
+                            <span class="title-primary">Olá! Eu sou o Giovani,</span><br>
+                            <span class="title-accent">o seu designer profissional.</span>
+                        </h1>
+                        
+                        <p class="hero-subhead anim-hero-3">
+                            Bem-vindo ao meu site! Você pode contar comigo para dar vida aos seus projetos. Basta clicar nos botões aqui da página para ver os meus trabalhos ou me chamar no botão do WhatsApp. Estou à disposição!
+                        </p>
+                        
+                        <div class="hero-actions anim-hero-4" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                            <!-- Botão WhatsApp com Alta Visibilidade -->
+                            <button type="button" class="btn btn-whatsapp-welcome" id="hero-whatsapp-btn" style="padding: 13px 28px; font-size: 0.9375rem;">
+                                <i class="ph ph-whatsapp-logo" style="font-size: 1.25rem;"></i>
+                                Chamar no WhatsApp
+                            </button>
 
-                    <h1 class="hero-welcome-title" style="font-size: clamp(1.85rem, 4.2vw, 2.75rem); font-weight: 800; line-height: 1.18; color: #1D1D1F; letter-spacing: -0.03em; margin-bottom: 20px;">
-                        Olá! Eu sou o Giovani,<br><span style="color: #0066CC;">o seu designer profissional.</span>
-                    </h1>
-
-                    <p class="hero-welcome-text" style="font-size: clamp(1rem, 2vw, 1.1875rem); line-height: 1.65; color: #424245; max-width: 680px; margin: 0 auto 32px; font-weight: 400;">
-                        Olá! Eu sou o Giovani, o seu designer profissional. Bem-vindo ao meu site! Você pode contar comigo para dar vida aos seus projetos. Basta clicar nos botões aqui da página para ver os meus trabalhos ou me chamar no botão do WhatsApp. Estou à disposição!
-                    </p>
-
-                    <div class="hero-welcome-actions" style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; width: 100%;">
-                        <!-- Botão WhatsApp com Alta Visibilidade -->
-                        <button type="button" class="btn-whatsapp-welcome" id="hero-whatsapp-btn">
-                            <i class="ph ph-whatsapp-logo" style="font-size: 1.35rem;"></i>
-                            Chamar no WhatsApp
-                        </button>
-
-                        <!-- Botão Ver Trabalhos com Alta Visibilidade -->
-                        <a href="#trabalhos" class="btn-works-welcome">
-                            <i class="ph ph-squares-four" style="font-size: 1.25rem;"></i>
-                            Ver Trabalhos <span class="arrow">↓</span>
-                        </a>
+                            <!-- Botão Ver Trabalhos com Alta Visibilidade -->
+                            <a href="#trabalhos" class="btn btn-works-welcome" style="padding: 13px 28px; font-size: 0.9375rem;">
+                                <i class="ph ph-squares-four" style="font-size: 1.15rem;"></i>
+                                Ver Trabalhos <span class="arrow">↓</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Indicador Sensorial de Scroll (Desktop) -->
+            <a href="#trabalhos" class="hero-scroll-indicator" aria-label="Rolar para os trabalhos">
+                <span class="scroll-text">EXPLORAR</span>
+                <div class="scroll-mouse-icon">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </a>
         </section>
 
         <!-- 4. Galeria de Trabalhos & Cases Selecionados -->

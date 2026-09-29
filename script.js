@@ -348,9 +348,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Navbar Apple adaptativa (mantém legibilidade nítida no padrão Apple)
+        // Navbar Apple adaptativa (vidro escuro sobre o vídeo e vidro claro sobre o conteúdo)
         if (appleNav) {
-            appleNav.classList.remove('on-hero');
+            if (heroVideo && scrollY <= vh * 0.7) {
+                appleNav.classList.add('on-hero');
+            } else {
+                appleNav.classList.remove('on-hero');
+            }
         }
 
         isTicking = false;
