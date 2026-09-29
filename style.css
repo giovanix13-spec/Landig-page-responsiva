@@ -67,6 +67,14 @@ body {
     line-height: 1.5;
     letter-spacing: -0.011em;
     overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
+}
+
+/* Prevenção universal de quebra e estouro de caixas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, li, button, input, textarea {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 img, video {
@@ -426,15 +434,16 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     height: 100vh;
     height: 100dvh;
-    min-height: 720px;
+    min-height: 640px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Posiciona os textos harmoniosamente na base */
+    justify-content: center; /* Centralizado harmoniosamente para equilíbrio visual impecável */
     overflow: hidden;
-    padding: 0 20px 110px 20px; /* Folga generosa para NUNCA sobrepor o indicador de scroll */
+    padding: calc(var(--nav-height, 56px) + 20px) 20px 64px 20px;
     background-color: #000000;
+    box-sizing: border-box;
 }
 
 .hero-video-bg-container {
@@ -451,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 40%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.85) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 40%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.85) 100%);
     pointer-events: none;
     z-index: 2;
 }
@@ -473,9 +482,11 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 3;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 0 16px;
-    margin-bottom: 8px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* Glass Box Apple com Efeito Noise e Blur Profundo */
@@ -492,6 +503,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 24px 72px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     overflow: hidden;
     animation: heroGlassReveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    box-sizing: border-box;
 }
 
 /* Card de Apresentação em Fundo #F5F5F7 (Alta Conversão & Contraste) */
@@ -503,6 +515,11 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(255, 255, 255, 0.8) !important;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
     color: #1D1D1F !important;
+    max-width: 780px !important;
+    padding: 36px 40px !important;
+    border-radius: 28px !important;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .hero-glass-box-apple.hero-card-light .hero-eyebrow-pill {
@@ -514,22 +531,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-glass-box-apple.hero-card-light .hero-eyebrow-dot {
     background: #0066CC !important;
+    box-shadow: 0 0 8px rgba(0, 102, 204, 0.5) !important;
 }
 
 .hero-glass-box-apple.hero-card-light .hero-display-title,
 .hero-glass-box-apple.hero-card-light .hero-display-title .title-primary {
     color: #1D1D1F !important;
+    text-shadow: none !important;
 }
 
 .hero-glass-box-apple.hero-card-light .hero-display-title .title-accent {
     color: #0066CC !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    text-shadow: none !important;
 }
 
 .hero-glass-box-apple.hero-card-light .hero-subhead {
     color: #424245 !important;
-    font-size: clamp(0.875rem, 1.8vw, 1.0625rem) !important;
-    line-height: 1.55 !important;
+    text-shadow: none !important;
+    font-size: clamp(0.9375rem, 1.4vw, 1.0625rem) !important;
+    line-height: 1.6 !important;
     font-weight: 400 !important;
+    max-width: 660px !important;
+    margin: 0 auto 24px auto !important;
+    overflow-wrap: break-word !important;
 }
 
 /* Efeito Noise Texturizado */
@@ -2772,10 +2798,11 @@ h1, h2, h3, h4, h5, h6 {
         height: auto !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
         align-items: center !important;
-        padding: calc(var(--nav-height, 56px) + 16px) 16px 28px 16px !important;
-        overflow: hidden !important;
+        padding: calc(var(--nav-height, 56px) + 20px) 16px 36px 16px !important;
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
         box-sizing: border-box !important;
     }
 
@@ -2790,8 +2817,8 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-glass-box-apple {
         width: 100% !important;
-        max-width: 420px !important;
-        padding: 20px 18px 22px 18px !important;
+        max-width: 440px !important;
+        padding: 22px 18px 24px 18px !important;
         border-radius: 22px !important;
         margin: 0 auto !important;
         box-sizing: border-box !important;
@@ -2808,9 +2835,9 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-eyebrow-pill {
         padding: 5px 12px !important;
-        font-size: 0.65rem !important;
+        font-size: 0.6875rem !important;
         letter-spacing: 0.04em !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 12px !important;
         max-width: 100% !important;
         white-space: normal !important;
         text-align: center !important;
@@ -2821,34 +2848,43 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-display-title {
-        font-size: clamp(1.45rem, 5.6vw, 1.85rem) !important;
-        line-height: 1.15 !important;
-        margin-bottom: 10px !important;
+        font-size: clamp(1.4rem, 5.4vw, 1.85rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 12px !important;
         letter-spacing: -0.02em !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
     }
 
     .hero-subhead {
-        font-size: 0.8125rem !important;
-        line-height: 1.45 !important;
-        margin: 0 auto 16px auto !important;
+        font-size: 0.875rem !important;
+        line-height: 1.5 !important;
+        margin: 0 auto 18px auto !important;
         padding: 0 4px !important;
         max-width: 100% !important;
-        color: #D2D2D7 !important;
+        color: #424245 !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .hero-glass-box-apple.hero-card-light .hero-subhead {
+        color: #424245 !important;
     }
 
     .hero-actions {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-        gap: 8px !important;
+        gap: 10px !important;
     }
 
     .hero-actions .btn,
     .hero-btn-apple,
-    .btn-hero-secondary {
+    .btn-hero-secondary,
+    .btn-whatsapp-welcome,
+    .btn-works-welcome {
         width: 100% !important;
-        padding: 11px 18px !important;
-        font-size: 0.8125rem !important;
+        padding: 13px 20px !important;
+        font-size: 0.875rem !important;
         justify-content: center !important;
         box-sizing: border-box !important;
         text-align: center !important;
@@ -2893,8 +2929,8 @@ h1, h2, h3, h4, h5, h6 {
 
     .apple-segmented-control {
         width: 100% !important;
-        padding: 3px !important;
-        gap: 2px !important;
+        padding: 4px !important;
+        gap: 4px !important;
         box-sizing: border-box !important;
         display: flex !important;
     }
@@ -2903,10 +2939,10 @@ h1, h2, h3, h4, h5, h6 {
         flex: 1 1 50% !important;
         min-width: 0 !important;
         padding: 8px 4px !important;
-        font-size: 0.75rem !important;
-        letter-spacing: -0.015em !important;
+        font-size: 0.78125rem !important;
+        letter-spacing: -0.01em !important;
         white-space: nowrap !important;
-        text-overflow: ellipsis !important;
+        text-overflow: clip !important;
         overflow: hidden !important;
         text-align: center !important;
     }
@@ -3530,17 +3566,21 @@ h1, h2, h3, h4, h5, h6 {
     gap: 32px;
     max-width: 1040px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .service-conversion-card {
     background: #F5F5F7;
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 26px;
-    padding: 40px 32px;
+    padding: 38px 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .service-conversion-card:hover {
@@ -3548,6 +3588,99 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
     border-color: rgba(0, 102, 204, 0.2);
     background: #FFFFFF;
+}
+
+.service-card-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: #FFFFFF;
+    color: #0066CC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.65rem;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+}
+
+.service-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1D1D1F;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    line-height: 1.25;
+}
+
+.service-card-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #424245;
+    margin-bottom: 24px;
+}
+
+.service-check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.service-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9375rem;
+    color: #1D1D1F;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.service-check-item i {
+    color: #34C759;
+    font-size: 1.15rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.service-check-item span {
+    flex: 1;
+    min-width: 0;
+}
+
+.btn-service-cta {
+    background: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+    padding: 13px 22px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all var(--transition-apple);
+    box-sizing: border-box;
+}
+
+.btn-service-cta i {
+    color: #25D366;
+    font-size: 1.25rem;
+}
+
+.btn-service-cta:hover {
+    background: #1D1D1F;
+    color: #FFFFFF;
+    border-color: #1D1D1F;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* =========================================================================
@@ -3623,24 +3756,63 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 64px;
 }
 
+.sobre-cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .services-two-cards-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        gap: 24px !important;
+    }
+    .sobre-layout-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 680px !important;
+        margin: 0 auto 48px auto !important;
+        gap: 40px !important;
+    }
+}
+
 @media (max-width: 768px) {
     .services-two-cards-grid {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
+        max-width: 100% !important;
     }
     .service-conversion-card {
         padding: 28px 20px !important;
         border-radius: 22px !important;
+    }
+    .service-card-title {
+        font-size: 1.35rem !important;
+        margin-bottom: 12px !important;
+    }
+    .service-card-desc {
+        font-size: 0.9375rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 20px !important;
+    }
+    .service-check-item {
+        font-size: 0.875rem !important;
+        line-height: 1.45 !important;
     }
     .hero-welcome-card {
         padding: 32px 18px !important;
         border-radius: 22px !important;
     }
     .btn-whatsapp-welcome,
-    .btn-works-welcome {
+    .btn-works-welcome,
+    .btn-service-cta {
         width: 100% !important;
         justify-content: center !important;
         padding: 13px 20px !important;
+        box-sizing: border-box !important;
     }
     .sobre-layout-grid {
         grid-template-columns: 1fr !important;
@@ -3648,6 +3820,69 @@ h1, h2, h3, h4, h5, h6 {
     }
     .sobre-page-hero {
         padding: calc(var(--nav-height, 56px) + 20px) 16px 32px 16px !important;
+    }
+    .sobre-bio-text h2 {
+        font-size: clamp(1.4rem, 4.8vw, 1.85rem) !important;
+        margin-bottom: 18px !important;
+    }
+    .sobre-bio-text p {
+        font-size: 0.95rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 16px !important;
+    }
+    .sobre-credentials-card {
+        padding: 20px 18px !important;
+        border-radius: 18px !important;
+    }
+    .sobre-credential-item {
+        font-size: 0.875rem !important;
+        line-height: 1.45 !important;
+    }
+    .sobre-cta-box {
+        padding: 36px 20px !important;
+        border-radius: 22px !important;
+        margin-top: 48px !important;
+    }
+    .sobre-cta-actions {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-section.hero-fullscreen {
+        padding: calc(var(--nav-height, 56px) + 14px) 12px 28px 12px !important;
+    }
+    .hero-glass-box-apple {
+        padding: 18px 14px 20px 14px !important;
+        border-radius: 18px !important;
+    }
+    .hero-display-title {
+        font-size: 1.35rem !important;
+    }
+    .hero-subhead {
+        font-size: 0.8125rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 14px !important;
+    }
+    .hero-eyebrow-pill {
+        font-size: 0.625rem !important;
+        padding: 4px 10px !important;
+        margin-bottom: 10px !important;
+    }
+    .service-conversion-card {
+        padding: 22px 16px !important;
+        border-radius: 18px !important;
+    }
+    .service-card-title {
+        font-size: 1.25rem !important;
+    }
+    .btn-whatsapp-welcome,
+    .btn-works-welcome,
+    .btn-service-cta {
+        padding: 12px 16px !important;
+        font-size: 0.8125rem !important;
     }
 }
 

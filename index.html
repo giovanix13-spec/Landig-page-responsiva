@@ -322,8 +322,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- CSS 2027-2028 Minimalismo Suíço & Apple Clean (v2028.9) -->
-    <link rel="stylesheet" href="style.css?v=2028.12">
+    <!-- CSS 2027-2028 Minimalismo Suíço & Apple Clean (v2028.13) -->
+    <link rel="stylesheet" href="style.css?v=2028.13">
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -405,7 +405,7 @@
                         </span>
                         
                         <h1 class="hero-display-title anim-hero-2">
-                            <span class="title-primary">Olá! Eu sou o Giovani,</span><br>
+                            <span class="title-primary">Olá! Eu sou o Giovani,</span>
                             <span class="title-accent">o seu designer profissional.</span>
                         </h1>
                         
@@ -413,16 +413,16 @@
                             Bem-vindo ao meu site! Você pode contar comigo para dar vida aos seus projetos. Basta clicar nos botões aqui da página para ver os meus trabalhos ou me chamar no botão do WhatsApp. Estou à disposição!
                         </p>
                         
-                        <div class="hero-actions anim-hero-4" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                        <div class="hero-actions anim-hero-4">
                             <!-- Botão WhatsApp com Alta Visibilidade -->
-                            <button type="button" class="btn btn-whatsapp-welcome" id="hero-whatsapp-btn" style="padding: 13px 28px; font-size: 0.9375rem;">
-                                <i class="ph ph-whatsapp-logo" style="font-size: 1.25rem;"></i>
+                            <button type="button" class="btn btn-whatsapp-welcome" id="hero-whatsapp-btn">
+                                <i class="ph ph-whatsapp-logo"></i>
                                 Chamar no WhatsApp
                             </button>
 
                             <!-- Botão Ver Trabalhos com Alta Visibilidade -->
-                            <a href="#trabalhos" class="btn btn-works-welcome" style="padding: 13px 28px; font-size: 0.9375rem;">
-                                <i class="ph ph-squares-four" style="font-size: 1.15rem;"></i>
+                            <a href="#trabalhos" class="btn btn-works-welcome">
+                                <i class="ph ph-squares-four"></i>
                                 Ver Trabalhos <span class="arrow">↓</span>
                             </a>
                         </div>
@@ -569,60 +569,68 @@
                     <!-- Bloco 1: Identidade Visual e Design -->
                     <div class="service-conversion-card">
                         <div>
-                            <div style="width: 52px; height: 52px; border-radius: 16px; background: #FFFFFF; color: #0066CC; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                            <div class="service-card-icon-wrap">
                                 <i class="ph ph-paint-brush-broad"></i>
                             </div>
-                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1D1D1F; letter-spacing: -0.02em; margin-bottom: 14px;">Identidade Visual e Design</h3>
-                            <p style="font-size: 1rem; line-height: 1.6; color: #424245; margin-bottom: 24px;">
+                            <h3 class="service-card-title">Identidade Visual e Design</h3>
+                            <p class="service-card-desc">
                                 Criamos a cara e a personalidade da sua empresa. De logotipos a materiais gráficos e embalagens, garanto que sua marca passe credibilidade e se destaque visualmente no mercado.
                             </p>
-                            <ul style="list-style: none; padding: 0; margin: 0 0 28px 0; display: flex; flex-direction: column; gap: 10px;">
-                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
-                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Criação e modernização de logotipos
+                            <ul class="service-check-list">
+                                <li class="service-check-item">
+                                    <i class="ph ph-check-circle"></i>
+                                    <span>Criação e modernização de logotipos</span>
                                 </li>
-                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
-                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Embalagens, rótulos e materiais impressos
+                                <li class="service-check-item">
+                                    <i class="ph ph-check-circle"></i>
+                                    <span>Embalagens, rótulos e materiais impressos</span>
                                 </li>
-                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
-                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Imagens profissionais para redes sociais
+                                <li class="service-check-item">
+                                    <i class="ph ph-check-circle"></i>
+                                    <span>Imagens profissionais para redes sociais</span>
                                 </li>
-                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
-                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Criação de sites modernos e responsivos
+                                <li class="service-check-item">
+                                    <i class="ph ph-check-circle"></i>
+                                    <span>Criação de sites modernos e responsivos</span>
                                 </li>
                             </ul>
                         </div>
-                        <button type="button" class="btn" onclick="sendToWhatsAppService('design')" style="background: #FFFFFF; color: #1D1D1F; border: 1px solid rgba(0,0,0,0.12); border-radius: 999px; padding: 13px 22px; font-weight: 600; font-size: 0.9375rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                            <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i> Pedir Orçamento de Design
+                        <button type="button" class="btn btn-service-cta" onclick="sendToWhatsAppService('design')">
+                            <i class="ph ph-whatsapp-logo"></i> Pedir Orçamento de Design
                         </button>
                     </div>
 
                     <!-- Bloco 2: Estratégia e Marketing Digital -->
                     <div class="service-conversion-card">
                         <div>
-                            <div style="width: 52px; height: 52px; border-radius: 16px; background: #FFFFFF; color: #0066CC; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                            <div class="service-card-icon-wrap">
                                 <i class="ph ph-chart-line-up"></i>
                             </div>
-                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1D1D1F; letter-spacing: -0.02em; margin-bottom: 14px;">Estratégia e Marketing Digital</h3>
-                            <p style="font-size: 1rem; line-height: 1.6; color: #424245; margin-bottom: 24px;">
+                            <h3 class="service-card-title">Estratégia e Marketing Digital</h3>
+                            <p class="service-card-desc">
                                 Ajudamos o seu negócio a ser visto pelas pessoas certas. Gerenciamos seus anúncios e montamos a estratégia perfeita para atrair mais clientes.
                             </p>
-                            <ul style="list-style: none; padding: 0; margin: 0 0 28px 0; display: flex; flex-direction: column; gap: 10px;">
-                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
-                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Anúncios no Google e no Instagram/Facebook
+                            <ul class="service-check-list">
+                                <li class="service-check-item">
+                                    <i class="ph ph-check-circle"></i>
+                                    <span>Anúncios no Google e no Instagram/Facebook</span>
                                 </li>
-                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
-                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Estratégia prática para atração de novos clientes
+                                <li class="service-check-item">
+                                    <i class="ph ph-check-circle"></i>
+                                    <span>Estratégia prática para atração de novos clientes</span>
                                 </li>
-                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
-                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Consultoria para valorização e posicionamento
+                                <li class="service-check-item">
+                                    <i class="ph ph-check-circle"></i>
+                                    <span>Consultoria para valorização e posicionamento</span>
                                 </li>
-                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
-                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Acompanhamento de resultados e vendas
+                                <li class="service-check-item">
+                                    <i class="ph ph-check-circle"></i>
+                                    <span>Acompanhamento de resultados e vendas</span>
                                 </li>
                             </ul>
                         </div>
-                        <button type="button" class="btn" onclick="sendToWhatsAppService('marketing')" style="background: #FFFFFF; color: #1D1D1F; border: 1px solid rgba(0,0,0,0.12); border-radius: 999px; padding: 13px 22px; font-weight: 600; font-size: 0.9375rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                            <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i> Falar sobre Anúncios & Marketing
+                        <button type="button" class="btn btn-service-cta" onclick="sendToWhatsAppService('marketing')">
+                            <i class="ph ph-whatsapp-logo"></i> Falar sobre Anúncios & Marketing
                         </button>
                     </div>
                 </div>
@@ -658,7 +666,7 @@
                 <div class="process-grid">
                     <div class="process-step">
                         <span class="step-number">01</span>
-                        <h4 class="step-title">Passo 1: Entendimento</h4>
+                        <h4 class="step-title">Entendimento</h4>
                         <p class="step-desc">
                             Mergulho no seu negócio para entender seus objetivos e o que te diferencia.
                         </p>
@@ -666,7 +674,7 @@
 
                     <div class="process-step">
                         <span class="step-number">02</span>
-                        <h4 class="step-title">Passo 2: O Plano</h4>
+                        <h4 class="step-title">O Plano</h4>
                         <p class="step-desc">
                             Definimos juntos o posicionamento e o caminho visual ideal para a sua marca.
                         </p>
@@ -674,7 +682,7 @@
 
                     <div class="process-step">
                         <span class="step-number">03</span>
-                        <h4 class="step-title">Passo 3: A Criação</h4>
+                        <h4 class="step-title">A Criação</h4>
                         <p class="step-desc">
                             Desenvolvo toda a identidade visual, cores e formatos com base no plano traçado.
                         </p>
@@ -682,7 +690,7 @@
 
                     <div class="process-step">
                         <span class="step-number">04</span>
-                        <h4 class="step-title">Passo 4: O Resultado</h4>
+                        <h4 class="step-title">O Resultado</h4>
                         <p class="step-desc">
                             Entregamos os materiais prontos para alavancar suas vendas.
                         </p>
@@ -985,8 +993,8 @@
 
                 <!-- Segmented Control Estilo Apple -->
                 <div class="apple-segmented-control">
-                    <button class="segmented-btn modal-tab-btn active" data-tab="servicos">Freelance & Projetos</button>
-                    <button class="segmented-btn modal-tab-btn" data-tab="recrutamento">Empresas & Contratação</button>
+                    <button class="segmented-btn modal-tab-btn active" data-tab="servicos">Projetos & Serviços</button>
+                    <button class="segmented-btn modal-tab-btn" data-tab="recrutamento">Vagas & Empresas</button>
                 </div>
             </div>
 
