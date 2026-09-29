@@ -233,7 +233,7 @@
               "position": 2,
               "name": "Sobre",
               "description": "Conheça a trajetória de mais de uma década, rigor suíço e método estratégico.",
-              "url": "https://giovanialmeida.store/#sobre"
+              "url": "https://giovanialmeida.store/sobre.html"
             },
             {
               "@type": "SiteNavigationElement",
@@ -323,7 +323,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS 2027-2028 Minimalismo Suíço & Apple Clean (v2028.9) -->
-    <link rel="stylesheet" href="style.css?v=2028.10">
+    <link rel="stylesheet" href="style.css?v=2028.11">
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -346,8 +346,8 @@
             <nav class="apple-nav-menu">
                 <a href="#trabalhos" class="apple-nav-link">Trabalhos</a>
                 <a href="cases.html" class="apple-nav-link">Cases</a>
-                <a href="#sobre" class="apple-nav-link">Sobre</a>
-                <a href="#autoridade" class="apple-nav-link">Autoridade</a>
+                <a href="#servicos" class="apple-nav-link">Serviços</a>
+                <a href="sobre.html" class="apple-nav-link">Sobre Mim</a>
                 <a href="#contato" class="apple-nav-link">Contato</a>
             </nav>
             
@@ -374,8 +374,8 @@
         <nav class="mobile-nav-links">
             <a href="#trabalhos" class="mobile-link">Trabalhos</a>
             <a href="cases.html" class="mobile-link highlight-link">Cases</a>
-            <a href="#sobre" class="mobile-link">Sobre</a>
-            <a href="#autoridade" class="mobile-link">Autoridade</a>
+            <a href="#servicos" class="mobile-link">Serviços</a>
+            <a href="sobre.html" class="mobile-link">Sobre Mim</a>
             <a href="#contato" class="mobile-link">Contato</a>
             <button class="mobile-link client-login-link" style="background: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; padding: 12px 24px; color: #fff; font-size: 1.1rem; margin-top: 1rem;">
                 <i class="ph ph-user"></i> Área do Cliente
@@ -384,63 +384,36 @@
     </div>
 
     <main>
-        <!-- 2. Hero Section: Fullscreen com Vídeo 100% Puro em FHD + Glass Texture Card e Text Animation -->
-        <section class="hero-section hero-fullscreen">
-            <!-- Background Video Layer com BANNER 2027 em Fidelidade Máxima (Sem Scrim / Sem Opacidade) -->
-            <div class="hero-video-bg-container">
-                <video id="heroVideo" autoplay loop muted playsinline preload="auto" class="hero-video-full">
-                    <source src="BANNER 2027.mp4" type="video/mp4">
-                    <source src="meu-video.mp4" type="video/mp4">
-                </video>
-            </div>
-            
-            <!-- Hero Content: Glass Box com Efeito Noise e Animações Fluidas Apple -->
-            <div class="container hero-content-overlay">
-                <div class="hero-glass-box-apple">
-                    <div class="glass-noise-layer"></div>
-                    <div class="hero-glass-inner">
-                        <span class="hero-eyebrow-pill anim-hero-1">
-                            <span class="hero-eyebrow-dot"></span>
-                            Direção de Arte & Estratégia de Marcas
-                        </span>
-                        <h1 class="hero-display-title anim-hero-2">
-                            <span class="title-primary">Design com rigor.</span>
-                            <span class="title-accent">Estratégia com propósito.</span>
-                        </h1>
-                        <p class="hero-subhead anim-hero-3">
-                            Crio soluções visuais fundamentadas em significado, proporção e clareza para marcas que buscam relevância duradoura.
-                        </p>
-                        
-                        <div class="hero-actions anim-hero-4">
-                            <a href="#trabalhos" class="btn btn-primary hero-btn-apple">Explorar Trabalhos</a>
-                            <a href="cases.html" class="btn btn-hero-secondary">
-                                Ver Cases Detalhados <span class="arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Indicador Sensorial de Scroll (Roll) -->
-            <a href="#visao" class="hero-scroll-indicator" aria-label="Rolar para baixo">
-                <span class="scroll-text">EXPLORAR</span>
-                <div class="scroll-mouse-icon">
-                    <div class="scroll-wheel"></div>
-                </div>
-            </a>
-        </section>
-
-        <!-- 3. Manifesto / Declaração de Posicionamento -->
-        <section id="visao" class="section-tight manifesto-section">
+        <!-- 2. Hero Section: Boas-Vindas & Apresentação (Foco em Conversão & Fundo #F5F5F7) -->
+        <section class="hero-welcome-section">
             <div class="container">
-                <div class="manifesto-grid">
-                    <span class="eyebrow">Filosofia de Design</span>
-                    <p class="manifesto-statement">
-                        "O design autêntico não existe para preencher espaços vazios. Ele existe para <mark>estruturar negócios</mark>, gerar clareza imediata e transformar marcas em referências de mercado."
+                <div class="hero-welcome-card">
+                    <span class="hero-eyebrow-pill" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 102, 204, 0.08); color: #0066CC; padding: 6px 16px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; border: 1px solid rgba(0, 102, 204, 0.15);">
+                        <span class="hero-eyebrow-dot" style="width: 7px; height: 7px; border-radius: 50%; background: #0066CC;"></span>
+                        Designer Profissional & Estrategista de Marcas
+                    </span>
+
+                    <h1 class="hero-welcome-title" style="font-size: clamp(1.85rem, 4.2vw, 2.75rem); font-weight: 800; line-height: 1.18; color: #1D1D1F; letter-spacing: -0.03em; margin-bottom: 20px;">
+                        Olá! Eu sou o Giovani,<br><span style="color: #0066CC;">o seu designer profissional.</span>
+                    </h1>
+
+                    <p class="hero-welcome-text" style="font-size: clamp(1rem, 2vw, 1.1875rem); line-height: 1.65; color: #424245; max-width: 680px; margin: 0 auto 32px; font-weight: 400;">
+                        Olá! Eu sou o Giovani, o seu designer profissional. Bem-vindo ao meu site! Você pode contar comigo para dar vida aos seus projetos. Basta clicar nos botões aqui da página para ver os meus trabalhos ou me chamar no botão do WhatsApp. Estou à disposição!
                     </p>
-                    <p class="body-regular" style="max-width: 620px; margin: 0 auto;">
-                        Abordagem orientada pelo minimalismo suíço: cada elemento gráfico possui função exata, eliminando o ruído para que a essência e o valor do produto se destaquem.
-                    </p>
+
+                    <div class="hero-welcome-actions" style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; width: 100%;">
+                        <!-- Botão WhatsApp com Alta Visibilidade -->
+                        <button type="button" class="btn-whatsapp-welcome" id="hero-whatsapp-btn">
+                            <i class="ph ph-whatsapp-logo" style="font-size: 1.35rem;"></i>
+                            Chamar no WhatsApp
+                        </button>
+
+                        <!-- Botão Ver Trabalhos com Alta Visibilidade -->
+                        <a href="#trabalhos" class="btn-works-welcome">
+                            <i class="ph ph-squares-four" style="font-size: 1.25rem;"></i>
+                            Ver Trabalhos <span class="arrow">↓</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -560,14 +533,89 @@
             </div>
         </section>
 
-        <!-- 5. Metodologia: Processo Suíço de 4 Fases -->
+        <!-- 3. Seção de Serviços Especializados (Foco em Soluções Claras para o Cliente) -->
+        <section id="servicos" class="services-layman-section">
+            <div class="container">
+                <div class="process-header-center" style="margin-bottom: 40px;">
+                    <span class="eyebrow">Como Posso Ajudar</span>
+                    <h2 class="section-heading">Serviços Para Fazer a Sua Empresa Crescer</h2>
+                    <p class="section-subhead">
+                        Soluções visuais e de divulgação pensadas para passar confiança e gerar mais vendas para o seu negócio.
+                    </p>
+                </div>
+
+                <div class="services-two-cards-grid">
+                    <!-- Bloco 1: Identidade Visual e Design -->
+                    <div class="service-conversion-card">
+                        <div>
+                            <div style="width: 52px; height: 52px; border-radius: 16px; background: #FFFFFF; color: #0066CC; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                                <i class="ph ph-paint-brush-broad"></i>
+                            </div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1D1D1F; letter-spacing: -0.02em; margin-bottom: 14px;">Identidade Visual e Design</h3>
+                            <p style="font-size: 1rem; line-height: 1.6; color: #424245; margin-bottom: 24px;">
+                                Criamos a cara e a personalidade da sua empresa. De logotipos a materiais gráficos e embalagens, garanto que sua marca passe credibilidade e se destaque visualmente no mercado.
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0 0 28px 0; display: flex; flex-direction: column; gap: 10px;">
+                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
+                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Criação e modernização de logotipos
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
+                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Embalagens, rótulos e materiais impressos
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
+                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Imagens profissionais para redes sociais
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
+                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Criação de sites modernos e responsivos
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn" onclick="sendToWhatsAppService('design')" style="background: #FFFFFF; color: #1D1D1F; border: 1px solid rgba(0,0,0,0.12); border-radius: 999px; padding: 13px 22px; font-weight: 600; font-size: 0.9375rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                            <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i> Pedir Orçamento de Design
+                        </button>
+                    </div>
+
+                    <!-- Bloco 2: Estratégia e Marketing Digital -->
+                    <div class="service-conversion-card">
+                        <div>
+                            <div style="width: 52px; height: 52px; border-radius: 16px; background: #FFFFFF; color: #0066CC; display: flex; align-items: center; justify-content: center; font-size: 1.65rem; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                                <i class="ph ph-chart-line-up"></i>
+                            </div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1D1D1F; letter-spacing: -0.02em; margin-bottom: 14px;">Estratégia e Marketing Digital</h3>
+                            <p style="font-size: 1rem; line-height: 1.6; color: #424245; margin-bottom: 24px;">
+                                Ajudamos o seu negócio a ser visto pelas pessoas certas. Gerenciamos seus anúncios e montamos a estratégia perfeita para atrair mais clientes.
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0 0 28px 0; display: flex; flex-direction: column; gap: 10px;">
+                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
+                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Anúncios no Google e no Instagram/Facebook
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
+                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Estratégia prática para atração de novos clientes
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
+                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Consultoria para valorização e posicionamento
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; color: #1D1D1F; font-weight: 500;">
+                                    <i class="ph ph-check-circle" style="color: #34C759; font-size: 1.15rem;"></i> Acompanhamento de resultados e vendas
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn" onclick="sendToWhatsAppService('marketing')" style="background: #FFFFFF; color: #1D1D1F; border: 1px solid rgba(0,0,0,0.12); border-radius: 999px; padding: 13px 22px; font-weight: 600; font-size: 0.9375rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                            <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i> Falar sobre Anúncios & Marketing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Metodologia: O Processo em 4 Passos Simples -->
         <section id="metodologia" class="section process-section">
             <div class="container">
                 <div class="process-header-center">
-                    <span class="eyebrow">Rigor e Previsibilidade</span>
-                    <h2 class="section-heading">Como eu construo valor</h2>
+                    <span class="eyebrow">Como Funciona</span>
+                    <h2 class="section-heading">O Processo em 4 Passos Simples</h2>
                     <p class="section-subhead">
-                        Um fluxo de trabalho disciplinado onde cada decisão visual é respaldada por objetivos concretos de negócio.
+                        Um fluxo claro, transparente e colaborativo para você acompanhar cada etapa do seu projeto com tranquilidade.
                     </p>
                 </div>
 
@@ -589,221 +637,68 @@
                 <div class="process-grid">
                     <div class="process-step">
                         <span class="step-number">01</span>
-                        <h4 class="step-title">Imersão & Diagnóstico</h4>
+                        <h4 class="step-title">Passo 1: Entendimento</h4>
                         <p class="step-desc">
-                            Investigação profunda do modelo de negócio, concorrência direta e comportamento do público-alvo para mapear diferenciais reais.
+                            Mergulho no seu negócio para entender seus objetivos e o que te diferencia.
                         </p>
                     </div>
 
                     <div class="process-step">
                         <span class="step-number">02</span>
-                        <h4 class="step-title">Estratégia & Conceito</h4>
+                        <h4 class="step-title">Passo 2: O Plano</h4>
                         <p class="step-desc">
-                            Definição de território de marca, posicionamento estratégico e diretrizes conceituais que servirão de guia para todas as manifestações.
+                            Definimos juntos o posicionamento e o caminho visual ideal para a sua marca.
                         </p>
                     </div>
 
                     <div class="process-step">
                         <span class="step-number">03</span>
-                        <h4 class="step-title">Design & Sistema Visual</h4>
+                        <h4 class="step-title">Passo 3: A Criação</h4>
                         <p class="step-desc">
-                            Desenvolvimento da identidade completa: tipografia, grids modulares, paleta de cores, ícones, embalagens e guidelines de aplicação.
+                            Desenvolvo toda a identidade visual, cores e formatos com base no plano traçado.
                         </p>
                     </div>
 
                     <div class="process-step">
                         <span class="step-number">04</span>
-                        <h4 class="step-title">Execução & Performance</h4>
+                        <h4 class="step-title">Passo 4: O Resultado</h4>
                         <p class="step-desc">
-                            Entrega dos ativos em alta fidelidade, suporte a equipes de marketing e alinhamento dos pontos de contato digitais e físicos.
+                            Entregamos os materiais prontos para alavancar suas vendas.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. Seção Sobre Mim (Biografia com Foco Editorial Limpo — Sem Bloco de Liderança) -->
-        <section id="sobre" class="section bio-editorial-section">
-            <div class="container">
-                <div class="bio-header-center">
-                    <span class="eyebrow">Biografia & Trajetória</span>
-                    <h2 class="section-heading">Processo, Organização e Significado.</h2>
-                    <p class="section-subhead" style="margin: 0 auto;">
-                        Uma visão estruturada que une sensibilidade artística e inteligência comercial para posicionar marcas de forma definitiva.
-                    </p>
-                </div>
-
-                <div class="bio-layout-grid">
-                    <!-- Coluna da Esquerda: Retrato de Galeria + Ação Direta -->
-                    <div class="bio-portrait-column">
-                        <div class="bio-photo-card">
-                            <img src="foto-perfil.png" alt="Giovani Almeida — Diretor de Arte" class="bio-img">
-                            <div class="bio-photo-caption">
-                                <strong>Giovani Almeida</strong>
-                                <span>Cajamar / São Paulo, Brasil</span>
-                            </div>
-                        </div>
-
-                        <button type="button" class="btn btn-secondary w-full btn-request-doc" data-document="Strategic Presentation" style="padding: 14px 20px; cursor: pointer;">
-                            <i class="ph ph-lock-key"></i> Solicitar Apresentação Estratégica (PDF)
-                        </button>
-                    </div>
-
-                    <!-- Coluna da Direita: Manifesto & Matriz Suíça de Especialidades -->
-                    <div class="bio-narrative-column">
-                        <div class="bio-text-block">
-                            <h3 class="bio-block-title">O design como catalisador de negócios</h3>
-                            <p class="body-large" style="color: var(--text-primary); margin-bottom: 16px;">
-                                Sou movido por processos criativos, organização e clareza conceitual. Gosto de entender o todo antes de propor a forma final, explorando ideias, referências e hipóteses até que cada detalhe faça sentido comercial e visual.
-                            </p>
-                            <p class="body-regular">
-                                Com mais de uma década de vivência prática em design e marketing estratégico, atuo na criação de identidades visuais sofisticadas e sistemas integrados que garantem percepção de alto valor, tração e relevância duradoura.
-                            </p>
-                        </div>
-
-                        <!-- Matriz Suíça de Especialidades (3 Colunas Limpas) -->
-                        <div class="skills-matrix-suisse">
-                            <!-- Coluna 1 -->
-                            <div class="matrix-column">
-                                <div class="matrix-col-header">
-                                    <i class="ph ph-paint-brush-broad"></i>
-                                    <h4>Design & Sistemas</h4>
-                                </div>
-                                <ul class="matrix-list">
-                                    <li>Branding & Identidade Visual</li>
-                                    <li>Rebranding de Marcas</li>
-                                    <li>Design de Embalagens & Rótulos</li>
-                                    <li>Direção de Arte Editorial</li>
-                                    <li>UI / Web Design</li>
-                                    <li>Design para Social Media</li>
-                                    <li>Campanhas Visuais Integradas</li>
-                                </ul>
-                            </div>
-
-                            <!-- Coluna 2 -->
-                            <div class="matrix-column">
-                                <div class="matrix-col-header">
-                                    <i class="ph ph-chart-line-up"></i>
-                                    <h4>Consultoria & Estratégia</h4>
-                                </div>
-                                <ul class="matrix-list">
-                                    <li><strong>Consultoria Estratégica de Marca</strong></li>
-                                    <li>Gestão de Riscos & Novas Oportunidades</li>
-                                    <li>Posicionamento & Rebranding</li>
-                                    <li>Planejamento Comercial & Trade PDV</li>
-                                    <li>Tráfego Pago & Performance (CRO)</li>
-                                    <li>Gestão Integrada de Comunicação</li>
-                                    <li>Análise de Métricas & Business LTV</li>
-                                </ul>
-                            </div>
-
-                            <!-- Coluna 3 -->
-                            <div class="matrix-column">
-                                <div class="matrix-col-header">
-                                    <i class="ph ph-cpu"></i>
-                                    <h4>Ferramentas & IA</h4>
-                                </div>
-                                <ul class="matrix-list">
-                                    <li>Adobe Photoshop & Illustrator</li>
-                                    <li>Adobe XD & Creative Cloud</li>
-                                    <li>Meta Business Manager</li>
-                                    <li>Google Analytics</li>
-                                    <li>Inteligência Artificial (Prompts)</li>
-                                    <li>Midjourney & ChatGPT</li>
-                                    <li>Notion & Fluxos Criativos</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card Pessoal & Lifestyle (Além do Design) — Padrão Apple Bento 2027 (Largura Total Centralizado) -->
-                <div class="apple-lifestyle-bento">
-                    <div class="lifestyle-media-frame">
-                        <img src="GIF ICONES.gif" alt="Giovani Almeida Avatar 3D" class="lifestyle-gif-img" loading="lazy">
-                    </div>
-                    <div class="lifestyle-info-content">
-                        <div class="lifestyle-stats-grid">
-                            <div class="lifestyle-stat-pill">
-                                <i class="ph ph-calendar"></i>
-                                <span>29 anos</span>
-                            </div>
-                            <div class="lifestyle-stat-pill">
-                                <i class="ph ph-heart-straight icon-heart-anim"></i>
-                                <span>Casado</span>
-                            </div>
-                            <div class="lifestyle-stat-pill">
-                                <i class="ph ph-users-three"></i>
-                                <span>Em família</span>
-                            </div>
-                            <div class="lifestyle-stat-pill">
-                                <i class="ph ph-dog icon-dog-anim"></i>
-                                <span>2 cachorros</span>
-                            </div>
-                        </div>
-                        
-                        <div class="lifestyle-hobbies-block">
-                            <span class="hobbies-label">Além do design:</span>
-                            <div class="hobbies-pills-row">
-                                <span class="hobby-pill"><i class="ph ph-airplane-tilt"></i> Viajar</span>
-                                <span class="hobby-pill"><i class="ph ph-cooking-pot"></i> Cozinhar</span>
-                                <span class="hobby-pill"><i class="ph ph-soccer-ball"></i> Futebol</span>
-                                <span class="hobby-pill"><i class="ph ph-game-controller"></i> Videogame</span>
-                                <span class="hobby-pill"><i class="ph ph-film-slate"></i> Cinema</span>
-                                <span class="hobby-pill"><i class="ph ph-palette"></i> Cultura e arte</span>
-                            </div>
-                        </div>
-
-                        <div class="lifestyle-quote-box">
-                            <i class="ph ph-quotes"></i>
-                            <p class="quote-text">"Acredito que boas ideias podem transformar realidades."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. Seção: Autoridade Executiva & Habilidades & Processos (Harmonizada Apple 2027) -->
-        <section id="autoridade" class="section executive-authority-section">
+        <!-- 5. Seção de Confiança & Clientes Atendidos (Sem Jargões Corporativos) -->
+        <section id="clientes" class="section executive-authority-section" style="background-color: #F5F5F7;">
             <div class="container">
                 <div class="authority-header authority-header-center">
-                    <span class="eyebrow">Validação Corporativa</span>
-                    <h2 class="section-heading">Autoridade Executiva</h2>
+                    <span class="eyebrow">Quem Já Confia</span>
+                    <h2 class="section-heading">Experiência Com Grandes e Pequenos Negócios</h2>
                     <p class="section-subhead">
-                        Transformando desafios complexos de vendas em rentáveis ecossistemas de marca. Operação construída por um sólido protocolo de atuação:
+                        De grandes redes consolidadas a comércios locais em expansão, dedicação total para valorizar cada marca:
                     </p>
-                </div>
-
-                <div class="protocol-flow-center-wrapper">
-                    <div class="protocol-flow-box">
-                        <span class="protocol-step"><strong>Diagnóstico</strong> (análise cirúrgica inicial)</span>
-                        <span class="protocol-arrow">→</span>
-                        <span class="protocol-step"><strong>Estratégia</strong> (road map e táticas)</span>
-                        <span class="protocol-arrow">→</span>
-                        <span class="protocol-step"><strong>Criação</strong> (design direcionado)</span>
-                        <span class="protocol-arrow">→</span>
-                        <span class="protocol-step"><strong>Implementação</strong> (ganho final de KPIs)</span>
-                    </div>
                 </div>
 
                 <div class="career-grid">
-                    <!-- Card 1: Empresas de Impacto -->
+                    <!-- Card 1: Grandes Marcas e Varejo -->
                     <div class="career-card">
                         <div class="card-icon-badge"><i class="ph ph-buildings"></i></div>
-                        <h3>Controle de Equity Corporativo</h3>
-                        <p>Elevei a atração e consolidação do posicionamento para as mais gigantescas redes:</p>
+                        <h3>Grandes Redes e Varejo</h3>
+                        <p>Projetos visuais e comunicação com grande destaque comercial:</p>
                         <ul class="career-list">
-                            <li><i class="ph ph-check-circle"></i> <div><strong>Carrefour:</strong> Alto faturamento e conversão agressiva e contínua</div></li>
-                            <li><i class="ph ph-check-circle"></i> <div><strong>Cia's de Tecnologia:</strong> Liderança e autoridade incontestável no nicho</div></li>
-                            <li><i class="ph ph-check-circle"></i> <div><strong>Holdings e Instituições:</strong> Padrão premium do ecossistema e compliance de marca</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div><strong>Carrefour:</strong> Campanhas e materiais promocionais de alto impacto</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div><strong>Empresas de Tecnologia:</strong> Marcas modernas que transmitem confiança</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div><strong>Comércios e Serviços:</strong> Visual profissional pronto para vender mais</div></li>
                         </ul>
                     </div>
 
-                    <!-- Card 2: Setor Farmacêutico -->
+                    <!-- Card 2: Setor Farmacêutico e Saúde -->
                     <div class="career-card">
                         <div class="card-icon-badge"><i class="ph ph-first-aid-kit"></i></div>
-                        <h3>Resultados e LTV na Saúde e Varejo</h3>
-                        <p>Revolução no modelo de aquisição e escala em drogarias. Transformação direta e sólida atração de clientes nas gigantes do atacado:</p>
+                        <h3>Saúde, Farmácias e Lojas</h3>
+                        <p>Fortalecimento de marca e comunicação visual para grandes redes da região:</p>
                         <div class="clients-tag-cloud">
                             <span>Drogaria Polvilho</span>
                             <span>Drogaria Estrela Dalva</span>
@@ -812,86 +707,25 @@
                         </div>
                     </div>
 
-                    <!-- Card 3: Soluções Digitais -->
+                    <!-- Card 3: Presença Digital e Vendas -->
                     <div class="career-card">
                         <div class="card-icon-badge"><i class="ph ph-rocket-launch"></i></div>
-                        <h3>Estratégia & ROI Digital Contínuo</h3>
-                        <p>Criação de esteiras escalonáveis focadas em alta extração e baixa barreira:</p>
+                        <h3>Presença Digital e Atração de Clientes</h3>
+                        <p>Criação de canais e campanhas práticas para conectar você ao seu cliente:</p>
                         <ul class="career-list">
-                            <li><i class="ph ph-arrows-merge"></i> <div>Multiplicidade e Canais Automatizados (App/iFood/API)</div></li>
-                            <li><i class="ph ph-robot"></i> <div>Sistemas avançados operacionais focado em CAC</div></li>
-                            <li><i class="ph ph-paint-brush-broad"></i> <div>Imagem premium impulsionando percepção do usuário</div></li>
-                            <li><i class="ph ph-chart-line-up"></i> <div>Metodologia aplicada com foco absoluto nas conversões de métricas</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div>Sites e páginas rápidas que funcionam perfeitamente no celular</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div>Anúncios bem direcionados para quem realmente quer comprar</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div>Materiais e postagens para redes sociais com padrão profissional</div></li>
+                            <li><i class="ph ph-check-circle"></i> <div>Atendimento humano e próximo em todas as etapas</div></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Banner Executivo Estilo Apple -->
+                <!-- Banner Conexão Direta -->
                 <div class="career-footer">
                     <div class="role-badge-apple">
-                        <span class="role-badge-tag">Direção Estratégica & Criativa</span>
-                        <p>Evolutivo e Diretor Executivo (Diretor de Arte / Estratégia). Meu ofício principal consiste em conectar branding com a extração da atenção corporativa do mercado.</p>
-                    </div>
-                </div>
-
-                <!-- Habilidades & Processos (Padrão Apple Minimalista) -->
-                <div class="skills-editorial-wrapper">
-                    <div class="skills-heading-minimal">
-                        <span class="section-label">Expertise Técnica</span>
-                        <h3>Habilidades & Processos</h3>
-                    </div>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <span class="skill-label">Design & Arte</span>
-                            <ul class="inline-chips">
-                                <li><span class="chip">Branding</span></li>
-                                <li><span class="chip">Identidade Visual</span></li>
-                                <li><span class="chip">Rebranding de Marca</span></li>
-                                <li><span class="chip">Direção de Arte</span></li>
-                                <li><span class="chip">Design Estratégico</span></li>
-                                <li><span class="chip">Design de Embalagem</span></li>
-                                <li><span class="chip">UI Design</span></li>
-                                <li><span class="chip">Web Design</span></li>
-                                <li><span class="chip">Criação de Campanhas</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <span class="skill-label">Consultoria & Estratégia</span>
-                            <ul class="inline-chips">
-                                <li><span class="chip" style="border-color: rgba(41, 151, 255, 0.4); color: #2997FF; font-weight: 600;">Consultoria de Marca</span></li>
-                                <li><span class="chip" style="border-color: rgba(41, 151, 255, 0.4); color: #2997FF; font-weight: 600;">Gestão de Riscos</span></li>
-                                <li><span class="chip">Novas Oportunidades</span></li>
-                                <li><span class="chip">Planejamento Estratégico</span></li>
-                                <li><span class="chip">Posicionamento de Mercado</span></li>
-                                <li><span class="chip">Trade Marketing & PDV</span></li>
-                                <li><span class="chip">Funil & Otimização (CRO)</span></li>
-                                <li><span class="chip">Estratégia de Negócios</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <span class="skill-label">Social & Tráfego</span>
-                            <ul class="inline-chips">
-                                <li><span class="chip">Gestão de Redes Sociais</span></li>
-                                <li><span class="chip">Conteúdo Visual</span></li>
-                                <li><span class="chip">Tráfego Pago</span></li>
-                                <li><span class="chip">Google Ads</span></li>
-                                <li><span class="chip">Meta Ads</span></li>
-                                <li><span class="chip">Análise de Dados/Relatórios</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <span class="skill-label">Softwares & Ferramentas</span>
-                            <ul class="inline-chips">
-                                <li><span class="chip">Adobe Photoshop</span></li>
-                                <li><span class="chip">Adobe Illustrator</span></li>
-                                <li><span class="chip">Adobe XD</span></li>
-                                <li><span class="chip">Meta Business Mngr.</span></li>
-                                <li><span class="chip">Google Analytics</span></li>
-                                <li><span class="chip">Notion</span></li>
-                                <li><span class="chip">IA & Midjourney</span></li>
-                            </ul>
-                        </div>
+                        <span class="role-badge-tag">Atendimento Direto & Personalizado</span>
+                        <p>Sem intermediários ou burocracia: você conversa diretamente com quem pensa e executa o design e a estratégia do seu negócio.</p>
                     </div>
                 </div>
             </div>
@@ -1097,7 +931,8 @@
                 <div class="footer-links">
                     <a href="#trabalhos">Trabalhos</a>
                     <a href="cases.html">Cases</a>
-                    <a href="#sobre">Sobre</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="sobre.html">Sobre Mim</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contato">Contato</a>
                     <a class="client-login-link" style="cursor: pointer;">Área do Cliente</a>

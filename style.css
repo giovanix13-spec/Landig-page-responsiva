@@ -3395,3 +3395,221 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* =========================================================================
+   12. PÁGINA INICIAL 2028: HERO DE BOAS-VINDAS & SERVIÇOS DE CONVERSÃO
+   ========================================================================= */
+.hero-welcome-section {
+    background-color: #F5F5F7;
+    padding: calc(var(--nav-height, 56px) + 36px) 20px 48px 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hero-welcome-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 28px;
+    padding: 48px 36px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 860px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-welcome-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.07);
+}
+
+.btn-whatsapp-welcome {
+    background-color: #25D366;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 15px 32px;
+    border-radius: var(--radius-pill);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.32);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+}
+
+.btn-whatsapp-welcome:hover {
+    background-color: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 26px rgba(37, 211, 102, 0.42);
+    color: #FFFFFF;
+}
+
+.btn-whatsapp-welcome:active {
+    transform: scale(0.97);
+}
+
+.btn-works-welcome {
+    background-color: #1D1D1F;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 15px 32px;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+}
+
+.btn-works-welcome:hover {
+    background-color: #333336;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    color: #FFFFFF;
+}
+
+.btn-works-welcome:active {
+    transform: scale(0.97);
+}
+
+.services-layman-section {
+    background-color: #FFFFFF;
+    padding: 72px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.services-two-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.service-conversion-card {
+    background: #F5F5F7;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 26px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-conversion-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 102, 204, 0.2);
+    background: #FFFFFF;
+}
+
+/* =========================================================================
+   13. PÁGINA DEDICADA "SOBRE MIM" (/sobre)
+   ========================================================================= */
+.sobre-page-hero {
+    background-color: #F5F5F7;
+    padding: calc(var(--nav-height, 56px) + 36px) 20px 48px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sobre-hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.sobre-content-section {
+    padding: 72px 0;
+    background-color: #FFFFFF;
+}
+
+.sobre-layout-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-bottom: 64px;
+}
+
+.sobre-bio-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #424245;
+}
+
+.sobre-bio-text p {
+    margin-bottom: 20px;
+}
+
+.sobre-credentials-card {
+    background: #F5F5F7;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 24px 26px;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sobre-credential-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9375rem;
+    color: #1D1D1F;
+    font-weight: 500;
+}
+
+.sobre-credential-item i {
+    font-size: 1.3rem;
+    color: var(--accent-blue);
+    flex-shrink: 0;
+}
+
+.sobre-cta-box {
+    background: #F5F5F7;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 28px;
+    padding: 48px 32px;
+    text-align: center;
+    margin-top: 64px;
+}
+
+@media (max-width: 768px) {
+    .services-two-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .service-conversion-card {
+        padding: 28px 20px !important;
+        border-radius: 22px !important;
+    }
+    .hero-welcome-card {
+        padding: 32px 18px !important;
+        border-radius: 22px !important;
+    }
+    .btn-whatsapp-welcome,
+    .btn-works-welcome {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 13px 20px !important;
+    }
+    .sobre-layout-grid {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+    }
+    .sobre-page-hero {
+        padding: calc(var(--nav-height, 56px) + 20px) 16px 32px 16px !important;
+    }
+}
+

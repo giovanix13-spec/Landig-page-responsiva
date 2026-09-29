@@ -68,9 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const heroWhatsAppBtn = document.getElementById('hero-whatsapp-btn');
+
+    window.sendToWhatsAppService = (serviceKey) => {
+        sendToWhatsApp(serviceKey);
+    };
+
     // Eventos WhatsApp Modal
     if (floatingWhatsAppBtn) floatingWhatsAppBtn.addEventListener('click', openWhatsAppModal);
     if (openContactModalBtn) openContactModalBtn.addEventListener('click', openWhatsAppModal);
+    if (heroWhatsAppBtn) heroWhatsAppBtn.addEventListener('click', openWhatsAppModal);
     if (openWhatsAppModalHub) openWhatsAppModalHub.addEventListener('click', openWhatsAppModal);
     if (closeWhatsAppModalBtn) closeWhatsAppModalBtn.addEventListener('click', closeWhatsAppModal);
 
@@ -341,13 +348,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Navbar Apple adaptativa (apenas adiciona 'on-hero' se o vídeo hero estiver na página)
+        // Navbar Apple adaptativa (mantém legibilidade nítida no padrão Apple)
         if (appleNav) {
-            if (heroVideo && scrollY <= vh * 0.7) {
-                appleNav.classList.add('on-hero');
-            } else {
-                appleNav.classList.remove('on-hero');
-            }
+            appleNav.classList.remove('on-hero');
         }
 
         isTicking = false;
