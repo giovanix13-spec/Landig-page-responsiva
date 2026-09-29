@@ -506,20 +506,24 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
 }
 
-/* Card de Apresentação em Fundo #F5F5F7 (Alta Conversão & Contraste) */
+/* Card de Apresentação em Fundo #F5F5F7 (Alta Conversão, Contraste Máximo & Legibilidade Impecável) */
 .hero-glass-box-apple.hero-card-light {
+    background: #F5F5F7 !important;
     background-color: #F5F5F7 !important;
-    background: rgba(245, 245, 247, 0.94) !important;
-    backdrop-filter: blur(28px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.8) !important;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
     color: #1D1D1F !important;
-    max-width: 780px !important;
-    padding: 36px 40px !important;
+    max-width: 740px !important;
+    padding: 34px 38px !important;
     border-radius: 28px !important;
     margin: 0 auto;
     box-sizing: border-box;
+}
+
+.hero-glass-box-apple.hero-card-light .glass-noise-layer {
+    display: none !important;
 }
 
 .hero-glass-box-apple.hero-card-light .hero-eyebrow-pill {
@@ -527,34 +531,55 @@ h1, h2, h3, h4, h5, h6 {
     color: #0066CC !important;
     border: 1px solid rgba(0, 102, 204, 0.18) !important;
     font-weight: 700 !important;
+    margin-bottom: 14px !important;
+    box-shadow: none !important;
 }
 
 .hero-glass-box-apple.hero-card-light .hero-eyebrow-dot {
     background: #0066CC !important;
-    box-shadow: 0 0 8px rgba(0, 102, 204, 0.5) !important;
+    box-shadow: none !important;
 }
 
-.hero-glass-box-apple.hero-card-light .hero-display-title,
-.hero-glass-box-apple.hero-card-light .hero-display-title .title-primary {
+.hero-glass-box-apple.hero-card-light .hero-display-title {
     color: #1D1D1F !important;
+    font-size: clamp(1.85rem, 3.8vw, 2.9rem) !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.18 !important;
+    margin-bottom: 14px !important;
     text-shadow: none !important;
+    filter: none !important;
+}
+
+.hero-glass-box-apple.hero-card-light .hero-display-title .title-primary {
+    display: inline !important;
+    color: #1D1D1F !important;
+    -webkit-text-fill-color: #1D1D1F !important;
+    text-shadow: none !important;
+    filter: none !important;
+    background: none !important;
 }
 
 .hero-glass-box-apple.hero-card-light .hero-display-title .title-accent {
+    display: inline !important;
     color: #0066CC !important;
+    -webkit-text-fill-color: #0066CC !important;
+    text-shadow: none !important;
+    filter: none !important;
     background: none !important;
     -webkit-background-clip: unset !important;
-    text-shadow: none !important;
 }
 
 .hero-glass-box-apple.hero-card-light .hero-subhead {
     color: #424245 !important;
+    -webkit-text-fill-color: #424245 !important;
     text-shadow: none !important;
-    font-size: clamp(0.9375rem, 1.4vw, 1.0625rem) !important;
-    line-height: 1.6 !important;
+    filter: none !important;
+    font-size: clamp(0.9375rem, 1.35vw, 1.0625rem) !important;
+    line-height: 1.55 !important;
     font-weight: 400 !important;
-    max-width: 660px !important;
-    margin: 0 auto 24px auto !important;
+    max-width: 620px !important;
+    margin: 0 auto 22px auto !important;
     overflow-wrap: break-word !important;
 }
 
@@ -578,30 +603,26 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-/* Animações Fluidas de Entrada */
+/* Animações Fluidas de Entrada (Sem desfoque/blur para máxima nitidez) */
 @keyframes heroGlassReveal {
     0% {
         opacity: 0;
-        transform: translateY(28px) scale(0.96);
-        filter: blur(8px);
+        transform: translateY(20px) scale(0.98);
     }
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
-        filter: blur(0);
     }
 }
 
 @keyframes heroTextSlideUp {
     0% {
         opacity: 0;
-        transform: translateY(18px);
-        filter: blur(4px);
+        transform: translateY(14px);
     }
     100% {
         opacity: 1;
         transform: translateY(0);
-        filter: blur(0);
     }
 }
 
@@ -620,60 +641,62 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Badge Eyebrow Apple com ponto luminoso */
 .hero-eyebrow-pill {
-    background: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #FFFFFF;
+    background: rgba(0, 102, 204, 0.08);
+    color: #0066CC;
+    border: 1px solid rgba(0, 102, 204, 0.18);
     padding: 6px 18px;
     border-radius: var(--radius-pill);
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .hero-eyebrow-dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background-color: #0071E3;
-    box-shadow: 0 0 10px #0071E3;
+    background-color: #0066CC;
 }
 
-/* Tipografia Conectada com Apple Titanium Gradient */
+/* Tipografia Hero: Foco em Legibilidade, Nitidez Absoluta e Sem Sombras Obstrutivas */
 .hero-display-title {
-    font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+    font-size: clamp(1.85rem, 3.8vw, 2.9rem);
     font-weight: 800;
     letter-spacing: -0.03em;
-    line-height: 1.12;
-    margin-bottom: 16px;
+    line-height: 1.18;
+    margin-bottom: 14px;
+    color: #1D1D1F;
+    text-shadow: none !important;
 }
 
 .hero-display-title .title-primary {
-    display: block;
-    color: #FFFFFF;
-    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    display: inline;
+    color: #1D1D1F !important;
+    -webkit-text-fill-color: #1D1D1F !important;
+    text-shadow: none !important;
 }
 
 .hero-display-title .title-accent {
-    display: block;
-    background: linear-gradient(180deg, #FFFFFF 20%, #B8B8C2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    display: inline;
+    color: #0066CC !important;
+    -webkit-text-fill-color: #0066CC !important;
+    text-shadow: none !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
 }
 
 .hero-subhead {
-    color: #D2D2D7;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
-    font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+    color: #424245 !important;
+    -webkit-text-fill-color: #424245 !important;
+    text-shadow: none !important;
+    font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
     max-width: 620px;
-    margin: 0 auto 24px auto;
+    margin: 0 auto 22px auto;
     line-height: 1.55;
 }
 
