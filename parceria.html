@@ -1,477 +1,243 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="dark scroll-smooth">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TDT7RTDV');</script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcerias Estratégicas | Giovani Almeida</title>
-    <meta name="description" content="Seu sócio de crescimento em marca, vendas e digital. Modelo de parceria com R$ 0,00 de investimento fixo inicial para microempreendedores.">
+    <title>Giovani Almeida • Parcerias Estratégicas & Crescimento</title>
     <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#0A0A0A">
-
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        ink: '#0A0A0A',
-                        panel: '#141414',
-                        raised: '#1F1F1F',
-                        snow: '#F5F5F7',
-                        mute: '#A3A3A3',
-                        gold: { DEFAULT: '#D4AF37', soft: '#E6CC7A', deep: '#9C7F24' }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        serif: ['Playfair Display', 'Georgia', 'serif']
-                    },
-                    boxShadow: {
-                        lift: '0 30px 60px -25px rgba(0,0,0,.9)',
-                        gold: '0 0 0 1px rgba(212,175,55,.55), 0 30px 70px -30px rgba(212,175,55,.35)'
+                        darkBg: '#0A0A0A',
+                        cardBg: '#141414',
+                        cardHover: '#1F1F1F',
+                        accentGold: '#D4AF37',
+                        textMuted: '#A3A3A3',
                     }
                 }
             }
         }
     </script>
-
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { background:#0A0A0A; color:#F5F5F7; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
-
-        /* Dourado metálico discreto */
-        .metal-gold { background:linear-gradient(135deg,#8C7432 0%,#D4AF37 35%,#F1E2A8 55%,#B8952C 100%); }
-        .text-metal { background:linear-gradient(120deg,#C9A636 0%,#F1E2A8 50%,#C9A636 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-        .metal-graphite { background:linear-gradient(135deg,#2A2A2A 0%,#3A3A3A 45%,#1F1F1F 100%); }
-
-        /* Luz suave no topo (sem cor vibrante) */
-        .hero-light { background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(245,245,247,.07), transparent 70%); }
-
-        /* Logos de clientes em padrão corporativo (monocromático suave -> cor no hover, sem inverter negativo) */
-        .logo-card {
-            background:#FFFFFF;
-            border:1px solid rgba(255,255,255,.12);
-            transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
-        }
-        .logo-card:hover {
-            transform:translateY(-3px);
-            border-color:rgba(212,175,55,.65);
-            box-shadow:0 16px 36px -14px rgba(0,0,0,.75);
-        }
-        .logo-mono {
-            filter:grayscale(1) contrast(1.05);
-            opacity:.78;
-            transition:filter .35s ease, opacity .35s ease, transform .35s ease;
-        }
-        .logo-card:hover .logo-mono { filter:grayscale(0) contrast(1); opacity:1; transform:scale(1.04); }
-
-        /* Reveal on scroll */
-        .reveal { opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
-        .reveal.is-visible { opacity:1; transform:none; }
-
-        /* Linhas da tabela de planos (estilo Netflix) */
-        .plan-row { padding:14px 0; border-bottom:1px solid rgba(255,255,255,.07); }
-        .plan-row:last-child { border-bottom:0; }
-        .plan-row dt { font-size:12px; color:#A3A3A3; font-weight:500; }
-        .plan-row dd { margin-top:2px; font-size:14px; color:#F5F5F7; font-weight:600; }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity:1; transform:none; transition:none; }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #F5F5F7; }
     </style>
 </head>
-<body class="font-sans selection:bg-gold selection:text-ink">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDT7RTDV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<body class="bg-darkBg text-white antialiased selection:bg-accentGold selection:text-black">
 
-    <!-- ===================== HEADER ===================== -->
-    <header id="topbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
-            <a href="index.html" class="min-w-0 flex items-center gap-2 text-[12px] sm:text-[13px] uppercase tracking-[0.2em]">
-                <strong class="font-bold text-snow whitespace-nowrap">Giovani Almeida</strong>
-                <span class="text-gold">&bull;</span>
-                <span class="hidden sm:inline text-mute font-medium truncate">Parcerias Estratégicas</span>
-            </a>
-            <a href="#" data-wa="Olá Giovani! Vi a sua apresentação de parceria e gostaria de conversar."
-               class="shrink-0 inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-gold/70 bg-white/[0.04] hover:bg-white/[0.08] px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-semibold text-snow transition-all duration-300">
-                <i class="ph ph-whatsapp-logo text-base text-gold"></i>
-                <span>Conversar no WhatsApp</span>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/85 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="font-bold tracking-wider text-sm md:text-base uppercase text-white">Giovani Almeida</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-white/10 text-accentGold font-medium">Parcerias</span>
+            </div>
+            <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20vi%20sua%20proposta%20de%20parceria%20e%20quero%20conversar." target="_blank" rel="noopener noreferrer"
+               class="bg-white text-black hover:bg-accentGold transition-all font-medium text-sm px-5 py-2.5 rounded-full shadow-lg">
+                Conversar no WhatsApp
             </a>
         </div>
     </header>
 
-    <main>
-        <!-- ===================== HERO ===================== -->
-        <section class="relative overflow-hidden pt-36 sm:pt-48 pb-24 sm:pb-32">
-            <div class="hero-light absolute inset-0 pointer-events-none"></div>
-            <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
-                <p class="reveal text-[11px] sm:text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-7">Uma proposta de parceria</p>
-
-                <h1 class="reveal font-serif text-[2.2rem] leading-[1.12] sm:text-6xl lg:text-[4.2rem] text-snow">
-                    Todo grande negócio começa com uma boa parceria.
-                    <span class="italic text-metal">Vamos construir o seu?</span>
-                </h1>
-
-                <p class="reveal mt-8 sm:mt-10 text-base sm:text-lg text-mute leading-relaxed max-w-2xl mx-auto">
-                    Você tem o dom do produto, a mão na massa e a vontade de fazer acontecer na nossa cidade. Mas começar sozinho, tentando adivinhar como atrair clientes, cuidar de redes sociais e precificar delivery, consome toda a sua energia.
-                    <span class="block mt-4 text-snow font-medium">Eu entro para ser o seu sócio de crescimento na parte de marca, vendas e digital.</span>
-                </p>
-
-                <div class="reveal mt-11 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-                    <a href="#planos" class="inline-flex items-center justify-center gap-2 rounded-full bg-snow hover:bg-white text-ink px-8 py-4 text-sm sm:text-base font-semibold transition-all duration-300 hover:-translate-y-0.5">
-                        Conhecer o Modelo de Parceria <i class="ph-bold ph-arrow-down"></i>
-                    </a>
-                    <a href="#como-funciona" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 hover:border-white/30 px-8 py-4 text-sm sm:text-base font-medium text-snow transition-all duration-300">
-                        Ver o que eu faço por você
-                    </a>
-                </div>
-
-                <!-- Linha do tempo da parceria -->
-                <ol class="reveal mt-20 grid grid-cols-3 gap-2 sm:gap-6 text-left max-w-2xl mx-auto">
-                    <li class="border-t border-gold/60 pt-4">
-                        <span class="text-[11px] text-gold font-semibold tracking-widest">01</span>
-                        <p class="mt-1 text-xs sm:text-sm text-snow font-medium">A sua marca</p>
-                    </li>
-                    <li class="border-t border-white/15 pt-4">
-                        <span class="text-[11px] text-mute font-semibold tracking-widest">02</span>
-                        <p class="mt-1 text-xs sm:text-sm text-snow font-medium">Os seus canais de venda</p>
-                    </li>
-                    <li class="border-t border-white/15 pt-4">
-                        <span class="text-[11px] text-mute font-semibold tracking-widest">03</span>
-                        <p class="mt-1 text-xs sm:text-sm text-snow font-medium">Crescemos juntos</p>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- ===================== SEÇÃO 1: MARCA ===================== -->
-        <section id="como-funciona" class="py-24 sm:py-32 border-t border-white/[0.06]">
-            <div class="max-w-6xl mx-auto px-5 sm:px-8">
-                <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
-                    <div class="reveal">
-                        <p class="text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Passo 1</p>
-                        <h2 class="mt-4 font-serif text-3xl sm:text-5xl leading-tight">O primeiro passo é ter uma marca que dá vontade de comprar.</h2>
-                        <p class="mt-6 text-mute text-base sm:text-lg leading-relaxed">
-                            Começamos do zero: um logotipo profissional, cores e letras próprias, embalagens, fachada e posts com a mesma cara. Quando a marca parece confiável, o cliente para, olha e compra. Na rua e no celular.
-                        </p>
-                        <ul class="mt-8 grid grid-cols-2 gap-3 text-sm">
-                            <li class="flex items-center gap-2.5 rounded-xl bg-panel border border-white/[0.06] px-4 py-3"><i class="ph ph-pen-nib text-gold text-lg"></i>Logotipo</li>
-                            <li class="flex items-center gap-2.5 rounded-xl bg-panel border border-white/[0.06] px-4 py-3"><i class="ph ph-palette text-gold text-lg"></i>Cores e letras</li>
-                            <li class="flex items-center gap-2.5 rounded-xl bg-panel border border-white/[0.06] px-4 py-3"><i class="ph ph-package text-gold text-lg"></i>Embalagens</li>
-                            <li class="flex items-center gap-2.5 rounded-xl bg-panel border border-white/[0.06] px-4 py-3"><i class="ph ph-storefront text-gold text-lg"></i>Fachada e cardápio</li>
-                        </ul>
-                    </div>
-
-                    <!-- Antes e Depois (exemplo: rotisseria de bairro) -->
-                    <div class="reveal">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs text-mute">Exemplo prático: rotisseria de bairro</span>
-                            <div class="inline-flex rounded-full bg-panel border border-white/10 p-1 text-xs font-semibold" role="tablist">
-                                <button type="button" data-ba="antes" class="ba-btn rounded-full px-4 py-1.5 text-mute transition-colors">Antes</button>
-                                <button type="button" data-ba="depois" class="ba-btn rounded-full px-4 py-1.5 bg-snow text-ink transition-colors">Depois</button>
-                            </div>
-                        </div>
-
-                        <div class="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/[0.08] bg-panel shadow-lift">
-                            <!-- ANTES -->
-                            <div id="ba-antes" class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-8 bg-[#d9d9d9] opacity-0 transition-opacity duration-500">
-                                <div class="bg-white border-4 border-red-600 px-6 py-4 rotate-[-2deg] shadow">
-                                    <p style="font-family:Arial,sans-serif" class="text-red-600 font-bold text-2xl sm:text-3xl text-center leading-tight">FRANGO ASSADO<br><span class="text-black text-lg">do Zé</span></p>
-                                </div>
-                                <p style="font-family:'Comic Sans MS',Arial,sans-serif" class="text-black text-sm sm:text-base text-center">Aceitamos encomendas!!! Zap 11 9xxxx-xxxx</p>
-                                <span class="absolute bottom-4 left-4 text-[11px] font-semibold uppercase tracking-widest text-black/50">Sem identidade</span>
-                            </div>
-
-                            <!-- DEPOIS -->
-                            <div id="ba-depois" class="absolute inset-0 flex flex-col items-center justify-center p-8 bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] transition-opacity duration-500">
-                                <svg viewBox="0 0 120 120" class="w-20 h-20 sm:w-24 sm:h-24" aria-hidden="true">
-                                    <circle cx="60" cy="60" r="56" fill="none" stroke="#D4AF37" stroke-width="2"/>
-                                    <circle cx="60" cy="60" r="49" fill="none" stroke="#D4AF37" stroke-opacity=".35" stroke-width="1"/>
-                                    <path d="M44 74c0-14 8-26 18-30 8-3 16 1 16 9 0 4-2 7-6 8 5 2 8 6 8 11 0 8-8 14-18 14-11 0-18-5-18-12z" fill="#D4AF37"/>
-                                    <path d="M40 86h40M46 92h28" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
-                                    <path d="M52 36c2-4 0-7 2-10M60 34c2-4 0-7 2-10M68 36c2-4 0-7 2-10" stroke="#F5F5F7" stroke-opacity=".6" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-                                </svg>
-                                <p class="mt-5 font-serif text-3xl sm:text-4xl text-snow tracking-wide">Brasa do Zé</p>
-                                <p class="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.4em] text-gold">Rotisseria &bull; Desde 2026</p>
-                                <div class="mt-7 flex flex-wrap justify-center gap-2 text-[11px] text-mute">
-                                    <span class="rounded-full border border-white/10 px-3 py-1">Embalagem</span>
-                                    <span class="rounded-full border border-white/10 px-3 py-1">Fachada</span>
-                                    <span class="rounded-full border border-white/10 px-3 py-1">Instagram</span>
-                                    <span class="rounded-full border border-white/10 px-3 py-1">iFood</span>
-                                </div>
-                                <span class="absolute bottom-4 left-4 text-[11px] font-semibold uppercase tracking-widest text-gold/80">Marca profissional</span>
-                            </div>
-                        </div>
-
-                        <!-- Caso real do segmento alimentação -->
-                        <div class="mt-4 flex items-center gap-4 rounded-2xl bg-panel border border-white/[0.06] p-4">
-                            <div class="w-16 h-12 rounded-lg bg-white flex items-center justify-center overflow-hidden shrink-0">
-                                <img src="assets/clientes/Prancheta 10.png" alt="Sabor da Vovó Marmitaria" class="w-full h-full object-contain scale-125" loading="lazy">
-                            </div>
-                            <p class="text-xs sm:text-sm text-mute leading-snug"><strong class="text-snow font-semibold">Caso real:</strong> Sabor da Vovó Marmitaria. Marca criada do zero para o delivery da região.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== SEÇÃO 2: ECOSSISTEMA DE VENDAS ===================== -->
-        <section class="py-24 sm:py-32 bg-panel border-y border-white/[0.06]">
-            <div class="max-w-6xl mx-auto px-5 sm:px-8">
-                <div class="reveal max-w-2xl">
-                    <p class="text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Passo 2</p>
-                    <h2 class="mt-4 font-serif text-3xl sm:text-5xl leading-tight">Depois, colocamos o seu negócio para vender. Explicado sem complicação.</h2>
-                    <p class="mt-6 text-mute text-base sm:text-lg">Três frentes trabalhando juntas para o cliente da sua região encontrar você, confiar e pedir.</p>
-                </div>
-
-                <div class="mt-14 grid gap-5 md:grid-cols-3">
-                    <!-- Delivery -->
-                    <article class="reveal group rounded-3xl bg-raised border border-white/[0.06] p-7 sm:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/40 flex flex-col">
-                        <div class="w-12 h-12 rounded-2xl bg-ink border border-white/10 flex items-center justify-center"><i class="ph ph-moped text-2xl text-gold"></i></div>
-                        <h3 class="mt-6 text-xl font-semibold">Cardápio e apps de delivery</h3>
-                        <p class="mt-3 text-sm text-mute leading-relaxed flex-1">Eu calculo o preço certo de cada prato e cadastro tudo bem feito nos aplicativos. Assim a taxa do app não come o seu lucro.</p>
-                        <div class="mt-6 flex flex-wrap gap-2 text-[11px] font-medium text-mute">
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">iFood</span>
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Rappi</span>
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Aiqfome</span>
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Zé Delivery</span>
-                        </div>
-                    </article>
-
-                    <!-- Anúncios -->
-                    <article class="reveal group rounded-3xl bg-raised border border-white/[0.06] p-7 sm:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/40 flex flex-col">
-                        <div class="w-12 h-12 rounded-2xl bg-ink border border-white/10 flex items-center justify-center"><i class="ph ph-crosshair text-2xl text-gold"></i></div>
-                        <h3 class="mt-6 text-xl font-semibold">Anúncios na sua cidade</h3>
-                        <p class="mt-3 text-sm text-mute leading-relaxed flex-1">Anúncios que aparecem só para quem mora a poucos quilômetros da sua loja. Nada de gastar dinheiro com quem nunca vai comprar de você.</p>
-                        <div class="mt-6 flex flex-wrap gap-2 text-[11px] font-medium text-mute">
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Instagram e Facebook</span>
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Google</span>
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">TikTok</span>
-                        </div>
-                    </article>
-
-                    <!-- Google Maps & WhatsApp -->
-                    <article class="reveal group rounded-3xl bg-raised border border-white/[0.06] p-7 sm:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/40 flex flex-col">
-                        <div class="w-12 h-12 rounded-2xl bg-ink border border-white/10 flex items-center justify-center"><i class="ph ph-map-pin text-2xl text-gold"></i></div>
-                        <h3 class="mt-6 text-xl font-semibold">Google Maps e WhatsApp</h3>
-                        <p class="mt-3 text-sm text-mute leading-relaxed flex-1">Quando alguém buscar "frango assado perto de mim", a sua loja aparece no mapa, com fotos, avaliações e um botão direto para pedir no WhatsApp.</p>
-                        <div class="mt-6 flex flex-wrap gap-2 text-[11px] font-medium text-mute">
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Perfil no Google</span>
-                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Link de pedido</span>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Fluxo simples -->
-                <div class="reveal mt-10 rounded-3xl border border-white/[0.06] bg-ink p-6 sm:p-8">
-                    <p class="text-xs text-mute mb-5">O caminho do seu cliente</p>
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-2 text-sm">
-                        <div class="flex items-center gap-3 sm:flex-1"><span class="w-8 h-8 rounded-full bg-raised flex items-center justify-center text-xs font-semibold">1</span>Vê o anúncio ou acha no mapa</div>
-                        <i class="ph ph-arrow-right text-gold hidden sm:block"></i>
-                        <div class="flex items-center gap-3 sm:flex-1"><span class="w-8 h-8 rounded-full bg-raised flex items-center justify-center text-xs font-semibold">2</span>Confia na marca bonita</div>
-                        <i class="ph ph-arrow-right text-gold hidden sm:block"></i>
-                        <div class="flex items-center gap-3 sm:flex-1"><span class="w-8 h-8 rounded-full bg-raised flex items-center justify-center text-xs font-semibold">3</span>Pede no WhatsApp ou app</div>
-                        <i class="ph ph-arrow-right text-gold hidden sm:block"></i>
-                        <div class="flex items-center gap-3 sm:flex-1"><span class="w-8 h-8 rounded-full metal-gold text-ink flex items-center justify-center text-xs font-bold">4</span><strong class="font-semibold">Dinheiro no seu caixa</strong></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== SEÇÃO 3: PLANOS (ESTILO NETFLIX) ===================== -->
-        <section id="planos" class="py-24 sm:py-32">
-            <div class="max-w-6xl mx-auto px-5 sm:px-8">
-                <div class="reveal max-w-2xl">
-                    <p class="text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Passo 3</p>
-                    <h2 class="mt-4 font-serif text-3xl sm:text-5xl leading-tight">Escolha o melhor formato para o seu momento.</h2>
-                    <p class="mt-5 text-mute text-base sm:text-lg">Para quem está começando, a proposta é simples: você não paga nada para eu começar.</p>
-                </div>
-
-                <div class="mt-14 grid gap-5 lg:grid-cols-3 lg:items-start">
-                    <!-- PLANO INDICADO -->
-                    <article class="reveal plan-card rounded-3xl bg-panel border border-gold/50 shadow-gold p-2.5 transition-transform duration-500 hover:-translate-y-1.5 lg:order-1">
-                        <div class="metal-gold rounded-2xl p-5 text-ink relative">
-                            <p class="text-lg font-bold">Sócio de Crescimento</p>
-                            <p class="text-xs font-semibold opacity-80">Microempreendedores &bull; Indicado para você</p>
-                            <span class="absolute right-4 bottom-4 w-6 h-6 rounded-full bg-ink flex items-center justify-center"><i class="ph-bold ph-check text-gold text-sm"></i></span>
-                        </div>
-                        <dl class="px-4 sm:px-5 pt-2 pb-3">
-                            <div class="plan-row"><dt>Investimento fixo de serviço</dt><dd class="!text-2xl !font-bold text-metal">R$ 0,00 inicial</dd></div>
-                            <div class="plan-row"><dt>Como eu ganho</dt><dd>Porcentagem justa sobre o faturamento gerado em conjunto</dd></div>
-                            <div class="plan-row"><dt>Marca e logotipo</dt><dd>Incluso</dd></div>
-                            <div class="plan-row"><dt>Cardápio e apps de delivery</dt><dd>Incluso</dd></div>
-                            <div class="plan-row"><dt>Anúncios e Google Maps</dt><dd>Incluso</dd></div>
-                            <div class="plan-row"><dt>Se você não vender</dt><dd>Você não paga taxa de serviço</dd></div>
-                            <div class="plan-row"><dt>Risco para o seu caixa</dt><dd class="text-gold">Zero</dd></div>
-                        </dl>
-                        <a href="#" data-wa="Olá Giovani! Quero entender melhor o plano Sócio de Crescimento (Ganha-Ganha)."
-                           class="mx-2.5 mb-2.5 flex items-center justify-center gap-2 rounded-2xl bg-snow hover:bg-white text-ink py-4 text-sm font-semibold transition-colors">
-                            Quero ser sócio <i class="ph-bold ph-arrow-right"></i>
-                        </a>
-                    </article>
-
-                    <!-- RETAINER -->
-                    <article class="reveal rounded-3xl bg-panel border border-white/[0.08] p-2.5 transition-all duration-500 hover:-translate-y-1.5 hover:border-white/20 lg:order-2">
-                        <div class="metal-graphite rounded-2xl p-5">
-                            <p class="text-lg font-bold">Retainer Mensal</p>
-                            <p class="text-xs font-semibold text-mute">Empresas médias</p>
-                        </div>
-                        <dl class="px-4 sm:px-5 pt-2 pb-3">
-                            <div class="plan-row"><dt>Investimento mensal</dt><dd>R$ 1.500 a R$ 3.000</dd></div>
-                            <div class="plan-row"><dt>Como funciona</dt><dd>Valor fixo pela gestão contínua</dd></div>
-                            <div class="plan-row"><dt>Redes sociais e anúncios</dt><dd>Incluso</dd></div>
-                            <div class="plan-row"><dt>Relatório de resultados</dt><dd>Mensal</dd></div>
-                            <div class="plan-row"><dt>Indicado para</dt><dd>Quem já vende bem e quer crescer mais</dd></div>
-                        </dl>
-                        <a href="#" data-wa="Olá Giovani! Gostaria de saber mais sobre o Retainer Mensal para a minha empresa."
-                           class="mx-2.5 mb-2.5 flex items-center justify-center gap-2 rounded-2xl border border-white/10 hover:bg-white/[0.06] py-4 text-sm font-medium transition-colors">
-                            Consultar
-                        </a>
-                    </article>
-
-                    <!-- PROJETO FECHADO -->
-                    <article class="reveal rounded-3xl bg-panel border border-white/[0.08] p-2.5 transition-all duration-500 hover:-translate-y-1.5 hover:border-white/20 lg:order-3">
-                        <div class="metal-graphite rounded-2xl p-5">
-                            <p class="text-lg font-bold">Projeto Fechado</p>
-                            <p class="text-xs font-semibold text-mute">Empresas grandes</p>
-                        </div>
-                        <dl class="px-4 sm:px-5 pt-2 pb-3">
-                            <div class="plan-row"><dt>Investimento</dt><dd>A partir de R$ 5.000</dd></div>
-                            <div class="plan-row"><dt>Como funciona</dt><dd>Escopo e prazo definidos no início</dd></div>
-                            <div class="plan-row"><dt>Rebranding e expansão</dt><dd>Incluso</dd></div>
-                            <div class="plan-row"><dt>Consultoria estratégica</dt><dd>Incluso</dd></div>
-                            <div class="plan-row"><dt>Indicado para</dt><dd>Operações já consolidadas</dd></div>
-                        </dl>
-                        <a href="#" data-wa="Olá Giovani! Gostaria de solicitar um orçamento de Projeto Fechado."
-                           class="mx-2.5 mb-2.5 flex items-center justify-center gap-2 rounded-2xl border border-white/10 hover:bg-white/[0.06] py-4 text-sm font-medium transition-colors">
-                            Solicitar orçamento
-                        </a>
-                    </article>
-                </div>
-
-                <!-- Explicação Ganha-Ganha -->
-                <div class="reveal mt-12 grid gap-8 lg:grid-cols-5 rounded-3xl bg-panel border border-white/[0.06] p-7 sm:p-10">
-                    <div class="lg:col-span-2">
-                        <p class="text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">A proposta Ganha-Ganha</p>
-                        <h3 class="mt-4 font-serif text-2xl sm:text-3xl leading-snug">Eu só ganho quando você ganha.</h3>
-                    </div>
-                    <div class="lg:col-span-3 text-mute text-sm sm:text-base leading-relaxed space-y-4">
-                        <p>Você não paga nada para eu começar. Eu entro como sócio de marketing: faço a marca, cuido das redes, dos anúncios e das vendas.</p>
-                        <p>Nós combinamos apenas uma <strong class="text-snow font-semibold">porcentagem justa sobre o faturamento</strong> que o negócio gerar em conjunto. Se você não vender, você não me paga taxa de serviço.</p>
-                        <p class="flex items-start gap-2 text-snow"><i class="ph-fill ph-shield-check text-gold text-xl shrink-0"></i>Risco zero para o seu caixa. O valor dos anúncios, quando houver, é pago direto às plataformas e combinado com você antes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== SEÇÃO 4: AUTORIDADE / LOGOS ===================== -->
-        <section class="py-24 sm:py-28 bg-panel border-y border-white/[0.06]">
-            <div class="max-w-6xl mx-auto px-5 sm:px-8">
-                <p class="reveal text-center text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Marcas que confiam no processo</p>
-                <p class="reveal mt-4 text-center text-mute text-sm sm:text-base max-w-xl mx-auto">Mais de 10 anos liderando projetos de marca e comunicação, do grande varejo ao comércio de bairro.</p>
-
-                <div id="logoGrid" class="reveal mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 items-center"></div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ===================== FOOTER / CTA ===================== -->
-    <footer>
-        <div class="max-w-3xl mx-auto px-5 sm:px-8 py-28 sm:py-36 text-center">
-            <i class="reveal ph ph-coffee text-4xl text-gold"></i>
-            <h2 class="reveal mt-6 font-serif text-3xl sm:text-5xl leading-tight">Vamos tomar um café e conversar sobre o seu projeto?</h2>
-            <p class="reveal mt-6 text-mute text-base sm:text-lg">Sem compromisso e sem palavras difíceis. Uma conversa sincera para ver se faz sentido construirmos isso juntos.</p>
-            <a href="#" data-wa="Olá Giovani! Vamos marcar um café para conversar sobre o meu projeto?"
-               class="reveal mt-10 inline-flex items-center justify-center gap-2.5 rounded-full metal-gold text-ink px-9 py-4 text-base font-bold transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 w-full sm:w-auto">
-                <i class="ph-bold ph-whatsapp-logo text-xl"></i> Chamar no WhatsApp
+    <!-- Hero Section -->
+    <section class="py-20 md:py-28 px-6 max-w-5xl mx-auto text-center">
+        <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-accentGold tracking-widest uppercase">
+            Aliança Comercial & Estratégia de Vendas
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+            Todo grande negócio começa com uma <span class="text-accentGold">boa parceria.</span> Vamos construir o seu?
+        </h1>
+        <p class="text-lg md:text-xl text-textMuted max-w-3xl mx-auto mb-10 leading-relaxed">
+            Você tem o domínio do produto, a mão na massa e a vontade de fazer acontecer na nossa cidade. Mas tentar adivinhar como atrair clientes, cuidar de redes sociais, fotos, aplicativos e anúncios consome toda a sua energia. <strong class="text-white">Eu entro para ser o seu sócio de crescimento.</strong>
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#planos" class="bg-accentGold text-black font-semibold px-8 py-4 rounded-xl hover:bg-white transition-all shadow-xl">
+                Ver Modelos de Parceria e Investimento
             </a>
         </div>
-        <div class="border-t border-white/[0.06]">
-            <div class="max-w-6xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-mute">
-                <p>&copy; <span id="year"></span> Giovani Almeida &bull; Cajamar, SP</p>
-                <nav class="flex gap-5"><a href="index.html" class="hover:text-snow transition-colors">Site</a><a href="cases.html" class="hover:text-snow transition-colors">Cases</a><a href="sobre.html" class="hover:text-snow transition-colors">Sobre</a></nav>
+    </section>
+
+    <!-- Seção 1: Identidade Visual & O Início -->
+    <section class="py-16 px-6 max-w-6xl mx-auto border-t border-white/10">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Passo 1: A Vitrine</span>
+                <h2 class="text-3xl font-bold mt-2 mb-4">Criação de Logotipo, Identidade & Fotos</h2>
+                <p class="text-textMuted leading-relaxed mb-6">
+                    Antes de vender, a marca precisa transpirar qualidade. Iniciamos criando uma identidade visual marcante (como por exemplo, para comércios locais, rotisserias e marcas de frango assado e refeições), fotografias profissionais dos produtos e cadastros atrativos que chamam atenção de imediato na rua e no digital.
+                </p>
+                <ul class="space-y-3 text-sm text-textMuted">
+                    <li class="flex items-center gap-2"><span class="text-accentGold">✓</span> Logotipo profissional e manual de marca</li>
+                    <li class="flex items-center gap-2"><span class="text-accentGold">✓</span> Fotos e padronização visual dos produtos</li>
+                    <li class="flex items-center gap-2"><span class="text-accentGold">✓</span> Posicionamento correto no Google Maps</li>
+                </ul>
+            </div>
+            <div class="bg-cardBg border border-white/10 p-8 rounded-2xl shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-accentGold/10 rounded-full blur-3xl"></div>
+                <h3 class="font-bold text-lg mb-2 text-accentGold">Exemplo Prático de Nicho (Rotisseria / Frango Assado)</h3>
+                <p class="text-sm text-textMuted mb-4">Estruturação completa de cardápio visual, imagens apetitosas e embalagens que geram desejo imediato no consumidor local.</p>
+                <div class="p-4 bg-black/40 rounded-xl border border-white/5 text-xs font-mono text-textMuted">
+                    Status: Vitrine Digital Pronta e Otimizada para Conversão 🚀
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Seção 2: O Ecossistema de Vendas (Apps & Anúncios com Valores e Alcances) -->
+    <section class="py-16 px-6 max-w-6xl mx-auto border-t border-white/10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Canais de Venda & Tráfego</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Onde o seu cliente está, nós vamos buscar</h2>
+            <p class="text-textMuted">Gestão completa multicanal e consultoria de precificação para garantir que as taxas dos aplicativos não esmaguem o seu lucro.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Card 1: Apps de Delivery -->
+            <div class="bg-cardBg border border-white/10 p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold mb-3 text-accentGold">Apps de Delivery & Precificação</h3>
+                    <p class="text-sm text-textMuted mb-6">Consultoria especializada e cadastros otimizados nas principais praças de entrega da região:</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-2.5 py-1 bg-white/5 rounded border border-white/10">iFood</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded border border-white/10">Rappi</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded border border-white/10">Aiqfome</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded border border-white/10">99Food</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded border border-white/10">Zé Delivery</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded border border-white/10">Uber Eats</span>
+                    </div>
+                </div>
+                <p class="text-xs text-textMuted mt-6 pt-4 border-t border-white/10">Foco: Ajuste de margem real para que o delivery traga lucro líquido seguro.</p>
+            </div>
+
+            <!-- Card 2: Tráfego Pago & Alcance -->
+            <div class="bg-cardBg border border-white/10 p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold mb-3 text-accentGold">Anúncios Pagos (Mídia Local)</h3>
+                    <p class="text-sm text-textMuted mb-4">Gestão profissional nas principais plataformas com investimento escalável:</p>
+                    <ul class="space-y-2 text-xs text-textMuted mb-6">
+                        <li>• <strong class="text-white">Meta Ads (Insta / Face):</strong> Anúncios geolocalizados no bairro/cidade.</li>
+                        <li>• <strong class="text-white">Google Ads & Maps:</strong> Captura de clientes buscando agora.</li>
+                        <li>• <strong class="text-white">TikTok Ads:</strong> Vídeos dinâmicos de alta conversão.</li>
+                    </ul>
+                </div>
+                <div class="bg-black/40 p-3 rounded-xl border border-white/5 text-xs">
+                    <span class="text-accentGold font-bold">Investimento Inicial Recomendado:</span><br>
+                    R$ 300 a R$ 600/mês em anúncios ➔ Alcance de <strong class="text-white">5.000 a 12.000 pessoas locais</strong>.
+                </div>
+            </div>
+
+            <!-- Card 3: Google & WhatsApp -->
+            <div class="bg-cardBg border border-white/10 p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold mb-3 text-accentGold">Google Maps & WhatsApp</h3>
+                    <p class="text-sm text-textMuted mb-6">Configuração de números oficiais, otimização completa do Google Meu Negócio para aparecer no topo quando buscarem o seu segmento na cidade.</p>
+                </div>
+                <p class="text-xs text-textMuted mt-6 pt-4 border-t border-white/10">Foco: Facilidade máxima para o cliente clicar e pedir direto no seu WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Modelos de Parceria e Preços por Porte -->
+    <section id="planos" class="py-16 px-6 max-w-6xl mx-auto border-t border-white/10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Transparência de Modelos</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Planos por Porte de Empresa</h2>
+            <p class="text-textMuted">Soluções ajustadas desde o microempreendedor iniciando do zero até operações consolidadas.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Microempresa (O Destaque Ganha-Ganha) -->
+            <div class="bg-cardBg border-2 border-accentGold p-8 rounded-3xl relative flex flex-col justify-between shadow-2xl">
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-accentGold text-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
+                    Indicado para Você (Micro)
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Microempresa / Iniciando</h3>
+                    <p class="text-sm text-textMuted mb-6">Para quem está começando agora, investindo em insumos e precisa de risco zero no caixa.</p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="p-3 bg-black/50 rounded-xl border border-white/10">
+                            <span class="text-xs text-textMuted block">Taxa Fixa de Serviço:</span>
+                            <span class="text-2xl font-black text-accentGold">R$ 0,00</span>
+                            <span class="text-xs text-textMuted block mt-0.5">Sem mensalidade fixa de agência.</span>
+                        </div>
+                        <div class="p-3 bg-black/50 rounded-xl border border-white/10">
+                            <span class="text-xs text-textMuted block">Modelo de Remuneração:</span>
+                            <span class="text-lg font-bold text-white">Ganha-Ganha (Revenue Share)</span>
+                            <span class="text-xs text-textMuted block mt-0.5">20% a 30% de comissão apenas sobre as vendas geradas pela nossa estratégia.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-white/10 text-xs text-accentGold font-medium text-center">
+                    ✓ Risco zero de caixa para o empresário.
+                </div>
+            </div>
+
+            <!-- Média Empresa -->
+            <div class="bg-cardBg border border-white/10 p-8 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Média Empresa</h3>
+                    <p class="text-sm text-textMuted mb-6">Para negócios já estabelecidos que buscam escala profissional.</p>
+                    <div class="space-y-4 mb-6">
+                        <div class="p-3 bg-black/50 rounded-xl border border-white/10">
+                            <span class="text-xs text-textMuted block">Modelo Híbrido ou Retainer:</span>
+                            <span class="text-xl font-bold text-white">R$ 1.500 a R$ 3.500</span>
+                            <span class="text-xs text-textMuted block mt-0.5">Fixo reduzido de gestão + % menor de performance.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-white/10 text-xs text-textMuted text-center">
+                    Operação completa de tráfego e redes.
+                </div>
+            </div>
+
+            <!-- Grande Empresa -->
+            <div class="bg-cardBg border border-white/10 p-8 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Grande Empresa</h3>
+                    <p class="text-sm text-textMuted mb-6">Operações consolidadas e franquias regionais.</p>
+                    <div class="space-y-4 mb-6">
+                        <div class="p-3 bg-black/50 rounded-xl border border-white/10">
+                            <span class="text-xs text-textMuted block">Projetos Customizados:</span>
+                            <span class="text-xl font-bold text-white">R$ 5.000 a R$ 12.000+</span>
+                            <span class="text-xs text-textMuted block mt-0.5">Rebranding completo e campanhas de grande porte.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-white/10 text-xs text-textMuted text-center">
+                    Consultoria corporativa avançada.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Experiência (Logos) -->
+    <section class="py-16 px-6 max-w-6xl mx-auto border-t border-white/10 text-center">
+        <span class="text-xs uppercase tracking-widest text-textMuted font-semibold mb-6 block">Experiência e Grandes Marcas Atendidas</span>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
+            <span class="text-xl font-bold tracking-wider text-white">CARREFOUR</span>
+            <span class="text-xl font-bold tracking-wider text-white">DROGARIA ESTRELA DALVA</span>
+            <span class="text-xl font-bold tracking-wider text-white">WOB BRASIL</span>
+        </div>
+    </section>
+
+    <!-- Footer / CTA Final -->
+    <footer class="py-20 px-6 max-w-4xl mx-auto text-center border-t border-white/10">
+        <h2 class="text-3xl font-bold mb-4">Vamos tomar um café e desenhar esse projeto?</h2>
+        <p class="text-textMuted mb-8 max-w-xl mx-auto">Sem compromisso. Vamos alinhar como a sua operação e a minha estratégia de marketing se unem para dar lucro real.</p>
+        <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20quero%20conversar%20sobre%20a%20parceria%20de%20crescimento." target="_blank" rel="noopener noreferrer"
+           class="inline-block bg-accentGold text-black font-bold px-8 py-4 rounded-xl hover:bg-white transition-all shadow-xl text-lg">
+            Falar Diretamente no WhatsApp
+        </a>
+        <p class="text-xs text-textMuted mt-8">Giovani Almeida • Estratégia, Marca e Vendas para Negócios Locais.</p>
     </footer>
 
-    <script>
-    (() => {
-        const PHONE = '5511964894096';
-        const LOGO_BASE = 'assets/clientes/';
-
-        // WhatsApp com mensagem contextual
-        document.querySelectorAll('[data-wa]').forEach(el => {
-            el.href = `https://wa.me/${PHONE}?text=${encodeURIComponent(el.dataset.wa)}`;
-            el.target = '_blank';
-            el.rel = 'noopener noreferrer';
-        });
-
-        // Header ao rolar
-        const bar = document.getElementById('topbar');
-        const onScroll = () => {
-            const s = window.scrollY > 24;
-            ['bg-ink/85', 'backdrop-blur-xl', 'border-b', 'border-white/[0.06]'].forEach(c => bar.classList.toggle(c, s));
-        };
-        onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-
-        // Grade de logos (Carrefour e Estrela Dalva primeiro)
-        const logos = [
-            ['Prancheta 6.png', 'Grupo Carrefour Brasil'],
-            ['Prancheta 5.png', 'Drogaria Estrela Dalva'],
-            ['Prancheta 7.png', 'Nescau'],
-            ['Prancheta 1.png', 'Colliers International'],
-            ['Prancheta 9.png', 'Brama Casa e Construção'],
-            ['Prancheta 8.png', 'Natural Alimentos'],
-            ['Prancheta 2.png', 'Drogaria Polvilho'],
-            ['Prancheta 3.png', 'Drogaria Leal'],
-            ['Prancheta 4.png', 'Portal Farma'],
-            ['Prancheta 10.png', 'Sabor da Vovó Marmitaria']
-        ];
-        document.getElementById('logoGrid').innerHTML = logos.map(([file, name]) =>
-            `<div class="logo-card rounded-2xl p-4 flex items-center justify-center h-24 sm:h-28" title="${name}">
-                <img src="${LOGO_BASE}${file}" alt="${name}" loading="lazy" class="logo-mono max-h-full w-auto max-w-[160px] object-contain">
-            </div>`).join('');
-
-        // Antes e Depois
-        const panes = { antes: document.getElementById('ba-antes'), depois: document.getElementById('ba-depois') };
-        document.querySelectorAll('.ba-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const key = btn.dataset.ba;
-                Object.entries(panes).forEach(([k, el]) => el.style.opacity = k === key ? '1' : '0');
-                document.querySelectorAll('.ba-btn').forEach(b => {
-                    const on = b === btn;
-                    b.classList.toggle('bg-snow', on);
-                    b.classList.toggle('text-ink', on);
-                    b.classList.toggle('text-mute', !on);
-                });
-            });
-        });
-
-        // Reveal on scroll
-        const io = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-        document.getElementById('year').textContent = new Date().getFullYear();
-    })();
-    </script>
 </body>
 </html>
