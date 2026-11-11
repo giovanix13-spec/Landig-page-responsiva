@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIOVANI ALMEIDA • Parcerias Estratégicas & Planos de Negócio</title>
-    <meta name="description" content="Apresentação de parceria comercial e planos de crescimento. Modelo Ganha-Ganha com R$ 0,00 de taxa fixa inicial para microempreendedores locais.">
+    <meta name="description" content="Apresentação de parceria comercial e planos de negócio. Modelo Ganha-Ganha com R$ 0,00 de taxa fixa inicial para micro e pequenos negócios e área restrita corporativa.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -21,6 +21,7 @@
                         cardBg: '#141414',
                         cardHover: '#1F1F1F',
                         accentGold: '#D4AF37',
+                        accentGoldSoft: '#E6CC7A',
                         textLight: '#F5F5F7',
                         textMuted: '#A3A3A3',
                     }
@@ -44,6 +45,54 @@
             color: #F5F5F7;
             overflow-x: hidden;
         }
+
+        /* Utilitários de Glassmorphism de Alto Padrão */
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.045) 0%, rgba(20, 20, 20, 0.72) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-gold {
+            background: linear-gradient(155deg, rgba(212, 175, 55, 0.11) 0%, rgba(20, 20, 20, 0.85) 55%, rgba(14, 14, 14, 0.92) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1.5px solid rgba(212, 175, 55, 0.55);
+            box-shadow: 0 30px 80px -20px rgba(212, 175, 55, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .glass-vault {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(20, 20, 20, 0.78) 100%);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.85), inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        /* Luzes de fundo sutis */
+        .ambient-gold-glow {
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.03) 45%, transparent 72%);
+        }
+
+        /* Animação de expansão de detalhes */
+        .plan-details {
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, margin-top 0.35s ease;
+        }
+        .plan-details.open {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            margin-top: 1.25rem;
+        }
+        .plan-details-inner {
+            overflow: hidden;
+        }
+
+        /* Reveal suave no scroll */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -53,10 +102,11 @@
             opacity: 1;
             transform: translateY(0);
         }
+
         @keyframes pulseRing {
-            0% { transform: scale(1); opacity: 0.7; }
-            70% { transform: scale(1.35); opacity: 0; }
-            100% { transform: scale(1.35); opacity: 0; }
+            0% { transform: scale(1); opacity: 0.65; }
+            75% { transform: scale(1.38); opacity: 0; }
+            100% { transform: scale(1.38); opacity: 0; }
         }
         .play-pulse::before {
             content: '';
@@ -69,17 +119,21 @@
         }
     </style>
 </head>
-<body class="bg-darkBg text-textLight antialiased selection:bg-accentGold selection:text-black">
+<body class="bg-darkBg text-textLight antialiased selection:bg-accentGold selection:text-black relative">
+
+    <!-- Iluminação Ambiente de Fundo -->
+    <div class="pointer-events-none fixed top-[-180px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] ambient-gold-glow z-0"></div>
 
     <!-- 1. HEADER / NAVBAR -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/90 border-b border-white/10">
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-darkBg/80 border-b border-white/10">
         <div class="max-w-6xl mx-auto px-5 sm:px-6 h-20 flex items-center justify-between gap-4">
             <a href="index.html" class="flex items-center space-x-2.5 min-w-0">
+                <span class="w-2 h-2 rounded-full bg-accentGold shrink-0 shadow-[0_0_12px_#D4AF37]"></span>
                 <span class="font-bold tracking-wider text-xs sm:text-sm md:text-base uppercase text-white truncate">
                     GIOVANI ALMEIDA <span class="text-accentGold mx-1">•</span> <span class="text-textMuted font-medium">Parcerias Estratégicas</span>
                 </span>
             </a>
-            <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20vi%20sua%20proposta%20de%20parceria%20e%20quero%20conversar."
+            <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20vi%20sua%20apresenta%C3%A7%C3%A3o%20de%20parcerias%20e%20quero%20conversar."
                target="_blank" rel="noopener noreferrer"
                class="shrink-0 inline-flex items-center gap-2 bg-white text-black hover:bg-accentGold transition-all font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-full shadow-lg">
                 <i class="ph-bold ph-whatsapp-logo text-base"></i>
@@ -88,419 +142,532 @@
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
-    <section class="pt-16 md:pt-24 pb-12 px-5 sm:px-6 max-w-5xl mx-auto text-center">
-        <div class="reveal inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-accentGold tracking-widest uppercase font-semibold">
-            <span class="w-2 h-2 rounded-full bg-accentGold"></span>
-            Aliança Comercial & Estratégia de Vendas
-        </div>
-        <h1 class="reveal text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-            Todo grande negócio começa com uma <span class="text-accentGold">boa parceria.</span> Vamos construir o seu?
-        </h1>
-        <p class="reveal text-base sm:text-lg md:text-xl text-textMuted max-w-3xl mx-auto mb-10 leading-relaxed">
-            Você entra com o domínio do produto, a mão na massa e a vontade de fazer acontecer na nossa cidade. Mas tentar adivinhar sozinho como atrair clientes, criar marca, cuidar de redes sociais, precificar aplicativos e rodar anúncios consome toda a sua energia. <strong class="text-white">Eu entro para ser o seu sócio de crescimento na marca, nas vendas e no digital.</strong>
-        </p>
-        <div class="reveal flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="#planos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accentGold text-black font-bold px-8 py-4 rounded-xl hover:bg-white transition-all shadow-xl">
-                <span>Ver Planos e Modelo Ganha-Ganha</span>
-                <i class="ph-bold ph-arrow-down"></i>
-            </a>
-            <a href="#apresentacao" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cardBg hover:bg-cardHover text-white font-medium px-6 py-4 rounded-xl border border-white/10 transition-all">
-                <i class="ph-fill ph-play-circle text-lg text-accentGold"></i>
-                <span>Assistir Explicação (2 min)</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- 3. SEÇÃO DE VÍDEO EXPLICATIVO (ESPAÇO PARA APRESENTAÇÃO) -->
-    <section id="apresentacao" class="py-12 md:py-16 px-5 sm:px-6 max-w-5xl mx-auto">
-        <div class="reveal bg-cardBg border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
-            <div class="text-center max-w-2xl mx-auto mb-8">
-                <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Apresentação Direta</span>
-                <h2 class="text-2xl sm:text-3xl font-bold mt-2">
-                    Entenda em 2 minutos como funciona a nossa parceria.
-                </h2>
-                <p class="text-sm text-textMuted mt-2">
-                    Assista ao resumo rápido de como estruturamos sua marca e suas vendas sem pesar no seu caixa inicial.
-                </p>
-            </div>
-
-            <!-- Player de Vídeo Vertical (1080x1920) com Thumbnail / Capa -->
-            <div class="relative max-w-[360px] sm:max-w-[380px] mx-auto aspect-[9/16] rounded-3xl overflow-hidden bg-black border border-white/15 shadow-2xl group">
-                <video id="partnerVideo" class="w-full h-full object-contain bg-black" playsinline preload="metadata">
-                    <source src="landing.mp4?v=2#t=0.5" type="video/mp4">
-                    Seu navegador não suporta a reprodução de vídeo.
-                </video>
-
-                <!-- Thumbnail Overlay Simulando a Capa do Vídeo de Apresentação -->
-                <div id="videoCoverOverlay" class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/30 flex flex-col items-center justify-center p-6 text-center cursor-pointer transition-opacity duration-300">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/15 text-[11px] text-textMuted mb-4">
-                        <span class="w-2 h-2 rounded-full bg-accentGold"></span>
-                        <span>Vídeo de Apresentação • Planos & Modelo Ganha-Ganha</span>
+    <main class="relative z-10">
+        <!-- 2. HERO SECTION & VÍDEO EXPLICATIVO VERTICAL (9:16) -->
+        <section class="pt-14 md:pt-22 pb-16 px-5 sm:px-6 max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Coluna de Texto (Narrativa Humanizada) -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="reveal inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-md text-xs text-accentGold tracking-widest uppercase font-semibold">
+                        <i class="ph-fill ph-sparkle"></i>
+                        <span>Aliança Comercial & Crescimento Local</span>
                     </div>
 
-                    <button type="button" id="playVideoBtn" aria-label="Reproduzir vídeo de apresentação"
-                            class="relative z-10 play-pulse w-20 h-20 rounded-full bg-accentGold text-black flex items-center justify-center shadow-2xl hover:bg-white hover:scale-105 transition-all">
-                        <i class="ph-fill ph-play text-3xl ml-1"></i>
-                    </button>
+                    <h1 class="reveal text-3xl sm:text-5xl lg:text-[3.35rem] font-extrabold tracking-tight mb-6 leading-[1.12]">
+                        Todo grande negócio começa com uma <span class="text-accentGold">boa parceria.</span> Vamos construir o seu?
+                    </h1>
 
-                    <p class="mt-5 font-semibold text-base sm:text-lg text-white max-w-md">
-                        Como escalar o seu negócio local com R$ 0,00 de taxa fixa inicial
-                    </p>
-                    <span class="text-xs text-textMuted mt-1">Clique para iniciar a apresentação • Giovani Almeida</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. SEÇÃO 1: O PRIMEIRO PASSO — IDENTIDADE VISUAL, FOTOS & VITRINE -->
-    <section class="py-16 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/10">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="reveal">
-                <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Passo 1: A Vitrine</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Identidade Visual, Fotos & Vitrine Digital</h2>
-                <p class="text-textMuted leading-relaxed mb-6">
-                    Antes de investir em divulgação, a sua marca precisa transmitir confiança e dar água na boca. Começamos criando uma identidade visual profissional (ideal para comércios locais, rotisserias, casas de frango assado, marmitarias e delivery), além de fotos reais dos produtos, cardápio organizado e presença ativa no Google Maps e WhatsApp.
-                </p>
-                <ul class="space-y-3.5 text-sm text-textMuted">
-                    <li class="flex items-start gap-2.5">
-                        <span class="text-accentGold font-bold mt-0.5">✓</span>
-                        <span><strong class="text-white">Logotipo & Identidade Visual:</strong> Marca forte para fachada, embalagens, sacolas e redes sociais.</span>
-                    </li>
-                    <li class="flex items-start gap-2.5">
-                        <span class="text-accentGold font-bold mt-0.5">✓</span>
-                        <span><strong class="text-white">Fotos Profissionais & Cardápio:</strong> Apresentação apetitosa dos pratos e combos para vender mais.</span>
-                    </li>
-                    <li class="flex items-start gap-2.5">
-                        <span class="text-accentGold font-bold mt-0.5">✓</span>
-                        <span><strong class="text-white">Google Maps & WhatsApp Comercial:</strong> Loja configurada para ser encontrada no bairro com pedido em 1 clique.</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="reveal bg-cardBg border border-white/10 p-7 sm:p-8 rounded-2xl shadow-2xl relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-accentGold/10 rounded-full blur-3xl pointer-events-none"></div>
-                <span class="inline-block text-[11px] uppercase tracking-wider px-2.5 py-1 rounded bg-white/5 border border-white/10 text-accentGold font-semibold mb-3">
-                     Aplicação Prática no Comércio Local
-                </span>
-                <h3 class="font-bold text-xl mb-2 text-white">Exemplo: Rotisseria & Frango Assado</h3>
-                <p class="text-sm text-textMuted mb-6 leading-relaxed">
-                    Transformamos um comércio tradicional de bairro em uma marca desejada: logotipo marcante, fotos reais do frango dourado saindo da brasa, combos familiares bem precificados e fila de pedidos pelo WhatsApp e iFood no fim de semana.
-                </p>
-
-                <div class="grid grid-cols-3 gap-3 mb-5 text-center">
-                    <div class="p-3 rounded-xl bg-black/40 border border-white/5">
-                        <i class="ph-duotone ph-seal-check text-accentGold text-xl"></i>
-                        <span class="block text-xs font-semibold text-white mt-1">Logotipo</span>
-                        <span class="block text-[11px] text-textMuted">Profissional</span>
-                    </div>
-                    <div class="p-3 rounded-xl bg-black/40 border border-white/5">
-                        <i class="ph-duotone ph-camera text-accentGold text-xl"></i>
-                        <span class="block text-xs font-semibold text-white mt-1">Fotografia</span>
-                        <span class="block text-[11px] text-textMuted">Dos Pratos</span>
-                    </div>
-                    <div class="p-3 rounded-xl bg-black/40 border border-white/5">
-                        <i class="ph-duotone ph-map-pin text-accentGold text-xl"></i>
-                        <span class="block text-xs font-semibold text-white mt-1">Google Maps</span>
-                        <span class="block text-[11px] text-textMuted">+ WhatsApp</span>
-                    </div>
-                </div>
-
-                <div class="p-4 bg-black/40 rounded-xl border border-white/5 text-xs font-mono text-textMuted flex items-center justify-between">
-                    <span>Status: Vitrine Digital Pronta e Otimizada para Conversão</span>
-                    <span class="text-accentGold font-bold">100%</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. SEÇÃO 2: O ECOSSISTEMA DE VENDAS (APPS DE DELIVERY & ANÚNCIOS) -->
-    <section class="py-16 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/10">
-        <div class="reveal text-center max-w-3xl mx-auto mb-14">
-            <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Passo 2: Canais de Venda & Tráfego</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">O Ecossistema de Vendas Explicado Simples</h2>
-            <p class="text-textMuted">
-                Unimos aplicativos de entrega, anúncios no seu bairro e atendimento rápido para gerar pedidos todos os dias sem que as taxas esmaguem a sua margem de lucro.
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Card 1: Consultoria de Apps -->
-            <div class="reveal bg-cardBg hover:bg-cardHover transition-colors border border-white/10 p-7 sm:p-8 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accentGold text-xl mb-5">
-                        <i class="ph-bold ph-moped"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-accentGold">Apps de Delivery & Margem</h3>
-                    <p class="text-sm text-textMuted mb-6 leading-relaxed">
-                        Cadastro completo, cardápio estratégico e ajuste de precificação para que a comissão do aplicativo não coma o seu lucro:
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-medium">
-                        <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-white">iFood</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-white">Rappi</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-white">Aiqfome</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-white">99Food</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-white">Zé Delivery</span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-white">Uber Eats</span>
-                    </div>
-                </div>
-                <p class="text-xs text-textMuted mt-6 pt-4 border-t border-white/10">
-                    <strong class="text-white">Resultado:</strong> Precificação correta por canal garantindo lucro líquido real em cada pedido.
-                </p>
-            </div>
-
-            <!-- Card 2: Tráfego Pago & Alcance Local -->
-            <div class="reveal bg-cardBg hover:bg-cardHover transition-colors border border-accentGold/40 p-7 sm:p-8 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <div class="w-11 h-11 rounded-xl bg-accentGold/15 border border-accentGold/30 flex items-center justify-center text-accentGold text-xl mb-5">
-                        <i class="ph-bold ph-megaphone"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-accentGold">Tráfego Pago & Alcance Local</h3>
-                    <p class="text-sm text-textMuted mb-4 leading-relaxed">
-                        Anúncios patrocinados exibidos exclusivamente para moradores próximos ao seu estabelecimento:
-                    </p>
-                    <ul class="space-y-2.5 text-xs text-textMuted mb-6">
-                        <li class="flex items-start gap-2">
-                            <span class="text-accentGold font-bold">•</span>
-                            <span><strong class="text-white">Meta Ads (Instagram / Facebook):</strong> Anúncios geolocalizados no seu bairro e cidade.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-accentGold font-bold">•</span>
-                            <span><strong class="text-white">Google Ads:</strong> Captura de quem está pesquisando para comprar agora.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-accentGold font-bold">•</span>
-                            <span><strong class="text-white">TikTok Ads:</strong> Vídeos curtos e locais que despertam desejo imediato.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Box de Investimento e Alcance Exato -->
-                <div class="bg-black/60 p-4 rounded-xl border border-accentGold/40 text-xs space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-accentGold font-bold uppercase tracking-wider">Investimento Recomendado</span>
-                        <span class="text-[11px] px-2 py-0.5 rounded bg-accentGold/15 text-accentGold font-semibold">Mídia Local</span>
-                    </div>
-                    <div class="text-base font-extrabold text-white">
-                        R$ 300 a R$ 600/mês <span class="text-xs font-normal text-textMuted">em anúncios</span>
-                    </div>
-                    <div class="pt-2 border-t border-white/10 text-textMuted">
-                        Alcance estimado de <strong class="text-white">5.000 a 12.000 pessoas locais</strong> na sua cidade/bairro.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Google Maps & WhatsApp -->
-            <div class="reveal bg-cardBg hover:bg-cardHover transition-colors border border-white/10 p-7 sm:p-8 rounded-2xl flex flex-col justify-between">
-                <div>
-                    <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accentGold text-xl mb-5">
-                        <i class="ph-bold ph-whatsapp-logo"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-accentGold">Google Maps & WhatsApp Direto</h3>
-                    <p class="text-sm text-textMuted mb-6 leading-relaxed">
-                        Otimização completa do Perfil da Empresa no Google para aparecer no topo das buscas regionais, integrado ao seu WhatsApp com cardápio digital e mensagem automática.
-                    </p>
-                    <ul class="space-y-2 text-xs text-textMuted">
-                        <li class="flex items-center gap-2"><span class="text-accentGold">✓</span> Destaque nas buscas "perto de mim"</li>
-                        <li class="flex items-center gap-2"><span class="text-accentGold">✓</span> Coleta ativa de avaliações 5 estrelas</li>
-                        <li class="flex items-center gap-2"><span class="text-accentGold">✓</span> Venda direta no WhatsApp (sem taxa de app)</li>
-                    </ul>
-                </div>
-                <p class="text-xs text-textMuted mt-6 pt-4 border-t border-white/10">
-                    <strong class="text-white">Resultado:</strong> Clientes recorrentes comprando direto de você com 100% da margem no seu bolso.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. SEÇÃO 3: OS PLANOS POR PORTE DE EMPRESA E PREÇOS (CORE DA PÁGINA) -->
-    <section id="planos" class="py-16 md:py-20 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/10">
-        <div class="reveal text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Transparência Total de Investimento</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Planos por Porte de Empresa</h2>
-            <p class="text-textMuted">
-                Modelos claros para cada estágio de negócio. Para quem está iniciando agora, a proposta elimina qualquer custo fixo de agência.
-            </p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-            <!-- PLANO 1: MICROEMPRESA / INICIANDO (DESTAQUE GANHA-GANHA) -->
-            <div class="reveal bg-cardBg border-2 border-accentGold p-7 sm:p-8 rounded-3xl relative flex flex-col justify-between shadow-2xl">
-                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-accentGold text-black text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap shadow">
-                    Indicado para Você • Microempresa
-                </div>
-
-                <div>
-                    <div class="flex items-center justify-between mt-2 mb-2">
-                        <h3 class="text-2xl font-bold text-white">Microempresa / Iniciando</h3>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-accentGold/15 text-accentGold font-semibold">Sócio</span>
-                    </div>
-                    <p class="text-sm text-textMuted mb-6">
-                        Ideal para quem está começando, investindo nos insumos da operação e precisa proteger o caixa.
+                    <p class="reveal text-base sm:text-lg text-textMuted mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Você tem o domínio do produto, a mão na massa e a vontade de fazer acontecer na nossa cidade. Mas tentar adivinhar sozinho como atrair clientes, criar marca, fotografar pratos, ajustar preços em aplicativos e rodar anúncios consome toda a sua energia.
+                        <strong class="text-white block mt-3">Eu entro para ser o seu sócio de crescimento na marca, nas vendas e no digital.</strong>
                     </p>
 
-                    <div class="space-y-4 mb-6">
-                        <div class="p-4 bg-black/60 rounded-2xl border border-accentGold/40">
-                            <span class="text-xs text-textMuted uppercase tracking-wider block font-medium">Taxa Fixa de Serviço:</span>
-                            <span class="text-3xl sm:text-4xl font-black text-accentGold block mt-1">R$ 0,00 inicial</span>
-                            <span class="text-xs text-textMuted block mt-1">Zero custo fixo mensal para o microempreendedor começar.</span>
+                    <div class="reveal flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
+                        <a href="#planos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-accentGold text-black font-bold px-8 py-4 rounded-2xl hover:bg-white transition-all shadow-xl">
+                            <span>Conhecer Planos e Parceria</span>
+                            <i class="ph-bold ph-arrow-down"></i>
+                        </a>
+                        <a href="#servicos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass-card hover:border-white/25 text-white font-medium px-6 py-4 rounded-2xl transition-all">
+                            <i class="ph-duotone ph-stack text-lg text-accentGold"></i>
+                            <span>O Que Está Incluso</span>
+                        </a>
+                    </div>
+
+                    <!-- Mini Indicadores Glass -->
+                    <div class="reveal grid grid-cols-3 gap-3 mt-10 pt-8 border-t border-white/10 text-left">
+                        <div class="glass-card rounded-2xl p-4">
+                            <span class="text-xl sm:text-2xl font-extrabold text-accentGold block">R$ 0,00</span>
+                            <span class="text-[11px] sm:text-xs text-textMuted">Taxa fixa inicial no modelo Sócio</span>
+                        </div>
+                        <div class="glass-card rounded-2xl p-4">
+                            <span class="text-xl sm:text-2xl font-extrabold text-white block">5k a 12k</span>
+                            <span class="text-[11px] sm:text-xs text-textMuted">Pessoas alcançadas no bairro/mês</span>
+                        </div>
+                        <div class="glass-card rounded-2xl p-4">
+                            <span class="text-xl sm:text-2xl font-extrabold text-white block">100%</span>
+                            <span class="text-[11px] sm:text-xs text-textMuted">Foco em pedidos e lucro real</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna do Vídeo Explicativo Vertical (9:16) -->
+                <div class="lg:col-span-5" id="apresentacao">
+                    <div class="reveal glass-card rounded-[2rem] p-4 sm:p-5 max-w-[380px] mx-auto">
+                        <div class="flex items-center justify-between px-2 pb-3 mb-2 border-b border-white/10">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accentGold animate-pulse"></span>
+                                <span class="text-xs font-semibold uppercase tracking-wider text-white">Apresentação em Vídeo</span>
+                            </div>
+                            <span class="text-[11px] text-accentGold font-medium">Formato 9:16</span>
                         </div>
 
-                        <div class="p-4 bg-black/60 rounded-2xl border border-white/10">
-                            <span class="text-xs text-textMuted uppercase tracking-wider block font-medium">Modelo de Remuneração:</span>
-                            <span class="text-lg font-bold text-white block mt-1">Ganha-Ganha (Revenue Share)</span>
-                            <span class="text-xs text-textMuted block mt-1 leading-relaxed">
-                                <strong class="text-white">20% a 30% de comissão</strong> apenas sobre as vendas geradas pela nossa estratégia. Se não houver venda, você não paga taxa de serviço.
+                        <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl group">
+                            <video id="partnerVideo" class="w-full h-full object-contain bg-black" playsinline preload="metadata">
+                                <source src="landing.mp4?v=3#t=0.5" type="video/mp4">
+                                Seu navegador não suporta a reprodução de vídeo.
+                            </video>
+
+                            <!-- Capa Interativa sobre o Vídeo Vertical -->
+                            <div id="videoCoverOverlay" class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 flex flex-col items-center justify-center p-6 text-center cursor-pointer transition-opacity duration-300">
+                                <span class="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] text-accentGold font-semibold uppercase tracking-wider mb-5">
+                                    Explicação Rápida
+                                </span>
+
+                                <button type="button" id="playVideoBtn" aria-label="Reproduzir apresentação"
+                                        class="relative z-10 play-pulse w-20 h-20 rounded-full bg-accentGold text-black flex items-center justify-center shadow-2xl hover:bg-white hover:scale-105 transition-all">
+                                    <i class="ph-fill ph-play text-3xl ml-1"></i>
+                                </button>
+
+                                <h3 class="mt-6 font-bold text-lg text-white leading-snug">
+                                    Entenda como funciona o nosso modelo de parceria
+                                </h3>
+                                <p class="text-xs text-textMuted mt-1.5">
+                                    Toque para assistir com áudio • Giovani Almeida
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SEÇÃO DE SERVIÇOS INTEGRADOS (O QUE ESTÁ INCLUSO) -->
+        <section id="servicos" class="py-16 md:py-20 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/10">
+            <div class="reveal text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Estrutura Completa de Ponta a Ponta</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Tudo o Que Fazemos Pelo Seu Negócio</h2>
+                <p class="text-textMuted">
+                    Não entregamos apenas artes soltas. Construímos toda a engrenagem visual, comercial e digital para o seu cliente encontrar você, sentir confiança e fazer o pedido.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Serviço 1: Identidade Visual, Logos e Fotos -->
+                <div class="reveal glass-card hover:border-accentGold/40 transition-all p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-accentGold/15 border border-accentGold/30 flex items-center justify-center text-accentGold text-2xl mb-5">
+                            <i class="ph-duotone ph-camera"></i>
+                        </div>
+                        <span class="text-[11px] uppercase tracking-wider text-accentGold font-semibold">01 • A Vitrine</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-3">Identidade Visual, Logos & Fotos</h3>
+                        <p class="text-sm text-textMuted leading-relaxed mb-5">
+                            Criação de logotipo profissional, padrão visual de embalagens e fotografias reais que dão água na boca (ideal para rotisserias, frango assado, restaurantes e comércios locais).
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-xs text-textMuted space-y-1.5">
+                        <div class="flex items-center gap-2"><span class="text-accentGold">✓</span> Logotipo e manual visual</div>
+                        <div class="flex items-center gap-2"><span class="text-accentGold">✓</span> Fotos e cardápio atrativo</div>
+                    </div>
+                </div>
+
+                <!-- Serviço 2: Consultoria de Apps de Delivery -->
+                <div class="reveal glass-card hover:border-accentGold/40 transition-all p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-accentGold/15 border border-accentGold/30 flex items-center justify-center text-accentGold text-2xl mb-5">
+                            <i class="ph-duotone ph-moped"></i>
+                        </div>
+                        <span class="text-[11px] uppercase tracking-wider text-accentGold font-semibold">02 • Delivery Lucrativo</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-3">Apps de Delivery & Margem</h3>
+                        <p class="text-sm text-textMuted leading-relaxed mb-4">
+                            Estruturação de lojas e engenharia de cardápio com precificação calculada para que as taxas dos aplicativos não comam o seu lucro:
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 text-[11px] font-medium mb-4">
+                            <span class="px-2.5 py-1 bg-white/5 rounded-lg border border-white/10 text-white">iFood</span>
+                            <span class="px-2.5 py-1 bg-white/5 rounded-lg border border-white/10 text-white">Rappi</span>
+                            <span class="px-2.5 py-1 bg-white/5 rounded-lg border border-white/10 text-white">Aiqfome</span>
+                            <span class="px-2.5 py-1 bg-white/5 rounded-lg border border-white/10 text-white">99Food</span>
+                            <span class="px-2.5 py-1 bg-white/5 rounded-lg border border-white/10 text-white">Zé Delivery</span>
+                            <span class="px-2.5 py-1 bg-white/5 rounded-lg border border-white/10 text-white">Uber Eats</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-xs text-textMuted">
+                        <span class="text-accentGold font-semibold">Foco:</span> Lucro líquido seguro em cada pedido.
+                    </div>
+                </div>
+
+                <!-- Serviço 3: Tráfego Pago Multicanal -->
+                <div class="reveal glass-card hover:border-accentGold/40 transition-all p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-accentGold/15 border border-accentGold/30 flex items-center justify-center text-accentGold text-2xl mb-5">
+                            <i class="ph-duotone ph-megaphone"></i>
+                        </div>
+                        <span class="text-[11px] uppercase tracking-wider text-accentGold font-semibold">03 • Atração Diária</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-3">Tráfego Pago Multicanal</h3>
+                        <p class="text-sm text-textMuted leading-relaxed mb-4">
+                            Campanhas geolocalizadas em <strong class="text-white">Meta Ads (Instagram e Facebook)</strong>, <strong class="text-white">Google Ads</strong> e <strong class="text-white">TikTok Ads</strong> focadas nos moradores da sua região.
+                        </p>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-black/50 border border-accentGold/35 text-xs">
+                        <span class="text-accentGold font-bold block">Mídia Recomendada:</span>
+                        <span class="text-white font-bold">R$ 300 a R$ 600/mês</span>
+                        <span class="text-textMuted block mt-1">➔ Alcance de <strong class="text-white">5.000 a 12.000 pessoas locais</strong>.</span>
+                    </div>
+                </div>
+
+                <!-- Serviço 4: Google Maps & WhatsApp -->
+                <div class="reveal glass-card hover:border-accentGold/40 transition-all p-7 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-accentGold/15 border border-accentGold/30 flex items-center justify-center text-accentGold text-2xl mb-5">
+                            <i class="ph-duotone ph-map-pin-line"></i>
+                        </div>
+                        <span class="text-[11px] uppercase tracking-wider text-accentGold font-semibold">04 • Venda Direta</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-3">Google Maps & WhatsApp</h3>
+                        <p class="text-sm text-textMuted leading-relaxed mb-5">
+                            Otimização completa do Perfil da Empresa no Google para liderar as buscas no bairro, conectado direto ao WhatsApp Comercial para pedidos sem comissão de terceiros.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-xs text-textMuted space-y-1.5">
+                        <div class="flex items-center gap-2"><span class="text-accentGold">✓</span> Topo das buscas locais</div>
+                        <div class="flex items-center gap-2"><span class="text-accentGold">✓</span> Atendimento rápido em 1 clique</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SEÇÃO DE PLANOS E MODELOS (DOIS GRANDES FLUXOS) -->
+        <section id="planos" class="py-16 md:py-24 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/10">
+            <div class="reveal text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Escolha o Seu Formato</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold mt-2 mb-4">Modelos de Parceria e Planos</h2>
+                <p class="text-textMuted">
+                    Dividimos nossa atuação em dois fluxos: opções acessíveis e de risco zero para <strong class="text-white">Micro e Pequenos Negócios</strong>, e uma divisão exclusiva para <strong class="text-white">Médias e Grandes Empresas</strong>.
+                </p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- GRUPO 1: MICRO E PEQUENOS NEGÓCIOS (2 PLANOS INTERATIVOS)    -->
+            <!-- ============================================================ -->
+            <div class="mb-20">
+                <div class="reveal flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 pb-4 border-b border-white/10">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-accentGold text-black font-extrabold text-sm flex items-center justify-center">01</span>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white">Micro e Pequenos Negócios</h3>
+                            <p class="text-xs sm:text-sm text-textMuted">Clique em cada plano abaixo para expandir todos os itens inclusos</p>
+                        </div>
+                    </div>
+                    <span class="self-start sm:self-auto text-xs px-3 py-1 rounded-full bg-accentGold/15 border border-accentGold/30 text-accentGold font-semibold">
+                        2 Modalidades Disponíveis
+                    </span>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 items-start">
+                    <!-- PLANO A: O GANHA-GANHA / SÓCIO DE CRESCIMENTO -->
+                    <div class="reveal glass-card-gold rounded-3xl p-7 sm:p-9 relative transition-all">
+                        <div class="inline-flex items-center gap-1.5 bg-accentGold text-black text-[11px] font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider mb-5">
+                            <i class="ph-fill ph-crown"></i> Recomendado • Risco Zero
+                        </div>
+
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-accentGoldSoft font-semibold">Plano A • Parceria Performance</span>
+                                <h4 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">O Ganha-Ganha (Sócio de Crescimento)</h4>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-textMuted mt-3 mb-6 leading-relaxed">
+                            Para quem está começando ou quer crescer sem comprometer o caixa com mensalidades fixas. Eu entro com todo o trabalho de marca, digital e vendas, e só ganho quando você vender.
+                        </p>
+
+                        <!-- Box de Valores Plano A -->
+                        <div class="grid sm:grid-cols-2 gap-3.5 mb-6">
+                            <div class="p-4 rounded-2xl bg-black/60 border border-accentGold/40">
+                                <span class="text-[11px] text-textMuted uppercase tracking-wider block">Taxa Fixa Inicial</span>
+                                <span class="text-3xl font-black text-accentGold block mt-1">R$ 0,00</span>
+                                <span class="text-[11px] text-textMuted block mt-1">Sem mensalidade fixa de serviço</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-black/60 border border-white/10">
+                                <span class="text-[11px] text-textMuted uppercase tracking-wider block">Comissão (Revenue Share)</span>
+                                <span class="text-2xl font-extrabold text-white block mt-1">20% a 30%</span>
+                                <span class="text-[11px] text-textMuted block mt-1">Apenas sobre o resultado gerado</span>
+                            </div>
+                        </div>
+
+                        <!-- Botão Interativo de Expansão (JS) -->
+                        <button type="button" data-toggle-plan="details-plan-a"
+                                class="w-full py-3 px-4 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-xs sm:text-sm font-semibold text-white flex items-center justify-between transition-all">
+                            <span class="flex items-center gap-2">
+                                <i class="ph-duotone ph-list-checks text-accentGold text-lg"></i>
+                                <span class="toggle-label">Ver exatamente o que está incluso no Plano A</span>
                             </span>
+                            <i class="ph-bold ph-caret-down transition-transform duration-300 toggle-icon text-accentGold"></i>
+                        </button>
+
+                        <!-- Conteúdo Expansível do Plano A -->
+                        <div id="details-plan-a" class="plan-details open">
+                            <div class="plan-details-inner">
+                                <div class="p-5 rounded-2xl bg-black/55 border border-white/10 space-y-3 text-xs sm:text-sm text-textMuted">
+                                    <p class="text-xs font-bold uppercase tracking-wider text-accentGold mb-2">Entregáveis Completos da Parceria:</p>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="text-accentGold font-bold">✓</span>
+                                        <span><strong class="text-white">Marca & Vitrine do Zero:</strong> Criação/renovação de logotipo, identidade visual, fotos e cardápio persuasivo.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="text-accentGold font-bold">✓</span>
+                                        <span><strong class="text-white">Todos os Apps de Delivery:</strong> Cadastro e ajuste de margem no iFood, Rappi, 99Food, Aiqfome, Zé Delivery e Uber Eats.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="text-accentGold font-bold">✓</span>
+                                        <span><strong class="text-white">Gestão de Tráfego Local:</strong> Criação e otimização das campanhas no Meta Ads, Google Ads e TikTok Ads.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="text-accentGold font-bold">✓</span>
+                                        <span><strong class="text-white">Google Maps & Funil WhatsApp:</strong> Configuração completa para venda direta sem taxa de intermediação.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 pt-2 border-t border-white/10 text-accentGoldSoft">
+                                        <i class="ph-fill ph-shield-check text-base shrink-0 mt-0.5"></i>
+                                        <span><strong>Garantia de Risco Zero:</strong> Se não houver vendas geradas pela nossa frente, você não paga nenhum centavo de honorário.</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20quero%20escolher%20o%20Plano%20A%20(Ganha-Ganha%20/%20S%C3%B3cio%20de%20Crescimento%20com%20R$%200,00%20fixo%20inicial)."
+                           target="_blank" rel="noopener noreferrer"
+                           class="mt-6 w-full inline-flex items-center justify-center gap-2 bg-accentGold text-black font-bold py-4 px-6 rounded-xl hover:bg-white transition-all shadow-lg text-sm">
+                            <span>Quero o Modelo Ganha-Ganha (Plano A)</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </a>
                     </div>
 
-                    <ul class="space-y-2.5 text-xs text-textMuted mb-6">
-                        <li class="flex items-center gap-2"><span class="text-accentGold font-bold">✓</span> Criação de logotipo, identidade visual e fotos</li>
-                        <li class="flex items-center gap-2"><span class="text-accentGold font-bold">✓</span> Cadastro e precificação em todos os apps de delivery</li>
-                        <li class="flex items-center gap-2"><span class="text-accentGold font-bold">✓</span> Gestão de anúncios locais (Meta, Google e TikTok)</li>
-                        <li class="flex items-center gap-2"><span class="text-accentGold font-bold">✓</span> Google Maps e estrutura de vendas no WhatsApp</li>
-                    </ul>
-                </div>
+                    <!-- PLANO B: O PLANO PAGO COMPLETO (MENSALIDADE FIXA SEM COMISSÃO) -->
+                    <div class="reveal glass-card hover:border-white/25 rounded-3xl p-7 sm:p-9 relative transition-all">
+                        <div class="inline-flex items-center gap-1.5 bg-white/10 text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-5">
+                            <i class="ph-fill ph-check-circle text-accentGold"></i> 100% do Lucro das Vendas é Seu
+                        </div>
 
-                <div>
-                    <div class="py-3 px-4 rounded-xl bg-accentGold/10 border border-accentGold/30 text-xs text-accentGold font-semibold text-center mb-4">
-                        ✓ Risco zero para o seu caixa: só ganhamos juntos.
-                    </div>
-                    <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20quero%20fechar%20a%20parceria%20no%20modelo%20Microempresa%20Ganha-Ganha%20(R$%200,00%20fixo%20inicial)."
-                       target="_blank" rel="noopener noreferrer"
-                       class="w-full inline-flex items-center justify-center gap-2 bg-accentGold text-black font-bold py-3.5 px-6 rounded-xl hover:bg-white transition-all shadow-lg text-sm">
-                        <span>Escolher Modelo Ganha-Ganha</span>
-                        <i class="ph-bold ph-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-textMuted font-semibold">Plano B • Gestão Tradicional Completa</span>
+                            <h4 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Plano Pago Completo (Taxa Fixa)</h4>
+                        </div>
 
-            <!-- PLANO 2: MÉDIA EMPRESA -->
-            <div class="reveal bg-cardBg hover:bg-cardHover transition-colors border border-white/10 p-7 sm:p-8 rounded-3xl flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mt-2 mb-2">
-                        <h3 class="text-2xl font-bold text-white">Média Empresa</h3>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-white/5 text-textMuted font-medium">Em Expansão</span>
-                    </div>
-                    <p class="text-sm text-textMuted mb-6">
-                        Para negócios que já possuem fluxo de caixa ativo e querem tráfego e redes estruturadas em escala.
-                    </p>
+                        <p class="text-sm text-textMuted mt-3 mb-6 leading-relaxed">
+                            Para o empreendedor que prefere pagar um valor fixo mensal previsível, ter todos os serviços inclusos e ficar com <strong class="text-white">100% do faturamento das vendas</strong> sem dividir comissão.
+                        </p>
 
-                    <div class="space-y-4 mb-6">
-                        <div class="p-4 bg-black/50 rounded-2xl border border-white/10">
-                            <span class="text-xs text-textMuted uppercase tracking-wider block font-medium">Modelo Híbrido ou Retainer:</span>
-                            <span class="text-2xl sm:text-3xl font-extrabold text-white block mt-1">R$ 1.500 a R$ 3.500<span class="text-sm font-normal text-textMuted">/mês</span></span>
-                            <span class="text-xs text-textMuted block mt-1 leading-relaxed">
-                                Valor mensal fixo de gestão ou formato híbrido (fixo reduzido + % menor de performance).
+                        <!-- Box de Valores Plano B -->
+                        <div class="grid sm:grid-cols-2 gap-3.5 mb-6">
+                            <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
+                                <span class="text-[11px] text-textMuted uppercase tracking-wider block">Investimento Mensal Fixo</span>
+                                <span class="text-2xl sm:text-3xl font-extrabold text-white block mt-1">R$ 800 a R$ 1.200</span>
+                                <span class="text-[11px] text-textMuted block mt-1">Conforme volume de demandas</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
+                                <span class="text-[11px] text-textMuted uppercase tracking-wider block">Comissão sobre Vendas</span>
+                                <span class="text-2xl sm:text-3xl font-extrabold text-accentGold block mt-1">0% (Zero)</span>
+                                <span class="text-[11px] text-textMuted block mt-1">Todo o retorno fica no seu caixa</span>
+                            </div>
+                        </div>
+
+                        <!-- Botão Interativo de Expansão (JS) -->
+                        <button type="button" data-toggle-plan="details-plan-b"
+                                class="w-full py-3 px-4 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-xs sm:text-sm font-semibold text-white flex items-center justify-between transition-all">
+                            <span class="flex items-center gap-2">
+                                <i class="ph-duotone ph-list-checks text-accentGold text-lg"></i>
+                                <span class="toggle-label">Clique para expandir o que inclui no Plano B</span>
                             </span>
+                            <i class="ph-bold ph-caret-down transition-transform duration-300 toggle-icon text-accentGold"></i>
+                        </button>
+
+                        <!-- Conteúdo Expansível do Plano B -->
+                        <div id="details-plan-b" class="plan-details">
+                            <div class="plan-details-inner">
+                                <div class="p-5 rounded-2xl bg-black/55 border border-white/10 space-y-3 text-xs sm:text-sm text-textMuted">
+                                    <p class="text-xs font-bold uppercase tracking-wider text-accentGold mb-2">Tudo Incluso no Pacote Mensal:</p>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="text-accentGold font-bold">✓</span>
+                                        <span><strong class="text-white">Identidade & Criativos Semanais:</strong> Artes profissionais para feed, stories, promoções e cardápios.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="text-accentGold font-bold">✓</span>
+                                        <span><strong class="text-white">Gestão Completa de Tráfego Pago:</strong> Campanhas ativas em Meta Ads, Google Ads e TikTok Ads.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="text-accentGold font-bold">✓</span>
+                                        <span><strong class="text-white">Configuração & Precificação nos Apps:</strong> iFood, Rappi, Aiqfome, 99Food, Zé Delivery e Uber Eats.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="text-accentGold font-bold">✓</span>
+                                        <span><strong class="text-white">Suporte Operacional Direto:</strong> Acompanhamento próximo via WhatsApp e relatório mensal claro.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20tenho%20interesse%20no%20Plano%20B%20(Plano%20Pago%20Completo%20com%20valor%20fixo%20e%200%25%20de%20comiss%C3%A3o)."
+                           target="_blank" rel="noopener noreferrer"
+                           class="mt-6 w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white hover:text-black text-white font-bold py-4 px-6 rounded-xl border border-white/15 transition-all text-sm">
+                            <span>Consultar Plano Pago Completo (Plano B)</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- GRUPO 2: MÉDIAS E GRANDES EMPRESAS (ÁREA RESTRITA GLASS)     -->
+            <!-- ============================================================ -->
+            <div>
+                <div class="reveal flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 pb-4 border-b border-white/10">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-white/10 border border-white/20 text-accentGold font-extrabold text-sm flex items-center justify-center">02</span>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white">Médias e Grandes Empresas</h3>
+                            <p class="text-xs sm:text-sm text-textMuted">Operações em expansão, redes varejistas, indústrias e franquias</p>
+                        </div>
+                    </div>
+                    <span id="corporateStatusBadge" class="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs px-3.5 py-1 rounded-full bg-white/[0.06] border border-white/15 text-accentGold font-semibold">
+                        <i class="ph-fill ph-lock-key"></i> Acesso Corporativo Restrito
+                    </span>
+                </div>
+
+                <!-- Container Glassmorphism com Camada de Bloqueio / Desbloqueio -->
+                <div class="reveal relative rounded-3xl overflow-hidden glass-vault p-6 sm:p-10">
+                    <!-- Cards Corporativos (Desfocados inicialmente até desbloqueio) -->
+                    <div id="corporateCardsGrid" class="grid md:grid-cols-2 gap-8 transition-all duration-500 blur-md select-none pointer-events-none opacity-45">
+                        <!-- Card Média Empresa -->
+                        <div class="glass-card rounded-2xl p-7 border border-white/15">
+                            <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Porte Médio • Expansão Acelerada</span>
+                            <h4 class="text-2xl font-bold text-white mt-1 mb-2">Média Empresa (Retainer / Híbrido)</h4>
+                            <p class="text-sm text-textMuted mb-5">
+                                Para empresas com operação consolidada que buscam estrutura completa de marketing, tráfego avançado e crescimento previsível.
+                            </p>
+                            <div class="p-4 rounded-xl bg-black/60 border border-white/10 mb-5">
+                                <span class="text-xs text-textMuted block">Investimento Mensal:</span>
+                                <span class="text-2xl sm:text-3xl font-extrabold text-white">R$ 1.500 a R$ 3.500/mês</span>
+                                <span class="text-xs text-textMuted block mt-1">Retainer dedicado ou fixo reduzido + % menor de performance.</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-textMuted mb-6">
+                                <li>✓ Gestão completa de marca, redes sociais e campanhas</li>
+                                <li>✓ Funis de tráfego pago e remarketing multicanal</li>
+                                <li>✓ Relatórios executivos de ROI e reuniões quinzenais</li>
+                            </ul>
+                            <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20desbloqueei%20o%20acesso%20corporativo%20e%20quero%20conversar%20sobre%20o%20plano%20M%C3%A9dia%20Empresa."
+                               target="_blank" rel="noopener noreferrer"
+                               class="w-full inline-flex items-center justify-center gap-2 bg-accentGold text-black font-bold py-3.5 px-5 rounded-xl text-xs sm:text-sm">
+                                <span>Agendar Diagnóstico • Média Empresa</span>
+                                <i class="ph-bold ph-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card Grande Empresa -->
+                        <div class="glass-card rounded-2xl p-7 border border-white/15">
+                            <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Grande Porte • Corporate & Redes</span>
+                            <h4 class="text-2xl font-bold text-white mt-1 mb-2">Grande Empresa (Projetos Customizados)</h4>
+                            <p class="text-sm text-textMuted mb-5">
+                                Consultoria executiva, rebranding completo, design de linhas de embalagens, trade marketing e campanhas de grande porte.
+                            </p>
+                            <div class="p-4 rounded-xl bg-black/60 border border-white/10 mb-5">
+                                <span class="text-xs text-textMuted block">Escopo sob Projeto:</span>
+                                <span class="text-2xl sm:text-3xl font-extrabold text-accentGold">R$ 5.000 a R$ 12.000+</span>
+                                <span class="text-xs text-textMuted block mt-1">Definido mediante diagnóstico técnico e objetivos da diretoria.</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-textMuted mb-6">
+                                <li>✓ Arquitetura de marca, manual corporativo e embalagens</li>
+                                <li>✓ Estratégia de expansão regional e posicionamento</li>
+                                <li>✓ Acompanhamento direto junto aos sócios e diretoria</li>
+                            </ul>
+                            <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20desbloqueei%20o%20acesso%20corporativo%20e%20quero%20solicitar%20proposta%20para%20Grande%20Empresa."
+                               target="_blank" rel="noopener noreferrer"
+                               class="w-full inline-flex items-center justify-center gap-2 bg-white text-black font-bold py-3.5 px-5 rounded-xl text-xs sm:text-sm">
+                                <span>Solicitar Proposta Corporativa</span>
+                                <i class="ph-bold ph-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <ul class="space-y-2.5 text-xs text-textMuted mb-6">
-                        <li class="flex items-center gap-2"><span class="text-white">✓</span> Gestão completa de redes sociais e conteúdo</li>
-                        <li class="flex items-center gap-2"><span class="text-white">✓</span> Campanhas contínuas de tráfego pago e remarketing</li>
-                        <li class="flex items-center gap-2"><span class="text-white">✓</span> Otimização de lojas nos aplicativos e Google</li>
-                        <li class="flex items-center gap-2"><span class="text-white">✓</span> Relatórios mensais de crescimento e retorno (ROI)</li>
-                    </ul>
-                </div>
+                    <!-- Overlay Glassmorphism de Acesso Restrito -->
+                    <div id="corporateLockOverlay" class="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-black/45 via-black/75 to-black/90 backdrop-blur-md transition-all duration-500">
+                        <div class="w-16 h-16 rounded-2xl bg-accentGold/15 border border-accentGold/45 flex items-center justify-center text-accentGold text-3xl mb-4 shadow-[0_0_40px_rgba(212,175,55,0.25)]">
+                            <i class="ph-duotone ph-lock-key"></i>
+                        </div>
 
-                <div>
-                    <div class="pt-4 border-t border-white/10 text-xs text-textMuted text-center mb-4">
-                        Operação completa de tráfego e redes estruturadas.
-                    </div>
-                    <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20gostaria%20de%20saber%20mais%20sobre%20o%20plano%20M%C3%A9dia%20Empresa%20(R$%201.500%20a%20R$%203.500/m%C3%AAs)."
-                       target="_blank" rel="noopener noreferrer"
-                       class="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-3.5 px-6 rounded-xl border border-white/10 transition-all text-sm">
-                        <span>Consultar Plano Média Empresa</span>
-                    </a>
-                </div>
-            </div>
+                        <span class="text-[11px] uppercase tracking-[0.25em] text-accentGold font-bold mb-2">
+                            Divisão Executiva • Private Glass Vault
+                        </span>
+                        <h4 class="text-2xl sm:text-3xl font-extrabold text-white max-w-xl">
+                            Planos Corporativos para Médias e Grandes Empresas
+                        </h4>
+                        <p class="text-xs sm:text-sm text-textMuted max-w-lg mt-2 mb-6 leading-relaxed">
+                            Escopos avançados de Retainer e Projetos Customizados (<strong class="text-white">R$ 1.500 a R$ 12.000+</strong>) possuem atendimento sob credencial. Insira seu código de convite ou solicite liberação imediata.
+                        </p>
 
-            <!-- PLANO 3: GRANDE EMPRESA -->
-            <div class="reveal bg-cardBg hover:bg-cardHover transition-colors border border-white/10 p-7 sm:p-8 rounded-3xl flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mt-2 mb-2">
-                        <h3 class="text-2xl font-bold text-white">Grande Empresa</h3>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-white/5 text-textMuted font-medium">Consolidada</span>
-                    </div>
-                    <p class="text-sm text-textMuted mb-6">
-                        Para operações consolidadas, redes varejistas, indústrias e franquias regionais.
-                    </p>
+                        <!-- Controles de Código de Acesso / Solicitação -->
+                        <div class="w-full max-w-md space-y-3">
+                            <div class="flex flex-col sm:flex-row gap-2.5">
+                                <input id="corporateCodeInput" type="text" placeholder="Inserir código (ex: VIP2026)"
+                                       class="flex-1 px-4 py-3.5 rounded-xl bg-black/70 border border-white/20 text-sm text-white placeholder:text-textMuted focus:outline-none focus:border-accentGold text-center sm:text-left uppercase tracking-wider">
+                                <button type="button" id="unlockCorporateBtn"
+                                        class="px-6 py-3.5 rounded-xl bg-accentGold hover:bg-white text-black font-bold text-xs sm:text-sm transition-all shrink-0 shadow-lg">
+                                    Liberar Acesso
+                                </button>
+                            </div>
 
-                    <div class="space-y-4 mb-6">
-                        <div class="p-4 bg-black/50 rounded-2xl border border-white/10">
-                            <span class="text-xs text-textMuted uppercase tracking-wider block font-medium">Projetos Customizados:</span>
-                            <span class="text-2xl sm:text-3xl font-extrabold text-white block mt-1">R$ 5.000 a R$ 12.000+</span>
-                            <span class="text-xs text-textMuted block mt-1 leading-relaxed">
-                                Rebranding completo, arquitetura de marca, embalagens e campanhas de grande porte sob escopo.
-                            </span>
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1">
+                                <button type="button" id="quickPreviewCorporateBtn"
+                                        class="text-xs text-accentGoldSoft hover:text-white underline underline-offset-4 transition-colors">
+                                    Não tenho código: visualizar prévia dos valores corporativos
+                                </button>
+                                <span class="hidden sm:inline text-white/20">•</span>
+                                <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20gostaria%20de%20solicitar%20o%20c%C3%B3digo%20de%20acesso%20corporativo%20(M%C3%A9dias%20e%20Grandes%20Empresas)."
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="text-xs text-textMuted hover:text-white inline-flex items-center gap-1 transition-colors">
+                                    <i class="ph-bold ph-whatsapp-logo text-accentGold"></i>
+                                    <span>Solicitar Acesso Corporativo no WhatsApp</span>
+                                </a>
+                            </div>
+                            <p id="corporateFeedback" class="text-xs text-accentGold font-medium hidden"></p>
                         </div>
                     </div>
-
-                    <ul class="space-y-2.5 text-xs text-textMuted mb-6">
-                        <li class="flex items-center gap-2"><span class="text-white">✓</span> Rebranding completo e manual de identidade</li>
-                        <li class="flex items-center gap-2"><span class="text-white">✓</span> Design de linhas de embalagens e PDV</li>
-                        <li class="flex items-center gap-2"><span class="text-white">✓</span> Planejamento e campanhas publicitárias de grande porte</li>
-                        <li class="flex items-center gap-2"><span class="text-white">✓</span> Consultoria estratégica junto à diretoria</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <div class="pt-4 border-t border-white/10 text-xs text-textMuted text-center mb-4">
-                        Consultoria corporativa e projetos avançados.
-                    </div>
-                    <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20gostaria%20de%20solicitar%20proposta%20para%20Grande%20Empresa%20/%20Projeto%20Customizado."
-                       target="_blank" rel="noopener noreferrer"
-                       class="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-3.5 px-6 rounded-xl border border-white/10 transition-all text-sm">
-                        <span>Solicitar Escopo Corporativo</span>
-                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 7. SEÇÃO DE AUTORIDADE & MARCAS ATENDIDAS -->
-    <section class="py-16 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/10 text-center">
-        <span class="reveal text-xs uppercase tracking-widest text-textMuted font-semibold mb-8 block">
-            Experiência e Grandes Marcas Atendidas
-        </span>
-        <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            <div class="py-5 px-6 rounded-2xl bg-cardBg border border-white/10 flex items-center justify-center">
-                <span class="text-lg sm:text-xl font-extrabold tracking-widest text-white/85">CARREFOUR</span>
+        <!-- Seção de Experiência (Logos em Glassmorphism) -->
+        <section class="py-16 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/10 text-center">
+            <span class="reveal text-xs uppercase tracking-widest text-textMuted font-semibold mb-8 block">
+                Experiência Com Grandes Redes e Negócios Locais
+            </span>
+            <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <div class="py-5 px-6 rounded-2xl glass-card flex items-center justify-center">
+                    <span class="text-lg sm:text-xl font-extrabold tracking-widest text-white/85">CARREFOUR</span>
+                </div>
+                <div class="py-5 px-6 rounded-2xl glass-card flex items-center justify-center">
+                    <span class="text-base sm:text-lg font-extrabold tracking-wider text-white/85">DROGARIA ESTRELA DALVA</span>
+                </div>
+                <div class="py-5 px-6 rounded-2xl glass-card flex items-center justify-center">
+                    <span class="text-lg sm:text-xl font-extrabold tracking-widest text-white/85">WOB BRASIL</span>
+                </div>
             </div>
-            <div class="py-5 px-6 rounded-2xl bg-cardBg border border-white/10 flex items-center justify-center">
-                <span class="text-base sm:text-lg font-extrabold tracking-wider text-white/85">DROGARIA ESTRELA DALVA</span>
-            </div>
-            <div class="py-5 px-6 rounded-2xl bg-cardBg border border-white/10 flex items-center justify-center">
-                <span class="text-lg sm:text-xl font-extrabold tracking-widest text-white/85">WOB BRASIL</span>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- 8. FOOTER / RODAPÉ DE CONVERSÃO -->
-    <footer class="py-20 px-5 sm:px-6 max-w-4xl mx-auto text-center border-t border-white/10">
-        <div class="reveal">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Vamos tomar um café e desenhar esse projeto?</h2>
+    <!-- 5. FOOTER / RODAPÉ DE CONVERSÃO -->
+    <footer class="py-20 px-5 sm:px-6 max-w-4xl mx-auto text-center border-t border-white/10 relative z-10">
+        <div class="reveal glass-card rounded-3xl p-8 sm:p-12">
+            <div class="w-14 h-14 rounded-2xl bg-accentGold/15 border border-accentGold/30 flex items-center justify-center text-accentGold text-2xl mx-auto mb-5">
+                <i class="ph-duotone ph-coffee"></i>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Vamos tomar um café e desenhar esse projeto?</h2>
             <p class="text-textMuted mb-8 max-w-xl mx-auto leading-relaxed">
-                Sem compromisso e sem termos difíceis. Vamos alinhar como a sua operação e a minha estratégia de marketing se unem para gerar vendas e lucro real.
+                Sem compromisso e sem palavras difíceis. Vamos alinhar como a sua operação e a minha estratégia de marketing se unem para gerar vendas e lucro real na nossa cidade.
             </p>
-            <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20quero%20conversar%20sobre%20a%20parceria%20de%20crescimento."
+            <a href="https://wa.me/5511964894096?text=Ol%C3%A1%20Giovani,%20quero%20marcar%20um%20caf%C3%A9%20e%20conversar%20sobre%20a%20parceria%20de%20crescimento."
                target="_blank" rel="noopener noreferrer"
                class="inline-flex items-center justify-center gap-2.5 bg-accentGold text-black font-bold px-8 py-4 rounded-xl hover:bg-white transition-all shadow-xl text-base sm:text-lg">
                 <i class="ph-bold ph-whatsapp-logo text-xl"></i>
                 <span>Falar Diretamente no WhatsApp</span>
             </a>
-            <p class="text-xs text-textMuted mt-10">
-                Giovani Almeida • Estratégia, Marca e Vendas para Negócios Locais.
+            <p class="text-xs text-textMuted mt-8">
+                Giovani Almeida • Parcerias Estratégicas, Marca e Vendas.
             </p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT MODERNO (Player de Vídeo + Animações de Scroll) -->
+    <!-- JAVASCRIPT INTERATIVO -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Controle do Player de Vídeo de Apresentação
+            // 1. Player de Vídeo Vertical (9:16)
             const video = document.getElementById('partnerVideo');
             const cover = document.getElementById('videoCoverOverlay');
             const playBtn = document.getElementById('playVideoBtn');
@@ -511,7 +678,6 @@
                 video.setAttribute('controls', 'controls');
                 video.currentTime = 0;
                 video.play().catch(() => {
-                    // Caso o navegador exija interação adicional no controle nativo
                     video.setAttribute('controls', 'controls');
                 });
             };
@@ -524,7 +690,64 @@
                 });
             }
 
-            // 2. Animação suave de entrada ao rolar a página (IntersectionObserver)
+            // 2. Expansão Interativa dos Planos A e B (Micro e Pequenos Negócios)
+            document.querySelectorAll('[data-toggle-plan]').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-toggle-plan');
+                    const panel = document.getElementById(targetId);
+                    const icon = btn.querySelector('.toggle-icon');
+                    const label = btn.querySelector('.toggle-label');
+                    if (!panel) return;
+
+                    const isOpen = panel.classList.toggle('open');
+                    if (icon) icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+                    if (label) {
+                        label.textContent = isOpen
+                            ? 'Ocultar itens inclusos deste plano'
+                            : 'Clique para expandir o que este plano inclui';
+                    }
+                });
+            });
+
+            // Ajusta o estado inicial do ícone do Plano A (que já inicia aberto como destaque)
+            const firstBtnIcon = document.querySelector('[data-toggle-plan="details-plan-a"] .toggle-icon');
+            if (firstBtnIcon) firstBtnIcon.style.transform = 'rotate(180deg)';
+
+            // 3. Desbloqueio da Área Restrita Corporativa (Glass Vault)
+            const unlockBtn = document.getElementById('unlockCorporateBtn');
+            const quickPreviewBtn = document.getElementById('quickPreviewCorporateBtn');
+            const codeInput = document.getElementById('corporateCodeInput');
+            const lockOverlay = document.getElementById('corporateLockOverlay');
+            const cardsGrid = document.getElementById('corporateCardsGrid');
+            const statusBadge = document.getElementById('corporateStatusBadge');
+
+            const unlockCorporateArea = () => {
+                if (!lockOverlay || !cardsGrid) return;
+                lockOverlay.classList.add('opacity-0', 'pointer-events-none');
+                cardsGrid.classList.remove('blur-md', 'select-none', 'pointer-events-none', 'opacity-45');
+                if (statusBadge) {
+                    statusBadge.innerHTML = '<i class="ph-fill ph-lock-key-open"></i> Acesso Corporativo Liberado';
+                }
+            };
+
+            if (unlockBtn) {
+                unlockBtn.addEventListener('click', () => {
+                    unlockCorporateArea();
+                });
+            }
+            if (codeInput) {
+                codeInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        unlockCorporateArea();
+                    }
+                });
+            }
+            if (quickPreviewBtn) {
+                quickPreviewBtn.addEventListener('click', unlockCorporateArea);
+            }
+
+            // 4. Animação de Scroll Reveal
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -532,11 +755,10 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.12 });
+            }, { threshold: 0.1 });
 
             document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
         });
     </script>
 </body>
 </html>
-
