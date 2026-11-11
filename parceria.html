@@ -11,8 +11,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcerias Estratégicas & Planos de Negócio | Giovani Almeida</title>
-    <meta name="description" content="Modelos de parceria de marketing por porte de empresa. Plano Ganha-Ganha com R$ 0,00 de custo fixo inicial para microempreendedores.">
+    <title>Parcerias Estratégicas | Giovani Almeida</title>
+    <meta name="description" content="Seu sócio de crescimento em marca, vendas e digital. Modelo de parceria com R$ 0,00 de investimento fixo inicial para microempreendedores.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#0A0A0A">
 
@@ -21,7 +21,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,12 +35,15 @@
                         raised: '#1F1F1F',
                         snow: '#F5F5F7',
                         mute: '#A3A3A3',
-                        violet: { DEFAULT: '#65379D', soft: '#7C4DBA', deep: '#4A2775' }
+                        gold: { DEFAULT: '#D4AF37', soft: '#E6CC7A', deep: '#9C7F24' }
                     },
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif']
+                    },
                     boxShadow: {
-                        glow: '0 0 0 1px rgba(101,55,157,.6), 0 30px 80px -20px rgba(101,55,157,.55)',
-                        lift: '0 24px 60px -20px rgba(0,0,0,.8)'
+                        lift: '0 30px 60px -25px rgba(0,0,0,.9)',
+                        gold: '0 0 0 1px rgba(212,175,55,.55), 0 30px 70px -30px rgba(212,175,55,.35)'
                     }
                 }
             }
@@ -53,372 +56,346 @@
     <style>
         body { background:#0A0A0A; color:#F5F5F7; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
 
-        /* Vinheta estilo streaming */
-        .hero-vignette {
-            background:
-                radial-gradient(ellipse 70% 55% at 50% 0%, rgba(101,55,157,.35), transparent 70%),
-                linear-gradient(180deg, rgba(10,10,10,0) 60%, #0A0A0A 100%);
+        /* Dourado metálico discreto */
+        .metal-gold { background:linear-gradient(135deg,#8C7432 0%,#D4AF37 35%,#F1E2A8 55%,#B8952C 100%); }
+        .text-metal { background:linear-gradient(120deg,#C9A636 0%,#F1E2A8 50%,#C9A636 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .metal-graphite { background:linear-gradient(135deg,#2A2A2A 0%,#3A3A3A 45%,#1F1F1F 100%); }
+
+        /* Luz suave no topo (sem cor vibrante) */
+        .hero-light { background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(245,245,247,.07), transparent 70%); }
+
+        /* Logos de clientes em monocromático (padrão corporativo) */
+        .logo-mono {
+            filter:grayscale(1) invert(1) contrast(1.25) brightness(.95);
+            mix-blend-mode:screen;
+            opacity:.55;
+            transition:opacity .35s ease, transform .35s ease;
         }
-        .grain::after {
-            content:''; position:absolute; inset:0; pointer-events:none; opacity:.05;
-            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        }
+        .logo-cell:hover .logo-mono { opacity:1; transform:scale(1.04); }
 
         /* Reveal on scroll */
-        .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+        .reveal { opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
         .reveal.is-visible { opacity:1; transform:none; }
 
-        /* Borda animada do plano recomendado */
-        .ring-animated { position:relative; isolation:isolate; }
-        .ring-animated::before {
-            content:''; position:absolute; inset:-1px; border-radius:inherit; padding:1px; z-index:-1;
-            background:conic-gradient(from var(--a,0deg), #65379D, #F5F5F7 20%, #65379D 40%, #2a1745 70%, #65379D);
-            -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-            -webkit-mask-composite:xor; mask-composite:exclude;
-            animation:spin 6s linear infinite;
-        }
-        @property --a { syntax:'<angle>'; initial-value:0deg; inherits:false; }
-        @keyframes spin { to { --a:360deg; } }
-
-        /* Marquee de clientes */
-        .marquee { display:flex; width:max-content; animation:marquee 40s linear infinite; }
-        .marquee:hover { animation-play-state:paused; }
-        @keyframes marquee { to { transform:translateX(-50%); } }
-
-        /* Slider */
-        input[type=range] { -webkit-appearance:none; appearance:none; height:6px; border-radius:999px; background:#1F1F1F; outline:none; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:22px; height:22px; border-radius:50%; background:#F5F5F7; border:4px solid #65379D; cursor:pointer; box-shadow:0 0 0 6px rgba(101,55,157,.25); }
-        input[type=range]::-moz-range-thumb { width:16px; height:16px; border-radius:50%; background:#F5F5F7; border:4px solid #65379D; cursor:pointer; }
+        /* Linhas da tabela de planos (estilo Netflix) */
+        .plan-row { padding:14px 0; border-bottom:1px solid rgba(255,255,255,.07); }
+        .plan-row:last-child { border-bottom:0; }
+        .plan-row dt { font-size:12px; color:#A3A3A3; font-weight:500; }
+        .plan-row dd { margin-top:2px; font-size:14px; color:#F5F5F7; font-weight:600; }
 
         @media (prefers-reduced-motion: reduce) {
             .reveal { opacity:1; transform:none; transition:none; }
-            .marquee, .ring-animated::before { animation:none; }
         }
     </style>
 </head>
-<body class="font-sans selection:bg-violet selection:text-white">
+<body class="font-sans selection:bg-gold selection:text-ink">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDT7RTDV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- ===================== 1. HEADER ===================== -->
+    <!-- ===================== HEADER ===================== -->
     <header id="topbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
-            <a href="index.html" class="flex items-center gap-2.5 min-w-0">
-                <span class="w-1.5 h-6 rounded-full bg-violet shrink-0"></span>
-                <span class="truncate text-[13px] sm:text-sm tracking-[0.18em] uppercase">
-                    <strong class="font-extrabold text-snow">Giovani Almeida</strong>
-                    <span class="text-violet mx-1">&bull;</span>
-                    <span class="font-medium text-mute hidden sm:inline">Parcerias Estratégicas</span>
-                </span>
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+            <a href="index.html" class="min-w-0 flex items-center gap-2 text-[12px] sm:text-[13px] uppercase tracking-[0.2em]">
+                <strong class="font-bold text-snow whitespace-nowrap">Giovani Almeida</strong>
+                <span class="text-gold">&bull;</span>
+                <span class="hidden sm:inline text-mute font-medium truncate">Parcerias Estratégicas</span>
             </a>
-            <a href="#" data-wa="Olá Giovani! Vi a apresentação de parcerias e gostaria de conversar."
-               class="shrink-0 inline-flex items-center gap-2 rounded-full bg-violet hover:bg-violet-soft px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-8px_rgba(101,55,157,.8)]">
-                <i class="ph-bold ph-whatsapp-logo text-base"></i>
-                <span>Falar no WhatsApp</span>
+            <a href="#" data-wa="Olá Giovani! Vi a sua apresentação de parceria e gostaria de conversar."
+               class="shrink-0 inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-gold/70 bg-white/[0.04] hover:bg-white/[0.08] px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-semibold text-snow transition-all duration-300">
+                <i class="ph ph-whatsapp-logo text-base text-gold"></i>
+                <span>Conversar no WhatsApp</span>
             </a>
         </div>
     </header>
 
     <main>
-        <!-- ===================== 2. HERO ===================== -->
-        <section class="relative grain overflow-hidden pt-32 sm:pt-44 pb-20 sm:pb-28">
-            <div class="hero-vignette absolute inset-0 pointer-events-none"></div>
+        <!-- ===================== HERO ===================== -->
+        <section class="relative overflow-hidden pt-36 sm:pt-48 pb-24 sm:pb-32">
+            <div class="hero-light absolute inset-0 pointer-events-none"></div>
+            <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
+                <p class="reveal text-[11px] sm:text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-7">Uma proposta de parceria</p>
 
-            <div class="relative max-w-5xl mx-auto px-5 sm:px-8 text-center">
-                <div class="reveal inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-mute mb-8">
-                    <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full rounded-full bg-violet opacity-75 animate-ping"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-violet"></span></span>
-                    Apresentação exclusiva de parceria
-                </div>
-
-                <h1 class="reveal text-[2.1rem] leading-[1.08] sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-snow">
-                    Escale o seu negócio com inteligência estratégica e
-                    <span class="bg-gradient-to-r from-[#B793E6] via-snow to-[#B793E6] bg-clip-text text-transparent">risco zero de caixa.</span>
+                <h1 class="reveal font-serif text-[2.2rem] leading-[1.12] sm:text-6xl lg:text-[4.2rem] text-snow">
+                    Todo grande negócio começa com uma boa parceria.
+                    <span class="italic text-metal">Vamos construir o seu?</span>
                 </h1>
 
-                <p class="reveal mt-6 sm:mt-8 text-base sm:text-xl text-mute max-w-2xl mx-auto leading-relaxed">
-                    Soluções de marketing sob medida para cada estágio empresarial — do lançamento ao crescimento acelerado.
+                <p class="reveal mt-8 sm:mt-10 text-base sm:text-lg text-mute leading-relaxed max-w-2xl mx-auto">
+                    Você tem o dom do produto, a mão na massa e a vontade de fazer acontecer na nossa cidade. Mas começar sozinho, tentando adivinhar como atrair clientes, cuidar de redes sociais e precificar delivery, consome toda a sua energia.
+                    <span class="block mt-4 text-snow font-medium">Eu entro para ser o seu sócio de crescimento na parte de marca, vendas e digital.</span>
                 </p>
 
-                <div class="reveal mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-                    <a href="#ganha-ganha" class="inline-flex items-center justify-center gap-2 rounded-full bg-snow text-ink px-7 py-4 text-sm sm:text-base font-bold transition-all duration-300 hover:bg-white hover:-translate-y-0.5">
-                        <i class="ph-fill ph-play text-lg"></i> Ver o plano ideal para mim
+                <div class="reveal mt-11 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
+                    <a href="#planos" class="inline-flex items-center justify-center gap-2 rounded-full bg-snow hover:bg-white text-ink px-8 py-4 text-sm sm:text-base font-semibold transition-all duration-300 hover:-translate-y-0.5">
+                        Conhecer o Modelo de Parceria <i class="ph-bold ph-arrow-down"></i>
                     </a>
-                    <a href="#portes" class="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/15 border border-white/10 px-7 py-4 text-sm sm:text-base font-semibold text-snow transition-all duration-300">
-                        <i class="ph-bold ph-info text-lg"></i> Comparar modelos
+                    <a href="#como-funciona" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 hover:border-white/30 px-8 py-4 text-sm sm:text-base font-medium text-snow transition-all duration-300">
+                        Ver o que eu faço por você
                     </a>
                 </div>
 
-                <!-- Métricas -->
-                <dl class="reveal mt-16 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.06] text-left">
-                    <div class="bg-panel p-5 sm:p-6"><dt class="text-[11px] uppercase tracking-widest text-mute">Pedidos</dt><dd class="mt-1 text-2xl sm:text-3xl font-extrabold">+120%</dd></div>
-                    <div class="bg-panel p-5 sm:p-6"><dt class="text-[11px] uppercase tracking-widest text-mute">Custo fixo inicial</dt><dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#B793E6]">R$ 0</dd></div>
-                    <div class="bg-panel p-5 sm:p-6"><dt class="text-[11px] uppercase tracking-widest text-mute">Experiência</dt><dd class="mt-1 text-2xl sm:text-3xl font-extrabold">10+ anos</dd></div>
-                    <div class="bg-panel p-5 sm:p-6"><dt class="text-[11px] uppercase tracking-widest text-mute">Canais</dt><dd class="mt-1 text-2xl sm:text-3xl font-extrabold">Google + Meta</dd></div>
-                </dl>
-            </div>
-        </section>
-
-        <!-- Faixa de clientes (prova social) -->
-        <section aria-label="Marcas atendidas" class="border-y border-white/[0.06] bg-panel/60 py-6 overflow-hidden">
-            <p class="text-center text-[11px] uppercase tracking-[0.2em] text-mute mb-5">Marcas que já cresceram com esta metodologia</p>
-            <div class="relative [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
-                <div class="marquee gap-4 px-2" id="clientsTrack"></div>
-            </div>
-        </section>
-
-        <!-- ===================== 3. SEGMENTAÇÃO POR PORTE ===================== -->
-        <section id="portes" class="py-24 sm:py-32">
-            <div class="max-w-7xl mx-auto px-5 sm:px-8">
-                <div class="reveal max-w-2xl mb-14">
-                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-violet-soft">Modelos por porte</span>
-                    <h2 class="mt-3 text-3xl sm:text-5xl font-extrabold tracking-tight">Um formato certo para cada estágio do negócio.</h2>
-                    <p class="mt-4 text-mute text-base sm:text-lg">Escolha pelo momento da sua empresa, não pelo tamanho da fatura. Quem está começando não deveria pagar como quem já está consolidado.</p>
-                </div>
-
-                <div class="grid gap-6 lg:grid-cols-3 lg:items-stretch">
-                    <!-- MICRO (DESTAQUE) -->
-                    <article class="reveal ring-animated rounded-3xl bg-gradient-to-b from-[#1d1229] via-panel to-panel p-7 sm:p-9 shadow-glow lg:-translate-y-3 transition-transform duration-500 hover:-translate-y-5 flex flex-col order-first">
-                        <div class="flex items-center justify-between gap-3 mb-6">
-                            <span class="inline-flex items-center gap-1.5 rounded-full bg-violet px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white"><i class="ph-fill ph-star"></i> O seu caso</span>
-                            <span class="text-[11px] uppercase tracking-widest text-mute">Microempresa</span>
-                        </div>
-                        <h3 class="text-2xl sm:text-3xl font-extrabold">Sócio de Crescimento</h3>
-                        <p class="mt-2 text-sm text-mute">Para quem está iniciando e precisa crescer sem comprometer o caixa.</p>
-
-                        <div class="mt-7 rounded-2xl bg-ink/60 border border-white/[0.06] p-5">
-                            <div class="text-[11px] uppercase tracking-widest text-mute">Honorário fixo inicial</div>
-                            <div class="mt-1 flex items-end gap-2 flex-wrap">
-                                <span class="text-4xl sm:text-5xl font-black">R$ 0</span>
-                                <span class="mb-1.5 text-sm text-mute">+ 20% a 30% sobre o resultado gerado</span>
-                            </div>
-                        </div>
-
-                        <ul class="mt-7 space-y-3 text-sm text-snow/90 flex-1">
-                            <li class="flex gap-3"><i class="ph-fill ph-check-circle text-violet-soft text-lg shrink-0"></i>Remuneração 100% por performance (Revenue Share)</li>
-                            <li class="flex gap-3"><i class="ph-fill ph-check-circle text-violet-soft text-lg shrink-0"></i>Marca, Google Perfil de Empresa e redes sociais</li>
-                            <li class="flex gap-3"><i class="ph-fill ph-check-circle text-violet-soft text-lg shrink-0"></i>Gestão de anúncios locais no Meta Ads</li>
-                            <li class="flex gap-3"><i class="ph-fill ph-check-circle text-violet-soft text-lg shrink-0"></i>Reunião semanal de metas com o sócio-diretor</li>
-                        </ul>
-
-                        <a href="#ganha-ganha" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-violet hover:bg-violet-soft px-6 py-4 text-sm font-bold text-white transition-all duration-300">
-                            Entender o Ganha-Ganha <i class="ph-bold ph-arrow-right"></i>
-                        </a>
-                    </article>
-
-                    <!-- MÉDIA -->
-                    <article class="reveal group rounded-3xl bg-panel border border-white/[0.06] p-7 sm:p-9 transition-all duration-500 hover:-translate-y-2 hover:border-white/15 hover:shadow-lift flex flex-col">
-                        <div class="flex items-center justify-between gap-3 mb-6">
-                            <span class="rounded-full bg-raised px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-mute">Em expansão</span>
-                            <span class="text-[11px] uppercase tracking-widest text-mute">Média empresa</span>
-                        </div>
-                        <h3 class="text-2xl sm:text-3xl font-extrabold">Modelo Híbrido</h3>
-                        <p class="mt-2 text-sm text-mute">Para quem já tem fluxo e quer acelerar com previsibilidade.</p>
-
-                        <div class="mt-7 rounded-2xl bg-raised/60 border border-white/[0.04] p-5">
-                            <div class="text-[11px] uppercase tracking-widest text-mute">Retainer mensal</div>
-                            <div class="mt-1 text-3xl sm:text-4xl font-extrabold">R$ 1,5k a 3,5k</div>
-                            <div class="mt-1 text-sm text-mute">ou fixo reduzido + % menor de performance</div>
-                        </div>
-
-                        <ul class="mt-7 space-y-3 text-sm text-mute flex-1">
-                            <li class="flex gap-3"><i class="ph-bold ph-check text-snow text-lg shrink-0"></i>Gestão completa de redes sociais</li>
-                            <li class="flex gap-3"><i class="ph-bold ph-check text-snow text-lg shrink-0"></i>Tráfego pago estruturado e otimizado</li>
-                            <li class="flex gap-3"><i class="ph-bold ph-check text-snow text-lg shrink-0"></i>Relatório mensal de retorno (ROI)</li>
-                            <li class="flex gap-3"><i class="ph-bold ph-check text-snow text-lg shrink-0"></i>Campanhas sazonais e promoções</li>
-                        </ul>
-
-                        <a href="#" data-wa="Olá Giovani! Quero entender o Modelo Híbrido para média empresa."
-                           class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 px-6 py-4 text-sm font-semibold transition-all duration-300">
-                            Consultar modelo <i class="ph-bold ph-arrow-up-right"></i>
-                        </a>
-                    </article>
-
-                    <!-- GRANDE -->
-                    <article class="reveal group rounded-3xl bg-panel border border-white/[0.06] p-7 sm:p-9 transition-all duration-500 hover:-translate-y-2 hover:border-white/15 hover:shadow-lift flex flex-col">
-                        <div class="flex items-center justify-between gap-3 mb-6">
-                            <span class="rounded-full bg-raised px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-mute">Consolidada</span>
-                            <span class="text-[11px] uppercase tracking-widest text-mute">Grande empresa</span>
-                        </div>
-                        <h3 class="text-2xl sm:text-3xl font-extrabold">Consultoria Corporativa</h3>
-                        <p class="mt-2 text-sm text-mute">Projetos avançados de expansão e reposicionamento de marca.</p>
-
-                        <div class="mt-7 rounded-2xl bg-raised/60 border border-white/[0.04] p-5">
-                            <div class="text-[11px] uppercase tracking-widest text-mute">Valor sob projeto</div>
-                            <div class="mt-1 text-3xl sm:text-4xl font-extrabold">R$ 5k a 12k+</div>
-                            <div class="mt-1 text-sm text-mute">escopo definido após diagnóstico</div>
-                        </div>
-
-                        <ul class="mt-7 space-y-3 text-sm text-mute flex-1">
-                            <li class="flex gap-3"><i class="ph-bold ph-check text-snow text-lg shrink-0"></i>Rebranding e arquitetura de marca</li>
-                            <li class="flex gap-3"><i class="ph-bold ph-check text-snow text-lg shrink-0"></i>Planejamento de expansão regional</li>
-                            <li class="flex gap-3"><i class="ph-bold ph-check text-snow text-lg shrink-0"></i>Treinamento de equipe interna</li>
-                            <li class="flex gap-3"><i class="ph-bold ph-check text-snow text-lg shrink-0"></i>Gestão de riscos e novas oportunidades</li>
-                        </ul>
-
-                        <a href="#" data-wa="Olá Giovani! Gostaria de solicitar um diagnóstico de Consultoria Corporativa."
-                           class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 px-6 py-4 text-sm font-semibold transition-all duration-300">
-                            Solicitar diagnóstico <i class="ph-bold ph-arrow-up-right"></i>
-                        </a>
-                    </article>
-                </div>
-
-                <!-- Tabela comparativa (desktop) -->
-                <div class="reveal mt-16 hidden md:block overflow-hidden rounded-2xl border border-white/[0.06]">
-                    <table class="w-full text-sm">
-                        <thead class="bg-raised text-left text-[11px] uppercase tracking-widest text-mute">
-                            <tr>
-                                <th class="p-5 font-semibold">Critério</th>
-                                <th class="p-5 font-semibold text-snow bg-violet/20">Micro &bull; Ganha-Ganha</th>
-                                <th class="p-5 font-semibold">Média &bull; Híbrido</th>
-                                <th class="p-5 font-semibold">Grande &bull; Consultoria</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-white/[0.06] bg-panel">
-                            <tr><td class="p-5 text-mute">Custo fixo</td><td class="p-5 font-bold bg-violet/[0.08]">R$ 0</td><td class="p-5">R$ 1,5k a 3,5k</td><td class="p-5">Sob projeto</td></tr>
-                            <tr><td class="p-5 text-mute">Remuneração variável</td><td class="p-5 font-bold bg-violet/[0.08]">20% a 30% do resultado</td><td class="p-5">% menor sobre excedente</td><td class="p-5">Não se aplica</td></tr>
-                            <tr><td class="p-5 text-mute">Risco para o empresário</td><td class="p-5 font-bold bg-violet/[0.08] text-emerald-400">Mínimo</td><td class="p-5">Moderado</td><td class="p-5">Planejado</td></tr>
-                            <tr><td class="p-5 text-mute">Ideal para</td><td class="p-5 font-bold bg-violet/[0.08]">Começar a crescer</td><td class="p-5">Acelerar vendas</td><td class="p-5">Expandir a marca</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== 4. TRÁFEGO PAGO ===================== -->
-        <section id="trafego" class="py-24 sm:py-32 bg-panel border-y border-white/[0.06]">
-            <div class="max-w-7xl mx-auto px-5 sm:px-8">
-                <div class="reveal max-w-2xl mb-14">
-                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-violet-soft">Tráfego pago</span>
-                    <h2 class="mt-3 text-3xl sm:text-5xl font-extrabold tracking-tight">O poder do anúncio certo, na sua cidade.</h2>
-                    <p class="mt-4 text-mute text-base sm:text-lg">O valor de mídia é pago direto ao Meta (Instagram e Facebook). Veja o que cada faixa de investimento entrega em alcance local.</p>
-                </div>
-
-                <div class="grid gap-6 lg:grid-cols-5">
-                    <!-- Faixas -->
-                    <div class="lg:col-span-3 grid gap-6 sm:grid-cols-2">
-                        <div class="reveal rounded-3xl bg-raised border border-white/[0.06] p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-white/15">
-                            <div class="w-11 h-11 rounded-xl bg-white/[0.06] flex items-center justify-center mb-5"><i class="ph-bold ph-flask text-xl text-snow"></i></div>
-                            <div class="text-[11px] uppercase tracking-widest text-mute">Baixo investimento</div>
-                            <div class="mt-1 text-2xl font-extrabold">R$ 300 a 600<span class="text-sm font-medium text-mute">/mês</span></div>
-                            <div class="mt-5 h-2 rounded-full bg-ink overflow-hidden"><div class="h-full w-[22%] rounded-full bg-mute"></div></div>
-                            <div class="mt-3 text-lg font-bold">5 mil a 12 mil <span class="text-sm font-medium text-mute">pessoas locais</span></div>
-                            <p class="mt-3 text-sm text-mute">Ideal para validação e testes de oferta, público e criativos.</p>
-                        </div>
-
-                        <div class="reveal rounded-3xl bg-raised border border-violet/40 p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-violet">
-                            <div class="w-11 h-11 rounded-xl bg-violet/20 flex items-center justify-center mb-5"><i class="ph-bold ph-rocket-launch text-xl text-[#B793E6]"></i></div>
-                            <div class="text-[11px] uppercase tracking-widest text-mute">Investimento médio</div>
-                            <div class="mt-1 text-2xl font-extrabold">R$ 1.000 a 3.000<span class="text-sm font-medium text-mute">/mês</span></div>
-                            <div class="mt-5 h-2 rounded-full bg-ink overflow-hidden"><div class="h-full w-[85%] rounded-full bg-gradient-to-r from-violet to-[#B793E6]"></div></div>
-                            <div class="mt-3 text-lg font-bold">25 mil a 60 mil <span class="text-sm font-medium text-mute">pessoas</span></div>
-                            <p class="mt-3 text-sm text-mute">Escala de vendas diárias com fluxo constante de novos clientes.</p>
-                        </div>
-                    </div>
-
-                    <!-- Simulador -->
-                    <div class="reveal lg:col-span-2 rounded-3xl bg-ink border border-white/[0.08] p-7 sm:p-8 shadow-lift">
-                        <div class="flex items-center justify-between mb-6">
-                            <span class="text-sm font-bold">Simulador de alcance</span>
-                            <span class="text-[11px] uppercase tracking-widest text-mute">Estimativa</span>
-                        </div>
-                        <label for="budget" class="text-[11px] uppercase tracking-widest text-mute">Investimento mensal em mídia</label>
-                        <div id="budgetOut" class="mt-1 text-4xl font-black">R$ 600</div>
-                        <input id="budget" type="range" min="300" max="3000" step="50" value="600" class="mt-5 w-full" aria-label="Investimento mensal em anúncios">
-                        <div class="mt-2 flex justify-between text-[11px] text-mute"><span>R$ 300</span><span>R$ 3.000</span></div>
-
-                        <div class="mt-7 grid grid-cols-2 gap-3">
-                            <div class="rounded-2xl bg-panel p-4">
-                                <div class="text-[11px] uppercase tracking-widest text-mute">Alcance local</div>
-                                <div id="reachOut" class="mt-1 text-xl font-extrabold">12 mil</div>
-                            </div>
-                            <div class="rounded-2xl bg-panel p-4">
-                                <div class="text-[11px] uppercase tracking-widest text-mute">Fase</div>
-                                <div id="phaseOut" class="mt-1 text-xl font-extrabold text-[#B793E6]">Validação</div>
-                            </div>
-                        </div>
-                        <p class="mt-5 text-xs text-mute leading-relaxed"><i class="ph-bold ph-info text-violet-soft"></i> Valores aproximados para raio de 3 a 10 km. O alcance real varia conforme região, segmento e qualidade dos criativos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================== 5. DESTAQUE GANHA-GANHA ===================== -->
-        <section id="ganha-ganha" class="relative py-24 sm:py-32 overflow-hidden">
-            <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 60% 50% at 50% 40%, rgba(101,55,157,.28), transparent 70%)"></div>
-
-            <div class="relative max-w-6xl mx-auto px-5 sm:px-8">
-                <div class="reveal text-center max-w-3xl mx-auto">
-                    <span class="inline-flex items-center gap-1.5 rounded-full bg-violet px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white"><i class="ph-fill ph-crown"></i> Recomendado para você</span>
-                    <h2 class="mt-5 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Por que o plano <span class="text-[#B793E6]">Ganha-Ganha</span> é perfeito para o seu momento?</h2>
-                    <p class="mt-5 text-mute text-base sm:text-lg">Em vez de um fornecedor que cobra todo mês, você ganha um <strong class="text-snow">sócio de crescimento</strong>. Eu só ganho quando a sua empresa fatura.</p>
-                </div>
-
-                <!-- Comparação visual -->
-                <div class="reveal mt-14 grid gap-6 md:grid-cols-2">
-                    <div class="rounded-3xl bg-panel border border-white/[0.06] p-7 sm:p-9">
-                        <div class="flex items-center gap-2 text-sm font-bold text-mute"><i class="ph-bold ph-x-circle text-red-400 text-xl"></i> Agência tradicional</div>
-                        <div class="mt-6 text-4xl font-black text-mute line-through decoration-red-400/70">R$ 2.500/mês</div>
-                        <p class="mt-3 text-sm text-mute">Cobrado mesmo que você não venda nada. O risco fica inteiro com você.</p>
-                    </div>
-                    <div class="ring-animated rounded-3xl bg-gradient-to-br from-[#1d1229] to-panel p-7 sm:p-9 shadow-glow">
-                        <div class="flex items-center gap-2 text-sm font-bold"><i class="ph-fill ph-check-circle text-emerald-400 text-xl"></i> Sócio de Crescimento</div>
-                        <div class="mt-6 text-4xl font-black">R$ 0 <span class="text-base font-semibold text-mute">de fixo inicial</span></div>
-                        <p class="mt-3 text-sm text-snow/80">Recebo de 20% a 30% somente sobre o resultado que geramos juntos.</p>
-                    </div>
-                </div>
-
-                <!-- Pilares -->
-                <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    <div class="reveal rounded-3xl bg-panel border border-white/[0.06] p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-violet/50">
-                        <i class="ph-duotone ph-shield-check text-3xl text-[#B793E6]"></i>
-                        <h3 class="mt-4 font-bold">Caixa protegido</h3>
-                        <p class="mt-2 text-sm text-mute">Nenhum honorário fixo enquanto o negócio está ganhando tração.</p>
-                    </div>
-                    <div class="reveal rounded-3xl bg-panel border border-white/[0.06] p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-violet/50">
-                        <i class="ph-duotone ph-handshake text-3xl text-[#B793E6]"></i>
-                        <h3 class="mt-4 font-bold">Riscos alinhados</h3>
-                        <p class="mt-2 text-sm text-mute">Se você não fatura, eu também não. O incentivo é o mesmo dos dois lados.</p>
-                    </div>
-                    <div class="reveal rounded-3xl bg-panel border border-white/[0.06] p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-violet/50">
-                        <i class="ph-duotone ph-chart-line-up text-3xl text-[#B793E6]"></i>
-                        <h3 class="mt-4 font-bold">Foco em venda real</h3>
-                        <p class="mt-2 text-sm text-mute">Nada de curtidas como meta. O que importa é pedido, cliente e faturamento.</p>
-                    </div>
-                    <div class="reveal rounded-3xl bg-panel border border-white/[0.06] p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-violet/50">
-                        <i class="ph-duotone ph-user-circle text-3xl text-[#B793E6]"></i>
-                        <h3 class="mt-4 font-bold">Contato direto</h3>
-                        <p class="mt-2 text-sm text-mute">Você fala com quem executa e decide, sem intermediários.</p>
-                    </div>
-                </div>
-
-                <!-- Como funciona -->
-                <ol class="reveal mt-14 grid gap-px rounded-3xl overflow-hidden border border-white/[0.06] bg-white/[0.06] sm:grid-cols-3">
-                    <li class="bg-panel p-7"><span class="text-xs font-bold text-violet-soft">01</span><h4 class="mt-2 font-bold">Diagnóstico</h4><p class="mt-1 text-sm text-mute">Entendemos números, operação e metas do seu negócio.</p></li>
-                    <li class="bg-panel p-7"><span class="text-xs font-bold text-violet-soft">02</span><h4 class="mt-2 font-bold">Acordo transparente</h4><p class="mt-1 text-sm text-mute">Definimos juntos a base de cálculo e o percentual (20% a 30%).</p></li>
-                    <li class="bg-panel p-7"><span class="text-xs font-bold text-violet-soft">03</span><h4 class="mt-2 font-bold">Crescimento mútuo</h4><p class="mt-1 text-sm text-mute">Executo a estratégia e acompanhamos os resultados toda semana.</p></li>
+                <!-- Linha do tempo da parceria -->
+                <ol class="reveal mt-20 grid grid-cols-3 gap-2 sm:gap-6 text-left max-w-2xl mx-auto">
+                    <li class="border-t border-gold/60 pt-4">
+                        <span class="text-[11px] text-gold font-semibold tracking-widest">01</span>
+                        <p class="mt-1 text-xs sm:text-sm text-snow font-medium">A sua marca</p>
+                    </li>
+                    <li class="border-t border-white/15 pt-4">
+                        <span class="text-[11px] text-mute font-semibold tracking-widest">02</span>
+                        <p class="mt-1 text-xs sm:text-sm text-snow font-medium">Os seus canais de venda</p>
+                    </li>
+                    <li class="border-t border-white/15 pt-4">
+                        <span class="text-[11px] text-mute font-semibold tracking-widest">03</span>
+                        <p class="mt-1 text-xs sm:text-sm text-snow font-medium">Crescemos juntos</p>
+                    </li>
                 </ol>
+            </div>
+        </section>
+
+        <!-- ===================== SEÇÃO 1: MARCA ===================== -->
+        <section id="como-funciona" class="py-24 sm:py-32 border-t border-white/[0.06]">
+            <div class="max-w-6xl mx-auto px-5 sm:px-8">
+                <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
+                    <div class="reveal">
+                        <p class="text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Passo 1</p>
+                        <h2 class="mt-4 font-serif text-3xl sm:text-5xl leading-tight">O primeiro passo é ter uma marca que dá vontade de comprar.</h2>
+                        <p class="mt-6 text-mute text-base sm:text-lg leading-relaxed">
+                            Começamos do zero: um logotipo profissional, cores e letras próprias, embalagens, fachada e posts com a mesma cara. Quando a marca parece confiável, o cliente para, olha e compra. Na rua e no celular.
+                        </p>
+                        <ul class="mt-8 grid grid-cols-2 gap-3 text-sm">
+                            <li class="flex items-center gap-2.5 rounded-xl bg-panel border border-white/[0.06] px-4 py-3"><i class="ph ph-pen-nib text-gold text-lg"></i>Logotipo</li>
+                            <li class="flex items-center gap-2.5 rounded-xl bg-panel border border-white/[0.06] px-4 py-3"><i class="ph ph-palette text-gold text-lg"></i>Cores e letras</li>
+                            <li class="flex items-center gap-2.5 rounded-xl bg-panel border border-white/[0.06] px-4 py-3"><i class="ph ph-package text-gold text-lg"></i>Embalagens</li>
+                            <li class="flex items-center gap-2.5 rounded-xl bg-panel border border-white/[0.06] px-4 py-3"><i class="ph ph-storefront text-gold text-lg"></i>Fachada e cardápio</li>
+                        </ul>
+                    </div>
+
+                    <!-- Antes e Depois (exemplo: rotisseria de bairro) -->
+                    <div class="reveal">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs text-mute">Exemplo prático: rotisseria de bairro</span>
+                            <div class="inline-flex rounded-full bg-panel border border-white/10 p-1 text-xs font-semibold" role="tablist">
+                                <button type="button" data-ba="antes" class="ba-btn rounded-full px-4 py-1.5 text-mute transition-colors">Antes</button>
+                                <button type="button" data-ba="depois" class="ba-btn rounded-full px-4 py-1.5 bg-snow text-ink transition-colors">Depois</button>
+                            </div>
+                        </div>
+
+                        <div class="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/[0.08] bg-panel shadow-lift">
+                            <!-- ANTES -->
+                            <div id="ba-antes" class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-8 bg-[#d9d9d9] opacity-0 transition-opacity duration-500">
+                                <div class="bg-white border-4 border-red-600 px-6 py-4 rotate-[-2deg] shadow">
+                                    <p style="font-family:Arial,sans-serif" class="text-red-600 font-bold text-2xl sm:text-3xl text-center leading-tight">FRANGO ASSADO<br><span class="text-black text-lg">do Zé</span></p>
+                                </div>
+                                <p style="font-family:'Comic Sans MS',Arial,sans-serif" class="text-black text-sm sm:text-base text-center">Aceitamos encomendas!!! Zap 11 9xxxx-xxxx</p>
+                                <span class="absolute bottom-4 left-4 text-[11px] font-semibold uppercase tracking-widest text-black/50">Sem identidade</span>
+                            </div>
+
+                            <!-- DEPOIS -->
+                            <div id="ba-depois" class="absolute inset-0 flex flex-col items-center justify-center p-8 bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] transition-opacity duration-500">
+                                <svg viewBox="0 0 120 120" class="w-20 h-20 sm:w-24 sm:h-24" aria-hidden="true">
+                                    <circle cx="60" cy="60" r="56" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                                    <circle cx="60" cy="60" r="49" fill="none" stroke="#D4AF37" stroke-opacity=".35" stroke-width="1"/>
+                                    <path d="M44 74c0-14 8-26 18-30 8-3 16 1 16 9 0 4-2 7-6 8 5 2 8 6 8 11 0 8-8 14-18 14-11 0-18-5-18-12z" fill="#D4AF37"/>
+                                    <path d="M40 86h40M46 92h28" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M52 36c2-4 0-7 2-10M60 34c2-4 0-7 2-10M68 36c2-4 0-7 2-10" stroke="#F5F5F7" stroke-opacity=".6" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                                </svg>
+                                <p class="mt-5 font-serif text-3xl sm:text-4xl text-snow tracking-wide">Brasa do Zé</p>
+                                <p class="mt-1 text-[10px] sm:text-xs uppercase tracking-[0.4em] text-gold">Rotisseria &bull; Desde 2026</p>
+                                <div class="mt-7 flex flex-wrap justify-center gap-2 text-[11px] text-mute">
+                                    <span class="rounded-full border border-white/10 px-3 py-1">Embalagem</span>
+                                    <span class="rounded-full border border-white/10 px-3 py-1">Fachada</span>
+                                    <span class="rounded-full border border-white/10 px-3 py-1">Instagram</span>
+                                    <span class="rounded-full border border-white/10 px-3 py-1">iFood</span>
+                                </div>
+                                <span class="absolute bottom-4 left-4 text-[11px] font-semibold uppercase tracking-widest text-gold/80">Marca profissional</span>
+                            </div>
+                        </div>
+
+                        <!-- Caso real do segmento alimentação -->
+                        <div class="mt-4 flex items-center gap-4 rounded-2xl bg-panel border border-white/[0.06] p-4">
+                            <div class="w-16 h-12 rounded-lg bg-white flex items-center justify-center overflow-hidden shrink-0">
+                                <img src="assets/clientes/Prancheta 10.png" alt="Sabor da Vovó Marmitaria" class="w-full h-full object-contain scale-125" loading="lazy">
+                            </div>
+                            <p class="text-xs sm:text-sm text-mute leading-snug"><strong class="text-snow font-semibold">Caso real:</strong> Sabor da Vovó Marmitaria. Marca criada do zero para o delivery da região.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SEÇÃO 2: ECOSSISTEMA DE VENDAS ===================== -->
+        <section class="py-24 sm:py-32 bg-panel border-y border-white/[0.06]">
+            <div class="max-w-6xl mx-auto px-5 sm:px-8">
+                <div class="reveal max-w-2xl">
+                    <p class="text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Passo 2</p>
+                    <h2 class="mt-4 font-serif text-3xl sm:text-5xl leading-tight">Depois, colocamos o seu negócio para vender. Explicado sem complicação.</h2>
+                    <p class="mt-6 text-mute text-base sm:text-lg">Três frentes trabalhando juntas para o cliente da sua região encontrar você, confiar e pedir.</p>
+                </div>
+
+                <div class="mt-14 grid gap-5 md:grid-cols-3">
+                    <!-- Delivery -->
+                    <article class="reveal group rounded-3xl bg-raised border border-white/[0.06] p-7 sm:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/40 flex flex-col">
+                        <div class="w-12 h-12 rounded-2xl bg-ink border border-white/10 flex items-center justify-center"><i class="ph ph-moped text-2xl text-gold"></i></div>
+                        <h3 class="mt-6 text-xl font-semibold">Cardápio e apps de delivery</h3>
+                        <p class="mt-3 text-sm text-mute leading-relaxed flex-1">Eu calculo o preço certo de cada prato e cadastro tudo bem feito nos aplicativos. Assim a taxa do app não come o seu lucro.</p>
+                        <div class="mt-6 flex flex-wrap gap-2 text-[11px] font-medium text-mute">
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">iFood</span>
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Rappi</span>
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Aiqfome</span>
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Zé Delivery</span>
+                        </div>
+                    </article>
+
+                    <!-- Anúncios -->
+                    <article class="reveal group rounded-3xl bg-raised border border-white/[0.06] p-7 sm:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/40 flex flex-col">
+                        <div class="w-12 h-12 rounded-2xl bg-ink border border-white/10 flex items-center justify-center"><i class="ph ph-crosshair text-2xl text-gold"></i></div>
+                        <h3 class="mt-6 text-xl font-semibold">Anúncios na sua cidade</h3>
+                        <p class="mt-3 text-sm text-mute leading-relaxed flex-1">Anúncios que aparecem só para quem mora a poucos quilômetros da sua loja. Nada de gastar dinheiro com quem nunca vai comprar de você.</p>
+                        <div class="mt-6 flex flex-wrap gap-2 text-[11px] font-medium text-mute">
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Instagram e Facebook</span>
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Google</span>
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">TikTok</span>
+                        </div>
+                    </article>
+
+                    <!-- Google Maps & WhatsApp -->
+                    <article class="reveal group rounded-3xl bg-raised border border-white/[0.06] p-7 sm:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/40 flex flex-col">
+                        <div class="w-12 h-12 rounded-2xl bg-ink border border-white/10 flex items-center justify-center"><i class="ph ph-map-pin text-2xl text-gold"></i></div>
+                        <h3 class="mt-6 text-xl font-semibold">Google Maps e WhatsApp</h3>
+                        <p class="mt-3 text-sm text-mute leading-relaxed flex-1">Quando alguém buscar "frango assado perto de mim", a sua loja aparece no mapa, com fotos, avaliações e um botão direto para pedir no WhatsApp.</p>
+                        <div class="mt-6 flex flex-wrap gap-2 text-[11px] font-medium text-mute">
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Perfil no Google</span>
+                            <span class="rounded-full bg-ink border border-white/10 px-3 py-1">Link de pedido</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Fluxo simples -->
+                <div class="reveal mt-10 rounded-3xl border border-white/[0.06] bg-ink p-6 sm:p-8">
+                    <p class="text-xs text-mute mb-5">O caminho do seu cliente</p>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-2 text-sm">
+                        <div class="flex items-center gap-3 sm:flex-1"><span class="w-8 h-8 rounded-full bg-raised flex items-center justify-center text-xs font-semibold">1</span>Vê o anúncio ou acha no mapa</div>
+                        <i class="ph ph-arrow-right text-gold hidden sm:block"></i>
+                        <div class="flex items-center gap-3 sm:flex-1"><span class="w-8 h-8 rounded-full bg-raised flex items-center justify-center text-xs font-semibold">2</span>Confia na marca bonita</div>
+                        <i class="ph ph-arrow-right text-gold hidden sm:block"></i>
+                        <div class="flex items-center gap-3 sm:flex-1"><span class="w-8 h-8 rounded-full bg-raised flex items-center justify-center text-xs font-semibold">3</span>Pede no WhatsApp ou app</div>
+                        <i class="ph ph-arrow-right text-gold hidden sm:block"></i>
+                        <div class="flex items-center gap-3 sm:flex-1"><span class="w-8 h-8 rounded-full metal-gold text-ink flex items-center justify-center text-xs font-bold">4</span><strong class="font-semibold">Dinheiro no seu caixa</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SEÇÃO 3: PLANOS (ESTILO NETFLIX) ===================== -->
+        <section id="planos" class="py-24 sm:py-32">
+            <div class="max-w-6xl mx-auto px-5 sm:px-8">
+                <div class="reveal max-w-2xl">
+                    <p class="text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Passo 3</p>
+                    <h2 class="mt-4 font-serif text-3xl sm:text-5xl leading-tight">Escolha o melhor formato para o seu momento.</h2>
+                    <p class="mt-5 text-mute text-base sm:text-lg">Para quem está começando, a proposta é simples: você não paga nada para eu começar.</p>
+                </div>
+
+                <div class="mt-14 grid gap-5 lg:grid-cols-3 lg:items-start">
+                    <!-- PLANO INDICADO -->
+                    <article class="reveal plan-card rounded-3xl bg-panel border border-gold/50 shadow-gold p-2.5 transition-transform duration-500 hover:-translate-y-1.5 lg:order-1">
+                        <div class="metal-gold rounded-2xl p-5 text-ink relative">
+                            <p class="text-lg font-bold">Sócio de Crescimento</p>
+                            <p class="text-xs font-semibold opacity-80">Microempreendedores &bull; Indicado para você</p>
+                            <span class="absolute right-4 bottom-4 w-6 h-6 rounded-full bg-ink flex items-center justify-center"><i class="ph-bold ph-check text-gold text-sm"></i></span>
+                        </div>
+                        <dl class="px-4 sm:px-5 pt-2 pb-3">
+                            <div class="plan-row"><dt>Investimento fixo de serviço</dt><dd class="!text-2xl !font-bold text-metal">R$ 0,00 inicial</dd></div>
+                            <div class="plan-row"><dt>Como eu ganho</dt><dd>Porcentagem justa sobre o faturamento gerado em conjunto</dd></div>
+                            <div class="plan-row"><dt>Marca e logotipo</dt><dd>Incluso</dd></div>
+                            <div class="plan-row"><dt>Cardápio e apps de delivery</dt><dd>Incluso</dd></div>
+                            <div class="plan-row"><dt>Anúncios e Google Maps</dt><dd>Incluso</dd></div>
+                            <div class="plan-row"><dt>Se você não vender</dt><dd>Você não paga taxa de serviço</dd></div>
+                            <div class="plan-row"><dt>Risco para o seu caixa</dt><dd class="text-gold">Zero</dd></div>
+                        </dl>
+                        <a href="#" data-wa="Olá Giovani! Quero entender melhor o plano Sócio de Crescimento (Ganha-Ganha)."
+                           class="mx-2.5 mb-2.5 flex items-center justify-center gap-2 rounded-2xl bg-snow hover:bg-white text-ink py-4 text-sm font-semibold transition-colors">
+                            Quero ser sócio <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- RETAINER -->
+                    <article class="reveal rounded-3xl bg-panel border border-white/[0.08] p-2.5 transition-all duration-500 hover:-translate-y-1.5 hover:border-white/20 lg:order-2">
+                        <div class="metal-graphite rounded-2xl p-5">
+                            <p class="text-lg font-bold">Retainer Mensal</p>
+                            <p class="text-xs font-semibold text-mute">Empresas médias</p>
+                        </div>
+                        <dl class="px-4 sm:px-5 pt-2 pb-3">
+                            <div class="plan-row"><dt>Investimento mensal</dt><dd>R$ 1.500 a R$ 3.000</dd></div>
+                            <div class="plan-row"><dt>Como funciona</dt><dd>Valor fixo pela gestão contínua</dd></div>
+                            <div class="plan-row"><dt>Redes sociais e anúncios</dt><dd>Incluso</dd></div>
+                            <div class="plan-row"><dt>Relatório de resultados</dt><dd>Mensal</dd></div>
+                            <div class="plan-row"><dt>Indicado para</dt><dd>Quem já vende bem e quer crescer mais</dd></div>
+                        </dl>
+                        <a href="#" data-wa="Olá Giovani! Gostaria de saber mais sobre o Retainer Mensal para a minha empresa."
+                           class="mx-2.5 mb-2.5 flex items-center justify-center gap-2 rounded-2xl border border-white/10 hover:bg-white/[0.06] py-4 text-sm font-medium transition-colors">
+                            Consultar
+                        </a>
+                    </article>
+
+                    <!-- PROJETO FECHADO -->
+                    <article class="reveal rounded-3xl bg-panel border border-white/[0.08] p-2.5 transition-all duration-500 hover:-translate-y-1.5 hover:border-white/20 lg:order-3">
+                        <div class="metal-graphite rounded-2xl p-5">
+                            <p class="text-lg font-bold">Projeto Fechado</p>
+                            <p class="text-xs font-semibold text-mute">Empresas grandes</p>
+                        </div>
+                        <dl class="px-4 sm:px-5 pt-2 pb-3">
+                            <div class="plan-row"><dt>Investimento</dt><dd>A partir de R$ 5.000</dd></div>
+                            <div class="plan-row"><dt>Como funciona</dt><dd>Escopo e prazo definidos no início</dd></div>
+                            <div class="plan-row"><dt>Rebranding e expansão</dt><dd>Incluso</dd></div>
+                            <div class="plan-row"><dt>Consultoria estratégica</dt><dd>Incluso</dd></div>
+                            <div class="plan-row"><dt>Indicado para</dt><dd>Operações já consolidadas</dd></div>
+                        </dl>
+                        <a href="#" data-wa="Olá Giovani! Gostaria de solicitar um orçamento de Projeto Fechado."
+                           class="mx-2.5 mb-2.5 flex items-center justify-center gap-2 rounded-2xl border border-white/10 hover:bg-white/[0.06] py-4 text-sm font-medium transition-colors">
+                            Solicitar orçamento
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Explicação Ganha-Ganha -->
+                <div class="reveal mt-12 grid gap-8 lg:grid-cols-5 rounded-3xl bg-panel border border-white/[0.06] p-7 sm:p-10">
+                    <div class="lg:col-span-2">
+                        <p class="text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">A proposta Ganha-Ganha</p>
+                        <h3 class="mt-4 font-serif text-2xl sm:text-3xl leading-snug">Eu só ganho quando você ganha.</h3>
+                    </div>
+                    <div class="lg:col-span-3 text-mute text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>Você não paga nada para eu começar. Eu entro como sócio de marketing: faço a marca, cuido das redes, dos anúncios e das vendas.</p>
+                        <p>Nós combinamos apenas uma <strong class="text-snow font-semibold">porcentagem justa sobre o faturamento</strong> que o negócio gerar em conjunto. Se você não vender, você não me paga taxa de serviço.</p>
+                        <p class="flex items-start gap-2 text-snow"><i class="ph-fill ph-shield-check text-gold text-xl shrink-0"></i>Risco zero para o seu caixa. O valor dos anúncios, quando houver, é pago direto às plataformas e combinado com você antes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SEÇÃO 4: AUTORIDADE / LOGOS ===================== -->
+        <section class="py-24 sm:py-28 bg-panel border-y border-white/[0.06]">
+            <div class="max-w-6xl mx-auto px-5 sm:px-8">
+                <p class="reveal text-center text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Marcas que confiam no processo</p>
+                <p class="reveal mt-4 text-center text-mute text-sm sm:text-base max-w-xl mx-auto">Mais de 10 anos liderando projetos de marca e comunicação, do grande varejo ao comércio de bairro.</p>
+
+                <div id="logoGrid" class="reveal mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 items-center"></div>
             </div>
         </section>
     </main>
 
-    <!-- ===================== 6. FOOTER / CTA ===================== -->
-    <footer class="border-t border-white/[0.06] bg-panel">
-        <div class="max-w-4xl mx-auto px-5 sm:px-8 py-24 text-center">
-            <h2 class="reveal text-3xl sm:text-5xl font-extrabold tracking-tight">Vamos desenhar o crescimento do seu negócio?</h2>
-            <p class="reveal mt-5 text-mute text-base sm:text-lg max-w-xl mx-auto">Uma conversa rápida, sem compromisso, para avaliarmos juntos se a parceria faz sentido para os dois lados.</p>
-            <div class="reveal mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-                <a href="#" data-wa="Olá Giovani! Quero agendar uma reunião para avaliar o plano Ganha-Ganha."
-                   class="inline-flex items-center justify-center gap-2.5 rounded-full bg-violet hover:bg-violet-soft px-8 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-0.5 shadow-glow">
-                    <i class="ph-bold ph-calendar-check text-xl"></i> Agendar reunião
-                </a>
-                <a href="#" data-wa="Olá Giovani! Vi a apresentação de parcerias e tenho algumas dúvidas."
-                   class="inline-flex items-center justify-center gap-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 px-8 py-4 text-base font-semibold transition-all duration-300">
-                    <i class="ph-bold ph-whatsapp-logo text-xl"></i> Chamar no WhatsApp
-                </a>
-            </div>
+    <!-- ===================== FOOTER / CTA ===================== -->
+    <footer>
+        <div class="max-w-3xl mx-auto px-5 sm:px-8 py-28 sm:py-36 text-center">
+            <i class="reveal ph ph-coffee text-4xl text-gold"></i>
+            <h2 class="reveal mt-6 font-serif text-3xl sm:text-5xl leading-tight">Vamos tomar um café e conversar sobre o seu projeto?</h2>
+            <p class="reveal mt-6 text-mute text-base sm:text-lg">Sem compromisso e sem palavras difíceis. Uma conversa sincera para ver se faz sentido construirmos isso juntos.</p>
+            <a href="#" data-wa="Olá Giovani! Vamos marcar um café para conversar sobre o meu projeto?"
+               class="reveal mt-10 inline-flex items-center justify-center gap-2.5 rounded-full metal-gold text-ink px-9 py-4 text-base font-bold transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 w-full sm:w-auto">
+                <i class="ph-bold ph-whatsapp-logo text-xl"></i> Chamar no WhatsApp
+            </a>
         </div>
         <div class="border-t border-white/[0.06]">
-            <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-mute">
-                <p>&copy; <span id="year"></span> Giovani Almeida. Proposta comercial privada.</p>
+            <div class="max-w-6xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-mute">
+                <p>&copy; <span id="year"></span> Giovani Almeida &bull; Cajamar, SP</p>
                 <nav class="flex gap-5"><a href="index.html" class="hover:text-snow transition-colors">Site</a><a href="cases.html" class="hover:text-snow transition-colors">Cases</a><a href="sobre.html" class="hover:text-snow transition-colors">Sobre</a></nav>
             </div>
         </div>
@@ -427,62 +404,62 @@
     <script>
     (() => {
         const PHONE = '5511964894096';
-        const CLIENT_IMG_BASE = 'assets/clientes/';
+        const LOGO_BASE = 'assets/clientes/';
 
-        // Links de WhatsApp com mensagem contextual
+        // WhatsApp com mensagem contextual
         document.querySelectorAll('[data-wa]').forEach(el => {
             el.href = `https://wa.me/${PHONE}?text=${encodeURIComponent(el.dataset.wa)}`;
             el.target = '_blank';
             el.rel = 'noopener noreferrer';
         });
 
-        // Header muda ao rolar
+        // Header ao rolar
         const bar = document.getElementById('topbar');
         const onScroll = () => {
             const s = window.scrollY > 24;
-            bar.classList.toggle('bg-ink/85', s);
-            bar.classList.toggle('backdrop-blur-xl', s);
-            bar.classList.toggle('border-b', s);
-            bar.classList.toggle('border-white/[0.06]', s);
+            ['bg-ink/85', 'backdrop-blur-xl', 'border-b', 'border-white/[0.06]'].forEach(c => bar.classList.toggle(c, s));
         };
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
 
-        // Faixa de clientes (duplicada para loop contínuo)
-        const track = document.getElementById('clientsTrack');
-        const cards = Array.from({ length: 10 }, (_, i) =>
-            `<div class="shrink-0 w-40 sm:w-48 h-24 sm:h-28 rounded-xl bg-snow/95 flex items-center justify-center p-3 transition-transform duration-300 hover:scale-105">
-                <img src="${CLIENT_IMG_BASE}Prancheta ${i + 1}.png" alt="Cliente atendido ${i + 1}" loading="lazy" class="max-h-full max-w-full object-contain">
+        // Grade de logos (Carrefour e Estrela Dalva primeiro)
+        const logos = [
+            ['Prancheta 6.png', 'Grupo Carrefour Brasil'],
+            ['Prancheta 5.png', 'Drogaria Estrela Dalva'],
+            ['Prancheta 7.png', 'Nescau'],
+            ['Prancheta 1.png', 'Colliers International'],
+            ['Prancheta 9.png', 'Brama Casa e Construção'],
+            ['Prancheta 8.png', 'Natural Alimentos'],
+            ['Prancheta 2.png', 'Drogaria Polvilho'],
+            ['Prancheta 3.png', 'Drogaria Leal'],
+            ['Prancheta 4.png', 'Portal Farma'],
+            ['Prancheta 10.png', 'Sabor da Vovó Marmitaria']
+        ];
+        document.getElementById('logoGrid').innerHTML = logos.map(([file, name]) =>
+            `<div class="logo-cell flex items-center justify-center h-16 sm:h-20" title="${name}">
+                <img src="${LOGO_BASE}${file}" alt="${name}" loading="lazy" class="logo-mono max-h-full w-auto max-w-[150px] object-contain">
             </div>`).join('');
-        track.innerHTML = cards + cards;
+
+        // Antes e Depois
+        const panes = { antes: document.getElementById('ba-antes'), depois: document.getElementById('ba-depois') };
+        document.querySelectorAll('.ba-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const key = btn.dataset.ba;
+                Object.entries(panes).forEach(([k, el]) => el.style.opacity = k === key ? '1' : '0');
+                document.querySelectorAll('.ba-btn').forEach(b => {
+                    const on = b === btn;
+                    b.classList.toggle('bg-snow', on);
+                    b.classList.toggle('text-ink', on);
+                    b.classList.toggle('text-mute', !on);
+                });
+            });
+        });
 
         // Reveal on scroll
         const io = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-        // Simulador de alcance (interpolação entre faixas de referência)
-        const points = [[300, 5000], [600, 12000], [1000, 25000], [3000, 60000]];
-        const reachFor = v => {
-            for (let i = 0; i < points.length - 1; i++) {
-                const [x1, y1] = points[i], [x2, y2] = points[i + 1];
-                if (v <= x2) return y1 + (v - x1) * (y2 - y1) / (x2 - x1);
-            }
-            return points.at(-1)[1];
-        };
-        const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
-        const range = document.getElementById('budget');
-        const update = () => {
-            const v = +range.value;
-            const pct = (v - range.min) / (range.max - range.min) * 100;
-            range.style.background = `linear-gradient(90deg,#65379D ${pct}%,#1F1F1F ${pct}%)`;
-            document.getElementById('budgetOut').textContent = brl.format(v);
-            document.getElementById('reachOut').textContent = `${Math.round(reachFor(v) / 1000)} mil`;
-            document.getElementById('phaseOut').textContent = v < 1000 ? 'Validação' : 'Escala';
-        };
-        range.addEventListener('input', update);
-        update();
 
         document.getElementById('year').textContent = new Date().getFullYear();
     })();
