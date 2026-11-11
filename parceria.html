@@ -67,6 +67,23 @@
             box-shadow: 0 28px 70px rgba(0, 0, 0, 0.88), inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
 
+        /* Badge de Plataforma com Logo Oficial */
+        .platform-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0.65rem;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            transition: all 0.2s ease;
+        }
+        .platform-pill:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.22);
+            transform: translateY(-1px);
+        }
+
         /* Efeito de Vidro Fosco Avançado (Glassmorphism para Área Restrita) */
         .glass-frosted-vault {
             background: rgba(14, 14, 14, 0.68);
@@ -131,6 +148,9 @@
                 <a href="#clientes" class="hidden md:inline-flex items-center text-xs font-medium text-textSecondary hover:text-white px-3 py-2 rounded-lg hover:bg-white/[0.05] transition">
                     Clientes
                 </a>
+                <a href="#servicos" class="hidden md:inline-flex items-center text-xs font-medium text-textSecondary hover:text-white px-3 py-2 rounded-lg hover:bg-white/[0.05] transition">
+                    Plataformas
+                </a>
                 <a href="#planos" class="hidden md:inline-flex items-center text-xs font-medium text-textSecondary hover:text-white px-3 py-2 rounded-lg hover:bg-white/[0.05] transition">
                     Planos & Regras
                 </a>
@@ -169,11 +189,84 @@
                     </h1>
 
                     <!-- Bloco de Narrativa Sóbria -->
-                    <div class="openai-surface p-6 sm:p-7 rounded-2xl mb-8">
+                    <div class="openai-surface p-6 sm:p-7 rounded-2xl mb-7">
                         <p class="text-base sm:text-[17px] text-textSecondary leading-relaxed font-normal">
                             "Você tem o dom do produto, a mão na massa e a vontade de fazer acontecer na nossa cidade. Mas começar sozinho, tentando adivinhar como atrair clientes, cuidar de redes sociais e precificar delivery, consome toda a sua energia.
                             <strong class="text-white font-medium">Eu entro para ser o seu sócio de crescimento na parte de marca, vendas e digital.</strong>"
                         </p>
+                    </div>
+
+                    <!-- Mini Faixa de Logos das Plataformas no Hero -->
+                    <div class="mb-8">
+                        <span class="text-[11px] font-mono uppercase tracking-wider text-textSubtle block mb-2.5">
+                            Canais & Plataformas Gerenciados na Parceria:
+                        </span>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <!-- iFood -->
+                            <span class="platform-pill text-xs font-medium text-white">
+                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="6" fill="#EA1D2C"/>
+                                    <circle cx="8.5" cy="9.5" r="1.4" fill="white"/>
+                                    <circle cx="15.5" cy="9.5" r="1.4" fill="white"/>
+                                    <path d="M7.5 14.2C9.2 16.5 14.8 16.5 16.5 14.2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span>iFood</span>
+                            </span>
+                            <!-- Uber Eats -->
+                            <span class="platform-pill text-xs font-medium text-white">
+                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="6" fill="#06C167"/>
+                                    <text x="12" y="15.5" text-anchor="middle" fill="#000000" font-size="9.5" font-weight="900" font-family="Inter, sans-serif">UE</text>
+                                </svg>
+                                <span>Uber Eats</span>
+                            </span>
+                            <!-- Rappi -->
+                            <span class="platform-pill text-xs font-medium text-white">
+                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="6" fill="#FF441F"/>
+                                    <path d="M6.5 13.5C8 11.2 10.5 11.5 12 13C13.5 11.5 16 11.2 17.5 13.5" stroke="white" stroke-width="2.1" stroke-linecap="round"/>
+                                </svg>
+                                <span>Rappi</span>
+                            </span>
+                            <!-- Instagram -->
+                            <span class="platform-pill text-xs font-medium text-white">
+                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <defs>
+                                        <linearGradient id="igGradHero" x1="0%" y1="100%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#FD5949"/>
+                                            <stop offset="50%" stop-color="#D6249F"/>
+                                            <stop offset="100%" stop-color="#285AEB"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="24" height="24" rx="6" fill="url(#igGradHero)"/>
+                                    <rect x="5.5" y="5.5" width="13" height="13" rx="3.8" stroke="white" stroke-width="1.7"/>
+                                    <circle cx="12" cy="12" r="3" stroke="white" stroke-width="1.7"/>
+                                    <circle cx="15.8" cy="8.2" r="0.9" fill="white"/>
+                                </svg>
+                                <span>Instagram</span>
+                            </span>
+                            <!-- TikTok -->
+                            <span class="platform-pill text-xs font-medium text-white">
+                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="6" fill="#141414" stroke="rgba(255,255,255,0.18)"/>
+                                    <path d="M14.5 6V14.2C14.5 15.9 13.1 17.2 11.5 17.2C9.9 17.2 8.6 15.9 8.6 14.2C8.6 12.6 9.9 11.3 11.5 11.3" stroke="#25F4EE" stroke-width="1.9" stroke-linecap="round"/>
+                                    <path d="M14.5 6C14.8 7.8 16.2 9.1 18 9.3" stroke="#FE2C55" stroke-width="1.9" stroke-linecap="round"/>
+                                    <path d="M14.2 6V14C14.2 15.6 12.9 16.9 11.3 16.9C9.7 16.9 8.4 15.6 8.4 14C8.4 12.4 9.7 11.1 11.3 11.1" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+                                </svg>
+                                <span>TikTok Ads</span>
+                            </span>
+                            <!-- Google -->
+                            <span class="platform-pill text-xs font-medium text-white">
+                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect width="24" height="24" rx="6" fill="#FFFFFF"/>
+                                    <path d="M17.6 12.2C17.6 11.8 17.5 11.4 17.5 11H12V13.3H15.2C15 14.1 14.5 14.8 13.8 15.3V16.9H15.7C16.9 15.8 17.6 14.2 17.6 12.2Z" fill="#4285F4"/>
+                                    <path d="M12 18C13.6 18 14.9 17.5 15.7 16.9L13.8 15.3C13.3 15.6 12.7 15.8 12 15.8C10.5 15.8 9.2 14.8 8.7 13.4H6.8V15C7.7 16.8 9.7 18 12 18Z" fill="#34A853"/>
+                                    <path d="M8.7 13.4C8.5 12.9 8.5 12.5 8.5 12C8.5 11.5 8.6 11.1 8.7 10.6V9H6.8C6.3 10 6 11 6 12C6 13 6.3 14 6.8 15L8.7 13.4Z" fill="#FBBC05"/>
+                                    <path d="M12 8.2C12.8 8.2 13.6 8.5 14.2 9.1L15.8 7.5C14.9 6.6 13.6 6 12 6C9.7 6 7.7 7.2 6.8 9L8.7 10.6C9.2 9.2 10.5 8.2 12 8.2Z" fill="#EA4335"/>
+                                </svg>
+                                <span>Google Ads & Maps</span>
+                            </span>
+                        </div>
                     </div>
 
                     <!-- CTAs Minimalistas Estilo OpenAI -->
@@ -419,7 +512,7 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 3. SEÇÃO DE SERVIÇOS INTEGRADOS            -->
+    <!-- 3. SEÇÃO DE SERVIÇOS & PLATAFORMAS         -->
     <!-- ========================================== -->
     <section id="servicos" class="py-20 md:py-24 px-5 sm:px-6 border-b border-white/10 bg-openaiBlack">
         <div class="max-w-6xl mx-auto">
@@ -428,10 +521,10 @@
                     Ecossistema Integrado de Crescimento
                 </span>
                 <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-                    Quatro frentes executadas do zero para transformar seu produto em vendas diárias.
+                    Quatro frentes executadas do zero nas maiores plataformas de vendas e tráfego.
                 </h2>
                 <p class="text-textSecondary text-base leading-relaxed">
-                    De uma rotisseria de frango assado, marmitaria (como a <em>Sabor da Vovó</em>) ou restaurante a uma drogaria ou loja de bairro: estruturamos sua marca, seus canais de entrega e seus anúncios pagos com gestão centralizada.
+                    De uma rotisseria de frango assado, marmitaria (como a <em>Sabor da Vovó</em>) ou restaurante a uma drogaria ou loja de bairro: estruturamos sua marca, seus aplicativos de entrega e seus anúncios pagos com gestão centralizada.
                 </p>
             </div>
 
@@ -452,13 +545,22 @@
                         Criação ou modernização completa de logotipo, paleta de cores e apresentação visual de alto apetite (como o frango assado dourado, marmitas executivas, combos familiares e embalagens profissionais).
                     </p>
                     <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Logotipo Oficial</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Direção de Fotos</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Cardápio Persuasivo</span>
+                        <span class="platform-pill text-xs text-white/90">
+                            <i class="ph-fill ph-pen-nib text-accentChampagne text-sm"></i>
+                            <span>Logotipo & Identidade</span>
+                        </span>
+                        <span class="platform-pill text-xs text-white/90">
+                            <i class="ph-fill ph-aperture text-accentChampagne text-sm"></i>
+                            <span>Direção de Fotos</span>
+                        </span>
+                        <span class="platform-pill text-xs text-white/90">
+                            <i class="ph-fill ph-book-open-text text-accentChampagne text-sm"></i>
+                            <span>Cardápio Persuasivo</span>
+                        </span>
                     </div>
                 </div>
 
-                <!-- Frente 2: Consultoria de Apps de Delivery -->
+                <!-- Frente 2: Consultoria de Apps de Delivery (COM LOGOS OFICIAIS) -->
                 <div class="openai-card p-7 sm:p-8 rounded-2xl hover:border-white/20 transition duration-200 reveal">
                     <div class="flex items-center justify-between mb-5">
                         <div class="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white">
@@ -472,17 +574,68 @@
                     <p class="text-sm text-textSecondary leading-relaxed mb-5">
                         Inserção, configuração completa e precificação estratégica em todos os aplicativos de entrega — calculando taxas das plataformas, embalagens e insumos para proteger sua margem de lucro em cada pedido.
                     </p>
+
+                    <!-- Logos Oficiais dos Apps de Delivery -->
                     <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.06] text-white font-medium border border-white/15">iFood</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Rappi</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Aiqfome</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">99Food</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Zé Delivery</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Uber Eats</span>
+                        <!-- iFood -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#EA1D2C"/>
+                                <circle cx="8.5" cy="9.5" r="1.4" fill="white"/>
+                                <circle cx="15.5" cy="9.5" r="1.4" fill="white"/>
+                                <path d="M7.5 14.2C9.2 16.5 14.8 16.5 16.5 14.2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>iFood</span>
+                        </span>
+
+                        <!-- Rappi -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#FF441F"/>
+                                <path d="M6.5 13.5C8 11.2 10.5 11.5 12 13C13.5 11.5 16 11.2 17.5 13.5" stroke="white" stroke-width="2.1" stroke-linecap="round"/>
+                            </svg>
+                            <span>Rappi</span>
+                        </span>
+
+                        <!-- Uber Eats -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#06C167"/>
+                                <text x="12" y="15.5" text-anchor="middle" fill="#000000" font-size="9.5" font-weight="900" font-family="Inter, sans-serif">UE</text>
+                            </svg>
+                            <span>Uber Eats</span>
+                        </span>
+
+                        <!-- 99Food -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#FFB800"/>
+                                <text x="12" y="15.5" text-anchor="middle" fill="#000000" font-size="10.5" font-weight="900" font-family="Inter, sans-serif">99</text>
+                            </svg>
+                            <span>99Food</span>
+                        </span>
+
+                        <!-- Aiqfome -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#7B1FA2"/>
+                                <text x="12" y="15.5" text-anchor="middle" fill="#FFFFFF" font-size="9.5" font-weight="800" font-family="Inter, sans-serif">aiq</text>
+                            </svg>
+                            <span>Aiqfome</span>
+                        </span>
+
+                        <!-- Zé Delivery -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#FFCC00"/>
+                                <text x="12" y="15.5" text-anchor="middle" fill="#111111" font-size="9.5" font-weight="900" font-family="Inter, sans-serif">ZÉ</text>
+                            </svg>
+                            <span>Zé Delivery</span>
+                        </span>
                     </div>
                 </div>
 
-                <!-- Frente 3: Tráfego Pago Multicanal -->
+                <!-- Frente 3: Tráfego Pago Multicanal (COM LOGOS INSTAGRAM, FACEBOOK, META, GOOGLE, TIKTOK) -->
                 <div class="openai-card p-7 sm:p-8 rounded-2xl hover:border-white/20 transition duration-200 reveal">
                     <div class="flex items-center justify-between mb-5">
                         <div class="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white">
@@ -493,9 +646,63 @@
                     <h3 class="text-lg sm:text-xl font-semibold text-white mb-2.5">
                         Tráfego Pago Multicanal (Meta Ads, Google Ads & TikTok Ads)
                     </h3>
-                    <p class="text-sm text-textSecondary leading-relaxed mb-5">
+                    <p class="text-sm text-textSecondary leading-relaxed mb-4">
                         Campanhas geolocalizadas no raio exato do seu bairro nos horários de pico. Com investimento enxuto em mídia, fazemos seu produto aparecer todos os dias para milhares de vizinhos prontos para pedir.
                     </p>
+
+                    <!-- Logos Oficiais das Redes de Tráfego -->
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <!-- Instagram Ads -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <defs>
+                                    <linearGradient id="igGradCard" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#FD5949"/>
+                                        <stop offset="50%" stop-color="#D6249F"/>
+                                        <stop offset="100%" stop-color="#285AEB"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="24" height="24" rx="6" fill="url(#igGradCard)"/>
+                                <rect x="5.5" y="5.5" width="13" height="13" rx="3.8" stroke="white" stroke-width="1.7"/>
+                                <circle cx="12" cy="12" r="3" stroke="white" stroke-width="1.7"/>
+                                <circle cx="15.8" cy="8.2" r="0.9" fill="white"/>
+                            </svg>
+                            <span>Instagram</span>
+                        </span>
+
+                        <!-- Facebook / Meta Ads -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#1877F2"/>
+                                <path d="M13.4 19V12.8H15.5L15.8 10.3H13.4V8.7C13.4 8 13.6 7.5 14.6 7.5H15.9V5.3C15.6 5.3 14.9 5.2 14 5.2C12.2 5.2 10.9 6.3 10.9 8.4V10.3H8.9V12.8H10.9V19H13.4Z" fill="white"/>
+                            </svg>
+                            <span>Facebook / Meta</span>
+                        </span>
+
+                        <!-- TikTok Ads -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#141414" stroke="rgba(255,255,255,0.2)"/>
+                                <path d="M14.5 6V14.2C14.5 15.9 13.1 17.2 11.5 17.2C9.9 17.2 8.6 15.9 8.6 14.2C8.6 12.6 9.9 11.3 11.5 11.3" stroke="#25F4EE" stroke-width="1.9" stroke-linecap="round"/>
+                                <path d="M14.5 6C14.8 7.8 16.2 9.1 18 9.3" stroke="#FE2C55" stroke-width="1.9" stroke-linecap="round"/>
+                                <path d="M14.2 6V14C14.2 15.6 12.9 16.9 11.3 16.9C9.7 16.9 8.4 15.6 8.4 14C8.4 12.4 9.7 11.1 11.3 11.1" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+                            </svg>
+                            <span>TikTok Ads</span>
+                        </span>
+
+                        <!-- Google Ads -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#FFFFFF"/>
+                                <path d="M17.6 12.2C17.6 11.8 17.5 11.4 17.5 11H12V13.3H15.2C15 14.1 14.5 14.8 13.8 15.3V16.9H15.7C16.9 15.8 17.6 14.2 17.6 12.2Z" fill="#4285F4"/>
+                                <path d="M12 18C13.6 18 14.9 17.5 15.7 16.9L13.8 15.3C13.3 15.6 12.7 15.8 12 15.8C10.5 15.8 9.2 14.8 8.7 13.4H6.8V15C7.7 16.8 9.7 18 12 18Z" fill="#34A853"/>
+                                <path d="M8.7 13.4C8.5 12.9 8.5 12.5 8.5 12C8.5 11.5 8.6 11.1 8.7 10.6V9H6.8C6.3 10 6 11 6 12C6 13 6.3 14 6.8 15L8.7 13.4Z" fill="#FBBC05"/>
+                                <path d="M12 8.2C12.8 8.2 13.6 8.5 14.2 9.1L15.8 7.5C14.9 6.6 13.6 6 12 6C9.7 6 7.7 7.2 6.8 9L8.7 10.6C9.2 9.2 10.5 8.2 12 8.2Z" fill="#EA4335"/>
+                            </svg>
+                            <span>Google Ads</span>
+                        </span>
+                    </div>
+
                     <div class="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
                         <div class="bg-black/60 rounded-xl p-3 border border-white/10">
                             <span class="text-[11px] text-textSecondary block">Investimento em Anúncios</span>
@@ -508,7 +715,7 @@
                     </div>
                 </div>
 
-                <!-- Frente 4: Google Maps & WhatsApp -->
+                <!-- Frente 4: Google Maps & WhatsApp (COM LOGOS GOOGLE MAPS & WHATSAPP) -->
                 <div class="openai-card p-7 sm:p-8 rounded-2xl hover:border-white/20 transition duration-200 reveal">
                     <div class="flex items-center justify-between mb-5">
                         <div class="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white">
@@ -523,9 +730,28 @@
                         Posicionamento do Google Meu Negócio no topo das buscas do bairro e estruturação profissional do WhatsApp Business para receber pedidos diretos com zero taxa de intermediação.
                     </p>
                     <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Google Maps SEO Local</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Catálogo WhatsApp Business</span>
-                        <span class="text-xs px-2.5 py-1 rounded-md bg-white/[0.03] text-textSecondary border border-white/10">Venda Direta Recorrente</span>
+                        <!-- Google Maps -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#FFFFFF"/>
+                                <path d="M12 5C8.9 5 6.5 7.4 6.5 10.4C6.5 14.2 12 19.2 12 19.2C12 19.2 17.5 14.2 17.5 10.4C17.5 7.4 15.1 5 12 5Z" fill="#EA4335"/>
+                                <circle cx="12" cy="10.3" r="2.3" fill="#FFFFFF"/>
+                                <path d="M8.2 7.2L12 10.3L15.8 7.2C14.8 5.8 13.5 5 12 5C10.5 5 9.2 5.8 8.2 7.2Z" fill="#4285F4"/>
+                                <path d="M6.5 10.4C6.5 12.1 7.6 14 9.1 15.8L12 10.3L6.5 10.4Z" fill="#FBBC05"/>
+                                <path d="M14.9 15.8C16.4 14 17.5 12.1 17.5 10.4L12 10.3L14.9 15.8Z" fill="#34A853"/>
+                            </svg>
+                            <span>Google Maps / Meu Negócio</span>
+                        </span>
+
+                        <!-- WhatsApp Business -->
+                        <span class="platform-pill text-xs font-medium text-white">
+                            <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <rect width="24" height="24" rx="6" fill="#25D366"/>
+                                <path d="M12 5.8C8.6 5.8 5.8 8.5 5.8 11.9C5.8 13.1 6.2 14.2 6.8 15.1L6 18.2L9.2 17.4C10.1 17.9 11 18.1 12 18.1C15.4 18.1 18.2 15.4 18.2 12C18.2 8.6 15.4 5.8 12 5.8Z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/>
+                                <path d="M10.2 9.6C10 9.2 9.8 9.2 9.6 9.2C9.4 9.2 9.1 9.3 8.9 9.5C8.7 9.8 8.3 10.2 8.3 11C8.3 11.8 8.9 12.6 9 12.7C9.1 12.9 10.2 14.5 11.9 15.1C13.3 15.6 13.6 15.5 14 15.4C14.4 15.3 15 14.9 15.2 14.4C15.3 13.9 15.3 13.5 15.2 13.4C15.1 13.3 14.9 13.2 14.6 13.1C14.3 12.9 13.5 12.5 13.3 12.5C13.1 12.4 12.9 12.4 12.8 12.6C12.6 12.8 12.3 13.2 12.2 13.3C12.1 13.4 11.9 13.5 11.7 13.4C11.4 13.2 10.8 13 10.2 12.4C9.7 11.9 9.4 11.3 9.3 11.1C9.2 10.9 9.3 10.8 9.4 10.7C9.5 10.6 9.7 10.4 9.8 10.2C9.9 10.1 9.9 9.9 9.8 9.8L10.2 9.6Z" fill="white"/>
+                            </svg>
+                            <span>WhatsApp Business</span>
+                        </span>
                     </div>
                 </div>
 
