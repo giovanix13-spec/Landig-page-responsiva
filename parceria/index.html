@@ -64,14 +64,23 @@
         /* Luz suave no topo (sem cor vibrante) */
         .hero-light { background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(245,245,247,.07), transparent 70%); }
 
-        /* Logos de clientes em monocromático (padrão corporativo) */
-        .logo-mono {
-            filter:grayscale(1) invert(1) contrast(1.25) brightness(.95);
-            mix-blend-mode:screen;
-            opacity:.55;
-            transition:opacity .35s ease, transform .35s ease;
+        /* Logos de clientes em padrão corporativo (monocromático suave -> cor no hover, sem inverter negativo) */
+        .logo-card {
+            background:#FFFFFF;
+            border:1px solid rgba(255,255,255,.12);
+            transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         }
-        .logo-cell:hover .logo-mono { opacity:1; transform:scale(1.04); }
+        .logo-card:hover {
+            transform:translateY(-3px);
+            border-color:rgba(212,175,55,.65);
+            box-shadow:0 16px 36px -14px rgba(0,0,0,.75);
+        }
+        .logo-mono {
+            filter:grayscale(1) contrast(1.05);
+            opacity:.78;
+            transition:filter .35s ease, opacity .35s ease, transform .35s ease;
+        }
+        .logo-card:hover .logo-mono { filter:grayscale(0) contrast(1); opacity:1; transform:scale(1.04); }
 
         /* Reveal on scroll */
         .reveal { opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
@@ -377,7 +386,7 @@
                 <p class="reveal text-center text-[11px] uppercase tracking-[0.3em] text-gold font-semibold">Marcas que confiam no processo</p>
                 <p class="reveal mt-4 text-center text-mute text-sm sm:text-base max-w-xl mx-auto">Mais de 10 anos liderando projetos de marca e comunicação, do grande varejo ao comércio de bairro.</p>
 
-                <div id="logoGrid" class="reveal mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 items-center"></div>
+                <div id="logoGrid" class="reveal mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 items-center"></div>
             </div>
         </section>
     </main>
@@ -436,8 +445,8 @@
             ['Prancheta 10.png', 'Sabor da Vovó Marmitaria']
         ];
         document.getElementById('logoGrid').innerHTML = logos.map(([file, name]) =>
-            `<div class="logo-cell flex items-center justify-center h-16 sm:h-20" title="${name}">
-                <img src="${LOGO_BASE}${file}" alt="${name}" loading="lazy" class="logo-mono max-h-full w-auto max-w-[150px] object-contain">
+            `<div class="logo-card rounded-2xl p-4 flex items-center justify-center h-24 sm:h-28" title="${name}">
+                <img src="${LOGO_BASE}${file}" alt="${name}" loading="lazy" class="logo-mono max-h-full w-auto max-w-[160px] object-contain">
             </div>`).join('');
 
         // Antes e Depois
